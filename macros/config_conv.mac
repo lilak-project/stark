@@ -1,0 +1,15 @@
+LKRun/Name           stark  # name of the run
+LKRun/RunID          44     #
+LKRun/Division       0      # division within the run [optional]
+*LKRun/Tag           conv   # tag (*: temporary parameter)
+LKRun/DataPath       /root/lilak/stark/macros/data/
+
+persistency/FrameHeader true
+persistency/RawData     true
+
+########################################################################
+LKMFMConversionTask/InputFileName   data/run_0044.dat.28-02-24_04h55m12s
+LKFrameBuilder/MaxCobo              4   # maximum number of CoBo
+LKFrameBuilder/MaxAsad              4   # maximum number of AsAd in one CoBo
+LKFrameBuilder/MaxAget              4   # maximum number of AGET in one AsAd
+LKFrameBuilder/MaxChannels          68  # maximum number of channels in AGET

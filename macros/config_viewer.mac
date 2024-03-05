@@ -1,0 +1,11 @@
+LKRun/Name           stark  # name of the run
+LKRun/RunID          44     #
+LKRun/Division       0      # division within the run [optional]
+*LKRun/Tag           view   # tag (*: temporary parameter)
+LKRun/DataPath       /root/lilak/stark/macros/data/
+
+########################################################################
+LKGETChannelViewer/MaxCobo          4
+LKGETChannelViewer/MaxAsad          4
+LKGETChannelViewer/MaxAget          4
+LKGETChannelViewer/MaxChannels      68
