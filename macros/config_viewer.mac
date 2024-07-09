@@ -1,8 +1,10 @@
 LKRun/Name           stark  # name of the run
-LKRun/RunID          44     #
-LKRun/Division       0      # division within the run [optional]
-*LKRun/Tag           view   # tag (*: temporary parameter)
-LKRun/DataPath       /root/lilak/stark/macros/data/
+LKRun/RunID          253    #
+LKRun/Tag            view   # tag (*: temporary parameter)
+LKRun/OutputPath     {lilak_path}/stark/macros/data/
+LKRun/InputFile      /home/ejungwoo/data/stark/conv/stark_0253.conv.root
+#LKRun/SearchRun      conv
+LKRun/AutoTerminate  false
 
 ########################################################################
 LKGETChannelViewer/MaxCobo          4

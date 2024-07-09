@@ -1,0 +1,9 @@
+<stark_configs         config_stark.mac
+
+LKRun/InputFile        /home/ejungwoo/data/stark/conv/stark_0253.conv.root
+LKRun/Tag              eve
+LKEveTask/drawEve3D    false
+LKEveTask/drawPlane    true
+
+SKDrawEventStatisticsTask/binning_energy 500, 0, 4100
+SKDrawEventStatisticsTask/binning_theta  50, 50, 100
