@@ -112,8 +112,6 @@ class SKSiArrayPlane : public LKEvePlane
         LKParameterContainer fDetectorTypeArray;
 
         TH2* fFrameEventDisplay1 = nullptr;
-        int fNumDDX = 2;
-        int fNumDDY = 4;
         int fMaxDetectors = 40;
 
         TPad* fPadJOSideDisplay[2];
@@ -136,8 +134,10 @@ class SKSiArrayPlane : public LKEvePlane
         TPad* fPadDataDisplayFull;
         TPad* fPadDataDisplayTwo[2];
         TPad* fPadDataDisplayThree[3];
-        int fNumDataDisplay = fNumDDX*fNumDDY;
-        TPad* fPadDataDisplaySmall[32];
+        int fNumDDX = 2;
+        int fNumDDY = 3;
+        int fNumDataDisplays = fNumDDX*fNumDDY;
+        TPad* fPadDataDisplaySmall[24];
         TH2D* fHistControlDataDP = nullptr;
         int fNumUDPage = 0;
 
@@ -159,6 +159,11 @@ class SKSiArrayPlane : public LKEvePlane
         double fCtrlLabelOffset = 0.10;
 
         TGraph* fGSelJOSideDisplay = nullptr;
+
+    protected:
+        int kUpdateUserDrawing   = 6;
+        int kUpdateDataDisplays  = 7;
+        int kUpdateJunctionOhmic = 8;
 
     private:
         int fCountHistArray1 = 0;

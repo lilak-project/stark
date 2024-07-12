@@ -23,7 +23,7 @@ SKSiArrayPlane::SKSiArrayPlane(const char *name, const char *title)
     fGSelJOSideDisplay = new TGraph();
     fUserDrawingArrayCollection = new TObjArray();
 
-    fPaletteNumber = 1;
+    fPaletteNumber = 0;
     fCtrlBinTextSize = 8.0;
     fCtrlLabelSize = 0.25;
     //fCtrlLabelOffset = 0.10;
@@ -147,7 +147,7 @@ bool SKSiArrayPlane::Init()
         title = Form("%s(%d) Ohmic (%d,%d)",detName.Data(),detID,(useOhmicLR?2:1),numOhmicStrips);
         siDetector -> CreateHistOhmic(name, title, phi1, phi2, layer1, layer2, "!axis");
         fDetectorArray -> Add(siDetector);
-        siDetector -> Print();
+        //siDetector -> Print();
 
         if (fMaxLayerIndex < layer) fMaxLayerIndex = layer;
         if (fMinPhi > phi1) fMinPhi = phi1;
@@ -166,7 +166,6 @@ bool SKSiArrayPlane::Init()
     int localID = 0;
     while (fileCAACMap >> cobo >> asad >> aget >> chan >> chan2 >> detName >> detID >> jo >> strip >> lr >> tta >> phi)
     {
-        //lk_debug << detID << " " << jo << " " << strip << " " << lr << endl;
         jo = jo - 1;
         if (currentDetID==detID)
             localID++;
@@ -237,7 +236,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
 
         double x2 = 0.45;
 
-        fCanvas = LKPainter::GetPainter() -> CanvasResize("TTMicromegas",fDXCanvas,fDYCanvas,0.95);
+        fCanvas = LKPainter::GetPainter() -> CanvasResize("stark",fDXCanvas,fDYCanvas,0.95);
 
         fCanvas -> cd();
         fPadControlEvent1    = new TPad("SKSiArrayPlanePadCE1", "", 0.0 , y1, x2, y2);
@@ -256,43 +255,32 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadDataDisplayThree[1]  = new TPad("SKSiArrayPlanePadDD32","", x2,  w2,  1,  w3);
         fPadDataDisplayThree[2]  = new TPad("SKSiArrayPlanePadDD32","", x2,  w3,  1,  1 );
 
-        fPadControlEvent1     -> SetMargin(0.02,0.02,0.22,0.02);
-        fPadControlEvent2     -> SetMargin(0.02,0.02,0.22,0.02);
-        fPadCtrlUserDrawing   -> SetMargin(0.02,0.02,0.22,0.02);
-        fPadEventDisplay1     -> SetMargin(0.02,0.02,0.10,0.02);
-        fPadJOSideDisplay[0]  -> SetMargin(0.02,0.13,0.02,0.07);
-        fPadJOSideDisplay[1]  -> SetMargin(0.02,0.13,0.02,0.07);
-        fPadControlDataDP     -> SetMargin(0.02,0.02,0.22,0.02);
-        fPadDataDisplayFull   -> SetMargin(0.10,0.12,0.10,0.10);
-        fPadDataDisplayTwo[0] -> SetMargin(0.10,0.12,0.10,0.10);
-        fPadDataDisplayTwo[1] -> SetMargin(0.10,0.12,0.10,0.10);
+        fPadControlEvent1       -> SetMargin(0.02,0.02,0.22,0.02);
+        fPadControlEvent2       -> SetMargin(0.02,0.02,0.22,0.02);
+        fPadCtrlUserDrawing     -> SetMargin(0.02,0.02,0.22,0.02);
+        fPadEventDisplay1       -> SetMargin(0.02,0.02,0.10,0.02);
+        fPadJOSideDisplay[0]    -> SetMargin(0.02,0.13,0.02,0.07);
+        fPadJOSideDisplay[1]    -> SetMargin(0.02,0.13,0.02,0.07);
+        fPadControlDataDP       -> SetMargin(0.02,0.02,0.22,0.02);
+        fPadDataDisplayFull     -> SetMargin(0.10,0.12,0.10,0.10);
+        fPadDataDisplayTwo[0]   -> SetMargin(0.10,0.12,0.10,0.10);
+        fPadDataDisplayTwo[1]   -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayThree[0] -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayThree[1] -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayThree[2] -> SetMargin(0.10,0.12,0.10,0.10);
 
-        fPadControlDataDP -> SetGrid(1);
-        fPadCtrlUserDrawing -> SetGrid(1);
+        fPadControlDataDP    -> SetGrid(1);
+        fPadCtrlUserDrawing  -> SetGrid(1);
         fPadJOSideDisplay[0] -> SetGrid(1,1);
         fPadJOSideDisplay[1] -> SetGrid(1,1);
 
         fPadJOSideDisplay[0] -> Draw();
         fPadJOSideDisplay[1] -> Draw();
-        fPadControlEvent1 -> Draw();
-        fPadControlEvent2 -> Draw();
-        fPadEventDisplay1 -> Draw();
-        fPadCtrlUserDrawing -> Draw();
-        fPadControlDataDP -> Draw();
-        //fPadDataDisplayFull -> Draw();
-        //fPadDataDisplayTwo[0] -> Draw();                                        
-        //fPadDataDisplayTwo[1] -> Draw();
-        //fPadDataDisplayThree[0] -> Draw();
-        //fPadDataDisplayThree[1] -> Draw();
-        //fPadDataDisplayThree[2] -> Draw();
-
-        //fPadChannelBuffer = new TPad("SKSiArrayPlanePad_channel","",0.5,y5,1,y6);
-        //fPadChannelBuffer -> SetMargin(0.12,0.05,0.20,0.10);
-        //fPadChannelBuffer -> SetNumber(3);
-        //fPadChannelBuffer -> Draw();
+        fPadControlEvent1    -> Draw();
+        fPadControlEvent2    -> Draw();
+        fPadEventDisplay1    -> Draw();
+        fPadCtrlUserDrawing  -> Draw();
+        fPadControlDataDP    -> Draw();
 
         int countPad = 0;
         for (auto iy=0; iy<fNumDDY; ++iy) {
@@ -387,7 +375,13 @@ TH2* SKSiArrayPlane::GetHistUserDrawing(Option_t *option)
 
 bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw)
 {
-    lk_info << "adding: " << label << " " << detID << " " << joID << " containing " << userDrawingArray->GetEntries() << " histograms" << endl;
+    if (detID<0 && joID<0)
+        lk_info << "adding: " << label << " det=" << detID << "(" << (joID==0?"Junction":"Ohmic") << ") containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+    else if (joID<0)
+        lk_info << "adding: " << label << " det=" << detID << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+    else
+        lk_info << "adding: " << label << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+
     if (label.Index(" ")>=0)
         label.ReplaceAll(" ","_");
 
@@ -452,7 +446,9 @@ bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArr
 
 void SKSiArrayPlane::UpdateUserDrawing()
 {
-    //lk_debug << "UpdateUserDrawing" << endl;
+    if (UpdateFlag[kUpdateUserDrawing]) return;
+    else UpdateFlag[kUpdateUserDrawing] = true;
+
     if (fSignalUDTabChange)
     {
         fSignalUDTabChange = false;
@@ -476,14 +472,15 @@ void SKSiArrayPlane::UpdateUserDrawing()
         int selJOID = fSelJOID;
         if (selJOID<0)
             selJOID = 0;
-        //lk_debug << "Choosing " << fSelUDTab << " " <<fSelUDBin-2 << " " <<fSelDetID << " " <<selJOID << endl;
         fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDBin-2][fSelDetID][selJOID];
         fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDBin-2][fSelDetID][selJOID];
         auto selUDArray = (TObjArray*) fUserDrawingArrayCollection -> At(fSelUDArrayID);
-        if (selUDArray!=nullptr && selUDArray!=fSelUDArray) {
+
+        if (selUDArray!=nullptr)// && selUDArray!=fSelUDArray)
+        {
             fSelUDArray = selUDArray;
             fNumDrawingsInArray = fSelUDArray -> GetEntries();
-            fNumSelUDGroup = fNumDrawingsInArray / fNumDataDisplay;
+            fNumSelUDGroup = fNumDrawingsInArray / fNumDataDisplays;
             fSelUDPage = 0;
 
             {
@@ -497,13 +494,14 @@ void SKSiArrayPlane::UpdateUserDrawing()
                     bool good = false;
                     auto obj = fSelUDArray -> At(iDrawing);
                     if (obj -> InheritsFrom(TH1::Class())) {
-                        if (((TH2*) obj) -> GetEntries()>0)
+                        auto hist = (TH1*) obj;
+                        if (hist -> GetEntries()>0)
                             good = true;
                     }
                     if (good) {
                         fUDGoodIndex[fNumUDPage-1][fNumGoodDrawings] = iDrawing;
                         fNumGoodDrawings++;
-                        if (fNumGoodDrawings>=fNumDataDisplay) {
+                        if (fNumGoodDrawings>=fNumDataDisplays) {
                             fNumGoodDrawings = 0;
                             fNumUDPage++;
                         }
@@ -627,6 +625,10 @@ TPad* SKSiArrayPlane::Get3DEventPad()
 
 void SKSiArrayPlane::UpdateEventDisplay1()
 {
+    lk_info << endl;
+    if (UpdateFlag[kUpdateEventDisplay1]) return;
+    else UpdateFlag[kUpdateEventDisplay1] = true;
+
     if (fHistEventDisplay1==nullptr) 
         return;
 
@@ -654,17 +656,12 @@ void SKSiArrayPlane::UpdateEventDisplay1()
     for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
     {
         auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
-        //lk_debug << iDetector << " " << siDetector -> GetHistJunction() -> GetEntries() << " " << siDetector -> GetHistOhmic() -> GetEntries() << endl;
-        //auto xAxis = histJ -> GetXaxis();
-        //auto yAxis = histJ -> GetYaxis();
-        //lk_debug << iDetector << " " << xAxis -> GetXmin() << " " << xAxis -> GetXmax() << " " << yAxis -> GetXmin() << " " << yAxis -> GetXmax() << endl;
         auto histJ = siDetector -> GetHistJunction();
         auto histO = siDetector -> GetHistOhmic();
         double zMaxJ = histJ -> GetMaximum();
         double zMaxO = histO -> GetMaximum();
         if (zMaxJ>zMax) zMax = zMaxJ;
         if (zMaxO>zMax) zMax = zMaxO;
-        //lk_debug << iDetector << " " << fSelJOID << endl;
         TString drawSame = "same";
         //if (iDetector==0) drawSame = "";
         if (fSelJOID<0) {
@@ -678,20 +675,21 @@ void SKSiArrayPlane::UpdateEventDisplay1()
     }
     fHistEventDisplay1 -> SetMinimum(1);
     fHistEventDisplay1 -> SetMaximum(zMax);
-    fHistEventDisplay1 -> Draw("same text");
+    fHistEventDisplay1 -> Draw("same text z");
 
-    UpdateDataDisplays();
+    UpdateUserDrawing();
 }
 
 void SKSiArrayPlane::ExecMouseClickEventOnPad(TVirtualPad *pad, double xOnClick, double yOnClick)
 {
-    if (pad==fPadControlEvent1) { fSignalUDBinChange = true; ClickedControlEvent1(xOnClick, yOnClick); fCountChangeOther++; fCountChangeOther = 0; }
-    if (pad==fPadControlEvent2) { ClickedControlEvent2(xOnClick, yOnClick); fCountChangeOther++; }
-    if (pad==fPadEventDisplay1) { ClickedEventDisplay1(xOnClick, yOnClick); fCountChangeOther++; }
+    for (auto i=0; i<20; ++i) UpdateFlag[i] = false;
+    if (pad==fPadControlEvent1)    { fSignalUDBinChange = true; ClickedControlEvent1(xOnClick, yOnClick); fCountChangeOther++; fCountChangeOther = 0; }
+    if (pad==fPadControlEvent2)    { ClickedControlEvent2(xOnClick, yOnClick); fCountChangeOther++; }
+    if (pad==fPadEventDisplay1)    { ClickedEventDisplay1(xOnClick, yOnClick); fCountChangeOther++; }
     if (pad==fPadJOSideDisplay[0]) { ClickedJOSideDisplay(0); fCountChangeOther++; }
     if (pad==fPadJOSideDisplay[1]) { ClickedJOSideDisplay(1); fCountChangeOther++; }
-    if (pad==fPadCtrlUserDrawing) { ClickedUserDrawing(xOnClick, yOnClick); fCountChangeOther++; }
-    if (pad==fPadControlDataDP) { ClickedControlDataDP(xOnClick, yOnClick); fCountChangeOther++; }
+    if (pad==fPadCtrlUserDrawing)  { ClickedUserDrawing(xOnClick, yOnClick); fCountChangeOther++; }
+    if (pad==fPadControlDataDP)    { ClickedControlDataDP(xOnClick, yOnClick); fCountChangeOther++; }
 }
 
 void SKSiArrayPlane::ClickedJOSideDisplay(int jo)
@@ -711,6 +709,153 @@ void SKSiArrayPlane::ClickedJOSideDisplay(int jo)
         fSelJOID = -1;
     else
         fSelJOID = jo;
+
+    UpdateJunctionOhmic();
+
+    UpdateEventDisplay1();
+    if (fSignalUDBinChange||fSelJOID>=0) {
+        fSignalUDBinChange = true;
+        UpdateUserDrawing();
+    }
+}
+
+void SKSiArrayPlane::ClickedEventDisplay1(double xOnClick, double yOnClick)
+{
+    if (fHistEventDisplay1==nullptr)
+        return;
+
+    int selectedBin = fHistEventDisplay1 -> FindBin(xOnClick, yOnClick);
+    if (selectedBin<=0) {
+        lk_error << "SelectedBin is " << selectedBin << " (" << xOnClick << ", " << yOnClick << ") " << endl;
+        return;
+    }
+    auto detID = FindPadIDFromHistEventDisplay1Bin(selectedBin);
+    if (detID<0) {
+        lk_error << "DetectorID is " << detID << ". gbin = " << selectedBin << endl;
+        return;
+    }
+
+    fSelDetID = detID;
+    fSignalUDBinChange = true;
+
+    auto siDetector = (LKSiDetector*) fDetectorArray -> At(fSelDetID);
+    if (siDetector==nullptr) {
+        lk_error << "detector at " << fSelDetID << " is nullptr" << endl;
+        return;
+    }
+
+    siDetector -> Print();
+
+    UpdateJunctionOhmic();
+    UpdateUserDrawing();
+}
+
+void SKSiArrayPlane::UpdateAll()
+{
+    UpdateEventDisplay1();
+    UpdateControlEvent1();
+    UpdateControlEvent2();
+    UpdateJunctionOhmic();
+    UpdateUserDrawing();
+    UpdateDataDisplays();
+}
+
+void SKSiArrayPlane::UpdateDataDisplays()
+{
+    if (UpdateFlag[kUpdateDataDisplays]) return;
+    else UpdateFlag[kUpdateDataDisplays] = true;
+
+    fPadControlDataDP -> cd();
+    fHistControlDataDP -> SetBinContent(fBinCtrlPrevPage,-1);
+    fHistControlDataDP -> SetBinContent(fBinCtrlCurrPage,fSelUDPage);
+    fHistControlDataDP -> SetBinContent(fBinCtrlNextPage,fNumUDPage);
+    fHistControlDataDP -> Draw("text");
+
+    if (fSelUDArray==nullptr)
+        return;
+
+    fPadDataDisplayFull   -> GetListOfPrimitives() -> Clear();
+    fPadDataDisplayTwo[0] -> GetListOfPrimitives() -> Clear();
+    fPadDataDisplayTwo[1] -> GetListOfPrimitives() -> Clear();
+    fPadDataDisplayThree[0] -> GetListOfPrimitives() -> Clear();
+    fPadDataDisplayThree[1] -> GetListOfPrimitives() -> Clear();
+    fPadDataDisplayThree[2] -> GetListOfPrimitives() -> Clear();
+    int countPad = 0;
+    for (auto iy=0; iy<fNumDDY; ++iy) {
+        for (auto ix=0; ix<fNumDDX; ++ix) {
+            fPadDataDisplaySmall[countPad] -> GetListOfPrimitives() -> Clear();
+            fPadDataDisplaySmall[countPad] -> Modified();
+            fPadDataDisplaySmall[countPad] -> Update();
+            countPad++;
+        }
+    }
+
+    int numDataDisplays = fNumDataDisplays;
+    if      (fNumGoodDrawings==1 && fSelUDLeastNDraw<=1) { numDataDisplays = 1; }
+    else if (fNumGoodDrawings<=2 && fSelUDLeastNDraw<=2) { numDataDisplays = 2; }
+    else if (fNumGoodDrawings<=3 && fSelUDLeastNDraw<=3) { numDataDisplays = 3; }
+
+    for (auto iPad=0; iPad<numDataDisplays; ++iPad)
+    {
+        auto iDrawing = fUDGoodIndex[fSelUDPage][iPad];
+        if (iDrawing<0) break;
+
+        TPad *pad;
+        if      (numDataDisplays==1) pad = fPadDataDisplayFull;
+        else if (numDataDisplays==2) pad = fPadDataDisplayTwo[iPad];
+        else if (numDataDisplays==3) pad = fPadDataDisplayThree[iPad];
+        else                         pad = fPadDataDisplaySmall[iPad];
+
+        fCanvas -> cd();
+        pad -> Draw();
+        pad -> cd();
+
+        auto obj = fSelUDArray -> At(iDrawing);
+        if (obj==nullptr) break;
+        else if (obj -> InheritsFrom(TH2::Class())) { auto hist = (TH2*) obj; hist -> Draw("colz"); }
+        else if (obj -> InheritsFrom(TH1::Class())) { auto hist = (TH1*) obj; hist -> Draw();       }
+    }
+}
+
+void SKSiArrayPlane::UpdateJunctionOhmic()
+{
+    lk_info << UpdateFlag[kUpdateJunctionOhmic] << endl;
+    if (UpdateFlag[kUpdateJunctionOhmic]) return;
+    else UpdateFlag[kUpdateJunctionOhmic] = true;
+
+    auto siDetector = (LKSiDetector*) fDetectorArray -> At(fSelDetID);
+    if (siDetector==nullptr)
+        return;
+    siDetector -> Print();
+    auto histJ = siDetector -> GetHistJunction();
+    auto histO = siDetector -> GetHistOhmic();
+
+    int layer = siDetector -> GetLayer();
+    double layer1 = fLayerYScale * (layer + fLayerYOffset);
+    double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
+    auto phi1 = siDetector -> GetPhi1();
+    auto phi2 = siDetector -> GetPhi2();
+    fGSelEventDisplay1 -> Set(0);
+    fGSelEventDisplay1 -> SetPoint(0,phi1,layer1);
+    fGSelEventDisplay1 -> SetPoint(1,phi1,layer2);
+    fGSelEventDisplay1 -> SetPoint(2,phi2,layer2);
+    fGSelEventDisplay1 -> SetPoint(3,phi2,layer1);
+    fGSelEventDisplay1 -> SetPoint(4,phi1,layer1);
+    fGSelEventDisplay1 -> SetLineColor(kRed);
+    fGSelEventDisplay1 -> SetLineWidth(2);
+    fPadEventDisplay1 -> cd();
+    fGSelEventDisplay1 -> Draw("samel");
+
+    if (fFillOptionSelected=="prev")
+        siDetector -> FillHistEnergy();
+    else
+        siDetector -> FillHistEnergySum();
+
+    fPadJOSideDisplay[0] -> cd();
+    histJ -> Draw("colz");
+
+    fPadJOSideDisplay[1] -> cd();
+    histO -> Draw("colz");
 
     if (fSelJOID<0) {
         fPadJOSideDisplay[0] -> Modified();
@@ -734,171 +879,8 @@ void SKSiArrayPlane::ClickedJOSideDisplay(int jo)
         fGSelJOSideDisplay -> SetLineWidth(3);
         fGSelJOSideDisplay -> SetLineColor(kRed);
 
-        fPadJOSideDisplay[jo] -> cd();
-        fGSelJOSideDisplay -> Draw("samel");
-    }
-
-    UpdateEventDisplay1();
-    if (fSignalUDBinChange||fSelJOID>=0) {
-        fSignalUDBinChange = true;
-        UpdateUserDrawing();
-    }
-}
-
-void SKSiArrayPlane::ClickedEventDisplay1(double xOnClick, double yOnClick)
-{
-    if (fHistEventDisplay1==nullptr)
-        return;
-
-    int selectedBin = fHistEventDisplay1 -> FindBin(xOnClick, yOnClick);
-    if (selectedBin<=0) {
-        lk_error << "SelectedBin is " << selectedBin << " (" << xOnClick << ", " << yOnClick << ") " << endl;
-        return;
-    }
-    auto detID = FindPadIDFromHistEventDisplay1Bin(selectedBin);
-    //lk_debug << "(" << xOnClick << ", " << yOnClick << ") " << selectedBin << " -> " << detID << endl;
-    if (detID<0) {
-        lk_error << "DetectorID is " << detID << ". gbin = " << selectedBin << endl;
-        return;
-    }
-
-    fSelDetID = detID;
-    fSignalUDBinChange = true;
-
-    auto siDetector = (LKSiDetector*) fDetectorArray -> At(fSelDetID);
-    if (siDetector==nullptr) {
-        lk_error << "detector at " << fSelDetID << " is nullptr" << endl;
-        return;
-    }
-
-    siDetector -> Print();
-
-    UpdateJunctionOhmic();
-}
-
-void SKSiArrayPlane::UpdateAll()
-{
-    UpdateEventDisplay1();
-    //UpdateEventDisplay2();
-    //UpdateChannelBuffer();
-    UpdateControlEvent1();
-    UpdateControlEvent2();
-    UpdateJunctionOhmic();
-    UpdateUserDrawing();
-    UpdateDataDisplays();
-}
-
-void SKSiArrayPlane::UpdateDataDisplays()
-{
-    fPadControlDataDP -> cd();
-    fHistControlDataDP -> SetBinContent(fBinCtrlPrevPage,-1);
-    fHistControlDataDP -> SetBinContent(fBinCtrlCurrPage,fSelUDPage);
-    fHistControlDataDP -> SetBinContent(fBinCtrlNextPage,fNumUDPage);
-    fHistControlDataDP -> Draw("text");
-
-    if (fSelUDArray==nullptr)
-        return;
-
-    fPadDataDisplayFull   -> GetListOfPrimitives() -> Clear();
-    fPadDataDisplayTwo[0] -> GetListOfPrimitives() -> Clear();
-    fPadDataDisplayTwo[1] -> GetListOfPrimitives() -> Clear();
-    fPadDataDisplayThree[0] -> GetListOfPrimitives() -> Clear();
-    fPadDataDisplayThree[1] -> GetListOfPrimitives() -> Clear();
-    fPadDataDisplayThree[2] -> GetListOfPrimitives() -> Clear();
-    int countPad = 0;
-    for (auto iy=0; iy<fNumDDY; ++iy) {
-        for (auto ix=0; ix<fNumDDX; ++ix) {
-            fPadDataDisplaySmall[countPad] -> GetListOfPrimitives() -> Clear();
-            //fPadDataDisplaySmall[countPad] -> Modified();
-            //fPadDataDisplaySmall[countPad] -> Update();
-            countPad++;
-        }
-    }
-
-    int iPad = 0;
-    bool useFullPad = false;
-    bool useTwoPads = false;
-    bool useThreePads = false;
-    if (fNumGoodDrawings==1 && fSelUDLeastNDraw<=1) {
-        lk_info << "full" << endl;
-        useFullPad = true;
-    }
-    else if (fNumGoodDrawings<=2 && fSelUDLeastNDraw<=2) {
-        lk_info << "two" << endl;
-        useTwoPads = true;
-    }
-    else if (fNumGoodDrawings<=3 && fSelUDLeastNDraw<=3) {
-        lk_info << "three" << endl;
-        useThreePads = true;
-    }
-    else {
-        lk_info << "else" << endl;
-    }
-
-    for (auto iPad=0; iPad<fNumDataDisplay; ++iPad)
-    {
-        auto iDrawing = fUDGoodIndex[fSelUDPage][iPad];
-        if (iDrawing<0) break;
-
-        fCanvas -> cd();
-        if (useFullPad) {
-            fPadDataDisplayFull -> Draw();
-            fPadDataDisplayFull -> cd();
-        }
-        else if (useTwoPads) {
-            fPadDataDisplayTwo[iPad] -> Draw();
-            fPadDataDisplayTwo[iPad] -> cd();
-        }
-        else if (useThreePads) {
-            fPadDataDisplayThree[iPad] -> Draw();
-            fPadDataDisplayThree[iPad] -> cd();
-        }
-        else {
-            fPadDataDisplaySmall[iPad] -> Draw();
-            fPadDataDisplaySmall[iPad] -> cd();
-        }
-
-        auto obj = fSelUDArray -> At(iDrawing);
-        if (obj==nullptr) break;
-        else if (obj -> InheritsFrom(TH2::Class())) { ((TH2*) obj) -> Draw("colz"); }
-        else if (obj -> InheritsFrom(TH1::Class())) { ((TH2*) obj) -> Draw();       }
-    }
-}
-
-void SKSiArrayPlane::UpdateJunctionOhmic()
-{
-    auto siDetector = (LKSiDetector*) fDetectorArray -> At(fSelDetID);
-    if (siDetector==nullptr)
-        return;
-    siDetector -> Print();
-
-    int layer = siDetector -> GetLayer();
-    double layer1 = fLayerYScale * (layer + fLayerYOffset);
-    double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
-    auto phi1 = siDetector -> GetPhi1();
-    auto phi2 = siDetector -> GetPhi2();
-    fGSelEventDisplay1 -> Set(0);
-    fGSelEventDisplay1 -> SetPoint(0,phi1,layer1);
-    fGSelEventDisplay1 -> SetPoint(1,phi1,layer2);
-    fGSelEventDisplay1 -> SetPoint(2,phi2,layer2);
-    fGSelEventDisplay1 -> SetPoint(3,phi2,layer1);
-    fGSelEventDisplay1 -> SetPoint(4,phi1,layer1);
-    fGSelEventDisplay1 -> SetLineColor(kRed);
-    fGSelEventDisplay1 -> SetLineWidth(2);
-    //fGSelEventDisplay1 -> SetLineColor(kBlue-4);
-    fPadEventDisplay1 -> cd();
-    fGSelEventDisplay1 -> Draw("samel");
-
-    fPadJOSideDisplay[0] -> cd();
-    siDetector -> GetHistJunction() -> Draw("colz");
-
-    fPadJOSideDisplay[1] -> cd();
-    siDetector -> GetHistOhmic() -> Draw("colz");
-
-    if (fSelJOID>=0) {
         fPadJOSideDisplay[fSelJOID] -> cd();
         fGSelJOSideDisplay -> Draw("samel");
-        //TODO
     }
 }
 
@@ -969,13 +951,14 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
     }
 
     TString optionString(option);
+    if (!fFillOptionSelected.IsNull())
+        optionString = fFillOptionSelected;
     if (optionString.IsNull())
         optionString = "preview";
     optionString.ToLower();
     lk_info << "Filling " << optionString << " (" << currentEventID << ")" << endl;
 
     if (fAccumulateEvents==0) {
-        //lk_debug << fAccumulateEvents << endl;
         TIter nextDetector(fDetectorArray);
         LKSiDetector *siDetector;
         while ((siDetector = (LKSiDetector*) nextDetector()))
@@ -1031,7 +1014,10 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
             fSignalUDBinChange = true;
             fSelDetID = detID;
             auto siDetector = (LKSiDetector*) fDetectorArray -> At(detID);
-            siDetector -> AddChannel(channel,side,strip,direction);
+            if (fAccumulateEvents>0)
+                siDetector -> AddChannel(channel,side,strip,direction);
+            else
+                siDetector -> SetChannel(channel,side,strip,direction);
         }
     }
 }
@@ -1167,7 +1153,6 @@ void SKSiArrayPlane::ClickedUserDrawing(double xOnClick, double yOnClick)
     int bing = fHistCtrlUserDrawing -> FindBin(xOnClick, yOnClick);
     int selectedBinX, biny, binz;
     fHistCtrlUserDrawing -> GetBinXYZ(bing,selectedBinX,biny,binz);
-    //lk_debug << selectedBinX << endl;
 
     if (selectedBinX==1)
     {
@@ -1188,7 +1173,6 @@ void SKSiArrayPlane::ClickedUserDrawing(double xOnClick, double yOnClick)
             return;
         }
         fSelUDBin = selectedBinX;
-        //lk_debug << fSelUDTab << " " << fSelUDBin-2 << endl;
         lk_info << "Toggled " << fUserDrawingName[fSelUDTab][fSelUDBin-2] << endl;
         UpdateUserDrawing();
     }
@@ -1226,8 +1210,6 @@ bool SKSiArrayPlane::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     auto chan = channel -> GetChan();
     int detID, side, strip, direction;
     double theta, phi;
-    //bool found = FindSideStripDirection(cobo, asad, aget, chan, detID, side, strip, direction, theta, phi);
-    //if (!found || detID<0) return false;
     auto dummyChannel = GetSiChannel(cobo, asad, aget, chan);
     if (dummyChannel==nullptr)
         return false;
@@ -1235,37 +1217,22 @@ bool SKSiArrayPlane::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     siChannel -> SetAsad(asad);
     siChannel -> SetAget(aget);
     siChannel -> SetChan(chan);
-    siChannel -> SetDetType   (dummyChannel->GetDetType()   );
-    siChannel -> SetDetID     (dummyChannel->GetDetID()     );
-    siChannel -> SetChannelID (dummyChannel->GetChannelID() );
-    siChannel -> SetLocalID   (dummyChannel->GetLocalID()   );
-    siChannel -> SetSide      (dummyChannel->GetSide()      );
-    siChannel -> SetStrip     (dummyChannel->GetStrip()     );
-    siChannel -> SetDirection (dummyChannel->GetDirection() );
-    siChannel -> SetTheta1    (dummyChannel->GetTheta1()    );
-    siChannel -> SetTheta2    (dummyChannel->GetTheta2()    );
-    siChannel -> SetPhi1      (dummyChannel->GetPhi1()      );
-    siChannel -> SetPhi2      (dummyChannel->GetPhi2()      );
-    siChannel -> SetTime      (     channel->GetTime()      );
-    siChannel -> SetEnergy    (     channel->GetEnergy()    );
-    siChannel -> SetPedestal  (     channel->GetPedestal()  );
+    siChannel -> SetDetType   (dummyChannel->GetDetType   ());
+    siChannel -> SetDetID     (dummyChannel->GetDetID     ());
+    siChannel -> SetChannelID (dummyChannel->GetChannelID ());
+    siChannel -> SetLocalID   (dummyChannel->GetLocalID   ());
+    siChannel -> SetSide      (dummyChannel->GetSide      ());
+    siChannel -> SetStrip     (dummyChannel->GetStrip     ());
+    siChannel -> SetDirection (dummyChannel->GetDirection ());
+    siChannel -> SetTheta1    (dummyChannel->GetTheta1    ());
+    siChannel -> SetTheta2    (dummyChannel->GetTheta2    ());
+    siChannel -> SetPhi1      (dummyChannel->GetPhi1      ());
+    siChannel -> SetPhi2      (dummyChannel->GetPhi2      ());
+    siChannel -> SetTime      (     channel->GetTime      ());
+    siChannel -> SetEnergy    (     channel->GetEnergy    ());
+    siChannel -> SetPedestal  (     channel->GetPedestal  ());
     siChannel -> SetNoiseScale(     channel->GetNoiseScale());
-    siChannel -> SetBuffer    (     channel->GetBuffer()    );
-
-    //siChannel -> SetDetType(channel->GetDetType());
-    //siChannel -> SetDetID(detID);
-    //siChannel -> SetChannelID(channel->GetChannelID());
-    //siChannel -> SetLocalID(channel->GetLocalID());
-    //siChannel -> SetSide(side);
-    //siChannel -> SetStrip(strip);
-    //siChannel -> SetDirection(direction);
-    //siChannel -> SetTime(channel->GetTime());
-    //siChannel -> SetEnergy(channel->GetEnergy());
-    //siChannel -> SetPedestal(channel->GetPedestal());
-    //siChannel -> SetNoiseScale(channel->GetNoiseScale());
-    //siChannel -> SetBuffer(channel->GetBuffer());
-    //siChannel -> SetTheta1(theta);
-    //siChannel -> SetPhi1(phi);
+    siChannel -> SetBuffer    (     channel->GetBuffer    ());
     return true;
 }
 
