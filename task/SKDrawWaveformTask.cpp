@@ -57,13 +57,11 @@ bool SKDrawWaveformTask::Init()
                     fHistEnergy[iDetector][side][strip][direction] = new TH1D(nameChannel,ttleChannel,512,0,512);
                     auto hist = fHistEnergy[iDetector][side][strip][direction];
                     hist -> SetStats(0);
-                    //hist -> SetLineWidth(2);
-                    //if (iDetector==0) lk_debug << side << " " << strip << " " << direction << " " << ttleChannel << endl;
                     array -> Add(hist);
                 }
             }
         }
-        fStarkPlane -> AddUserDrawings("waveform", iDetector, -1, array, 3);
+        fStarkPlane -> AddUserDrawings("waveform", iDetector, -1, array, 6);
     }
 
     return true;
@@ -108,6 +106,5 @@ void SKDrawWaveformTask::Exec(Option_t*)
         int direction = siChannel -> GetDirection();
         auto hist = fHistEnergy[detID][side][strip][direction];
         siChannel -> FillHist(hist);
-        //lk_debug << hist -> GetName() << " " << detID << " " << side << " " << strip << " " << direction << " " << hist -> GetEntries() << " " << hist -> GetBinContent(10) << endl;
     }
 }

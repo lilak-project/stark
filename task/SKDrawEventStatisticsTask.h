@@ -24,10 +24,11 @@ class SKDrawEventStatisticsTask : public LKTask
     private:
         TH2D* fHistET[2];
         TH2D* fHistHP[2];
+        TH2D* fHistEP[40][8];
+        TH2D* fHistLR[40][8];
         // pid
         // raw spectrum
-        int fMaxJunctionChannels = 0;
-        int fMaxOhmicChannels = 0;
+        int fMaxChannels[2] = {0};
         bool fSinglePlot = true;
 
     ClassDef(SKDrawEventStatisticsTask, 1)

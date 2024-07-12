@@ -38,22 +38,22 @@ void SKSetSiChannelTask::Exec(Option_t*)
         auto siChannel1 = (LKSiChannel*) fSiChannelArray -> ConstructedAt(channelCount);
         siChannel1 -> SetChannelID(channelCount);
         bool good = fStarkPlane -> SetSiChannelData(siChannel1, channel);
-        if (good) {
-            for (auto iSiChannel=0; iSiChannel<numChannels; ++iSiChannel)
+
+        if (good)
+        {
+            channelCount++;
+            for (auto iSiChannel2=0; iSiChannel2<channelCount; ++iSiChannel2)
             {
-                if (iSiChannel==channelCount)
+                if (iSiChannel2==channelCount)
                     continue;
-                auto siChannel2 = (LKSiChannel*) fSiChannelArray -> ConstructedAt(iSiChannel);
+                auto siChannel2 = (LKSiChannel*) fSiChannelArray -> At(iSiChannel2);
                 if (siChannel1 -> IsPair(siChannel2)) {
                     siChannel1 -> SetPairChannel(siChannel2);
                     siChannel2 -> SetPairChannel(siChannel1);
                     siChannel1 -> SetPairArrayIndex(siChannel2 -> GetChannelID());
                     siChannel2 -> SetPairArrayIndex(siChannel1 -> GetChannelID());
-                    // TODO
-                    //siChannel1 -> Set
                 }
             }
-            channelCount++;
         }
         else
             fSiChannelArray -> RemoveAt(channelCount);
