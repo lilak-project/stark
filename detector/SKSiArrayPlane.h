@@ -54,9 +54,6 @@ class SKSiArrayPlane : public LKEvePlane
         int FindSiChannelID(int cobo, int asad, int aget, int chan) { return FindPadID(cobo, asad, aget, chan); }
         bool SetSiChannelData(LKSiChannel* siChannel, GETChannel* channel);
 
-        bool FindSideStripDirection(int cobo, int asad, int aget, int chan, int &detID, int &side, int &strip, int &direction, double &theta, double &phi);
-        bool FindSideStripDirection(int idx, int &detID, int &side, int &strip, int &direction, double &theta, double &phi);
-
         virtual TCanvas *GetCanvas(Option_t *option="");
         virtual TH2* GetHist(Option_t *option="");
         void ExecMouseClickEventOnPad(TVirtualPad *pad, double xOnClick, double yOnClick);

@@ -67,8 +67,15 @@ void SKSetSiChannelTask::Exec(Option_t*)
         fChannelAnalyzer -> Analyze(data);
         auto numRecoHits = fChannelAnalyzer -> GetNumHits();
         if (numRecoHits>=1) {
+            auto pedestal = fChannelAnalyzer -> GetPedestal();
             auto energy = fChannelAnalyzer -> GetAmplitude(0);
+            auto time = fChannelAnalyzer -> GetTbHit(0);
+            siChannel1 -> SetPedestal(pedestal);
             siChannel1 -> SetEnergy(energy);
+            siChannel1 -> SetTime(time);
+            channel -> SetPedestal(pedestal);
+            channel -> SetEnergy(energy);
+            channel -> SetTime(time);
         }
     }
 

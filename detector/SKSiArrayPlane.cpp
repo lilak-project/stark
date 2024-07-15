@@ -23,7 +23,7 @@ SKSiArrayPlane::SKSiArrayPlane(const char *name, const char *title)
     fGSelJOSideDisplay = new TGraph();
     fUserDrawingArrayCollection = new TObjArray();
 
-    fPaletteNumber = 0;
+    fPaletteNumber = 1;
     fCtrlBinTextSize = 8.0;
     fCtrlLabelSize = 0.25;
     //fCtrlLabelOffset = 0.10;
@@ -137,6 +137,7 @@ bool SKSiArrayPlane::Init()
         double tta2 = TMath::ATan2(detRadius,detDistance+detHeight)*TMath::RadToDeg();
         int detIndex = fDetectorArray -> GetEntries();
         siDetector -> SetSiType(detName, detTypeIndex, detIndex, detID, numSides, numJunctionStrips, numOhmicStrips, useJunctionLR, useOhmicLR);
+        //siDetector -> SetSiPosition(TVector3(), layer, ringIndex, phi0, tta0);
         siDetector -> SetSiPosition(TVector3(), layer, ringIndex, phi1, phi2, tta1, tta2);
         double layer1 = fLayerYScale * (layer + fLayerYOffset);
         double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
@@ -148,6 +149,10 @@ bool SKSiArrayPlane::Init()
         siDetector -> CreateHistOhmic(name, title, phi1, phi2, layer1, layer2, "!axis");
         fDetectorArray -> Add(siDetector);
         //siDetector -> Print();
+        auto histJ = siDetector -> GetHistJunction();
+        auto histO = siDetector -> GetHistOhmic();
+        histJ -> SetMarkerSize(fCtrlBinTextSize*0.3);
+        histO -> SetMarkerSize(fCtrlBinTextSize*0.3);
 
         if (fMaxLayerIndex < layer) fMaxLayerIndex = layer;
         if (fMinPhi > phi1) fMinPhi = phi1;
@@ -563,7 +568,7 @@ TH2* SKSiArrayPlane::GetHistEventDisplay1(Option_t *option)
         //if (fPaletteNumber==0)
         //    fHistEventDisplay1 -> SetMarkerColor(kBlack);
         //fHistEventDisplay1 -> SetMinimum(0);
-        fFrameEventDisplay1 = (TH2Poly*) fHistEventDisplay1 -> Clone();
+        //fFrameEventDisplay1 = (TH2Poly*) fHistEventDisplay1 -> Clone();
     }
 
     return fHistEventDisplay1;
@@ -662,14 +667,12 @@ void SKSiArrayPlane::UpdateEventDisplay1()
         double zMaxO = histO -> GetMaximum();
         if (zMaxJ>zMax) zMax = zMaxJ;
         if (zMaxO>zMax) zMax = zMaxO;
-        TString drawSame = "same";
-        //if (iDetector==0) drawSame = "";
         if (fSelJOID<0) {
-            histJ -> Draw(drawSame+"col");
-            histO -> Draw(drawSame+"col");
+            histJ -> Draw("same col");
+            histO -> Draw("same col");
         }
-        else if (fSelJOID==0) histJ -> Draw(drawSame+"col");
-        else if (fSelJOID==1) histO -> Draw(drawSame+"col");
+        else if (fSelJOID==0) histJ -> Draw("same col");
+        else if (fSelJOID==1) histO -> Draw("same col");
         if (fGSelEventDisplay1!=nullptr)
             fGSelEventDisplay1 -> Draw("samel");
     }
@@ -846,16 +849,15 @@ void SKSiArrayPlane::UpdateJunctionOhmic()
     fPadEventDisplay1 -> cd();
     fGSelEventDisplay1 -> Draw("samel");
 
-    if (fFillOptionSelected=="prev")
-        siDetector -> FillHistEnergy();
-    else
-        siDetector -> FillHistEnergySum();
+    TString drawOption = "colz";
+    if (fAccumulateEvents>0)
+        drawOption = "text";
 
     fPadJOSideDisplay[0] -> cd();
-    histJ -> Draw("colz");
+    histJ -> Draw(drawOption);
 
     fPadJOSideDisplay[1] -> cd();
-    histO -> Draw("colz");
+    histO -> Draw(drawOption);
 
     if (fSelJOID<0) {
         fPadJOSideDisplay[0] -> Modified();
@@ -936,6 +938,7 @@ bool SKSiArrayPlane::SetDataFromBranch()
 
 void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
 {
+    lk_info << endl;
     if (fCurrentView==0) // 3d
         return;
 
@@ -996,21 +999,17 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
             auto asad = channel -> GetAsad();
             auto aget = channel -> GetAget();
             auto chan = channel -> GetChan();
-            int detID, side, strip, direction;
-            double theta, phi;
-            bool found = FindSideStripDirection(cobo, asad, aget, chan, detID, side, strip, direction, theta, phi);
-            if (!found)
+            auto dummyChannel = GetSiChannel(cobo, asad, aget, chan);
+            if (dummyChannel==nullptr) {
+                lk_error << "channel is not mapped! CAAC = " << cobo << " " << asad << " " << aget << " " << chan << endl;
                 continue;
-            //auto globalChannelIndex = FindPadID(cobo, asad, aget, chan);
-            //if (globalChannelIndex<0)
-            //    continue;
-            //auto siChannel = (LKSiChannel*) fChannelArray -> At(globalChannelIndex);
-            //auto side = siChannel -> GetSide();
-            //auto strip = siChannel -> GetStrip();
-            //auto direction = siChannel -> GetDirection();
-            //auto detID = siChannel -> GetDetID();
+            }
+            auto detID = dummyChannel -> GetDetID();
             if (detID<0)
                 continue;
+            auto side = dummyChannel -> GetSide();
+            auto strip = dummyChannel -> GetStrip();
+            auto direction = dummyChannel -> GetDirection();
             fSignalUDBinChange = true;
             fSelDetID = detID;
             auto siDetector = (LKSiDetector*) fDetectorArray -> At(detID);
@@ -1018,6 +1017,34 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
                 siDetector -> AddChannel(channel,side,strip,direction);
             else
                 siDetector -> SetChannel(channel,side,strip,direction);
+        }
+        int numDetectors = fDetectorArray -> GetEntries();
+        for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
+        {
+            auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
+            if (fAccumulateEvents>0) {
+                siDetector -> FillHistCount();
+            }
+            else {
+                auto histJ = siDetector -> GetHistJunction();
+                auto histO = siDetector -> GetHistOhmic();
+                if (fFillOptionSelected=="preview") {
+                    siDetector -> FillHistEnergy();
+                    histJ -> SetMinimum(0);
+                    histO -> SetMinimum(0);
+                    histJ -> SetMaximum(4200);
+                    histO -> SetMaximum(4200);
+                }
+                else {
+                    siDetector -> FillHistEnergySum();
+                    histJ -> SetMinimum(0);
+                    histO -> SetMinimum(0);
+                    //histJ -> SetMaximum(-1111);
+                    //histO -> SetMaximum(-1111);
+                    histJ -> SetMaximum(5.e+6);
+                    histO -> SetMaximum(5.e+6);
+                }
+            }
         }
     }
 }
@@ -1233,34 +1260,6 @@ bool SKSiArrayPlane::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     siChannel -> SetPedestal  (     channel->GetPedestal  ());
     siChannel -> SetNoiseScale(     channel->GetNoiseScale());
     siChannel -> SetBuffer    (     channel->GetBuffer    ());
-    return true;
-}
-
-bool SKSiArrayPlane::FindSideStripDirection(int cobo, int asad, int aget, int chan, int &detID, int &side, int &strip, int &direction, double &theta, double &phi)
-{
-    auto siChannel = GetSiChannel(cobo, asad, aget, chan);
-    if (siChannel==nullptr)
-        return false;
-    detID = siChannel -> GetDetID();
-    side = siChannel -> GetSide();
-    strip = siChannel -> GetStrip();
-    direction = siChannel -> GetDirection();
-    theta = siChannel -> GetTheta1();
-    phi = siChannel -> GetPhi1();
-    return true;
-}
-
-bool SKSiArrayPlane::FindSideStripDirection(int idx, int &detID, int &side, int &strip, int &direction, double &theta, double &phi)
-{
-    auto siChannel = GetSiChannel(idx);
-    if (siChannel==nullptr)
-        return false;
-    detID = siChannel -> GetDetID();
-    side = siChannel -> GetSide();
-    strip = siChannel -> GetStrip();
-    direction = siChannel -> GetDirection();
-    theta = siChannel -> GetTheta1();
-    phi = siChannel -> GetPhi1();
     return true;
 }
 
