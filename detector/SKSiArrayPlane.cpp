@@ -114,7 +114,7 @@ bool SKSiArrayPlane::Init()
     fMaxPhi = -DBL_MAX;
 
     TString detName;
-    int cobo, asad, aget, chan, chan2, detID, strip, jo, lr;
+    int cobo, asad, aget, chan, chan2, detID, strip, side, lr;
     int numSides, numJunctionStrips, numOhmicStrips, layer, ringIndex, useJunctionLR, useOhmicLR;
     double detDistance, detRadius, phi0, detWidth, detHeight, detThickness, tta, phi;
     while (fileDetector >> detName >> detID
@@ -168,15 +168,19 @@ bool SKSiArrayPlane::Init()
 
     int globalChannelIndex = 0;
     int currentDetID = -1;
-    int localID = 0;
-    while (fileCAACMap >> cobo >> asad >> aget >> chan >> chan2 >> detName >> detID >> jo >> strip >> lr >> tta >> phi)
+    int localJID = 0;
+    int localOID = 0;
+    while (fileCAACMap >> cobo >> asad >> aget >> chan >> chan2 >> detName >> detID >> side >> strip >> lr >> tta >> phi)
     {
-        jo = jo - 1;
-        if (currentDetID==detID)
-            localID++;
+        side = side - 1;
+        if (currentDetID==detID) {
+            if (side==0) localJID++;
+            if (side==1) localOID++;
+        }
         else {
             currentDetID = detID;
-            localID = 0;
+            localJID = 0;
+            localOID = 0;
         }
         fMapCAACToChannelIndex[cobo][asad][aget][chan] = globalChannelIndex;
         int detTypeIndex = fDetectorTypeArray.GetParIndex(detName);
@@ -189,8 +193,9 @@ bool SKSiArrayPlane::Init()
         siChannel -> SetDetType(detTypeIndex);
         siChannel -> SetDetID(detID);
         siChannel -> SetChannelID(globalChannelIndex);
-        siChannel -> SetLocalID(localID);
-        siChannel -> SetSide(jo);
+        if (side==0) siChannel -> SetLocalID(localJID);
+        if (side==1) siChannel -> SetLocalID(localOID);
+        siChannel -> SetSide(side);
         siChannel -> SetStrip(strip);
         siChannel -> SetDirection(lr);
         siChannel -> SetTheta1(tta);
@@ -695,7 +700,7 @@ void SKSiArrayPlane::ExecMouseClickEventOnPad(TVirtualPad *pad, double xOnClick,
     if (pad==fPadControlDataDP)    { ClickedControlDataDP(xOnClick, yOnClick); fCountChangeOther++; }
 }
 
-void SKSiArrayPlane::ClickedJOSideDisplay(int jo)
+void SKSiArrayPlane::ClickedJOSideDisplay(int side)
 {
     auto siDetector = (LKSiDetector*) fDetectorArray -> At(fSelDetID);
     if (siDetector==nullptr)
@@ -708,10 +713,10 @@ void SKSiArrayPlane::ClickedJOSideDisplay(int jo)
     auto phi2 = siDetector -> GetPhi2();
     fGSelJOSideDisplay -> Set(0);
     fGSelJOSideDisplay -> SetPoint(0,phi1,layer1);
-    if (fSelJOID==jo)
+    if (fSelJOID==side)
         fSelJOID = -1;
     else
-        fSelJOID = jo;
+        fSelJOID = side;
 
     UpdateJunctionOhmic();
 
@@ -851,7 +856,7 @@ void SKSiArrayPlane::UpdateJunctionOhmic()
 
     TString drawOption = "colz";
     if (fAccumulateEvents>0)
-        drawOption = "text";
+        drawOption = "text colz";
 
     fPadJOSideDisplay[0] -> cd();
     histJ -> Draw(drawOption);
@@ -988,6 +993,7 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
         }
         */
     }
+
     else if (fRawDataArray!=nullptr)
     {
         title = "Raw Data";
@@ -1028,7 +1034,14 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
             else {
                 auto histJ = siDetector -> GetHistJunction();
                 auto histO = siDetector -> GetHistOhmic();
-                if (fFillOptionSelected=="preview") {
+                if (fAccumulateEvents>0)
+                {
+                    histJ -> SetMinimum(0);
+                    histO -> SetMinimum(0);
+                    histJ -> SetMaximum(-1111);
+                    histO -> SetMaximum(-1111);
+                }
+                else if (fFillOptionSelected=="preview") {
                     siDetector -> FillHistEnergy();
                     histJ -> SetMinimum(0);
                     histO -> SetMinimum(0);
