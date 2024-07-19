@@ -32,7 +32,7 @@ class SKSiArrayPlane : public LKEvePlane
         virtual TPad* Get3DEventPad();
 
         virtual TH2* GetHistUserDrawing(Option_t *option="-1");
-        virtual TH2* GetHistControlDataDP(Option_t *option="-1");
+        virtual TH2* GetHistControlDDPage(Option_t *option="-1");
         virtual TH2* GetHistEventDisplay1(Option_t *option="-1");
         virtual TH2* GetHistEventDisplay2(Option_t *option="-1");
         virtual TH1D* GetHistChannelBuffer();
@@ -61,7 +61,7 @@ class SKSiArrayPlane : public LKEvePlane
         virtual void ClickedEventDisplay2(double xOnClick, double yOnClick);
         virtual void ClickedJOSideDisplay(int jo);
         virtual void ClickedUserDrawing(double xOnClick, double yOnClick);
-        virtual void ClickedControlDataDP(double xOnClick, double yOnClick);
+        virtual void ClickedControlDDPage(double xOnClick, double yOnClick);
 
         virtual void UpdateAll();
         virtual void UpdateEventDisplay1();
@@ -70,6 +70,8 @@ class SKSiArrayPlane : public LKEvePlane
         //virtual void UpdateChannelBuffer();
         virtual void UpdateDataDisplays();
         virtual void UpdateUserDrawing();
+
+        void ExitEve();
 
         bool AddUserDrawings(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw=1);
 
@@ -124,7 +126,7 @@ class SKSiArrayPlane : public LKEvePlane
         int ****fUserDrawingLeastNDraw; // [4][7][40][2]
         TString fUserDrawingName[4][7];
 
-        TPad* fPadControlDataDP = nullptr;
+        TPad* fPadControlDDPage = nullptr;
         int fBinCtrlPrevPage;
         int fBinCtrlCurrPage;
         int fBinCtrlNextPage;
@@ -135,7 +137,7 @@ class SKSiArrayPlane : public LKEvePlane
         int fNumDDY = 3;
         int fNumDataDisplays = fNumDDX*fNumDDY;
         TPad* fPadDataDisplaySmall[24];
-        TH2D* fHistControlDataDP = nullptr;
+        TH2D* fHistControlDDPage = nullptr;
         int fNumUDPage = 0;
 
         int fSelUDTab = 0;
@@ -146,11 +148,12 @@ class SKSiArrayPlane : public LKEvePlane
         int fNumGoodDrawings = 0;
         int fSelUDArrayID = 0;
         int fSelUDLeastNDraw = 1;
-        int fSelUDPage = 0;
+        //int fSelUDPage = 0;
         int fNumSelUDGroup = 0;
         TObjArray* fSelUDArray = nullptr;
         bool fSignalUDTabChange = true;
         bool fSignalUDBinChange = true;
+        int fSelControlDDPage = 0;
 
         //double fCtrlLabelSize = 0.18;
         double fCtrlLabelOffset = 0.10;

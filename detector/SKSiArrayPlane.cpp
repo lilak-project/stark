@@ -1,6 +1,7 @@
 #include <fstream>
 using namespace std;
 
+#include "TApplication.h"
 #include "SKSiArrayPlane.h"
 #include "LKSiDetector.h"
 #include "LKSiChannel.h"
@@ -247,6 +248,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         double x2 = 0.45;
 
         fCanvas = LKPainter::GetPainter() -> CanvasResize("stark",fDXCanvas,fDYCanvas,0.95);
+        fCanvas -> SetTitle(fRun->GetInputFile()->GetName());
 
         fCanvas -> cd();
         fPadControlEvent1    = new TPad("SKSiArrayPlanePadCE1", "", 0.0 , y1, x2, y2);
@@ -256,7 +258,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadJOSideDisplay[1] = new TPad("SKSiArrayPlanePadOD",  "", 0.5*(x2-0.0), y5, x2, y6);
         fPadEventDisplay1    = new TPad("SKSiArrayPlanePadED1", "", 0.0 , y4, x2, y5);
 
-        fPadControlDataDP      = new TPad("SKSiArrayPlanePadDDC0","", x2,  0,   1,  u1);
+        fPadControlDDPage      = new TPad("SKSiArrayPlanePadDDC0","", x2,  0,   1,  u1);
         fPadDataDisplayFull    = new TPad("SKSiArrayPlanePadDDF0","", x2,  u1,  1,  u3);
         fPadDataDisplayTwo[0]  = new TPad("SKSiArrayPlanePadDDT1","", x2,  u1,  1,  u2);
         fPadDataDisplayTwo[1]  = new TPad("SKSiArrayPlanePadDDT2","", x2,  u2,  1,  1 );
@@ -271,7 +273,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadEventDisplay1       -> SetMargin(0.02,0.02,0.10,0.02);
         fPadJOSideDisplay[0]    -> SetMargin(0.02,0.13,0.02,0.07);
         fPadJOSideDisplay[1]    -> SetMargin(0.02,0.13,0.02,0.07);
-        fPadControlDataDP       -> SetMargin(0.02,0.02,0.22,0.02);
+        fPadControlDDPage       -> SetMargin(0.02,0.02,0.22,0.02);
         fPadDataDisplayFull     -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayTwo[0]   -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayTwo[1]   -> SetMargin(0.10,0.12,0.10,0.10);
@@ -279,7 +281,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadDataDisplayThree[1] -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayThree[2] -> SetMargin(0.10,0.12,0.10,0.10);
 
-        fPadControlDataDP    -> SetGrid(1);
+        fPadControlDDPage    -> SetGrid(1);
         fPadCtrlUserDrawing  -> SetGrid(1);
         fPadJOSideDisplay[0] -> SetGrid(1,1);
         fPadJOSideDisplay[1] -> SetGrid(1,1);
@@ -290,7 +292,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadControlEvent2    -> Draw();
         fPadEventDisplay1    -> Draw();
         fPadCtrlUserDrawing  -> Draw();
-        fPadControlDataDP    -> Draw();
+        fPadControlDDPage    -> Draw();
 
         int countPad = 0;
         for (auto iy=0; iy<fNumDDY; ++iy) {
@@ -314,7 +316,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         AddInteractivePad(fPadJOSideDisplay[0]);
         AddInteractivePad(fPadJOSideDisplay[1]);
         AddInteractivePad(fPadCtrlUserDrawing);
-        AddInteractivePad(fPadControlDataDP);
+        AddInteractivePad(fPadControlDDPage);
     }
 
     return fCanvas;
@@ -324,38 +326,39 @@ TH2* SKSiArrayPlane::GetHist(Option_t *option)
 {
     LKEvePlane::GetHist(option);
     GetHistUserDrawing();
-    GetHistControlDataDP();
+    GetHistControlDDPage();
     return (TH2*) fHistEventDisplay1;
 }
 
-TH2* SKSiArrayPlane::GetHistControlDataDP(Option_t *option)
+TH2* SKSiArrayPlane::GetHistControlDDPage(Option_t *option)
 {
-    if (fHistControlDataDP==nullptr)
+    if (fHistControlDDPage==nullptr)
     {
         gStyle -> SetHistMinimumZero(); // this will draw text even when content is 0
 
-        fHistControlDataDP = new TH2D("LKEvePlane_DataDisplay1","",3,0,3,1,0,1);
-        fHistControlDataDP -> SetStats(0);
-        fHistControlDataDP -> GetXaxis() -> SetTickSize(0);
-        fHistControlDataDP -> GetYaxis() -> SetTickSize(0);
-        fHistControlDataDP -> GetYaxis() -> SetBinLabel(1,"");
-        fHistControlDataDP -> GetXaxis() -> SetBinLabel(1,"<");
-        fHistControlDataDP -> GetXaxis() -> SetBinLabel(2,"/");
-        fHistControlDataDP -> GetXaxis() -> SetBinLabel(3,">");
-        fHistControlDataDP -> GetXaxis() -> SetLabelSize(fCtrlLabelSize);
-        fHistControlDataDP -> SetMinimum(0);
-        fHistControlDataDP -> SetMarkerSize(fCtrlBinTextSize);
+        //fHistControlDDPage = new TH2D("LKEvePlane_DataDisplay1","",3,0,3,1,0,1);
+        fHistControlDDPage = new TH2D("LKEvePlane_DataDisplay1","",8,0,8,1,0,1);
+        fHistControlDDPage -> SetStats(0);
+        fHistControlDDPage -> GetXaxis() -> SetTickSize(0);
+        fHistControlDDPage -> GetYaxis() -> SetTickSize(0);
+        fHistControlDDPage -> GetYaxis() -> SetBinLabel(1,"");
+        //fHistControlDDPage -> GetXaxis() -> SetBinLabel(2,"/");
+        //fHistControlDDPage -> GetXaxis() -> SetBinLabel(3,">");
+        fHistControlDDPage -> GetXaxis() -> SetLabelSize(fCtrlLabelSize);
+        fHistControlDDPage -> SetMinimum(0);
+        fHistControlDDPage -> SetMarkerSize(fCtrlBinTextSize);
         if (fPaletteNumber==0)
-            fHistControlDataDP -> SetMarkerColor(kBlack);
-        fBinCtrlPrevPage = fHistControlDataDP -> GetBin(1,1);
-        fBinCtrlCurrPage = fHistControlDataDP -> GetBin(2,1);
-        fBinCtrlNextPage = fHistControlDataDP -> GetBin(3,1);
-        fHistControlDataDP -> GetBinContent(fBinCtrlPrevPage,-1);
-        fHistControlDataDP -> GetBinContent(fBinCtrlCurrPage,0);
-        fHistControlDataDP -> GetBinContent(fBinCtrlNextPage,-1);
+            fHistControlDDPage -> SetMarkerColor(kBlack);
+        //fBinCtrlPrevPage = fHistControlDDPage -> GetBin(1,1);
+        //fBinCtrlCurrPage = fHistControlDDPage -> GetBin(2,1);
+        //fBinCtrlNextPage = fHistControlDDPage -> GetBin(3,1);
+        //fHistControlDDPage -> SetBinContent(fBinCtrlPrevPage,-1);
+        //fHistControlDDPage -> SetBinContent(fBinCtrlCurrPage,0);
+        //fHistControlDDPage -> SetBinContent(fBinCtrlNextPage,-1);
+        fHistControlDDPage -> SetMaximum(2);
     }
 
-    return fHistControlDataDP;
+    return fHistControlDDPage;
 }
 
 TH2* SKSiArrayPlane::GetHistUserDrawing(Option_t *option)
@@ -385,12 +388,19 @@ TH2* SKSiArrayPlane::GetHistUserDrawing(Option_t *option)
 
 bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw)
 {
-    if (detID<0 && joID<0)
+    TString label1;
+    if (detID<0 && joID<0) {
+        label1 = label;
         lk_info << "adding: " << label << " det=" << detID << "(" << (joID==0?"Junction":"Ohmic") << ") containing " << userDrawingArray->GetEntries() << " drawings" << endl;
-    else if (joID<0)
+    }
+    else if (joID<0) {
+        label1 = Form("%s_%d",label.Data(),detID);
         lk_info << "adding: " << label << " det=" << detID << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
-    else
+    }
+    else {
+        label1 = Form("%s_%d_%d",label.Data(),detID,joID);
         lk_info << "adding: " << label << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+    }
 
     if (label.Index(" ")>=0)
         label.ReplaceAll(" ","_");
@@ -428,6 +438,7 @@ bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArr
         fNumUDLabels++;
     }
 
+    userDrawingArray -> SetName(label1);
     auto haID = fUserDrawingArrayCollection -> GetEntries();
     fUserDrawingArrayCollection -> Add(userDrawingArray);
 
@@ -468,7 +479,7 @@ void SKSiArrayPlane::UpdateUserDrawing()
                 TString label = fUserDrawingName[ucTab][ucBin];
                 if (fSelUDTab==ucTab) {
                     fHistCtrlUserDrawing -> GetXaxis() -> SetBinLabel(ucBin+2,label);
-                    fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(ucBin+2,1),fSelUDPage);
+                    fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(ucBin+2,1),fSelControlDDPage);
                 }
             }
         }
@@ -490,14 +501,15 @@ void SKSiArrayPlane::UpdateUserDrawing()
         {
             fSelUDArray = selUDArray;
             fNumDrawingsInArray = fSelUDArray -> GetEntries();
-            fNumSelUDGroup = fNumDrawingsInArray / fNumDataDisplays;
-            fSelUDPage = 0;
+            fNumSelUDGroup = (fNumDrawingsInArray / fNumDataDisplays) + 1;
+            fSelControlDDPage = 0;
 
             {
                 for (auto i=0; i<10; ++i)
                     for (auto j=0; j<16; ++j)
                         fUDGoodIndex[i][j] = -1;
                 fNumGoodDrawings = 0;
+                auto numGoodDrawingsInPage = 0;
                 fNumUDPage = 1;
                 for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing)
                 {
@@ -509,10 +521,11 @@ void SKSiArrayPlane::UpdateUserDrawing()
                             good = true;
                     }
                     if (good) {
-                        fUDGoodIndex[fNumUDPage-1][fNumGoodDrawings] = iDrawing;
+                        fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
                         fNumGoodDrawings++;
-                        if (fNumGoodDrawings>=fNumDataDisplays) {
-                            fNumGoodDrawings = 0;
+                        numGoodDrawingsInPage++;
+                        if (numGoodDrawingsInPage>=fNumDataDisplays) {
+                            numGoodDrawingsInPage = 0;
                             fNumUDPage++;
                         }
                     }
@@ -661,6 +674,7 @@ void SKSiArrayPlane::UpdateEventDisplay1()
     //fHistEventDisplay1 -> Draw(fEventDisplayDrawOption+"same");
     fHistEventDisplay1 -> SetMinimum(0);
     fHistEventDisplay1 -> Draw("text");
+
     int numDetectors = fDetectorArray -> GetEntries();
     double zMax = 0.;
     for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
@@ -668,10 +682,18 @@ void SKSiArrayPlane::UpdateEventDisplay1()
         auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
         auto histJ = siDetector -> GetHistJunction();
         auto histO = siDetector -> GetHistOhmic();
-        double zMaxJ = histJ -> GetMaximum();
-        double zMaxO = histO -> GetMaximum();
+        double zMaxJ = histJ -> GetBinContent(histJ->GetMaximumBin());
+        double zMaxO = histO -> GetBinContent(histO->GetMaximumBin());
         if (zMaxJ>zMax) zMax = zMaxJ;
         if (zMaxO>zMax) zMax = zMaxO;
+    }
+    for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
+    {
+        auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
+        auto histJ = siDetector -> GetHistJunction();
+        auto histO = siDetector -> GetHistOhmic();
+        histJ -> SetMaximum(zMax);
+        histJ -> SetMaximum(zMax);
         if (fSelJOID<0) {
             histJ -> Draw("same col");
             histO -> Draw("same col");
@@ -683,7 +705,7 @@ void SKSiArrayPlane::UpdateEventDisplay1()
     }
     fHistEventDisplay1 -> SetMinimum(1);
     fHistEventDisplay1 -> SetMaximum(zMax);
-    fHistEventDisplay1 -> Draw("same text z");
+    fHistEventDisplay1 -> Draw("same text");
 
     UpdateUserDrawing();
 }
@@ -697,7 +719,7 @@ void SKSiArrayPlane::ExecMouseClickEventOnPad(TVirtualPad *pad, double xOnClick,
     if (pad==fPadJOSideDisplay[0]) { ClickedJOSideDisplay(0); fCountChangeOther++; }
     if (pad==fPadJOSideDisplay[1]) { ClickedJOSideDisplay(1); fCountChangeOther++; }
     if (pad==fPadCtrlUserDrawing)  { ClickedUserDrawing(xOnClick, yOnClick); fCountChangeOther++; }
-    if (pad==fPadControlDataDP)    { ClickedControlDataDP(xOnClick, yOnClick); fCountChangeOther++; }
+    if (pad==fPadControlDDPage)    { ClickedControlDDPage(xOnClick, yOnClick); fCountChangeOther++; }
 }
 
 void SKSiArrayPlane::ClickedJOSideDisplay(int side)
@@ -773,12 +795,6 @@ void SKSiArrayPlane::UpdateDataDisplays()
     if (UpdateFlag[kUpdateDataDisplays]) return;
     else UpdateFlag[kUpdateDataDisplays] = true;
 
-    fPadControlDataDP -> cd();
-    fHistControlDataDP -> SetBinContent(fBinCtrlPrevPage,-1);
-    fHistControlDataDP -> SetBinContent(fBinCtrlCurrPage,fSelUDPage);
-    fHistControlDataDP -> SetBinContent(fBinCtrlNextPage,fNumUDPage);
-    fHistControlDataDP -> Draw("text");
-
     if (fSelUDArray==nullptr)
         return;
 
@@ -805,7 +821,7 @@ void SKSiArrayPlane::UpdateDataDisplays()
 
     for (auto iPad=0; iPad<numDataDisplays; ++iPad)
     {
-        auto iDrawing = fUDGoodIndex[fSelUDPage][iPad];
+        auto iDrawing = fUDGoodIndex[fSelControlDDPage][iPad];
         if (iDrawing<0) break;
 
         TPad *pad;
@@ -823,6 +839,19 @@ void SKSiArrayPlane::UpdateDataDisplays()
         else if (obj -> InheritsFrom(TH2::Class())) { auto hist = (TH2*) obj; hist -> Draw("colz"); }
         else if (obj -> InheritsFrom(TH1::Class())) { auto hist = (TH1*) obj; hist -> Draw();       }
     }
+
+    fPadControlDDPage -> cd();
+    auto numSelUDGroup = (fNumGoodDrawings / numDataDisplays) + 1;
+    for (auto i=numSelUDGroup+1; i<=8; ++i) {
+        fHistControlDDPage -> SetBinContent(i,1,-1);
+        fHistControlDDPage -> GetXaxis() -> SetBinLabel(i,"");
+    }
+    for (auto i=1; i<=numSelUDGroup; ++i) {
+        fHistControlDDPage -> SetBinContent(i,1,0);
+        fHistControlDDPage -> GetXaxis() -> SetBinLabel(i,Form("%d",i));
+    }
+    fHistControlDDPage -> SetBinContent(fSelControlDDPage+1,1,1);
+    fHistControlDDPage -> Draw("col");
 }
 
 void SKSiArrayPlane::UpdateJunctionOhmic()
@@ -1155,34 +1184,22 @@ void SKSiArrayPlane::UpdateChannelBuffer()
 }
 */
 
-void SKSiArrayPlane::ClickedControlDataDP(double xOnClick, double yOnClick)
+void SKSiArrayPlane::ClickedControlDDPage(double xOnClick, double yOnClick)
 {
-    if (fHistControlDataDP==nullptr)
+    if (fHistControlDDPage==nullptr)
         return;
-    int bing = fHistControlDataDP -> FindBin(xOnClick, yOnClick);
-    //int binx, biny, binz;
-    //fHistControlDataDP -> GetBinXYZ(bing,binx,biny,binz);
 
-    if (bing==fBinCtrlCurrPage) 
+    int bing = fHistControlDDPage -> FindBin(xOnClick, yOnClick);
+
+    int binx, biny, binz;
+    fHistCtrlUserDrawing -> GetBinXYZ(bing,binx,biny,binz);
+
+    if (fSelControlDDPage==binx-1)
         return;
-    else
-    {
-        if (bing==fBinCtrlPrevPage) 
-        {
-            if (fSelUDPage!=0) {
-                fSelUDPage--;
-                fHistControlDataDP -> SetBinContent(fBinCtrlCurrPage,fSelUDPage);
-            }
-        }
-        else if (bing==fBinCtrlNextPage) 
-        {
-            if (fSelUDPage<fNumSelUDGroup-1) {
-                fSelUDPage++;
-                fHistControlDataDP -> SetBinContent(fBinCtrlCurrPage,fSelUDPage);
-            }
-        }
-        UpdateDataDisplays();
-    }
+
+    fSelControlDDPage = binx-1;
+
+    UpdateDataDisplays();
 }
 
 void SKSiArrayPlane::ClickedUserDrawing(double xOnClick, double yOnClick)
@@ -1294,4 +1311,41 @@ LKSiDetector* SKSiArrayPlane::GetSiDetector(int cobo, int asad, int aget, int ch
     if (id>=0)
         detector = GetSiDetector(id);
     return detector;
+}
+
+void SKSiArrayPlane::ExitEve()
+{
+    auto file = fRun -> GetOutputFile();
+    auto nCollections = fUserDrawingArrayCollection -> GetEntries();
+    for (auto iCollection=0; iCollection<nCollections; ++iCollection)
+    {
+        auto array = (TObjArray*) fUserDrawingArrayCollection -> At(iCollection);
+        e_info << "Writting " << array->GetName() << endl;
+        file -> mkdir(array->GetName());
+        file -> cd(array->GetName());
+        if (1)
+            array -> Write();
+        else {
+            auto nDrawings = array -> GetEntries();
+            for (auto iDraw=0; iDraw<nDrawings; ++iDraw)
+            {
+                bool good = true;
+                auto obj = array -> At(iDraw);
+                if (obj->InheritsFrom(TH1::Class())) {
+                    auto hist = (TH1*) obj;
+                    if (hist->GetEntries()==0)
+                        good = false;
+                }
+                if (good) {
+                    obj -> Write();
+                }
+                else {
+                    (new TNamed(obj->GetName(),"empty")) -> Write();
+                }
+            }
+        }
+    }
+    e_info << "to " << file -> GetName() << endl;
+    e_info << "Exit from " << fName << endl;
+    gApplication -> Terminate();
 }
