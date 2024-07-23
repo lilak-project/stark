@@ -203,8 +203,8 @@ bool SKSiArrayPlane::Init()
         siChannel -> SetPhi1(phi);
         fMapCAACToDetectorIndex[cobo][asad][aget][chan] = detID;
 
-        //auto siDetector = (LKSiDetector*) fDetectorArray -> At(detTypeIndex);
-        //siDetector -> SetChannel(channel);
+        auto siDetector = (LKSiDetector*) fDetectorArray -> At(detID);
+        siDetector -> RegisterChannel(siChannel);
 
         ++globalChannelIndex;
     }
@@ -737,8 +737,9 @@ void SKSiArrayPlane::ClickedJOSideDisplay(int side)
     fGSelJOSideDisplay -> SetPoint(0,phi1,layer1);
     if (fSelJOID==side)
         fSelJOID = -1;
-    else
+    else {
         fSelJOID = side;
+    }
 
     UpdateJunctionOhmic();
 
@@ -774,7 +775,8 @@ void SKSiArrayPlane::ClickedEventDisplay1(double xOnClick, double yOnClick)
         return;
     }
 
-    siDetector -> Print();
+    //siDetector -> Print();
+    siDetector -> Print("get_channels");
 
     UpdateJunctionOhmic();
     UpdateUserDrawing();
@@ -863,7 +865,7 @@ void SKSiArrayPlane::UpdateJunctionOhmic()
     auto siDetector = (LKSiDetector*) fDetectorArray -> At(fSelDetID);
     if (siDetector==nullptr)
         return;
-    siDetector -> Print();
+    //siDetector -> Print();
     auto histJ = siDetector -> GetHistJunction();
     auto histO = siDetector -> GetHistOhmic();
 
