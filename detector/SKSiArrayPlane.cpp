@@ -201,6 +201,8 @@ bool SKSiArrayPlane::Init()
         siChannel -> SetDirection(lr);
         siChannel -> SetTheta1(tta);
         siChannel -> SetPhi1(phi);
+        if (detName=="x6"&&side==0) siChannel -> SetIsPairedChannel();
+        else                        siChannel -> SetIsStandaloneChannel();
         fMapCAACToDetectorIndex[cobo][asad][aget][chan] = detID;
 
         auto siDetector = (LKSiDetector*) fDetectorArray -> At(detID);
@@ -1292,6 +1294,8 @@ bool SKSiArrayPlane::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     siChannel -> SetPedestal  (     channel->GetPedestal  ());
     siChannel -> SetNoiseScale(     channel->GetNoiseScale());
     siChannel -> SetBuffer    (     channel->GetBuffer    ());
+    if (dummyChannel->IsPairedChannel()) siChannel -> SetIsPairedChannel();
+    else                                 siChannel -> SetIsStandaloneChannel();
     return true;
 }
 
@@ -1350,4 +1354,49 @@ void SKSiArrayPlane::ExitEve()
     e_info << "to " << file -> GetName() << endl;
     e_info << "Exit from " << fName << endl;
     gApplication -> Terminate();
+}
+
+void SKSiArrayPlane::FireStrip(int det, int side, int strip, double energy)
+{
+    auto siDetector = (LKSiDetector*) fDetectorArray -> At(det);
+    siDetector -> Fire(side, strip, energy);
+}
+
+void SKSiArrayPlane::ClearFiredFlags()
+{
+    int numDetectors = fDetectorArray -> GetEntries();
+    for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
+    {
+        auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
+        siDetector -> ClearFiredFlags();
+    }
+}
+
+int SKSiArrayPlane::GetNumFiredDetectors()
+{
+    int countFiredDetectors = 0;
+    int numDetectors = fDetectorArray -> GetEntries();
+    for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
+    {
+        auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
+        if (siDetector->GetNumFiredStrips()>=0)
+            countFiredDetectors++;
+    }
+    return countFiredDetectors;
+}
+
+LKSiDetector* SKSiArrayPlane::GetFiredDetector(int iFired)
+{
+    int countFiredDetectors = 0;
+    int numDetectors = fDetectorArray -> GetEntries();
+    for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
+    {
+        auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
+        if (siDetector->GetNumFiredStrips()>=0) {
+            if (countFiredDetectors==iFired)
+                return siDetector;
+            countFiredDetectors++;
+        }
+    }
+    return (LKSiDetector*) nullptr;
 }

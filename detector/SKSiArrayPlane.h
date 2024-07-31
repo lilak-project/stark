@@ -75,6 +75,11 @@ class SKSiArrayPlane : public LKEvePlane
 
         bool AddUserDrawings(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw=1);
 
+        void FireStrip(int det, int side, int strip, double energy);
+        void ClearFiredFlags();
+        int GetNumFiredDetectors();
+        LKSiDetector* GetFiredDetector(int iFired);
+
     protected:
         TString fMappingFileName;
         TString fDetectorParName;
