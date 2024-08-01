@@ -46,6 +46,7 @@ class SKSiArrayPlane : public LKEvePlane
         LKSiDetector *GetSiDetector(int idx);
         LKSiDetector *GetSiDetector(int cobo, int asad, int aget, int chan);
         int FindSiDetectorID(int cobo, int asad, int aget, int chan);
+        int FindEPairDetectorID(int det);
 
         LKSiDetector *GetSiDetectorData(int idx);
 
@@ -186,6 +187,8 @@ class SKSiArrayPlane : public LKEvePlane
         LKParameterContainer* fArrayEventDrawing    = nullptr;
 
         double fUserPhiScale = 2.0;
+
+        int fdEEPairMapping[40][2];
 
     ClassDef(SKSiArrayPlane, 1)
 };

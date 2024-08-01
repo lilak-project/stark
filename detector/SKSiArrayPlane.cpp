@@ -124,13 +124,18 @@ bool SKSiArrayPlane::Init()
     int markID, fb;
     int ringType; // 12 or 16
     int dEEType; // 1:E 2:dE
-    int ringID; // 0 - 12(16)
+    int polarID; // 0 - 12(16)
+
+
+    for (auto i=0; i<12; ++i)
+        for (auto j=0; j<2; ++j)
+            fdEEPairMapping[i][j] = -1;
 
     detWidth = 40.3;
     detHeight = 75;
     while (fileDetector >> detName >> detID >> cobo >> asad
             >> zapJNo >> zapONo >> markNo >> markID >> fb
-            >> ringType >> dEEType >> ringID >> detRadius >> detDistance >> phi0 >> ringIndex)
+            >> ringType >> dEEType >> polarID >> detRadius >> detDistance >> phi0 >> ringIndex)
     {
         detRadius = detRadius*10;
         detDistance = detDistance*10;
@@ -167,6 +172,12 @@ bool SKSiArrayPlane::Init()
         siDetector -> SetSiPosition(position, layer, rotationIndex, phi1, phi2, tta1, tta2);
         siDetector -> SetWidth(detWidth);
         siDetector -> SetHeight(detHeight);
+        if (ringType==12)
+        {
+            dEEType = dEEType-1;
+            fdEEPairMapping[polarID][dEEType] = detID;
+            siDetector -> SetRow(polarID);
+        }
         double layer1 = fLayerYScale * (layer + fLayerYOffset);
         double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
         TString name = Form("hist_%s_%d_junction",detName.Data(),detID);
@@ -1377,6 +1388,15 @@ LKSiDetector* SKSiArrayPlane::GetSiDetector(int cobo, int asad, int aget, int ch
     if (id>=0)
         detector = GetSiDetector(id);
     return detector;
+}
+
+int SKSiArrayPlane::FindEPairDetectorID(int det)
+{
+    auto detector = GetSiDetector(det);
+    auto polarID = detector -> GetRow();
+    if (fdEEPairMapping[polarID][0]==det)
+        return fdEEPairMapping[polarID][1];
+    return fdEEPairMapping[polarID][0];
 }
 
 void SKSiArrayPlane::ExitEve()
