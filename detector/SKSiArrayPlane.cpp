@@ -100,8 +100,10 @@ bool SKSiArrayPlane::Init()
     fPar -> Require(fDetName+"/Mapping","{lilak_common}/stark_channel_mapping_RAON2024_40Arp.txt","cobo asad aget chan chan2 det detID JO strip LR theta phi","",1);
     fPar -> Require(fDetName+"/DetectorPar","{lilak_common}/stark_detector_par_RAON2024_40Arp.txt","detName detType(si,...) numSides numJunctionStrips numOhmicStrips useJunctionLR useOhmicLR","",2);
 
-    fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping");
-    fPar -> UpdatePar(fDetectorParName,fDetName+"/DetectorPar");
+    //fPar -> UpdatePar(fDetectorParName,fDetName+"/DetectorPar");
+    //fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping");
+    fPar -> UpdatePar(fDetectorParName,fDetName+"/Mapping1");
+    fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping2");
 
     ifstream fileDetector(fDetectorParName);
     if (!fileDetector.is_open()) {
@@ -116,17 +118,22 @@ bool SKSiArrayPlane::Init()
 
     TString detName;
     int cobo, asad, aget, chan, chan2, detID, strip, side, lr;
-    int numSides, numJunctionStrips, numOhmicStrips, layer, ringIndex, useJunctionLR, useOhmicLR;
+    int numSides, numJunctionStrips, numOhmicStrips, layer, rotationIndex, ringIndex, useJunctionLR, useOhmicLR;
     double detDistance, detRadius, phi0, detWidth, detHeight, detThickness, tta, phi;
-    while (fileDetector >> detName >> detID
-            >> numSides >> numJunctionStrips >> numOhmicStrips >> useJunctionLR >> useOhmicLR
-            >> detDistance >> layer >> detRadius >> ringIndex >> phi0
-            >> detWidth >> detHeight >> detThickness)
+    TString zapJNo, zapONo, markNo;
+    int markID, fb;
+    int ringType; // 12 or 16
+    int dEEType; // 1:E 2:dE
+    int ringID; // 0 - 12(16)
+
+    detWidth = 40.3;
+    detHeight = 75;
+    while (fileDetector >> detName >> detID >> cobo >> asad
+            >> zapJNo >> zapONo >> markNo >> markID >> fb
+            >> ringType >> dEEType >> ringID >> detRadius >> detDistance >> phi0 >> ringIndex)
     {
-        //lk_debug << detName << " " << detID
-        //    << " " << numSides << " " << numJunctionStrips << " " << numOhmicStrips << " " << useJunctionLR << " " << useOhmicLR
-        //    << " " << detDistance << " " << layer << " " << detRadius << " " << ringIndex << " " << phi0
-        //    << " " << detWidth << " " << detHeight << " " << detThickness << endl;
+        detRadius = detRadius*10;
+        detDistance = detDistance*10;
         auto siDetector = new LKSiDetector();
         if (fDetectorTypeArray.CheckPar(detName)==false)
             fDetectorTypeArray.AddPar(detName, 1);
@@ -134,27 +141,49 @@ bool SKSiArrayPlane::Init()
         double dphi = TMath::ATan2(detWidth/2.,detRadius)*TMath::RadToDeg();
         double phi1 = phi0 - dphi;
         double phi2 = phi0 + dphi;
-        double tta1 = TMath::ATan2(detRadius,detDistance)*TMath::RadToDeg();
-        double tta2 = TMath::ATan2(detRadius,detDistance+detHeight)*TMath::RadToDeg();
+        //lk_debug << "w=" << detWidth << " r=" << detRadius << " dphi=" << dphi << " " << phi1 << " " << phi2 << endl;
+        double tta1 = TMath::ATan2(detRadius,detDistance-0.5*detHeight)*TMath::RadToDeg();
+        double tta2 = TMath::ATan2(detRadius,detDistance+0.5*detHeight)*TMath::RadToDeg();
         int detIndex = fDetectorArray -> GetEntries();
-        siDetector -> SetSiType(detName, detTypeIndex, detIndex, detID, numSides, numJunctionStrips, numOhmicStrips, useJunctionLR, useOhmicLR);
-        //siDetector -> SetSiPosition(TVector3(), layer, ringIndex, phi0, tta0);
-        siDetector -> SetSiPosition(TVector3(), layer, ringIndex, phi1, phi2, tta1, tta2);
+        if (detName=="x6") // TODO
+        {
+            numJunctionStrips = 8;
+            numOhmicStrips = 4;
+            useJunctionLR = 1;
+            useOhmicLR = 0;
+        }
+        else if (detName=="csd")
+        {
+            numJunctionStrips = 8;
+            numOhmicStrips = 1;
+            useJunctionLR = 0;
+            useOhmicLR = 0;
+        }
+        siDetector -> SetSiType(detName, detTypeIndex, detIndex, detID, 2, numJunctionStrips, numOhmicStrips, useJunctionLR, useOhmicLR);
+        layer = ringIndex;
+        TVector3 position(detRadius,0,0);
+        position.SetPhi(phi0);
+        position.SetZ(detDistance);
+        siDetector -> SetSiPosition(position, layer, rotationIndex, phi1, phi2, tta1, tta2);
+        siDetector -> SetWidth(detWidth);
+        siDetector -> SetHeight(detHeight);
         double layer1 = fLayerYScale * (layer + fLayerYOffset);
         double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
         TString name = Form("hist_%s_%d_junction",detName.Data(),detID);
         TString title = Form("%s(%d) Junction (%d,%d)",detName.Data(),detID,numJunctionStrips,(useJunctionLR?2:1));
-        siDetector -> CreateHistJunction(name, title, phi1, phi2, layer1, layer2, "!axis");
+        auto phi0 = 0.5*(phi1+phi2);
+        double phi1_ = phi0 - fUserPhiScale*abs(phi0-phi1);
+        double phi2_ = phi0 + fUserPhiScale*abs(phi0-phi2);
+        siDetector -> CreateHistJunction(name, title, phi1_, phi2_, layer1, layer2, "!axis");
+        //siDetector -> CreateHistJunction(name, title, phi0-0.9*(2*TMath::Pi()/12/2), phi0+0.9*(2*TMath::Pi()/12/2), layer1, layer2, "!axis");
         name = Form("hist_%s_%d_ohmic",detName.Data(),detID);
         title = Form("%s(%d) Ohmic (%d,%d)",detName.Data(),detID,(useOhmicLR?2:1),numOhmicStrips);
-        siDetector -> CreateHistOhmic(name, title, phi1, phi2, layer1, layer2, "!axis");
+        siDetector -> CreateHistOhmic(name, title, phi1_, phi2_, layer1, layer2, "!axis");
         fDetectorArray -> Add(siDetector);
-        //siDetector -> Print();
         auto histJ = siDetector -> GetHistJunction();
         auto histO = siDetector -> GetHistOhmic();
         histJ -> SetMarkerSize(fCtrlBinTextSize*0.3);
         histO -> SetMarkerSize(fCtrlBinTextSize*0.3);
-
         if (fMaxLayerIndex < layer) fMaxLayerIndex = layer;
         if (fMinPhi > phi1) fMinPhi = phi1;
         if (fMaxPhi < phi2) fMaxPhi = phi2;
@@ -171,7 +200,7 @@ bool SKSiArrayPlane::Init()
     int currentDetID = -1;
     int localJID = 0;
     int localOID = 0;
-    while (fileCAACMap >> cobo >> asad >> aget >> chan >> chan2 >> detName >> detID >> side >> strip >> lr >> tta >> phi)
+    while (fileCAACMap >> cobo >> asad >> aget >> chan >> chan2 >> detName >> detID >> side >> strip >> lr >> detRadius >> detDistance)
     {
         side = side - 1;
         if (currentDetID==detID) {
@@ -199,14 +228,39 @@ bool SKSiArrayPlane::Init()
         siChannel -> SetSide(side);
         siChannel -> SetStrip(strip);
         siChannel -> SetDirection(lr);
-        siChannel -> SetTheta1(tta);
-        siChannel -> SetPhi1(phi);
         if (detName=="x6"&&side==0) siChannel -> SetIsPairedChannel();
         else                        siChannel -> SetIsStandaloneChannel();
         fMapCAACToDetectorIndex[cobo][asad][aget][chan] = detID;
 
         auto siDetector = (LKSiDetector*) fDetectorArray -> At(detID);
         siDetector -> RegisterChannel(siChannel);
+        TVector3 position0 = siDetector -> GetPosition();
+        TVector3 position1 = siDetector -> GetPosition();
+        TVector3 position2 = siDetector -> GetPosition();
+        double phi = siDetector -> GetPhi0();
+        double theta = siDetector -> GetTheta0();
+        double width = siDetector -> GetHeight();
+        double height = siDetector -> GetWidth();
+        position0.SetPhi(0);
+        if (side==0) {
+            auto numStrips = siDetector -> GetNumJunctionStrips();
+            position0.SetY(0.5*width-(localJID+0.5)*(width/numStrips)); position0.RotateZ(phi);
+            position1.SetY(0.5*width-(localJID    )*(width/numStrips)); position1.RotateZ(phi);
+            position2.SetY(0.5*width-(localJID+1  )*(width/numStrips)); position2.RotateZ(phi);
+        }
+        if (side==1) {
+            auto numStrips = siDetector -> GetNumOhmicStrips();
+            position0.SetY(0.5*width-(localOID+0.5)*(width/numStrips)); position0.RotateZ(phi);
+            position1.SetY(0.5*width-(localOID    )*(width/numStrips)); position1.RotateZ(phi);
+            position2.SetY(0.5*width-(localOID+1  )*(width/numStrips)); position2.RotateZ(phi);
+        }
+        siChannel -> SetPosition(position0);
+        double phi1 = position1.Phi();
+        double phi2 = position2.Phi();
+        siChannel -> SetPhi1(phi1);
+        siChannel -> SetPhi2(phi2);
+        siChannel -> SetTheta1(theta);
+        siChannel -> SetTheta2(theta);
 
         ++globalChannelIndex;
     }
@@ -563,8 +617,11 @@ TH2* SKSiArrayPlane::GetHistEventDisplay1(Option_t *option)
         {
             auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
             auto layer = siDetector -> GetLayer();
-            auto phi1 = siDetector -> GetPhi1();
-            auto phi2 = siDetector -> GetPhi2();
+            auto phi1 = siDetector -> GetPhi1();// * fUserPhiScale;
+            auto phi2 = siDetector -> GetPhi2();// * fUserPhiScale;
+            auto phi0 = 0.5*(phi1+phi2);
+            phi1 = phi0 - fUserPhiScale*abs(phi0-phi1);
+            phi2 = phi0 + fUserPhiScale*abs(phi0-phi2);
             double layer1 = fLayerYScale * (layer + fLayerYOffset);
             double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
             auto bin = histDetectors -> AddBin(phi1, layer1, phi2, layer2);
@@ -876,6 +933,9 @@ void SKSiArrayPlane::UpdateJunctionOhmic()
     double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
     auto phi1 = siDetector -> GetPhi1();
     auto phi2 = siDetector -> GetPhi2();
+    auto phi0 = 0.5*(phi1+phi2);
+    phi1 = phi0 - fUserPhiScale*abs(phi0-phi1);
+    phi2 = phi0 + fUserPhiScale*abs(phi0-phi2);
     fGSelEventDisplay1 -> Set(0);
     fGSelEventDisplay1 -> SetPoint(0,phi1,layer1);
     fGSelEventDisplay1 -> SetPoint(1,phi1,layer2);

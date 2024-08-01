@@ -185,6 +185,8 @@ class SKSiArrayPlane : public LKEvePlane
         LKParameterContainer* fArrayDetectorDrawing = nullptr;
         LKParameterContainer* fArrayEventDrawing    = nullptr;
 
+        double fUserPhiScale = 2.0;
+
     ClassDef(SKSiArrayPlane, 1)
 };
 
