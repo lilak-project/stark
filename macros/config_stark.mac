@@ -1,3 +1,5 @@
-stark/Mapping                 {lilak_common}/stark_channel_mapping_RAON2024_40Arp.txt
-stark/DetectorPar             {lilak_common}/stark_detector_par_RAON2024_40Arp.txt
+#stark/Mapping                 {lilak_common}/stark_channel_mapping_RAON2024_40Arp.txt
+#stark/DetectorPar             {lilak_common}/stark_detector_par_RAON2024_40Arp.txt
 stark/EnergyCalibrationFile   {lilak_common}/stark_ecal_par.199_303.RAON2024_40Arp.root
+stark/Mapping1                {lilak_common}/starkmap_input.RAON2024_40Arp.txt
+stark/Mapping2                {lilak_common}/starkmap_output.RAON2024_40Arp.txt
