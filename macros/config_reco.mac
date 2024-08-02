@@ -1,11 +1,14 @@
-<stark_configs         config_stark.mac
+<stark_configs     config_stark.mac
 
-LKRun/Name             stark
-LKRun/InputFile        /home/ejungwoo/data/stark/conv/stark_0303.conv.root
-#LKRun/InputFile        /home/ejungwoo/data/stark/conv/stark_0199.conv.root
-#LKRun/InputFile        /home/ejungwoo/data/stark/conv/stark_0253.conv.root
-LKRun/Tag              reco
-LKRun/OutputPath       ./data/
+run                e{RUN}
+@-run/run          253
+LKRun/RunID        {run}
+LKRun/Name         stark
+LKRun/OutputPath   data
+LKRun/InputPath    data
+LKRun/SearchRun    conv ##########
+LKRun/Tag          reco
+
 LKRun/EventCountForMessage 20000
 
 persistency/SiChannel  true

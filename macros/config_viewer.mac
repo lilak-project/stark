@@ -1,9 +1,13 @@
-LKRun/Name           stark  # name of the run
-LKRun/RunID          253    #
-LKRun/Tag            view   # tag (*: temporary parameter)
-LKRun/OutputPath     {lilak_path}/stark/macros/data/
-LKRun/InputFile      /home/ejungwoo/data/stark/conv/stark_0253.conv.root
-#LKRun/SearchRun      conv
+<stark_configs         config_stark.mac
+
+run                  e{RUN}
+@-run/run            253
+LKRun/RunID          {run}
+LKRun/Name           stark
+LKRun/OutputPath     data
+LKRun/InputPath      data
+LKRun/SearchRun      conv ##########
+LKRun/Tag            viewer
 LKRun/AutoTerminate  false
 
 ########################################################################

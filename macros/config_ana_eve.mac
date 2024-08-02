@@ -6,16 +6,10 @@ LKRun/RunID            {run}
 LKRun/Name             stark
 LKRun/OutputPath       data
 LKRun/InputPath        data
-LKRun/SearchRun        conv ##########
-LKRun/Tag              eve
+LKRun/SearchRun        reco ##########
+LKRun/Tag              ana_eve
 
 LKEveTask/drawEve3D    false
 LKEveTask/drawPlane    true
-LKRun/OutputPath       ./data/
 
 SKSiArrayPlane/jumpEventSize  50000
-
-SKDrawEventStatisticsTask/binning_energy 500, 0, 4100
-SKDrawEventStatisticsTask/binning_theta  50, 50, 100
-
-persistency/SiChannel  false

@@ -1,15 +1,15 @@
-LKRun/Name           stark  # name of the run
-LKRun/RunID          253    #
-LKRun/Tag            conv   # tag (*: temporary parameter)
-LKRun/OutputPath     ./data/
-
-LKRun/InputPath      /root/lilak/stark/macros/data/
-LKRun/SearchRun      mfm
+run                    e{RUN}
+@-run/run              253
+LKRun/RunID            {run}
+LKRun/Name             stark
+LKRun/OutputPath       data
+LKRun/InputPath        data
+LKRun/SearchRun        mfm ##########
+LKRun/Tag              conv
 
 persistency/FrameHeader true
 persistency/RawData     true
 
-########################################################################
 LKFrameBuilder/MaxCobo              4   # maximum number of CoBo
 LKFrameBuilder/MaxAsad              4   # maximum number of AsAd in one CoBo
 LKFrameBuilder/MaxAget              4   # maximum number of AGET in one AsAd

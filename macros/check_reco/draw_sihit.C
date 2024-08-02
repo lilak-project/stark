@@ -1,7 +1,11 @@
 void draw_sihit()
 {
-    auto file = new TFile("../data/stark_0199.reco.root");
-    //auto file = new TFile("../data/stark_0303.reco.root");
+    //int run = 199; int det1 = 0;  int det2 = 11;
+    int run = 303; int det1 = 12; int det2 = 31;
+    //TCut cutActiveDetIDs = Form("SiHit.fDetID>=%d&&SiHit.fDetID<%d",det1,det2);
+    TCut cutActiveDetIDs = Form("SiHit.fDetID==13&&SiHit.fJunctionStrip==0",det1,det2);
+
+    auto file = new TFile(Form("../data/stark_%04d.reco.root",run));
     auto tree = (TTree*) file -> Get("event");
 
     if (0)
@@ -18,35 +22,33 @@ void draw_sihit()
 
     if (1)
     {
-        auto cvsEZAll = LKPainter::GetPainter() -> CanvasResize("cvsEZAll",600,500,0.8);
-        cvsEZAll -> SetMargin(0.1,0.15,0.1,0.1);
-        //tree -> Draw("SiHit.fEnergy:SiHit.fZ>>histEZAll(400,-1,1,400,0,10)","SiHit.fDetID>=12&&SiHit.fDetID<32","colz");
-        tree -> Draw("SiHit.fEnergy:SiHit.fZ>>histEZAll(400,-1,1,400,0,10)","SiHit.fDetID<12","colz");
+        //auto cvsEZAll = LKPainter::GetPainter() -> CanvasResize("cvsEZAll",600,500,0.8);
+        //cvsEZAll -> SetMargin(0.1,0.15,0.1,0.1);
+        //tree -> Draw("SiHit.fEnergy:SiHit.fZ>>histEZAll(400,-1,1,400,0,10)",cutActiveDetIDs,"colz");
 
         auto cvsJO = LKPainter::GetPainter() -> CanvasResize("cvsJO",1000,500,0.8);
         cvsJO -> Divide(4,2);
         for (auto i=0; i<4; ++i) {
+            cout << i << endl;
             cvsJO -> cd(i+1);
-            tree -> Draw(Form("SiHit.fEnergy:SiHit.fZ>>histJOEX%d(400,-1,1,400,0,10)",i),Form("SiHit.fDetID<12 && SiHit.fOhmicStrip==%d",i),"colz");
+            tree -> Draw(Form("SiHit.fEnergy:SiHit.fZ>>histJOEX%d(400,-1,1,400,0,10)",i),cutActiveDetIDs&&Form("SiHit.fOhmicStrip==%d",i),"colz");
         }
         for (auto i=0; i<4; ++i) {
+            cout << i << endl;
             cvsJO -> cd(4+i+1);
-            tree -> Draw(Form("SiHit.fEnergyRight:SiHit.fEnergyLeft>>histJORL%d(400,0,10,400,0,10)",i),Form("SiHit.fDetID<12 && SiHit.fOhmicStrip==%d",i),"colz");
+            tree -> Draw(Form("SiHit.fEnergyRight:SiHit.fEnergyLeft>>histJORL%d(400,0,10,400,0,10)",i),cutActiveDetIDs&&Form("SiHit.fOhmicStrip==%d",i),"colz");
         }
     }
 
     if (0)
     {
-        //auto cvsEZs = LKPainter::GetPainter() -> CanvasResize("cvsEZs",1000,400,1);
-        //cvsEZs -> Divide(10,4);
-        //for (auto i=0; i<40; ++i)
         auto cvsEZs = LKPainter::GetPainter() -> CanvasResize("cvsEZs",400,300,1);
-        cvsEZs -> Divide(4,3);
-        for (auto i=0; i<12; ++i)
+        cvsEZs -> Divide(6,4);
+        for (auto i=0; i<(det2-det1+1); ++i)
         {
             cout << i << endl;
             cvsEZs -> cd(i+1);
-            tree -> Draw(Form("SiHit.fEnergy:SiHit.fZ>>histEZ%d(200,-1,1,200,0,10)",i),Form("SiHit.fDetID==%d",i),"colz");
+            tree -> Draw(Form("SiHit.fEnergy:SiHit.fZ>>histEZ%d(200,-1,1,200,0,10)",det1+i),Form("SiHit.fDetID==%d",det1+i),"colz");
         }
     }
 }
