@@ -177,6 +177,9 @@ class SKSiArrayPlane : public LKEvePlane
         TClonesArray* fHistArray1 = nullptr;
         TClonesArray* fHistArray2 = nullptr;
 
+        TClonesArray* fSiChannelArray = nullptr;
+        TClonesArray* fSiHitArray = nullptr;
+
         int fNumArrayChannelDrawing  = 0;
         int fNumArrayDetectorDrawing = 0;
         int fNumArrayPairDrawing     = 0;
@@ -186,7 +189,7 @@ class SKSiArrayPlane : public LKEvePlane
         LKParameterContainer* fArrayDetectorDrawing = nullptr;
         LKParameterContainer* fArrayEventDrawing    = nullptr;
 
-        double fUserPhiScale = 2.0;
+        double fUserPhiScale = 1.;
 
         int fdEEPairMapping[40][2];
 

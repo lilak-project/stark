@@ -61,7 +61,6 @@ void SKEnergyRestorationTask::Exec(Option_t*)
     fStarkPlane -> ClearFiredFlags();
 
     int countHits = 0;
-
     auto numChannels = fSiChannelArray -> GetEntries();
     for (auto iChannel=0; iChannel<numChannels; ++iChannel)
     {
@@ -72,7 +71,7 @@ void SKEnergyRestorationTask::Exec(Option_t*)
         auto strip = siChannel -> GetStrip();
         auto energy1 = siChannel -> GetEnergy();
         auto energy2 = siChannel -> GetEnergy2();
-        //auto detEP = fStarkPlane -> FindEPairDetID(det);
+        auto position = siChannel -> GetPosition();
         if (siChannel -> IsStandaloneChannel()) 
         {
             double g0 = fg0Array[det][side][strip];
@@ -84,6 +83,8 @@ void SKEnergyRestorationTask::Exec(Option_t*)
                 siHit -> SetDetID(det);
                 siHit -> SetEnergy(energy);
                 siHit -> SetZ(pos);
+                siHit -> SetJunctionStrip(strip);
+                siHit -> SetStripPosition(position);
             }
         }
         else if (siChannel -> IsPairedChannel() && energy2>0) {
@@ -102,9 +103,11 @@ void SKEnergyRestorationTask::Exec(Option_t*)
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
                 siHit -> SetEnergy(energy);
+                siHit -> SetZ(pos);
                 siHit -> SetEnergyLeft(energy1);
                 siHit -> SetEnergyRight(energy2);
-                siHit -> SetZ(pos); // TODO
+                siHit -> SetJunctionStrip(strip);
+                siHit -> SetStripPosition(position);
             }
         }
         else
@@ -130,24 +133,6 @@ void SKEnergyRestorationTask::Exec(Option_t*)
             }
         }
     }
-
-#ifdef AAAAAAAAAAAAA
-    for (auto iHit=0; iHit<countHits; ++iHit)
-    {
-        auto siHit1 = (SKSiHit*) fHitArray -> At(iHit);
-        for (auto jHit=0; jHit<countHits; ++jHit)
-        {
-            auto siHit2 = (SKSiHit*) fHitArray -> At(jHit);
-            if (siHit1->IsEPairDetector() && fStark->FindEPairDetID(siHit1->GetDetID())==siHit2->GetDetID())
-            {
-                if      (siHit1->IsEDetector()) siHit1 -> SetdE(siHit2->GetEnergy());
-                else if (siHit2->IsEDetector()) siHit2 -> SetdE(siHit1->GetEnergy());
-                else
-                    lk_debug << siHit1 -> GetDetID() << " " << siHit2 -> GetDetID() << endl;
-            }
-        }
-    }
-#endif
 
     lk_info << "Number of si-hits = " << countHits << endl;
 }
