@@ -3,6 +3,7 @@
 
 #include "LKContainer.h"
 #include "LKLogger.h"
+#include "TVector3.h"
 
 class SKSiHit : public LKContainer
 {
@@ -21,6 +22,7 @@ class SKSiHit : public LKContainer
             fEnergyLeft = -999;
             fEnergyRight = -999;
             fEnergyOhmic = -999;
+            fStripPosition = TVector3();
             fZ = -999;
             fX = -999;
             fPhi = -999;
@@ -41,6 +43,7 @@ class SKSiHit : public LKContainer
         void SetEnergyLeft(double energy ) { fEnergyLeft = energy; }
         void SetEnergyRight(double energy ) { fEnergyRight = energy; }
         void SetEnergyOhmic(double energy ) { fEnergyOhmic = energy; }
+        void SetStripPosition(TVector3 position) { fStripPosition = position; }
         void SetZ(double z) { fZ = z; }
         void SetX(double x) { fX = x; }
         void SetPhi(double phi) { fPhi = phi; }
@@ -57,6 +60,7 @@ class SKSiHit : public LKContainer
         double GetEnergyLeft() const { return fEnergyLeft; }
         double GetEnergyRight() const { return fEnergyRight; }
         double GetEnergyOhmic() const { return fEnergyOhmic; }
+        TVector3 GetStripPosition() const { return fStripPosition; }
         double GetZ() const { return fZ; }
         double GetX() const { return fX; }
         double GetPhi() const { return fPhi; }
@@ -73,6 +77,7 @@ class SKSiHit : public LKContainer
         double fEnergyLeft; ///< energy of downstream side
         double fEnergyRight; ///< energy of upstream side
         double fEnergyOhmic; ///< energy of ohmic side
+        TVector3 fStripPosition; ///< position of strip;
         double fZ; ///< global z-position in mm
         double fX; ///< x-position (axis through width direction) within si-detector
         double fPhi; ///< phi
