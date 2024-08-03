@@ -67,24 +67,38 @@ void SKEnergyRestorationTask::Exec(Option_t*)
         auto siChannel = (LKSiChannel*) fSiChannelArray -> At(iChannel);
         auto det = siChannel -> GetDetID();
         auto side = siChannel -> GetSide();
+        auto isEDet = fStarkPlane -> GetSiDetector(det) -> IsEDetector();
+        auto dEEPairID = fStarkPlane -> GetSiDetector(det) -> GetRow();
         if (side==1) continue;
         auto strip = siChannel -> GetStrip();
         auto energy1 = siChannel -> GetEnergy();
         auto energy2 = siChannel -> GetEnergy2();
         auto position = siChannel -> GetPosition();
+        auto phi = siChannel -> GetPhi0();
+        auto theta = siChannel -> GetTheta0();
         if (siChannel -> IsStandaloneChannel()) 
         {
             double g0 = fg0Array[det][side][strip];
             double energy = energy1 * g0;
             double pos = 0;
-
             if (energy>0) {
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
-                siHit -> SetEnergy(energy);
-                siHit -> SetZ(pos);
+                if (isEDet) {
+                    siHit -> SetEnergy(energy);
+                    siHit -> SetIsEDetector(true);
+                }
+                else {
+                    siHit -> SetdE(energy);
+                    siHit -> SetIsEDetector(false);
+                }
+                if (dEEPairID) siHit -> SetIsEPairDetector(true);
+                else siHit -> SetIsEPairDetector(false);
+                siHit -> SetRelativeZ(pos);
                 siHit -> SetJunctionStrip(strip);
                 siHit -> SetStripPosition(position);
+                siHit -> SetPhi(phi);
+                siHit -> SetTheta(theta);
             }
         }
         else if (siChannel -> IsPairedChannel() && energy2>0) {
@@ -98,16 +112,26 @@ void SKEnergyRestorationTask::Exec(Option_t*)
             double energy = energy1 + energy2;
             double pos = (energy1 - energy2) / energy;
             energy = energy / (b0 + b1*pos + b2*pos*pos) * f241AmAlphaEnergy1;
-
             if (energy>0) {
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
-                siHit -> SetEnergy(energy);
-                siHit -> SetZ(pos);
+                if (isEDet) {
+                    siHit -> SetEnergy(energy);
+                    siHit -> SetIsEDetector(true);
+                }
+                else {
+                    siHit -> SetdE(energy);
+                    siHit -> SetIsEDetector(false);
+                }
+                if (dEEPairID) siHit -> SetIsEPairDetector(true);
+                else siHit -> SetIsEPairDetector(false);
+                siHit -> SetRelativeZ(pos);
                 siHit -> SetEnergyLeft(energy1);
                 siHit -> SetEnergyRight(energy2);
                 siHit -> SetJunctionStrip(strip);
                 siHit -> SetStripPosition(position);
+                siHit -> SetPhi(phi);
+                siHit -> SetTheta(theta);
             }
         }
         else

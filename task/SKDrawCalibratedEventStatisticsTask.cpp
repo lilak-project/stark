@@ -60,10 +60,6 @@ bool SKDrawCalibratedEventStatisticsTask::Init()
 void SKDrawCalibratedEventStatisticsTask::Exec(Option_t*)
 {
     if (!fStarkPlane -> GetAccumulateEvents()) {
-        //fHistHP[0] -> Reset();
-        //fHistHP[1] -> Reset();
-        //fHistET[0] -> Reset();
-        //fHistET[1] -> Reset();
     }
 
     auto numHits = fSiHitArray -> GetEntries();
@@ -73,7 +69,7 @@ void SKDrawCalibratedEventStatisticsTask::Exec(Option_t*)
         int detID = siHit -> GetDetID();
         int stripJ = siHit -> GetJunctionStrip();
         int stripO = siHit -> GetOhmicStrip();
-        double energySum = siHit -> GetEnergy();
+        double energySum = siHit -> GetE();
         double energyOhmic = siHit -> GetEnergyOhmic();
 
         fHistHP[0] -> Fill(detID*fNumJStrips+stripJ, energySum);

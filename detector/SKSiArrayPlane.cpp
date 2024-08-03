@@ -1248,7 +1248,7 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
             int detID = siHit -> GetDetID();
             int stripJ = siHit -> GetJunctionStrip();
             int stripO = siHit -> GetOhmicStrip();
-            double energy = siHit -> GetEnergy();
+            double energy = siHit -> GetE();
             double energyLeft = siHit -> GetEnergyLeft();
             double energyRight = siHit -> GetEnergyRight();
             double energyOhmic = siHit -> GetEnergyOhmic();

@@ -27,6 +27,7 @@ void SKPairMatchingTask::Exec(Option_t*)
         auto pairID = fStarkPlane -> FindEPairDetectorID(siHit1->GetDetID());
         if (pairID>=0)
         {
+            siHit1 -> SetIsEPairDetector(true);
             for (auto jHit=0; jHit<numHits; ++jHit)
             {
                 if (iHit==jHit)
@@ -34,8 +35,14 @@ void SKPairMatchingTask::Exec(Option_t*)
                 auto siHit2 = (SKSiHit*) fHitArray -> At(jHit);
                 if (pairID==siHit2->GetDetID())
                 {
-                    if      (siHit1->IsEDetector()) siHit1 -> SetdE(siHit2->GetEnergy());
-                    else if (siHit2->IsEDetector()) siHit2 -> SetdE(siHit1->GetEnergy());
+                    if (siHit1->IsEDetector()) {
+                        siHit1 -> SetdE(siHit2->GetdE());
+                        siHit2 -> SetEnergy(0);
+                    }
+                    else if (siHit2->IsEDetector())  {
+                        siHit2 -> SetdE(siHit1->GetdE());
+                        siHit1 -> SetEnergy(0);
+                    }
                     else
                         lk_debug << siHit1 -> GetDetID() << " " << siHit2 -> GetDetID() << endl;
                 }
@@ -43,5 +50,14 @@ void SKPairMatchingTask::Exec(Option_t*)
         }
     }
 
-    lk_info << endl;
+    for (auto iHit=0; iHit<numHits; ++iHit)
+    {
+        auto siHit = (SKSiHit*) fHitArray -> At(iHit);
+        if (siHit->GetdE()>0 && siHit->GetE()==0)
+            fHitArray -> Remove(siHit);
+    }
+
+    fHitArray -> Compress();
+
+    lk_info << "Number of si-hits = " << fHitArray->GetEntries() << endl;
 }
