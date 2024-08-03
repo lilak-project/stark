@@ -67,8 +67,10 @@ void SKEnergyRestorationTask::Exec(Option_t*)
         auto siChannel = (LKSiChannel*) fSiChannelArray -> At(iChannel);
         auto det = siChannel -> GetDetID();
         auto side = siChannel -> GetSide();
-        auto isEDet = fStarkPlane -> GetSiDetector(det) -> IsEDetector();
-        auto dEEPairID = fStarkPlane -> GetSiDetector(det) -> GetRow();
+        auto siDetector = fStarkPlane -> GetSiDetector(det);
+        auto isEDet = siDetector -> IsEDetector();
+        auto dEEPairID = siDetector -> GetRow();
+        auto pairID = fStarkPlane -> FindEPairDetectorID(det);
         if (side==1) continue;
         auto strip = siChannel -> GetStrip();
         auto energy1 = siChannel -> GetEnergy();
@@ -84,6 +86,7 @@ void SKEnergyRestorationTask::Exec(Option_t*)
             if (energy>0) {
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
+                siHit -> SetdEDetID(pairID);
                 if (isEDet) {
                     siHit -> SetEnergy(energy);
                     siHit -> SetIsEDetector(true);
@@ -115,6 +118,7 @@ void SKEnergyRestorationTask::Exec(Option_t*)
             if (energy>0) {
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
+                siHit -> SetdEDetID(pairID);
                 if (isEDet) {
                     siHit -> SetEnergy(energy);
                     siHit -> SetIsEDetector(true);

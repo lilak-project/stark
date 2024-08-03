@@ -119,7 +119,7 @@ bool SKSiArrayPlane::Init()
 
     TString detName;
     int cobo, asad, aget, chan, chan2, detID, strip, side, lr;
-    int numSides, numJunctionStrips, numOhmicStrips, layer, rotationIndex, ringIndex, useJunctionLR, useOhmicLR;
+    int numSides, numJunctionStrips, numOhmicStrips, layer, ringIndex, useJunctionLR, useOhmicLR;
     double detDistance, detRadius, detDiameter, phi0, detWidth, detHeight, detThickness, tta, phi;
     TString zapJNo, zapONo, markNo;
     int markID, fb;
@@ -170,7 +170,7 @@ bool SKSiArrayPlane::Init()
         TVector3 position(detRadius,0,0);
         position.SetPhi(phi0);
         position.SetZ(detDistance);
-        siDetector -> SetSiPosition(position, layer, rotationIndex, phi1, phi2, tta1, tta2);
+        siDetector -> SetSiPosition(position, layer, polarID, phi1, phi2, tta1, tta2);
         siDetector -> SetWidth(detWidth);
         siDetector -> SetHeight(detHeight);
         dEEType = dEEType-1;
@@ -180,8 +180,8 @@ bool SKSiArrayPlane::Init()
             fdEEPairMapping[polarID][dEEType] = detID;
             if (dEEType==0) siDetector -> SetIsEDetector();
             else siDetector -> SetIsdEDetector();
-            siDetector -> SetRow(polarID);
         }
+        //else siDetector -> SetRow(-1);
         double layer1 = fLayerYScale * (layer + fLayerYOffset);
         double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
         TString name = Form("hist_%s_%d_junction",detName.Data(),detID);
@@ -1480,6 +1480,7 @@ bool SKSiArrayPlane::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     auto dummyChannel = GetSiChannel(cobo, asad, aget, chan);
     if (dummyChannel==nullptr)
         return false;
+
     siChannel -> SetCobo(cobo);
     siChannel -> SetAsad(asad);
     siChannel -> SetAget(aget);
@@ -1491,10 +1492,20 @@ bool SKSiArrayPlane::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     siChannel -> SetSide      (dummyChannel->GetSide      ());
     siChannel -> SetStrip     (dummyChannel->GetStrip     ());
     siChannel -> SetDirection (dummyChannel->GetDirection ());
+
+    siChannel -> SetInverted      (dummyChannel->GetInverted ());
+    siChannel -> SetPairArrayIndex(dummyChannel->GetPairArrayIndex());
+    siChannel -> SetEnergy2       (dummyChannel->GetEnergy2());
+    siChannel -> SetPosition      (dummyChannel->GetPosition());
+
     siChannel -> SetTheta1    (dummyChannel->GetTheta1    ());
     siChannel -> SetTheta2    (dummyChannel->GetTheta2    ());
     siChannel -> SetPhi1      (dummyChannel->GetPhi1      ());
     siChannel -> SetPhi2      (dummyChannel->GetPhi2      ());
+
+    if (dummyChannel -> IsStandaloneChannel()) siChannel -> SetIsStandaloneChannel();
+    if (dummyChannel -> IsPairedChannel())     siChannel -> SetIsPairedChannel();
+
     siChannel -> SetTime      (     channel->GetTime      ());
     siChannel -> SetEnergy    (     channel->GetEnergy    ());
     siChannel -> SetPedestal  (     channel->GetPedestal  ());
@@ -1529,6 +1540,8 @@ int SKSiArrayPlane::FindEPairDetectorID(int det)
 {
     auto detector = GetSiDetector(det);
     auto polarID = detector -> GetRow();
+    if (detector->GetLayer()>1)
+        return -1;
     if (detector->IsEDetector())
         return fdEEPairMapping[polarID][1];
     return fdEEPairMapping[polarID][0];

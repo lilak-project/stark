@@ -21,7 +21,7 @@
         bool case1 = siHit -> IsEPairAndOnlydE();
         bool case2 = siHit -> IsEPairAndOnlyE();
         bool case3 = siHit -> IsEPairAndBothdEE();
-        bool case3 = siHit -> IsEPairDetector();
+        bool case4 = siHit -> IsEPairDetector();
         bool case5 = siHit -> IsNotEPairDetector();
    
         // above should be same as
@@ -35,7 +35,6 @@
     ## Energy
     For any cases, total energy left in hit is GetEnergyTotal().
     This is equal to E for 16-ring detectors, and is equal to dE+E for 12-ring (pair) detectors.
-    For 12-ring (pair) detectors.
    
     ## z-position
     - GetDetectorZ(): z-position of Detector from the target.
@@ -51,6 +50,7 @@ class SKSiHit : public LKContainer
 
         virtual void Clear(Option_t *option="") {
             fDetID = -1;
+            fdEDetID = -1;
             fJunctionStrip = -1;
             fOhmicStrip = -1;
             fIsEPairDetector = false;
@@ -81,7 +81,28 @@ class SKSiHit : public LKContainer
                 << std::endl;
         }
 
+        void PrintAll() const {
+            e_info << "[SiHit] " << std::endl;
+            e_cout << "    - fDetID           = " << fDetID           << std::endl;
+            e_cout << "    - fdEDetID         = " << fdEDetID         << std::endl;
+            e_cout << "    - fJunctionStrip   = " << fJunctionStrip   << std::endl;
+            e_cout << "    - fOhmicStrip      = " << fOhmicStrip      << std::endl;
+            e_cout << "    - fIsEPairDetector = " << fIsEPairDetector << std::endl;
+            e_cout << "    - fIsEDetector     = " << fIsEDetector     << std::endl;
+            e_cout << "    - fdE              = " << fdE              << std::endl;
+            e_cout << "    - fEnergy          = " << fEnergy          << std::endl;
+            e_cout << "    - fEnergyLeft      = " << fEnergyLeft      << std::endl;
+            e_cout << "    - fEnergyRight     = " << fEnergyRight     << std::endl;
+            e_cout << "    - fEnergyOhmic     = " << fEnergyOhmic     << std::endl;
+            e_cout << "    - fStripPosition   = (" << fStripPosition.X() << ", " << fStripPosition.Y() << ", " << fStripPosition.Z() << ")" << std::endl;
+            e_cout << "    - fRelativeZ       = " << fRelativeZ       << std::endl;
+            e_cout << "    - fX               = " << fX               << std::endl;
+            e_cout << "    - fPhi             = " << fPhi             << std::endl;
+            e_cout << "    - fTheta           = " << fTheta           << std::endl;
+        }
+
         void SetDetID(int id) { fDetID = id; }
+        void SetdEDetID(int id) { fdEDetID = id; }
         void SetJunctionStrip(int id) { fJunctionStrip = id; }
         void SetOhmicStrip(int id) { fOhmicStrip = id; }
         void SetIsEPairDetector(int isPair) { fIsEPairDetector = isPair; }
@@ -98,13 +119,14 @@ class SKSiHit : public LKContainer
         void SetTheta(double theta) { fTheta = theta; }
 
         int GetDetID() const { return fDetID; }
+        int GetdEDetID() const { return fdEDetID; }
         int GetJunctionStrip() const { return fJunctionStrip; }
         int GetOhmicStrip() const { return fOhmicStrip; }
         bool IsEPairAndOnlydE()  const { return (fIsEPairDetector && fEnergy==0); } ///< Is dEE-pair detector but only dE energy is left
         bool IsEPairAndOnlyE()   const { return (fIsEPairDetector && fdE==0); } ///< Is dEE-pair detector but only E energy is left
         bool IsEPairAndBothdEE() const { return (fIsEPairDetector && fdE>0 && fEnergy>0); } ///< Is dEE-pair detector and both dE and E energies are left
-        bool IsEPairDetector() const { return fIsEPairDetector; } ///< Hit is in 12-ring detector where dE-E detectors are paired. This doesn’t mean both dE and E energy are found.
-        bool IsNotEPairDetector() const { return !fIsEPairDetector; } ///< Hit is in 12-ring detector where dE-E detectors are paired. This doesn’t mean both dE and E energy are found.
+        bool IsEPairDetector() const { return fIsEPairDetector; }     ///< Hit is in 12-ring detector where dE-E detectors are paired. This doesn’t mean both dE and E energy are found.
+        bool IsNotEPairDetector() const { return !fIsEPairDetector; } ///< Hit is in 16-ring detector where only E detectors are used.
         bool IsEDetector() const { return fIsEDetector; } ///< Hit belong to the E-detector
         bool IsdEDetector() const { return (!fIsEDetector); } ///< Hit belong to the dE-detector
         double GetdE() const { return fdE; } ///< Energy left in dE-detector
@@ -124,6 +146,7 @@ class SKSiHit : public LKContainer
 
     protected:
         int fDetID; ///< detector id
+        int fdEDetID; ///< de detector id
         int fJunctionStrip; ///< strip number of fired junction
         int fOhmicStrip; ///< strip number of fired ohmic
         bool fIsEPairDetector; ///< true: detector is paired with dE-E detectors, false: no dE-detector is use.
