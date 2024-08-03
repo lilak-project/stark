@@ -6,14 +6,15 @@
 #include "TVector3.h"
 
 /**
-    One SiHit correspond to the data left by single particle. Energy may be left in one or two detectors (dE and E for two).
+    ## SKSiHit
+    Hit left by single particle. The data may cover one or two detectors (dE and E for two).
    
     ## Hit Cases
-    Case1: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left in dE-detector and not in E-detector
-    Case2: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left in E-detector and not in dE-detector
-    Case3: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left both in dE-detector and not in E-detector
-    Case4: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left either in dE or E or in both.
-    Case5: Particle go through detector in one of 16-ring detectors (no dE-E pair).
+    - Case1: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left in dE-detector and not in E-detector
+    - Case2: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left in E-detector and not in dE-detector
+    - Case3: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left both in dE-detector and not in E-detector
+    - Case4: Particle go through detector in one of 12-ring detectors (dE-E paired detectors). Energy was left either in dE or E or in both.
+    - Case5: Particle go through detector in one of 16-ring detectors (no dE-E pair).
    
     @code{.cpp}
     {
@@ -29,16 +30,18 @@
         case2 = (siHit->IsEPairDetector() && siHit->GetdE()==0);
         case3 = (siHit->IsEPairDetector() && siHit->GetdE()>0 && siHit->GetE()>0);
     }
+    @endcode
    
     ## Energy
     For any cases, total energy left in hit is GetEnergyTotal().
-    This is equal to E for 16-ring detectors, and is eqault to dE+E for 12-ring (pair) detectors.
+    This is equal to E for 16-ring detectors, and is equal to dE+E for 12-ring (pair) detectors.
+    For 12-ring (pair) detectors.
    
     ## z-position
     - GetDetectorZ(): z-position of Detector from the target.
-    - GetRelativeZ(length): z-position of hit from the center of the detector, where length is the
+    - GetRelativeZ(), GetRelativeZ(length): z-position of hit from the center of the detector, where length is the
       detector-length and should be given by user. Default length is 2 (z ranging from -1 to 1).
-    - GetFinalZ(length): Final z-position of hit from the target is .
+    - GetFinalZ(), GetFinalZ(length): Final z-position of hit from the target.
 */
 class SKSiHit : public LKContainer
 {
@@ -71,7 +74,7 @@ class SKSiHit : public LKContainer
             if (IsEPairAndBothdEE())  { title = "dEE-pair (+dE,E)"; }
             if (IsEPairDetector())    { title = "dEE-pair"; }
             if (IsNotEPairDetector()) { title = "single"; }
-            e_cout << "[SiHit] " <<  title
+            e_info << "[SiHit] " <<  title
                 << ", det=" << fDetID
                 << ", E=" << fEnergy
                 << ", dE=" << fdE
@@ -136,7 +139,7 @@ class SKSiHit : public LKContainer
         double fPhi; ///< phi
         double fTheta; ///< theta
 
-    ClassDef(SKSiHit,1);
+    ClassDef(SKSiHit,2);
 };
 
 #endif
