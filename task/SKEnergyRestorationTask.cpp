@@ -97,7 +97,6 @@ void SKEnergyRestorationTask::Exec(Option_t*)
                 }
                 if (dEEPairID) siHit -> SetIsEPairDetector(true);
                 else siHit -> SetIsEPairDetector(false);
-                siHit -> SetRelativeZ(pos);
                 siHit -> SetJunctionStrip(strip);
                 siHit -> SetStripPosition(position);
                 siHit -> SetPhi(phi);
