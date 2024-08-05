@@ -130,7 +130,7 @@ class SKSiArrayPlane : public LKEvePlane
         TObjArray* fUserDrawingArrayCollection = nullptr;
         int ****fUserDrawingArrayIndex; // [4][7][40][2] menu-tab, menu-number, detector-number, junction/ohmic
         int ****fUserDrawingLeastNDraw; // [4][7][40][2]
-        TString fUserDrawingName[4][7];
+        TString fUserDrawingName[4][10];
 
         TPad* fPadControlDDPage = nullptr;
         int fBinCtrlPrevPage;

@@ -33,6 +33,8 @@ SKSiArrayPlane::SKSiArrayPlane(const char *name, const char *title)
 
 bool SKSiArrayPlane::Init()
 {
+    fEnergyMax = -1;
+
     LKEvePlane::Init();
 
     if (fDetName.IsNull())
@@ -40,8 +42,8 @@ bool SKSiArrayPlane::Init()
 
     fUserDrawingArrayIndex = new int***[4];
     for(int i=0; i<4; ++i) {
-        fUserDrawingArrayIndex[i] = new int**[8];
-        for(int j=0; j<8; ++j) {
+        fUserDrawingArrayIndex[i] = new int**[10];
+        for(int j=0; j<10; ++j) {
             fUserDrawingArrayIndex[i][j] = new int*[fMaxDetectors];
             for(int k=0; k<fMaxDetectors; ++k) {
                 fUserDrawingArrayIndex[i][j][k] = new int[2];
@@ -54,8 +56,8 @@ bool SKSiArrayPlane::Init()
 
     fUserDrawingLeastNDraw = new int***[4];
     for(int i=0; i<4; ++i) {
-        fUserDrawingLeastNDraw[i] = new int**[8];
-        for(int j=0; j<8; ++j) {
+        fUserDrawingLeastNDraw[i] = new int**[10];
+        for(int j=0; j<10; ++j) {
             fUserDrawingLeastNDraw[i][j] = new int*[fMaxDetectors];
             for(int k=0; k<fMaxDetectors; ++k) {
                 fUserDrawingLeastNDraw[i][j][k] = new int[2];
@@ -67,7 +69,7 @@ bool SKSiArrayPlane::Init()
     }
 
     for(int i=0; i<4; ++i)
-        for(int j=0; j<7; ++j)
+        for(int j=0; j<10; ++j)
             fUserDrawingName[i][j] = "";
 
     fMapCAACToChannelIndex = new int***[fNumCobo];
@@ -282,6 +284,8 @@ bool SKSiArrayPlane::Init()
 
     lk_info << globalChannelIndex << " channels are mapped!" << endl;
 
+    //ClickedControlEvent2(fBinCtrlEngyMax);
+
     return true;
 }
 
@@ -318,7 +322,8 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
 
         double x2 = 0.45;
 
-        fCanvas = LKPainter::GetPainter() -> CanvasResize("stark",fDXCanvas,fDYCanvas,0.95);
+        fCanvas = LKPainter::GetPainter() -> CanvasResize("stark",fDXCanvas,fDYCanvas,1.1);
+        //fCanvas = LKPainter::GetPainter() -> CanvasFull("stark",0.98);
         fCanvas -> SetTitle(fRun->GetInputFile()->GetName());
 
         fCanvas -> cd();
@@ -330,7 +335,8 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadEventDisplay1    = new TPad("SKSiArrayPlanePadED1", "", 0.0 , y4, x2, y5);
 
         fPadControlDDPage      = new TPad("SKSiArrayPlanePadDDC0","", x2,  0,   1,  u1);
-        fPadDataDisplayFull    = new TPad("SKSiArrayPlanePadDDF0","", x2,  u1,  1,  u3);
+        //fPadDataDisplayFull    = new TPad("SKSiArrayPlanePadDDF0","", x2,  u1,  1,  u3);
+        fPadDataDisplayFull    = new TPad("SKSiArrayPlanePadDDF0","", x2,  u1,  1,  1);
         fPadDataDisplayTwo[0]  = new TPad("SKSiArrayPlanePadDDT1","", x2,  u1,  1,  u2);
         fPadDataDisplayTwo[1]  = new TPad("SKSiArrayPlanePadDDT2","", x2,  u2,  1,  1 );
 
@@ -345,7 +351,7 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
         fPadJOSideDisplay[0]    -> SetMargin(0.02,0.13,0.02,0.07);
         fPadJOSideDisplay[1]    -> SetMargin(0.02,0.13,0.02,0.07);
         fPadControlDDPage       -> SetMargin(0.02,0.02,0.22,0.02);
-        fPadDataDisplayFull     -> SetMargin(0.10,0.12,0.10,0.10);
+        fPadDataDisplayFull     -> SetMargin(0.10,0.12,0.18,0.18);
         fPadDataDisplayTwo[0]   -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayTwo[1]   -> SetMargin(0.10,0.12,0.10,0.10);
         fPadDataDisplayThree[0] -> SetMargin(0.10,0.12,0.10,0.10);
@@ -354,8 +360,8 @@ TCanvas *SKSiArrayPlane::GetCanvas(Option_t *option)
 
         fPadControlDDPage    -> SetGrid(1);
         fPadCtrlUserDrawing  -> SetGrid(1);
-        fPadJOSideDisplay[0] -> SetGrid(1,1);
-        fPadJOSideDisplay[1] -> SetGrid(1,1);
+        //fPadJOSideDisplay[0] -> SetGrid(1,1);
+        //fPadJOSideDisplay[1] -> SetGrid(1,1);
 
         fPadJOSideDisplay[0] -> Draw();
         fPadJOSideDisplay[1] -> Draw();
@@ -408,7 +414,8 @@ TH2* SKSiArrayPlane::GetHistControlDDPage(Option_t *option)
         gStyle -> SetHistMinimumZero(); // this will draw text even when content is 0
 
         //fHistControlDDPage = new TH2D("LKEvePlane_DataDisplay1","",3,0,3,1,0,1);
-        fHistControlDDPage = new TH2D("LKEvePlane_DataDisplay1","",8,0,8,1,0,1);
+        fHistControlDDPage = new TH2D("LKEvePlane_DataDisplay1","",10,0,10,1,0,1);
+        //fHistControlDDPage = new TH2D("LKEvePlane_DataDisplay1","",8,0,8,1,0,1);
         fHistControlDDPage -> SetStats(0);
         fHistControlDDPage -> GetXaxis() -> SetTickSize(0);
         fHistControlDDPage -> GetYaxis() -> SetTickSize(0);
@@ -438,13 +445,14 @@ TH2* SKSiArrayPlane::GetHistUserDrawing(Option_t *option)
     {
         gStyle -> SetHistMinimumZero(); // this will draw text even when content is 0
 
-        fHistCtrlUserDrawing = new TH2D("SKSiArrayPlane_UserDrawing","",8,0,8,1,0,1);
+        //fHistCtrlUserDrawing = new TH2D("SKSiArrayPlane_UserDrawing","",8,0,8,1,0,1);
+        fHistCtrlUserDrawing = new TH2D("SKSiArrayPlane_UserDrawing","",10,0,10,1,0,1);
         fHistCtrlUserDrawing -> SetStats(0);
         fHistCtrlUserDrawing -> GetXaxis() -> SetTickSize(0);
         fHistCtrlUserDrawing -> GetYaxis() -> SetTickSize(0);
         fHistCtrlUserDrawing -> GetYaxis() -> SetBinLabel(1,"");
         fHistCtrlUserDrawing -> GetXaxis() -> SetBinLabel(1,"Menu");
-        fHistCtrlUserDrawing -> GetXaxis() -> SetLabelSize(fCtrlLabelSize);
+        fHistCtrlUserDrawing -> GetXaxis() -> SetLabelSize(fCtrlLabelSize*0.85);
         //fHistCtrlUserDrawing -> GetXaxis() -> SetLabelOffset(fCtrlLabelOffset);
         fHistCtrlUserDrawing -> SetMarkerSize(fCtrlBinTextSize);
         if (fPaletteNumber==0)
@@ -484,7 +492,7 @@ bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArr
 
     for (ucTab=0; ucTab<4; ++ucTab)
     {
-        for (ucBin=0; ucBin<7; ++ucBin)
+        for (ucBin=0; ucBin<9; ++ucBin)
         {
             if (fUserDrawingName[ucTab][ucBin]=="") {
                 isNewLabel = true;
@@ -546,7 +554,7 @@ void SKSiArrayPlane::UpdateUserDrawing()
         fSignalUDTabChange = false;
         fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(1,1),fSelUDTab);
         for (int ucTab=0; ucTab<4; ++ucTab) {
-            for (int ucBin=0; ucBin<7; ++ucBin) {
+            for (int ucBin=0; ucBin<9; ++ucBin) {
                 TString label = fUserDrawingName[ucTab][ucBin];
                 if (fSelUDTab==ucTab) {
                     fHistCtrlUserDrawing -> GetXaxis() -> SetBinLabel(ucBin+2,label);
@@ -567,6 +575,19 @@ void SKSiArrayPlane::UpdateUserDrawing()
         fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDBin-2][fSelDetID][selJOID];
         fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDBin-2][fSelDetID][selJOID];
         auto selUDArray = (TObjArray*) fUserDrawingArrayCollection -> At(fSelUDArrayID);
+        //lk_debug << endl;
+        if (selUDArray==nullptr) {
+            for (auto selDetID=0; selDetID<40; ++selDetID) {
+                fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDBin-2][selDetID][selJOID];
+                fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDBin-2][selDetID][selJOID];
+                selUDArray = (TObjArray*) fUserDrawingArrayCollection -> At(fSelUDArrayID);
+                if (selUDArray!=nullptr) {
+                    fSelDetID = selDetID;
+                    break;
+                }
+            }
+            UpdateJunctionOhmic();
+        }
 
         if (selUDArray!=nullptr)// && selUDArray!=fSelUDArray)
         {
@@ -582,22 +603,41 @@ void SKSiArrayPlane::UpdateUserDrawing()
                 fNumGoodDrawings = 0;
                 auto numGoodDrawingsInPage = 0;
                 fNumUDPage = 1;
-                for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing)
+
+                if (fNumDrawingsInArray==fSelUDLeastNDraw)
                 {
-                    bool good = false;
-                    auto obj = fSelUDArray -> At(iDrawing);
-                    if (obj -> InheritsFrom(TH1::Class())) {
-                        auto hist = (TH1*) obj;
-                        if (hist -> GetEntries()>0)
-                            good = true;
-                    }
-                    if (good) {
+                    for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing) {
                         fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
                         fNumGoodDrawings++;
                         numGoodDrawingsInPage++;
                         if (numGoodDrawingsInPage>=fNumDataDisplays) {
                             numGoodDrawingsInPage = 0;
                             fNumUDPage++;
+                        }
+                    }
+                }
+                else
+                {
+                    for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing)
+                    {
+                        bool good = false;
+                        auto obj = fSelUDArray -> At(iDrawing);
+                        if (obj -> InheritsFrom(TH1::Class())) {
+                            auto hist = (TH1*) obj;
+                            if (hist -> GetEntries()>0)
+                                good = true;
+                        }
+                        if (good) {
+                            fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
+                            fNumGoodDrawings++;
+                            numGoodDrawingsInPage++;
+                            if (numGoodDrawingsInPage>=fNumDataDisplays) {
+                                numGoodDrawingsInPage = 0;
+                                fNumUDPage++;
+                            }
+                        }
+                        else {
+                            lk_info << "Skipping " << obj -> GetName() << " because there is no entries." << endl;
                         }
                     }
                 }
@@ -609,6 +649,9 @@ void SKSiArrayPlane::UpdateUserDrawing()
             fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(5,1),0);
             fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(6,1),0);
             fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(7,1),0);
+            fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(8,1),0);
+            fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(9,1),0);
+            fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(10,1),0);
             fHistCtrlUserDrawing -> SetBinContent(fHistCtrlUserDrawing->GetBin(fSelUDBin,1),1);
             fPadCtrlUserDrawing -> Modified();
             fPadCtrlUserDrawing -> Update();
@@ -918,7 +961,9 @@ void SKSiArrayPlane::UpdateDataDisplays()
 
     fPadControlDDPage -> cd();
     auto numSelUDGroup = (fNumGoodDrawings / numDataDisplays) + 1;
-    for (auto i=numSelUDGroup+1; i<=8; ++i) {
+    if (fNumGoodDrawings==numDataDisplays)
+        numSelUDGroup = 1;
+    for (auto i=numSelUDGroup+1; i<=10; ++i) {
         fHistControlDDPage -> SetBinContent(i,1,-1);
         fHistControlDDPage -> GetXaxis() -> SetBinLabel(i,"");
     }
@@ -932,7 +977,6 @@ void SKSiArrayPlane::UpdateDataDisplays()
 
 void SKSiArrayPlane::UpdateJunctionOhmic()
 {
-    lk_info << UpdateFlag[kUpdateJunctionOhmic] << endl;
     if (UpdateFlag[kUpdateJunctionOhmic]) return;
     else UpdateFlag[kUpdateJunctionOhmic] = true;
 
@@ -1402,7 +1446,7 @@ void SKSiArrayPlane::ClickedControlDDPage(double xOnClick, double yOnClick)
     int bing = fHistControlDDPage -> FindBin(xOnClick, yOnClick);
 
     int binx, biny, binz;
-    fHistCtrlUserDrawing -> GetBinXYZ(bing,binx,biny,binz);
+    fHistControlDDPage -> GetBinXYZ(bing,binx,biny,binz);
 
     if (fSelControlDDPage==binx-1)
         return;
