@@ -30,10 +30,14 @@ class SKSetSiChannelTask : public LKTask
     private:
         SKSiArrayPlane* fStarkPlane = nullptr;
         LKChannelAnalyzer* fChannelAnalyzer = nullptr;
+        LKChannelAnalyzer* fChannelAnalyzer2 = nullptr;
 
     private:
         TClonesArray *fRawDataArray = nullptr;
         TClonesArray *fSiChannelArray = nullptr;
+
+        TF1* fSlopeFit = nullptr;
+        TH1D* fHistBuffer = nullptr;
 
     ClassDef(SKSetSiChannelTask, 1)
 };

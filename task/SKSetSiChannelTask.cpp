@@ -20,8 +20,20 @@ bool SKSetSiChannelTask::Init()
     fRawDataArray = fRun -> GetBranchA("RawData");
     fSiChannelArray = fRun -> RegisterBranchA("SiChannel","LKSiChannel",20);
 
+    TString pulseFileName;
+    fPar -> UpdatePar(pulseFileName,"stark/pulseFile");
+
     fChannelAnalyzer = new LKChannelAnalyzer();
+    //fChannelAnalyzer -> SetPulse(pulseFileName);
     fChannelAnalyzer -> Print();
+
+    fChannelAnalyzer2 = new LKChannelAnalyzer();
+    fChannelAnalyzer2 -> SetPulse(pulseFileName);
+    fChannelAnalyzer2 -> Print();
+
+    fSlopeFit = new TF1("SlopeFit","[3]+(x>[0]&&x<[1])*([2]/([1]-[0]))*(x-[0])+(x>[1]&&x<[1]+4)*[2]",0,512);
+
+    fHistBuffer = new TH1D("histBufferSSSC","",512,0,512);
 
     return true;
 }
@@ -43,10 +55,12 @@ void SKSetSiChannelTask::Exec(Option_t*)
             continue;
         }
 
-        if (siChannel1->GetSide()==0)
-            fChannelAnalyzer -> SetDataIsInverted(true);
-        else
-            fChannelAnalyzer -> SetDataIsInverted(false);
+        bool isInverted = true;
+        if (siChannel1->GetSide()==0) isInverted = true;
+        else isInverted = false;
+
+        fChannelAnalyzer -> SetDataIsInverted(isInverted);
+        fChannelAnalyzer2 -> SetDataIsInverted(isInverted);
 
         auto data = channel -> GetWaveformY();
         fChannelAnalyzer -> Analyze(data);
@@ -55,6 +69,53 @@ void SKSetSiChannelTask::Exec(Option_t*)
             auto pedestal = fChannelAnalyzer -> GetPedestal();
             auto energy = fChannelAnalyzer -> GetAmplitude(0);
             auto time = fChannelAnalyzer -> GetTbHit(0);
+
+            bool isSaturated = false;
+            if (isInverted)
+            {
+                for (auto t=0; t<512; ++t) {
+                    if (data[t]==0) {
+                        isSaturated = true;
+                        break;
+                    }
+                }
+            }
+            else {
+                for (auto t=0; t<512; ++t) {
+                    if (data[t]==4095) {
+                        isSaturated = true;
+                        break;
+                    }
+                }
+            }
+
+            if (isSaturated)
+            {
+                double t1 = time-10; if (t1<0) t1 = 0;
+                double t2 = time+5; if (t2>512) t2 = 512;
+                fSlopeFit -> SetRange(t1,t2);
+                fSlopeFit -> SetParameters(time-5,time,energy,pedestal);
+                if (isInverted) {
+                    for (auto tb=0; tb<512; ++tb)
+                        fHistBuffer -> SetBinContent(tb+1,4095-data[tb]);
+                }
+                else {
+                    for (auto tb=0; tb<512; ++tb)
+                        fHistBuffer -> SetBinContent(tb+1,data[tb]);
+                }
+                fHistBuffer -> Fit(fSlopeFit,"QN0");
+                double a0 = fSlopeFit -> GetParameter(0);
+                double a1 = fSlopeFit -> GetParameter(1);
+                double a2 = fSlopeFit -> GetParameter(2);
+                double slope = a2 / (a1-a0);
+                double energy2 = -1.90397 + 9.39922*slope;
+                //lk_debug << "bad: " << channel -> GetCAAC() << " : " << energy << " -> " << energy2 << endl;
+                energy = energy2;
+            }
+            else {
+                //lk_debug << "goo: " << channel -> GetCAAC() << " : " << energy << endl;
+            }
+
             siChannel1 -> SetPedestal(pedestal);
             siChannel1 -> SetEnergy(energy);
             siChannel1 -> SetTime(time);
@@ -85,8 +146,8 @@ void SKSetSiChannelTask::Exec(Option_t*)
                         siChannel2 -> SetPairArrayIndex(siChannel1 -> GetChannelID());
                         siChannel2 -> SetEnergy2(siChannel1->GetEnergy());
                     }
-                    if (siChannel1->GetEnergy()==siChannel2->GetEnergy())
-                        lk_debug << "1=(" << siChannel1->GetLocalID() << ") " << siChannel1->GetEnergy() << " 2=(" << siChannel2->GetLocalID() << ") " << siChannel2->GetEnergy() << endl;
+                    //if (siChannel1->GetEnergy()==siChannel2->GetEnergy())
+                        //lk_debug << "1=(" << siChannel1->GetLocalID() << ") " << siChannel1->GetEnergy() << " 2=(" << siChannel2->GetLocalID() << ") " << siChannel2->GetEnergy() << endl;
                 }
             }
         }
