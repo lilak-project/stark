@@ -69,7 +69,7 @@ void SKEnergyRestorationTask::Exec(Option_t*)
         auto side = siChannel -> GetSide();
         auto siDetector = fStarkPlane -> GetSiDetector(det);
         auto isEDet = siDetector -> IsEDetector();
-        auto dEEPairID = siDetector -> GetRow();
+        bool dEEPairID = (siDetector->GetLayer()<2);
         auto radiusRing = siDetector -> GetRadius();
         auto pairID = fStarkPlane -> FindEPairDetectorID(det);
         if (side==1) continue;
@@ -169,6 +169,9 @@ void SKEnergyRestorationTask::Exec(Option_t*)
                 siHit -> SetEnergyOhmic(energy);
             }
         }
+        //if (siHit -> IsdEDetector())
+        //{
+        //}
     }
 
     lk_info << "Number of si-hits = " << countHits << endl;
