@@ -70,6 +70,7 @@ void SKEnergyRestorationTask::Exec(Option_t*)
         auto siDetector = fStarkPlane -> GetSiDetector(det);
         auto isEDet = siDetector -> IsEDetector();
         auto dEEPairID = siDetector -> GetRow();
+        auto radiusRing = siDetector -> GetRadius();
         auto pairID = fStarkPlane -> FindEPairDetectorID(det);
         if (side==1) continue;
         auto strip = siChannel -> GetStrip();
@@ -82,7 +83,6 @@ void SKEnergyRestorationTask::Exec(Option_t*)
         {
             double g0 = fg0Array[det][side][strip];
             double energy = energy1 * g0;
-            double pos = 0;
             if (energy>0) {
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
@@ -103,7 +103,8 @@ void SKEnergyRestorationTask::Exec(Option_t*)
                 siHit -> SetTheta(theta);
             }
         }
-        else if (siChannel -> IsPairedChannel() && energy2>0) {
+        else if (siChannel -> IsPairedChannel() && energy1>0 && energy2>0)
+        {
             double g1 = fg1Array[det][side][strip];
             double g2 = fg2Array[det][side][strip];
             double b0 = fb0Array[det][side][strip];
@@ -114,17 +115,25 @@ void SKEnergyRestorationTask::Exec(Option_t*)
             double energy = energy1 + energy2;
             double pos = (energy1 - energy2) / energy;
             energy = energy / (b0 + b1*pos + b2*pos*pos) * f241AmAlphaEnergy1;
+            pos = pos / 0.8; // TODO @todo
+            //pos = pos / 0.7; // TODO @todo
             if (energy>0) {
                 auto siHit = (SKSiHit*) fHitArray -> ConstructedAt(countHits++);
                 siHit -> SetDetID(det);
                 siHit -> SetdEDetID(pairID);
-                if (isEDet) {
+                if (det>=0&&det<12)
+                {
                     siHit -> SetEnergy(energy);
                     siHit -> SetIsEDetector(true);
                 }
-                else {
+                else if (det>=28)
+                {
                     siHit -> SetdE(energy);
                     siHit -> SetIsEDetector(false);
+                }
+                else {
+                    siHit -> SetEnergy(energy);
+                    siHit -> SetIsEDetector(true);
                 }
                 if (dEEPairID) siHit -> SetIsEPairDetector(true);
                 else siHit -> SetIsEPairDetector(false);
@@ -134,6 +143,7 @@ void SKEnergyRestorationTask::Exec(Option_t*)
                 siHit -> SetJunctionStrip(strip);
                 siHit -> SetStripPosition(position);
                 siHit -> SetPhi(phi);
+                theta = TMath::RadToDeg()*TMath::ATan(radiusRing/siHit->GetFinalZ(75));
                 siHit -> SetTheta(theta);
             }
         }

@@ -53,6 +53,7 @@ class SKSiHit : public LKContainer
             fdEDetID = -1;
             fJunctionStrip = -1;
             fOhmicStrip = -1;
+            fInGate = true;
             fIsEPairDetector = false;
             fIsEDetector = true;
             fdE = 0;
@@ -88,6 +89,7 @@ class SKSiHit : public LKContainer
             e_cout << "    - fJunctionStrip   = " << fJunctionStrip   << std::endl;
             e_cout << "    - fOhmicStrip      = " << fOhmicStrip      << std::endl;
             e_cout << "    - fIsEPairDetector = " << fIsEPairDetector << std::endl;
+            e_cout << "    - fInGate          = " << fInGate          << std::endl;
             e_cout << "    - fIsEDetector     = " << fIsEDetector     << std::endl;
             e_cout << "    - fdE              = " << fdE              << std::endl;
             e_cout << "    - fEnergy          = " << fEnergy          << std::endl;
@@ -106,6 +108,7 @@ class SKSiHit : public LKContainer
         void SetJunctionStrip(int id) { fJunctionStrip = id; }
         void SetOhmicStrip(int id) { fOhmicStrip = id; }
         void SetIsEPairDetector(int isPair) { fIsEPairDetector = isPair; }
+        void SetInGate(int in) { fInGate = in; }
         void SetIsEDetector(int isE) { fIsEDetector = isE; }
         void SetdE(double de) { fdE = de; }
         void SetEnergy(double energy ) { fEnergy = energy; }
@@ -127,6 +130,7 @@ class SKSiHit : public LKContainer
         bool IsEPairAndBothdEE() const { return (fIsEPairDetector && fdE>0 && fEnergy>0); } ///< Is dEE-pair detector and both dE and E energies are left
         bool IsEPairDetector() const { return fIsEPairDetector; }     ///< Hit is in 12-ring detector where dE-E detectors are paired. This doesn’t mean both dE and E energy are found.
         bool IsNotEPairDetector() const { return !fIsEPairDetector; } ///< Hit is in 16-ring detector where only E detectors are used.
+        bool InGate() const { return fInGate; }
         bool IsEDetector() const { return fIsEDetector; } ///< Hit belong to the E-detector
         bool IsdEDetector() const { return (!fIsEDetector); } ///< Hit belong to the dE-detector
         double GetdE() const { return fdE; } ///< Energy left in dE-detector
@@ -144,11 +148,14 @@ class SKSiHit : public LKContainer
         double GetPhi() const { return fPhi; } ///< Phi angle of the detector
         double GetTheta() const { return fTheta; } ///< Theta angle of the detector
 
+        bool fGrab = false; //!
     protected:
         int fDetID; ///< detector id
         int fdEDetID; ///< de detector id
+        //int fEPairID;
         int fJunctionStrip; ///< strip number of fired junction
         int fOhmicStrip; ///< strip number of fired ohmic
+        bool fInGate; ///< true: hit is on gate, false: hit is off gate.
         bool fIsEPairDetector; ///< true: detector is paired with dE-E detectors, false: no dE-detector is use.
         bool fIsEDetector; ///< true: E-detector, false: dE-detector
         double fdE; ///< dE
@@ -162,7 +169,7 @@ class SKSiHit : public LKContainer
         double fPhi; ///< phi
         double fTheta; ///< theta
 
-    ClassDef(SKSiHit,2);
+    ClassDef(SKSiHit,3);
 };
 
 #endif
