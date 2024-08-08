@@ -25,11 +25,11 @@ bool SKSetSiChannelTask::Init()
 
     fChannelAnalyzer = new LKChannelAnalyzer();
     //fChannelAnalyzer -> SetPulse(pulseFileName);
-    fChannelAnalyzer -> Print();
+    //fChannelAnalyzer -> Print();
 
     fChannelAnalyzer2 = new LKChannelAnalyzer();
     fChannelAnalyzer2 -> SetPulse(pulseFileName);
-    fChannelAnalyzer2 -> Print();
+    //fChannelAnalyzer2 -> Print();
 
     fSlopeFit = new TF1("SlopeFit","[3]+(x>[0]&&x<[1])*([2]/([1]-[0]))*(x-[0])+(x>[1]&&x<[1]+4)*[2]",0,512);
 
