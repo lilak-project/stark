@@ -1,0 +1,206 @@
+     fMapCAACToChannelIndex = new int***[fNumCobo];
+     for(int i=0; i<fNumCobo; ++i) {
+@@ -468,17 +470,21 @@ TH2* SKSiArrayPlane::GetHistUserDrawing(Option_t *option)
+ bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw)
+ {
+     TString label1;
++    int type;
+     if (detID<0 && joID<0) {
+         label1 = label;
+-        lk_info << "adding: " << label << " det=" << detID << "(" << (joID==0?"Junction":"Ohmic") << ") containing " << userDrawingArray->GetEntries() << " drawings" << endl;
++        type = 0;
++        lk_info << "adding: " << label << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+     }
+     else if (joID<0) {
+         label1 = Form("%s_%d",label.Data(),detID);
++        type = 1;
+         lk_info << "adding: " << label << " det=" << detID << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+     }
+     else {
+         label1 = Form("%s_%d_%d",label.Data(),detID,joID);
+-        lk_info << "adding: " << label << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
++        type = 2;
++        lk_info << "adding: " << label << " det=" << detID << "(" << (joID==0?"Junction":"Ohmic") << ") containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+     }
+ 
+     if (label.Index(" ")>=0)
+@@ -509,11 +515,16 @@ bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArr
+     }
+     if (isNewLabel) {
+         fUserDrawingName[ucTab][ucBin] = label;
++        fUserDrawingType[ucTab][ucBin] = type;
+         lk_info << "new label: " << ucTab << " " << ucBin << " " << fUserDrawingName[ucTab][ucBin] << endl;
+-        if (label=="waveform")
++        if (label=="waveform") {
+             fSelUDBin = ucBin+2;
+-        else if (fSelUDBin<0)
++            fSelUDIndex = fSelUDBin - 2;
++        }
++        else if (fSelUDBin<0) {
+             fSelUDBin = ucBin+2;
++            fSelUDIndex = ucBin - 2;
++        }
+         fNumUDLabels++;
+     }
+ 
+@@ -572,14 +583,36 @@ void SKSiArrayPlane::UpdateUserDrawing()
+         int selJOID = fSelJOID;
+         if (selJOID<0)
+             selJOID = 0;
+-        fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDBin-2][fSelDetID][selJOID];
+-        fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDBin-2][fSelDetID][selJOID];
++
++        // collecting entries for all detectors
++        if (fUserDrawingType[fSelUDTab][fSelUDBin]==1)
++        {
++            for (auto iDetector=0; iDetector<40; ++iDetector)
++            {
++                auto id = fUserDrawingArrayIndex[fSelUDTab][fSelUDIndex][iDetector][selJOID];
++                auto array = (TObjArray*) fUserDrawingArrayCollection -> At(id);
++                auto numDrawings = array -> GetEntries();
++                fUserDrawingEntries[iDetector] = 0;
++                for (auto iDrawing=0; iDrawing<numDrawings; ++iDrawing)
++                {
++                    auto obj = array -> At(iDrawing);
++                    if (obj -> InheritsFrom(TH1::Class())) {
++                        auto hist = (TH1*) obj;
++                        auto entries = hist -> GetEntries();
++                        fUserDrawingEntries[iDetector] += entries;
++                    }
++                }
++            }
++        }
++
++        fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDIndex][fSelDetID][selJOID];
++        fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDIndex][fSelDetID][selJOID];
+         auto selUDArray = (TObjArray*) fUserDrawingArrayCollection -> At(fSelUDArrayID);
+-        //lk_debug << endl;
++
+         if (selUDArray==nullptr) {
+             for (auto selDetID=0; selDetID<40; ++selDetID) {
+-                fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDBin-2][selDetID][selJOID];
+-                fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDBin-2][selDetID][selJOID];
++                fSelUDArrayID = fUserDrawingArrayIndex[fSelUDTab][fSelUDIndex][selDetID][selJOID];
++                fSelUDLeastNDraw = fUserDrawingLeastNDraw[fSelUDTab][fSelUDIndex][selDetID][selJOID];
+                 selUDArray = (TObjArray*) fUserDrawingArrayCollection -> At(fSelUDArrayID);
+                 if (selUDArray!=nullptr) {
+                     fSelDetID = selDetID;
+@@ -596,49 +629,48 @@ void SKSiArrayPlane::UpdateUserDrawing()
+             fNumSelUDGroup = (fNumDrawingsInArray / fNumDataDisplays) + 1;
+             fSelControlDDPage = 0;
+ 
+-            {
+-                for (auto i=0; i<10; ++i)
+-                    for (auto j=0; j<16; ++j)
+-                        fUDGoodIndex[i][j] = -1;
+-                fNumGoodDrawings = 0;
+-                auto numGoodDrawingsInPage = 0;
+-                fNumUDPage = 1;
++            for (auto i=0; i<10; ++i)
++                for (auto j=0; j<16; ++j)
++                    fUDGoodIndex[i][j] = -1;
+ 
+-                if (fNumDrawingsInArray==fSelUDLeastNDraw)
+-                {
+-                    for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing) {
+-                        fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
+-                        fNumGoodDrawings++;
+-                        numGoodDrawingsInPage++;
+-                        if (numGoodDrawingsInPage>=fNumDataDisplays) {
+-                            numGoodDrawingsInPage = 0;
+-                            fNumUDPage++;
+-                        }
++            fNumGoodDrawings = 0;
++            auto numGoodDrawingsInPage = 0;
++            fNumUDPage = 1;
++            for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing)
++            {
++                bool good = false;
++                auto obj = fSelUDArray -> At(iDrawing);
++                if (obj -> InheritsFrom(TH1::Class())) {
++                    auto hist = (TH1*) obj;
++                    if (hist -> GetEntries()>0)
++                        good = true;
++                }
++                if (good) {
++                    fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
++                    fNumGoodDrawings++;
++                    numGoodDrawingsInPage++;
++                    if (numGoodDrawingsInPage>=fNumDataDisplays) {
++                        numGoodDrawingsInPage = 0;
++                        fNumUDPage++;
+                     }
+                 }
+-                else
+-                {
+-                    for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing)
+-                    {
+-                        bool good = false;
+-                        auto obj = fSelUDArray -> At(iDrawing);
+-                        if (obj -> InheritsFrom(TH1::Class())) {
+-                            auto hist = (TH1*) obj;
+-                            if (hist -> GetEntries()>0)
+-                                good = true;
+-                        }
+-                        if (good) {
+-                            fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
+-                            fNumGoodDrawings++;
+-                            numGoodDrawingsInPage++;
+-                            if (numGoodDrawingsInPage>=fNumDataDisplays) {
+-                                numGoodDrawingsInPage = 0;
+-                                fNumUDPage++;
+-                            }
+-                        }
+-                        else {
+-                            lk_info << "Skipping " << obj -> GetName() << " because there is no entries." << endl;
+-                        }
++                else {
++                    lk_info << "Skipping " << obj -> GetName() << " because there is no entries." << endl;
++                }
++            }
++
++            if (fNumDrawingsInArray==fSelUDLeastNDraw)
++            {
++                fNumGoodDrawings = 0;
++                numGoodDrawingsInPage = 0;
++                fNumUDPage = 1;
++                for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing) {
++                    fUDGoodIndex[fNumUDPage-1][numGoodDrawingsInPage] = iDrawing;
++                    fNumGoodDrawings++;
++                    numGoodDrawingsInPage++;
++                    if (numGoodDrawingsInPage>=fNumDataDisplays) {
++                        numGoodDrawingsInPage = 0;
++                        //fNumUDPage++;
+                     }
+                 }
+             }
+@@ -1185,7 +1217,10 @@ void SKSiArrayPlane::FillDataToHistEventDisplay1(Option_t *option)
+             {
+                 auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
+                 if (fAccumulateEvents>0) {
+-                    siDetector -> FillHistCount();
++                    //if (fUserDrawingType[fSelUDTab][fSelUDIndex]==1)
++                    //    siDetector -> FillHistValue(fUserDrawingEntries[iDetector]);
++                    //else
++                        siDetector -> FillHistCount();
+                 }
+                 else {
+                     auto histJ = siDetector -> GetHistJunction();
+@@ -1476,6 +1511,7 @@ void SKSiArrayPlane::ClickedUserDrawing(double xOnClick, double yOnClick)
+                 fSelUDTab++;
+             lk_info << "Toggled next menu " << fSelUDTab << endl;
+             fSelUDBin = selectedBinX;
++            fSelUDIndex = selectedBinX - 2;
+         }
+     }
+     else if (fSelUDBin!=selectedBinX) {
+@@ -1484,7 +1520,8 @@ void SKSiArrayPlane::ClickedUserDrawing(double xOnClick, double yOnClick)
+             return;
+         }
+         fSelUDBin = selectedBinX;
+-        lk_info << "Toggled " << fUserDrawingName[fSelUDTab][fSelUDBin-2] << endl;
++        fSelUDIndex = selectedBinX - 2;
++        lk_info << "Toggled " << fUserDrawingName[fSelUDTab][fSelUDIndex] << endl;
+         UpdateUserDrawing();
+     }
+ }

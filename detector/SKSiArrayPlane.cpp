@@ -551,7 +551,6 @@ void SKSiArrayPlane::UpdateUserDrawing()
     if (UpdateFlag[kUpdateUserDrawing]) return;
     else UpdateFlag[kUpdateUserDrawing] = true;
 
-    lk_info << fSignalUDTabChange << endl;
     if (fSignalUDTabChange)
     {
         fSignalUDTabChange = false;
