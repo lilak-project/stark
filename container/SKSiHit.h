@@ -148,6 +148,22 @@ class SKSiHit : public LKContainer
         double GetPhi() const { return fPhi; } ///< Phi angle of the detector
         double GetTheta() const { return fTheta; } ///< Theta angle of the detector
 
+        double GetQvalue(double massNoProton, double massNoAr, double beamEnergy, double energy=0, double theta=-9999)
+        {
+            if (energy==0) energy = fEnergy;
+            if (energy<-999) energy = fdE;
+            if (theta<-999) theta = fTheta;
+            double E_beam = beamEnergy * massNoAr;
+            double value1 = energy * (1 + massNoProton/massNoAr);
+            double value2 = E_beam * (1 - massNoAr/massNoAr);
+            double value3 = TMath::Sqrt(massNoAr * massNoProton * E_beam * energy);
+            double value4 = TMath::Cos(theta*TMath::DegToRad());
+            double value = value1 - value2 - 2/massNoAr * value3 * value4;
+            return value;
+        }
+        double GetQvalueE (double massNoProton, double massNoAr, double beamEnergy) { return GetQvalue(massNoProton, massNoAr, beamEnergy, 0); }
+        double GetQvaluedE(double massNoProton, double massNoAr, double beamEnergy) { return GetQvalue(massNoProton, massNoAr, beamEnergy, -1); }
+
         bool fGrab = false; //!
     protected:
         int fDetID; ///< detector id
