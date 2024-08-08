@@ -56,7 +56,9 @@ class SKSiHit : public LKContainer
             fInGate = true;
             fIsEPairDetector = false;
             fIsEDetector = true;
+            fKeyEnergy = 0;
             fdE = 0;
+            fdEOhmic = 0;
             fEnergy = 0;
             fEnergyLeft = 0;
             fEnergyRight = 0;
@@ -69,17 +71,6 @@ class SKSiHit : public LKContainer
         }
 
         virtual void Print(Option_t *option="") const {
-            TString title;
-            if (IsEPairAndOnlydE())   { title = "dEE-pair (+dE)"; }
-            if (IsEPairAndOnlyE())    { title = "dEE-pair (+E)"; }
-            if (IsEPairAndBothdEE())  { title = "dEE-pair (+dE,E)"; }
-            if (IsEPairDetector())    { title = "dEE-pair"; }
-            if (IsNotEPairDetector()) { title = "single"; }
-            e_info << "[SiHit] " <<  title
-                << ", det=" << fDetID
-                << ", E=" << fEnergy
-                << ", dE=" << fdE
-                << std::endl;
         }
 
         void PrintAll() const {
@@ -91,7 +82,9 @@ class SKSiHit : public LKContainer
             e_cout << "    - fIsEPairDetector = " << fIsEPairDetector << std::endl;
             e_cout << "    - fInGate          = " << fInGate          << std::endl;
             e_cout << "    - fIsEDetector     = " << fIsEDetector     << std::endl;
+            e_cout << "    - fKeyEnergy       = " << fKeyEnergy       << std::endl;
             e_cout << "    - fdE              = " << fdE              << std::endl;
+            e_cout << "    - fdEohmic         = " << fdEOhmic         << std::endl;
             e_cout << "    - fEnergy          = " << fEnergy          << std::endl;
             e_cout << "    - fEnergyLeft      = " << fEnergyLeft      << std::endl;
             e_cout << "    - fEnergyRight     = " << fEnergyRight     << std::endl;
@@ -110,7 +103,9 @@ class SKSiHit : public LKContainer
         void SetIsEPairDetector(int isPair) { fIsEPairDetector = isPair; }
         void SetInGate(int in) { fInGate = in; }
         void SetIsEDetector(int isE) { fIsEDetector = isE; }
+        void SetKeyEnergy(double e) { fKeyEnergy = e; }
         void SetdE(double de) { fdE = de; }
+        void SetdEOhmic(double de) { fdEOhmic = de; }
         void SetEnergy(double energy ) { fEnergy = energy; }
         void SetEnergyLeft(double energy ) { fEnergyLeft = energy; }
         void SetEnergyRight(double energy ) { fEnergyRight = energy; }
@@ -125,18 +120,27 @@ class SKSiHit : public LKContainer
         int GetdEDetID() const { return fdEDetID; }
         int GetJunctionStrip() const { return fJunctionStrip; }
         int GetOhmicStrip() const { return fOhmicStrip; }
+
         bool IsEPairAndOnlydE()  const { return (fIsEPairDetector && fEnergy==0); } ///< Is dEE-pair detector but only dE energy is left
         bool IsEPairAndOnlyE()   const { return (fIsEPairDetector && fdE==0); } ///< Is dEE-pair detector but only E energy is left
         bool IsEPairAndBothdEE() const { return (fIsEPairDetector && fdE>0 && fEnergy>0); } ///< Is dEE-pair detector and both dE and E energies are left
+
+        bool IsEPairAndOnlyOhmicdE()  const { return (fIsEPairDetector && fEnergyOhmic==0); }
+        bool IsEPairAndOnlyOhmicE()   const { return (fIsEPairDetector && fdEOhmic==0); }
+        bool IsEPairAndBothOhmicdEE() const { return (fIsEPairDetector && fdEOhmic>0 && fEnergyOhmic>0); }
+
         bool IsEPairDetector() const { return fIsEPairDetector; }     ///< Hit is in 12-ring detector where dE-E detectors are paired. This doesn’t mean both dE and E energy are found.
         bool IsNotEPairDetector() const { return !fIsEPairDetector; } ///< Hit is in 16-ring detector where only E detectors are used.
         bool InGate() const { return fInGate; }
         bool IsEDetector() const { return fIsEDetector; } ///< Hit belong to the E-detector
         bool IsdEDetector() const { return (!fIsEDetector); } ///< Hit belong to the dE-detector
+        double GetKeyEnergy() const { return fKeyEnergy; } ///< Energy left in dE-detector
         double GetdE() const { return fdE; } ///< Energy left in dE-detector
+        double GetdEOhmic() const { return fdEOhmic; } ///< Energy left in dE-detector
         double GetE() const { return fEnergy; } ///< Energy left in E-detector
         double GetEnergy() const { return fEnergy; } ///< Same as GetE()
         double GetEnergyTotal() const { return fEnergy+fdE; } ///< dE+E
+        double GetEnergyTotalOhmic() const { return fEnergyOhmic+fdEOhmic; } ///< dE+E
         double GetEnergyLeft() const { return fEnergyLeft; }
         double GetEnergyRight() const { return fEnergyRight; }
         double GetEnergyOhmic() const { return fEnergyOhmic; }
@@ -174,7 +178,9 @@ class SKSiHit : public LKContainer
         bool fInGate; ///< true: hit is on gate, false: hit is off gate.
         bool fIsEPairDetector; ///< true: detector is paired with dE-E detectors, false: no dE-detector is use.
         bool fIsEDetector; ///< true: E-detector, false: dE-detector
+        double fKeyEnergy; ///< Representative energy
         double fdE; ///< dE
+        double fdEOhmic; ///< energy of ohmic side
         double fEnergy; ///< E
         double fEnergyLeft; ///< energy of downstream side
         double fEnergyRight; ///< energy of upstream side
