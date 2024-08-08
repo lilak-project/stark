@@ -131,6 +131,8 @@ class SKSiArrayPlane : public LKEvePlane
         int ****fUserDrawingArrayIndex; // [4][7][40][2] menu-tab, menu-number, detector-number, junction/ohmic
         int ****fUserDrawingLeastNDraw; // [4][7][40][2]
         TString fUserDrawingName[4][10];
+        int fUserDrawingType[4][10];
+        double fUserDrawingEntries[40] = {0};
 
         TPad* fPadControlDDPage = nullptr;
         int fBinCtrlPrevPage;
@@ -148,6 +150,7 @@ class SKSiArrayPlane : public LKEvePlane
 
         int fSelUDTab = 0;
         int fSelUDBin = -1;
+        int fSelUDIndex = -1;
         int fNumUDLabels = 0;
         int fUDGoodIndex[10][16];
         int fNumDrawingsInArray = 0;

@@ -33,8 +33,6 @@ SKSiArrayPlane::SKSiArrayPlane(const char *name, const char *title)
 
 bool SKSiArrayPlane::Init()
 {
-    fEnergyMax = -1;
-
     LKEvePlane::Init();
 
     if (fDetName.IsNull())
@@ -69,8 +67,10 @@ bool SKSiArrayPlane::Init()
     }
 
     for(int i=0; i<4; ++i)
-        for(int j=0; j<10; ++j)
+        for(int j=0; j<10; ++j) {
             fUserDrawingName[i][j] = "";
+            fUserDrawingType[i][j] = -1;
+        }
 
     fMapCAACToChannelIndex = new int***[fNumCobo];
     for(int i=0; i<fNumCobo; ++i) {
@@ -206,6 +206,8 @@ bool SKSiArrayPlane::Init()
         if (fMaxPhi < phi2) fMaxPhi = phi2;
     }
 
+    //for (auto i=0; i<12; ++i) lk_debug << i << " " << fdEEPairMapping[i][0] << " " << fdEEPairMapping[i][1] << endl;
+
     ifstream fileCAACMap(fMappingFileName);
     if (!fileCAACMap.is_open()) {
         lk_error << "Cannot open " << fMappingFileName << endl;
@@ -297,7 +299,7 @@ void SKSiArrayPlane::Print(Option_t *option) const
     for (auto iDetector=0; iDetector<numDetectors; ++iDetector)
     {
         auto siDetector = (LKSiDetector*) fDetectorArray -> At(iDetector);
-        siDetector -> Print();
+        //siDetector -> Print();
     }
 }
 
@@ -470,15 +472,15 @@ bool SKSiArrayPlane::AddUserDrawings(TString label, int detID, int joID, TObjArr
     TString label1;
     if (detID<0 && joID<0) {
         label1 = label;
-        lk_info << "adding: " << label << " det=" << detID << "(" << (joID==0?"Junction":"Ohmic") << ") containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+        //lk_info << "adding: " << label << " det=" << detID << "(" << (joID==0?"Junction":"Ohmic") << ") containing " << userDrawingArray->GetEntries() << " drawings" << endl;
     }
     else if (joID<0) {
         label1 = Form("%s_%d",label.Data(),detID);
-        lk_info << "adding: " << label << " det=" << detID << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+        //lk_info << "adding: " << label << " det=" << detID << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
     }
     else {
         label1 = Form("%s_%d_%d",label.Data(),detID,joID);
-        lk_info << "adding: " << label << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
+        //lk_info << "adding: " << label << " containing " << userDrawingArray->GetEntries() << " drawings" << endl;
     }
 
     if (label.Index(" ")>=0)
@@ -549,6 +551,7 @@ void SKSiArrayPlane::UpdateUserDrawing()
     if (UpdateFlag[kUpdateUserDrawing]) return;
     else UpdateFlag[kUpdateUserDrawing] = true;
 
+    lk_info << fSignalUDTabChange << endl;
     if (fSignalUDTabChange)
     {
         fSignalUDTabChange = false;
@@ -564,6 +567,8 @@ void SKSiArrayPlane::UpdateUserDrawing()
         }
         fPadCtrlUserDrawing -> cd();
         fHistCtrlUserDrawing -> Draw("col text");
+        fPadCtrlUserDrawing -> Modified();
+        fPadCtrlUserDrawing -> Update();
     }
     else if (fSignalUDBinChange && fSelUDBin>=2)
     {
@@ -683,7 +688,7 @@ TH2* SKSiArrayPlane::GetHistEventDisplay1(Option_t *option)
             double layer1 = fLayerYScale * (layer + fLayerYOffset);
             double layer2 = fLayerYScale * (layer + 1 - fLayerYOffset);
             auto bin = histDetectors -> AddBin(phi1, layer1, phi2, layer2);
-            histDetectors -> SetBinContent(bin,iDetector);
+            histDetectors -> SetBinContent(bin,siDetector -> GetDetID());
             fMapBinToDetector[bin] = iDetector;
             //histDetectors -> SetBinContent(bin,iDetector);
         }
@@ -1485,8 +1490,8 @@ void SKSiArrayPlane::ClickedUserDrawing(double xOnClick, double yOnClick)
         }
         fSelUDBin = selectedBinX;
         lk_info << "Toggled " << fUserDrawingName[fSelUDTab][fSelUDBin-2] << endl;
-        UpdateUserDrawing();
     }
+    UpdateUserDrawing();
 }
 
 int SKSiArrayPlane::FindPadID(int cobo, int asad, int aget, int chan)
@@ -1584,6 +1589,7 @@ int SKSiArrayPlane::FindEPairDetectorID(int det)
 {
     auto detector = GetSiDetector(det);
     auto polarID = detector -> GetRow();
+    //lk_debug << "FindEPairDetectorID " << det << " " << polarID << " " << fdEEPairMapping[polarID][0] << " " << fdEEPairMapping[polarID][1] << endl;
     if (detector->GetLayer()>1)
         return -1;
     if (detector->IsEDetector())
