@@ -40,8 +40,6 @@ void SKPairMatchingTask::Exec(Option_t*)
                         continue; // TODO
                     if (pairID==siHit2->GetDetID())
                     {
-                        //lk_debug << iHit << " " << jHit << " .. " << siHit1 -> GetDetID() << "(" << pairID << ")" << ", " <<  siHit2 -> GetDetID() << " :  " << siHit1 -> GetEnergy() << " " << siHit1 -> GetdE() << ", " << siHit2 -> GetEnergy() << " " << siHit2 -> GetdE() << endl;
-
                         SKSiHit *siHit_dE = nullptr;
                         SKSiHit *siHit_E = nullptr;
                         if (siHit1->IsEDetector()) {
@@ -53,20 +51,24 @@ void SKPairMatchingTask::Exec(Option_t*)
                             siHit_dE = siHit1;
                         }
 
-                        if (siHit_dE->fGrab) {
+                        if (siHit_dE->IsGrabbed()) {
                             double energyPrev = siHit_dE -> GetEnergy();
                             double energy = siHit_E -> GetEnergy();
                             if (energy>energyPrev)
                             {
                                 siHit_E -> SetdE(siHit_dE->GetdE());
+                                siHit_E -> SetdEOhmic(siHit_dE->GetEnergyOhmic());
+                                siHit_E -> SetRelativeZdE(siHit_dE->GetRelativeZ());
                                 siHit_dE -> SetEnergy(siHit_E->GetEnergy());
-                                siHit_dE -> fGrab = true;
+                                siHit_dE -> Grab();
                             }
                         }
                         else {
                             siHit_E -> SetdE(siHit_dE->GetdE());
+                            siHit_E -> SetdEOhmic(siHit_dE->GetEnergyOhmic());
+                            siHit_E -> SetRelativeZdE(siHit_dE->GetRelativeZ());
                             siHit_dE -> SetEnergy(siHit_E->GetEnergy());
-                            siHit_dE -> fGrab = true;
+                            siHit_dE -> Grab();
                         }
                     }
                 }
@@ -77,8 +79,7 @@ void SKPairMatchingTask::Exec(Option_t*)
     for (auto iHit=0; iHit<numHits; ++iHit)
     {
         auto siHit = (SKSiHit*) fHitArray -> At(iHit);
-        //if (siHit->GetdE()>0 && siHit->GetE()<0)
-        if (siHit->fGrab)
+        if (siHit->IsGrabbed())
             fHitArray -> Remove(siHit);
     }
 
