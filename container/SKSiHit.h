@@ -48,56 +48,13 @@ class SKSiHit : public LKContainer
         SKSiHit();
         virtual ~SKSiHit() { ; }
 
-        virtual void Clear(Option_t *option="") {
-            fDetID = -1;
-            fdEDetID = -1;
-            fJunctionStrip = -1;
-            fOhmicStrip = -1;
-            fInGate = true;
-            fIsEPairDetector = false;
-            fIsEDetector = true;
-            fKeyEnergy = 0;
-            fdE = 0;
-            fdEOhmic = 0;
-            fEnergy = 0;
-            fEnergyLeft = 0;
-            fEnergyRight = 0;
-            fEnergyOhmic = 0;
-            fStripPosition = TVector3();
-            fRelativeZ = -999;
-            fX = -999;
-            fPhi = -999;
-            fTheta = -999;
-        }
-
-        virtual void Print(Option_t *option="") const {
-        }
-
-        void PrintAll() const {
-            e_info << "[SiHit] " << std::endl;
-            e_cout << "    - fDetID           = " << fDetID           << std::endl;
-            e_cout << "    - fdEDetID         = " << fdEDetID         << std::endl;
-            e_cout << "    - fJunctionStrip   = " << fJunctionStrip   << std::endl;
-            e_cout << "    - fOhmicStrip      = " << fOhmicStrip      << std::endl;
-            e_cout << "    - fIsEPairDetector = " << fIsEPairDetector << std::endl;
-            e_cout << "    - fInGate          = " << fInGate          << std::endl;
-            e_cout << "    - fIsEDetector     = " << fIsEDetector     << std::endl;
-            e_cout << "    - fKeyEnergy       = " << fKeyEnergy       << std::endl;
-            e_cout << "    - fdE              = " << fdE              << std::endl;
-            e_cout << "    - fdEohmic         = " << fdEOhmic         << std::endl;
-            e_cout << "    - fEnergy          = " << fEnergy          << std::endl;
-            e_cout << "    - fEnergyLeft      = " << fEnergyLeft      << std::endl;
-            e_cout << "    - fEnergyRight     = " << fEnergyRight     << std::endl;
-            e_cout << "    - fEnergyOhmic     = " << fEnergyOhmic     << std::endl;
-            e_cout << "    - fStripPosition   = (" << fStripPosition.X() << ", " << fStripPosition.Y() << ", " << fStripPosition.Z() << ")" << std::endl;
-            e_cout << "    - fRelativeZ       = " << fRelativeZ       << std::endl;
-            e_cout << "    - fX               = " << fX               << std::endl;
-            e_cout << "    - fPhi             = " << fPhi             << std::endl;
-            e_cout << "    - fTheta           = " << fTheta           << std::endl;
-        }
+        virtual void Clear(Option_t *option="");
+        virtual void Print(Option_t *option="") const;
+        void PrintAll() const;
 
         void SetDetID(int id) { fDetID = id; }
         void SetdEDetID(int id) { fdEDetID = id; }
+        void SetdEDetAIndex(int idx) { fdEDetAIndex = idx; }
         void SetJunctionStrip(int id) { fJunctionStrip = id; }
         void SetOhmicStrip(int id) { fOhmicStrip = id; }
         void SetIsEPairDetector(int isPair) { fIsEPairDetector = isPair; }
@@ -112,23 +69,25 @@ class SKSiHit : public LKContainer
         void SetEnergyOhmic(double energy ) { fEnergyOhmic = energy; }
         void SetStripPosition(TVector3 position) { fStripPosition = position; }
         void SetRelativeZ(double z) { fRelativeZ = z; }
+        void SetRelativeZdE(double z) { fRelativeZdE = z; }
         void SetX(double x) { fX = x; }
         void SetPhi(double phi) { fPhi = phi; }
         void SetTheta(double theta) { fTheta = theta; }
 
-        int GetDetID() const { return fDetID; }
-        int GetdEDetID() const { return fdEDetID; }
-        int GetJunctionStrip() const { return fJunctionStrip; }
-        int GetOhmicStrip() const { return fOhmicStrip; }
 
         bool IsEPairAndOnlydE()  const { return (fIsEPairDetector && fEnergy==0); } ///< Is dEE-pair detector but only dE energy is left
         bool IsEPairAndOnlyE()   const { return (fIsEPairDetector && fdE==0); } ///< Is dEE-pair detector but only E energy is left
         bool IsEPairAndBothdEE() const { return (fIsEPairDetector && fdE>0 && fEnergy>0); } ///< Is dEE-pair detector and both dE and E energies are left
-
         bool IsEPairAndOnlyOhmicdE()  const { return (fIsEPairDetector && fEnergyOhmic==0); }
         bool IsEPairAndOnlyOhmicE()   const { return (fIsEPairDetector && fdEOhmic==0); }
         bool IsEPairAndBothOhmicdEE() const { return (fIsEPairDetector && fdEOhmic>0 && fEnergyOhmic>0); }
 
+
+        int GetDetID() const { return fDetID; }
+        int GetdEDetID() const { return fdEDetID; }
+        int GetdEDetAIndex() const { return fdEDetAIndex; }
+        int GetJunctionStrip() const { return fJunctionStrip; }
+        int GetOhmicStrip() const { return fOhmicStrip; }
         bool IsEPairDetector() const { return fIsEPairDetector; }     ///< Hit is in 12-ring detector where dE-E detectors are paired. This doesn’t mean both dE and E energy are found.
         bool IsNotEPairDetector() const { return !fIsEPairDetector; } ///< Hit is in 16-ring detector where only E detectors are used.
         bool InGate() const { return fInGate; }
@@ -146,41 +105,32 @@ class SKSiHit : public LKContainer
         double GetEnergyOhmic() const { return fEnergyOhmic; }
         TVector3 GetStripPosition() const { return fStripPosition; } ///< center position of the strip from the target position 
         double GetRelativeZ(double length=2) const { return fRelativeZ*length/2.; } ///< Relative z = (left-right)/(left+right) * (length/2). By default, range is from -1 to 1. If detector length is given, this is z-position from the center of center of detector-strip
+        double GetRelativeZdE(double length=2) const { return fRelativeZdE*length/2.; } ///< Relative z = (left-right)/(left+right) * (length/2). By default, range is from -1 to 1. If detector length is given, this is z-position from the center of center of detector-strip
         double GetDetectorZ() const { return fStripPosition.Z(); } ///< z-position of the detector from the target position.
         double GetFinalZ(double length) const { return GetDetectorZ() + GetRelativeZ(length); } ///< detector-z + relative-z (scaled to the detector length)
+        double GetFinalZdE(double length) const { return GetDetectorZ() + GetRelativeZdE(length); } ///< detector-z + relative-z (scaled to the detector length)
         double GetX() const { return fX; }
         double GetPhi() const { return fPhi; } ///< Phi angle of the detector
         double GetTheta() const { return fTheta; } ///< Theta angle of the detector
 
-        double GetQvalue(double massNoProton, double massNoAr, double beamEnergy, double energy=0, double theta=-9999)
-        {
-            if (energy==0) energy = fEnergy;
-            if (energy<-999) energy = fdE;
-            if (theta<-999) theta = fTheta;
-            double E_beam = beamEnergy * massNoAr;
-            double value1 = energy * (1 + massNoProton/massNoAr);
-            double value2 = E_beam * (1 - massNoAr/massNoAr);
-            double value3 = TMath::Sqrt(massNoAr * massNoProton * E_beam * energy);
-            double value4 = TMath::Cos(theta*TMath::DegToRad());
-            double value = value1 - value2 - 2/massNoAr * value3 * value4;
-            return value;
-        }
-        double GetQvalueE (double massNoProton, double massNoAr, double beamEnergy) { return GetQvalue(massNoProton, massNoAr, beamEnergy, 0); }
+        double GetQvalue(double massNoProton, double massNoAr, double beamEnergy, double energy=0, double theta=-9999);
+        double GetQvalueE(double massNoProton, double massNoAr, double beamEnergy) { return GetQvalue(massNoProton, massNoAr, beamEnergy, 0); }
         double GetQvaluedE(double massNoProton, double massNoAr, double beamEnergy) { return GetQvalue(massNoProton, massNoAr, beamEnergy, -1); }
 
-        bool fGrab = false; //!
+        void Grab(bool value=true) { fGrab = value; }
+        bool IsGrabbed() const { return fGrab; }
+
     protected:
-        int fDetID; ///< detector id
-        int fdEDetID; ///< de detector id
-        //int fEPairID;
-        int fJunctionStrip; ///< strip number of fired junction
-        int fOhmicStrip; ///< strip number of fired ohmic
+        bool fGrab = false; //!
+
         bool fInGate; ///< true: hit is on gate, false: hit is off gate.
         bool fIsEPairDetector; ///< true: detector is paired with dE-E detectors, false: no dE-detector is use.
         bool fIsEDetector; ///< true: E-detector, false: dE-detector
         double fKeyEnergy; ///< Representative energy
-        double fdE; ///< dE
-        double fdEOhmic; ///< energy of ohmic side
+
+        int fDetID; ///< detector id
+        int fJunctionStrip; ///< strip number of fired junction
+        int fOhmicStrip; ///< strip number of fired ohmic
         double fEnergy; ///< E
         double fEnergyLeft; ///< energy of downstream side
         double fEnergyRight; ///< energy of upstream side
@@ -190,6 +140,12 @@ class SKSiHit : public LKContainer
         double fX; ///< x-position (axis through width direction) within si-detector
         double fPhi; ///< phi
         double fTheta; ///< theta
+
+        int fdEDetID; ///< dE detector id
+        int fdEDetAIndex; ///< dE hit idx in dEHit clones array
+        double fdE; ///< dE
+        double fdEOhmic; ///< energy of ohmic side
+        double fRelativeZdE;
 
     ClassDef(SKSiHit,3);
 };
