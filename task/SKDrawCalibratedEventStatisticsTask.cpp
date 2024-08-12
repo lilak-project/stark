@@ -52,7 +52,7 @@ bool SKDrawCalibratedEventStatisticsTask::Init()
     auto array = new TObjArray();
     array -> Add(fHistHP[0]);
     array -> Add(fHistHP[1]);
-    fStarkPlane -> AddUserDrawings("cal_HP", -1, -1, array);
+    fStarkPlane -> AddUserDrawingArray("cal_HP", array);
 
     return true;
 }

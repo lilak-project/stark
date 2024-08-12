@@ -7,6 +7,8 @@
 
 #include "SKSetSiChannelTask.h"
 
+#include "LKPulseFitData.h"
+
 ClassImp(SKSetSiChannelTask)
 
 SKSetSiChannelTask::SKSetSiChannelTask()
@@ -19,6 +21,7 @@ bool SKSetSiChannelTask::Init()
     fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
     fRawDataArray = fRun -> GetBranchA("RawData");
     fSiChannelArray = fRun -> RegisterBranchA("SiChannel","LKSiChannel",20);
+    fFitDataArray = fRun -> RegisterBranchA("PFData","LKPulseFitData",10,false);
 
     TString pulseFileName;
     fPar -> UpdatePar(pulseFileName,"stark/pulseFile");
@@ -42,6 +45,7 @@ void SKSetSiChannelTask::Exec(Option_t*)
 {
     fSiChannelArray -> Clear("C");
 
+    int fitDataCount = 0;
     int channelCount = 0;
     auto numChannels = fRawDataArray -> GetEntries();
     for (auto iChannel=0; iChannel<numChannels; ++iChannel)
@@ -65,10 +69,12 @@ void SKSetSiChannelTask::Exec(Option_t*)
         auto data = channel -> GetWaveformY();
         fChannelAnalyzer -> Analyze(data);
         auto numRecoHits = fChannelAnalyzer -> GetNumHits();
-        if (numRecoHits>=1) {
+        if (numRecoHits>=1)
+        {
             auto pedestal = fChannelAnalyzer -> GetPedestal();
             auto energy = fChannelAnalyzer -> GetAmplitude(0);
             auto time = fChannelAnalyzer -> GetTbHit(0);
+            double energy0 = energy;
 
             bool isSaturated = false;
             if (isInverted)
@@ -89,10 +95,16 @@ void SKSetSiChannelTask::Exec(Option_t*)
                 }
             }
 
+            double t1 = 0;
+            double t2 = 512;
+            double slope = 0;
+            double a1 = 0;
+            double a0 = 0;
+
             if (isSaturated)
             {
-                double t1 = time-10; if (t1<0) t1 = 0;
-                double t2 = time+5; if (t2>512) t2 = 512;
+                t1 = time-10; if (t1<0) t1 = 0;
+                t2 = time+5; if (t2>512) t2 = 512;
                 fSlopeFit -> SetRange(t1,t2);
                 fSlopeFit -> SetParameters(time-5,time,energy,pedestal);
                 if (isInverted) {
@@ -104,10 +116,10 @@ void SKSetSiChannelTask::Exec(Option_t*)
                         fHistBuffer -> SetBinContent(tb+1,data[tb]);
                 }
                 fHistBuffer -> Fit(fSlopeFit,"QN0");
-                double a0 = fSlopeFit -> GetParameter(0);
-                double a1 = fSlopeFit -> GetParameter(1);
+                a0 = fSlopeFit -> GetParameter(0);
+                a1 = fSlopeFit -> GetParameter(1);
                 double a2 = fSlopeFit -> GetParameter(2);
-                double slope = a2 / (a1-a0);
+                slope = a2 / (a1-a0);
                 double energy2 = -1.90397 + 9.39922*slope;
                 //lk_debug << "bad: " << channel -> GetCAAC() << " : " << energy << " -> " << energy2 << endl;
                 energy = energy2;
@@ -115,6 +127,23 @@ void SKSetSiChannelTask::Exec(Option_t*)
             else {
                 //lk_debug << "goo: " << channel -> GetCAAC() << " : " << energy << endl;
             }
+
+            auto fitData = (LKPulseFitData*) fFitDataArray -> ConstructedAt(fitDataCount++);
+            fitData -> fHitIndex = channelCount;
+            fitData -> fIsSaturated = isSaturated;
+            fitData -> fNumHitsInChannel = 1;
+            //fitData -> fNDF;
+            //fitData -> fChi2;
+            fitData -> fFitRange1 = t1;
+            fitData -> fFitRange2 = t2;
+            fitData -> fTb = time;
+            //fitData -> fWidth;
+            //fitData -> fIntegral;
+            fitData -> fAmplitude = energy0;
+            fitData -> fSlope = slope;
+            fitData -> fSlopePar0 = a0;
+            fitData -> fSlopePar1 = a1;
+            fitData -> fSlopeAmplitude = energy;
 
             siChannel1 -> SetPedestal(pedestal);
             siChannel1 -> SetEnergy(energy);

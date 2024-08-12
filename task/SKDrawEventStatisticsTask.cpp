@@ -65,14 +65,14 @@ bool SKDrawEventStatisticsTask::Init()
     auto array = new TObjArray();
     array -> Add(fHistHP[0]);
     array -> Add(fHistHP[1]);
-    fStarkPlane -> AddUserDrawings("hit_pattern", -1, -1, array);
+    fStarkPlane -> AddUserDrawingArray("hit_pattern", array);
 
     fHistET[0] = new TH2D("fHistET0","Junction;theta;energy",nt,t1,t2,ne,e1,e2);
     fHistET[1] = new TH2D("fHistET1",   "Ohmic;theta;energy",nt,t1,t2,ne,e1,e2);
     auto array2 = new TObjArray();
     array2 -> Add(fHistET[0]);
     array2 -> Add(fHistET[1]);
-    fStarkPlane -> AddUserDrawings("e_vs_t", -1, -1, array2);
+    fStarkPlane -> AddUserDrawingArray("e_vs_t", array2);
 
     for (auto detID=0; detID<40; ++detID) {
         auto array3 = new TObjArray();
@@ -82,7 +82,7 @@ bool SKDrawEventStatisticsTask::Init()
             array3 -> Add(fHistEP[detID][strip]);
             array3 -> Add(fHistLR[detID][strip]);
         }
-        fStarkPlane -> AddUserDrawings("e_vs_pos", detID, -1, array3);
+        fStarkPlane -> AddUserDrawingArray("e_vs_pos", detID, array3);
     }
 
     return true;

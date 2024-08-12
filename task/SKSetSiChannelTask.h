@@ -35,6 +35,7 @@ class SKSetSiChannelTask : public LKTask
     private:
         TClonesArray *fRawDataArray = nullptr;
         TClonesArray *fSiChannelArray = nullptr;
+        TClonesArray *fFitDataArray = nullptr;
 
         TF1* fSlopeFit = nullptr;
         TH1D* fHistBuffer = nullptr;

@@ -61,7 +61,7 @@ bool SKDrawWaveformTask::Init()
                 }
             }
         }
-        fStarkPlane -> AddUserDrawings("waveform", iDetector, -1, array, 3);
+        fStarkPlane -> AddUserDrawingArray("waveform", iDetector, array, 3);
     }
 
     return true;
