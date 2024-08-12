@@ -19,7 +19,9 @@ class SKSiArrayPlane : public LKEvePlane
         //virtual void Clear(Option_t *option = "");
         //virtual void Print(Option_t *option = "") const;
         virtual bool Init();
+        virtual bool Init2();
         virtual void Print(Option_t *option="") const;
+        virtual bool EndOfRun();
 
         //virtual TVector3 GetPositionError(int padID);
 
@@ -72,9 +74,15 @@ class SKSiArrayPlane : public LKEvePlane
         virtual void UpdateDataDisplays();
         virtual void UpdateUserDrawing();
 
+        void WriteHistograms();
         void ExitEve();
 
-        bool AddUserDrawings(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw=1);
+        bool AddUserDrawingArray(TString label, int detID, int joID, TObjArray* userDrawingArray, int leastNDraw=1);
+        bool AddUserDrawingArray(TString label, int detID, TObjArray* userDrawingArray, int leastNDraw=1) { return AddUserDrawingArray(label, detID, -1, userDrawingArray, leastNDraw); }
+        bool AddUserDrawingArray(TString label, TObjArray* userDrawingArray, int leastNDraw=1) { return AddUserDrawingArray(label, -1, -1, userDrawingArray, leastNDraw); }
+
+        bool AddDrawing(TObject* drawing, TString label, int detID);
+        bool AddDrawing(TObject* drawing, TString label) { return AddDrawing(drawing, label, -1); }
 
         void FireStrip(int det, int side, int strip, double energy);
         void ClearFiredFlags();
@@ -127,7 +135,7 @@ class SKSiArrayPlane : public LKEvePlane
         TH2* fHistCtrlUserDrawing = nullptr;
         int fNumUserDrawing = 0;
         LKParameterContainer fParUserDrawing;
-        TObjArray* fUserDrawingArrayCollection = nullptr;
+        TObjArray* fUserDrawingArray = nullptr;
         int ****fUserDrawingArrayIndex; // [4][7][40][2] menu-tab, menu-number, detector-number, junction/ohmic
         int ****fUserDrawingLeastNDraw; // [4][7][40][2]
         TString fUserDrawingName[4][10];
