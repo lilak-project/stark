@@ -49,7 +49,7 @@ class SKSiHit : public LKContainer
         virtual ~SKSiHit() { ; }
 
         virtual void Clear(Option_t *option="");
-        virtual void Print(Option_t *option="") const;
+        virtual void Print(Option_t *option="") const {}
         void PrintAll() const;
 
         void SetDetID(int id) { fDetID = id; }
