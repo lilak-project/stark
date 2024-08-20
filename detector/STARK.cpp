@@ -4,7 +4,7 @@
 ClassImp(STARK);
 
 STARK::STARK()
-    :LKDetector("stark","Active target TPC for Multiple nuclear eXperiment")
+    :LKDetector("stark","")
 {
 }
 

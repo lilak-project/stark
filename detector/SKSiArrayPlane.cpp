@@ -104,6 +104,8 @@ bool SKSiArrayPlane::Init()
     //fPar -> Require(fDetName+"/DetectorPar","{lilak_common}/stark_detector_par_RAON2024_40Arp.txt","detName detType(si,...) numSides numJunctionStrips numOhmicStrips useJunctionLR useOhmicLR","",2);
     //fPar -> UpdatePar(fDetectorParName,fDetName+"/DetectorPar");
     //fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping");
+    fPar -> Require(fDetName+"/Mapping1","","","t");
+    fPar -> Require(fDetName+"/Mapping2","","","t");
     fPar -> UpdatePar(fDetectorParName,fDetName+"/Mapping1");
     fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping2");
 
@@ -148,7 +150,6 @@ bool SKSiArrayPlane::Init()
         double dphi = TMath::ATan2(detWidth/2.,detRadius)*TMath::RadToDeg();
         double phi1 = phi0 - dphi;
         double phi2 = phi0 + dphi;
-        //lk_debug << "w=" << detWidth << " r=" << detRadius << " dphi=" << dphi << " " << phi1 << " " << phi2 << endl;
         double tta1 = TMath::ATan2(detRadius,detDistance-0.5*detHeight)*TMath::RadToDeg();
         double tta2 = TMath::ATan2(detRadius,detDistance+0.5*detHeight)*TMath::RadToDeg();
         int detIndex = fDetectorArray -> GetEntries();
@@ -688,9 +689,8 @@ void SKSiArrayPlane::UpdateUserDrawing()
         int selJOID = fSelJOID;
         if (selJOID<0)
             selJOID = 0;
-
         // collecting entries for all detectors
-        if (fUserDrawingType[fSelUDTab][fSelUDBin]==1)
+        if (fUserDrawingType[fSelUDTab][fSelUDIndex]==1)
         {
             for (auto iDetector=0; iDetector<40; ++iDetector)
             {
@@ -741,6 +741,7 @@ void SKSiArrayPlane::UpdateUserDrawing()
             fNumGoodDrawings = 0;
             auto numGoodDrawingsInPage = 0;
             fNumUDPage = 1;
+            int countSkip = 0;
             for (auto iDrawing=0; iDrawing<fNumDrawingsInArray; ++iDrawing)
             {
                 bool good = false;
@@ -760,9 +761,12 @@ void SKSiArrayPlane::UpdateUserDrawing()
                     }
                 }
                 else {
-                    lk_info << "Skipping " << obj -> GetName() << " because there is no entries." << endl;
+                    countSkip++;
+                    //lk_info << "Skipping " << obj -> GetName() << " because there is no entries." << endl;
                 }
             }
+            if (countSkip>0)
+                lk_info << "Skipping " << countSkip << " drawings (with zero entries)" << endl;
 
             if (fNumDrawingsInArray==fSelUDLeastNDraw)
             {
@@ -902,7 +906,6 @@ TPad* SKSiArrayPlane::Get3DEventPad()
 
 void SKSiArrayPlane::UpdateEventDisplay1()
 {
-    lk_info << endl;
     if (UpdateFlag[kUpdateEventDisplay1]) return;
     else UpdateFlag[kUpdateEventDisplay1] = true;
 
@@ -1723,7 +1726,6 @@ int SKSiArrayPlane::FindEPairDetectorID(int det)
 {
     auto detector = GetSiDetector(det);
     auto polarID = detector -> GetRow();
-    //lk_debug << "FindEPairDetectorID " << det << " " << polarID << " " << fdEEPairMapping[polarID][0] << " " << fdEEPairMapping[polarID][1] << endl;
     if (detector->GetLayer()>1)
         return -1;
     if (detector->IsEDetector())
