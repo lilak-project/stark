@@ -109,6 +109,15 @@ bool SKSiArrayPlane::Init()
     fPar -> UpdatePar(fDetectorParName,fDetName+"/Mapping1");
     fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping2");
 
+    fPar -> Require(fDetName+"/ForceMapping","","","t/");
+    if (fPar -> CheckPar(fDetName+"/ForceMapping")) {
+        fDetectorParName = fPar -> GetParString(fDetName+"/ForceMapping",0);
+        fMappingFileName = fPar -> GetParString(fDetName+"/ForceMapping",1);
+        lk_note << "YOU FORCED MAPPING FILES BY USING PARAMETER " << fDetName+"/ForceMapping" << endl;
+        lk_note << fDetectorParName << endl;
+        lk_note << fMappingFileName << endl;
+    }
+
     ifstream fileDetector(fDetectorParName);
     if (!fileDetector.is_open()) {
         lk_error << "Cannot open " << fDetectorParName << endl;
