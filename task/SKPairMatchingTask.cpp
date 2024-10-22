@@ -21,69 +21,70 @@ bool SKPairMatchingTask::Init()
 void SKPairMatchingTask::Exec(Option_t*)
 {
     auto numHits = fHitArray -> GetEntries();
-    for (auto iHit=0; iHit<numHits; ++iHit)
+
+    if (numHits==1)
     {
-        auto siHit1 = (SKSiHit*) fHitArray -> At(iHit);
-        auto det = siHit1 -> GetDetID();
-
-        if ((det>=0&&det<12) || det>=28)
-        {
-
-            auto pairID = fStarkPlane -> FindEPairDetectorID(siHit1->GetDetID());
-            if (pairID>=0)
-            {
-                siHit1 -> SetIsEPairDetector(true);
-                for (auto jHit=iHit+1; jHit<numHits; ++jHit)
-                {
-                    auto siHit2 = (SKSiHit*) fHitArray -> At(jHit);
-                    if (siHit1 -> GetDetID() == siHit2 -> GetDetID())
-                        continue; // TODO
-                    if (pairID==siHit2->GetDetID())
-                    {
-                        SKSiHit *siHit_dE = nullptr;
-                        SKSiHit *siHit_E = nullptr;
-                        if (siHit1->IsEDetector()) {
-                            siHit_E = siHit1;
-                            siHit_dE = siHit2;
-                        }
-                        else {
-                            siHit_E = siHit2;
-                            siHit_dE = siHit1;
-                        }
-
-                        if (siHit_dE->IsGrabbed()) {
-                            double energyPrev = siHit_dE -> GetEnergy();
-                            double energy = siHit_E -> GetEnergy();
-                            if (energy>energyPrev)
-                            {
-                                siHit_E -> SetdE(siHit_dE->GetdE());
-                                siHit_E -> SetdEOhmic(siHit_dE->GetEnergyOhmic());
-                                siHit_E -> SetRelativeZdE(siHit_dE->GetRelativeZ());
-                                siHit_dE -> SetEnergy(siHit_E->GetEnergy());
-                                siHit_dE -> Grab();
-                            }
-                        }
-                        else {
-                            siHit_E -> SetdE(siHit_dE->GetdE());
-                            siHit_E -> SetdEOhmic(siHit_dE->GetEnergyOhmic());
-                            siHit_E -> SetRelativeZdE(siHit_dE->GetRelativeZ());
-                            siHit_dE -> SetEnergy(siHit_E->GetEnergy());
-                            siHit_dE -> Grab();
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    for (auto iHit=0; iHit<numHits; ++iHit)
-    {
-        auto siHit = (SKSiHit*) fHitArray -> At(iHit);
-        if (siHit->IsGrabbed())
+        auto siHit = (SKSiHit*) fHitArray -> At(0);
+        if ( siHit->IsEPairDetector() && siHit->IsEDetector() )
             fHitArray -> Remove(siHit);
+    }
+    else
+    {
+        for (auto iHit=0; iHit<numHits; ++iHit)
+        {
+            auto eHit = (SKSiHit*) fHitArray -> At(iHit);
+            auto eID = eHit -> GetDetID();
+            if (eHit->IsEPairDetector()==false) continue;
+            if (eHit->IsEDetector()==false) continue;
+
+            bool dEIsSet = false;
+            for (auto jHit=0; jHit<numHits; ++jHit)
+            {
+                if (iHit==jHit)
+                    continue;
+                auto deHit = (SKSiHit*) fHitArray -> At(jHit);
+                auto deID = deHit -> GetDetID();
+                if (deHit->IsdEDetector()==false) continue;
+                if (deID!=fStarkPlane->FindEPairDetectorID(eID)) continue;
+
+                eHit -> SetdEDetID(deHit->GetdEDetID());
+                eHit -> SetdE(deHit->GetdE());
+                eHit -> SetdEOhmic(deHit->GetEnergyOhmic());
+                eHit -> SetRelativeZdE(deHit->GetRelativeZ());
+                deHit -> Grab();
+                dEIsSet = true;
+                break;
+            }
+            if (dEIsSet==false)
+                eHit -> Grab();
+        }
+        for (auto iHit=0; iHit<numHits; ++iHit)
+        {
+            auto siHit = (SKSiHit*) fHitArray -> At(iHit);
+            if (siHit->IsGrabbed())
+                fHitArray -> Remove(siHit);
+        }
     }
 
     fHitArray -> Compress();
 
-    lk_info << "Number of si-hits = " << fHitArray->GetEntries() << endl;
+    auto numHits2 = fHitArray -> GetEntries();
+    //for (auto iHit=0; iHit<numHits2; ++iHit)
+    //{
+    //    auto siHit = (SKSiHit*) fHitArray -> At(iHit);
+    //    double deID = siHit->GetdEDetID();
+    //    double eID = siHit->GetDetID();
+    //    double de = siHit->GetdEOhmic();
+    //    double energy = siHit->GetEnergyOhmic();
+    //    int deIs = (deID>=0)?(fStarkPlane->GetSiDetector(deID)->IsEDetector()):-1;
+    //    int eIs = (eID>=0)?(fStarkPlane->GetSiDetector(eID)->IsEDetector()):-1;
+    //    TString deTitle = (deIs>=0)?((deIs==1)?"E":"dE"):"X";
+    //    TString eTitle  = ( eIs>=0)?((eIs==1) ?"E":"dE"):"X";
+    //    if (siHit->IsEPairDetector())
+    //        lk_debug << "[E-PAIR] de_ohmic=(" << de << "|" << deID << "," << deTitle << "), " << " e_ohmic=(" << energy << "|" << eID << "," << eTitle << ") " << endl;
+    //    else
+    //        lk_debug << "[SINGLE] de_ohmic=(" << de << "|" << deID << "," << deTitle << "), " << " e_ohmic=(" << energy << "|" << eID << "," << eTitle << ") " << endl;
+    //}
+
+    lk_info << "Number of si-hits = " << fHitArray->GetEntries() << " (" << numHits << " -> " << numHits2 << ")" << endl;
 }

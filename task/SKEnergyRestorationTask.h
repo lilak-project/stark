@@ -4,6 +4,7 @@
 #include "TClonesArray.h"
 #include "LKTask.h"
 #include "SKSiArrayPlane.h"
+#include "SKEnergyHandler.h"
 
 class SKEnergyRestorationTask : public LKTask
 {
@@ -16,12 +17,13 @@ class SKEnergyRestorationTask : public LKTask
 
     private:
         SKSiArrayPlane* fStarkPlane = nullptr;
+        SKEnergyHandler* fEnergyHandler = nullptr;
 
         TClonesArray *fSiChannelArray = nullptr;
         TClonesArray *fHitArray = nullptr;
 
+        bool fUseOldParameterSet = false;
         double f241AmAlphaEnergy1 = 5.486;
-
         double fg0Array[40][2][8];
         double fg1Array[40][2][8];
         double fg2Array[40][2][8];
