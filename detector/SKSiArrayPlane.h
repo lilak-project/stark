@@ -4,6 +4,7 @@
 #include "LKEvePlane.h"
 #include "LKPad.h"
 #include "TPad.h"
+#include "TH2Poly.h"
 #include "LKParameterContainer.h"
 #include <vector>
 #include "LKSiDetector.h"
@@ -38,6 +39,8 @@ class SKSiArrayPlane : public LKEvePlane
         virtual TH2* GetHistEventDisplay1(Option_t *option="-1");
         virtual TH2* GetHistEventDisplay2(Option_t *option="-1");
         virtual TH1D* GetHistChannelBuffer();
+
+        TH2Poly* NewHistPlane(TString name, bool fillBinDetector=false);
 
         virtual int FindPadID(int cobo, int asad, int aget, int chan);
         //virtual LKPad* FindPad(int cobo, int asad, int aget, int chan);
@@ -88,6 +91,8 @@ class SKSiArrayPlane : public LKEvePlane
         void ClearFiredFlags();
         int GetNumFiredDetectors();
         LKSiDetector* GetFiredDetector(int iFired);
+
+        int GetEPairDetID(int pair, int i) { return fdEEPairMapping[pair][i]; }
 
     protected:
         TString fMappingFileName;

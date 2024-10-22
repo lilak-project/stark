@@ -6,7 +6,6 @@ using namespace std;
 #include "LKSiDetector.h"
 #include "LKSiChannel.h"
 #include "TStyle.h"
-#include "TH2Poly.h"
 #include "LKPainter.h"
 #include "SKSiHit.h"
 
@@ -237,9 +236,11 @@ bool SKSiArrayPlane::Init()
         }
         else {
             currentDetID = detID;
-            localJID = -1;
-            localOID = -1;
+            localJID = 0;
+            localOID = 0;
         }
+        //if (side==0) lk_debug << "det=" << detID << " jo=" << side << " st=" << strip << " lc=" << localJID << endl;
+        //if (side==1) lk_debug << "det=" << detID << " jo=" << side << " st=" << strip << " lc=" << localJID << endl;
         fMapCAACToChannelIndex[cobo][asad][aget][chan] = globalChannelIndex;
         int detTypeIndex = fDetectorTypeArray.GetParIndex(detName);
         auto siChannel = new LKSiChannel();
@@ -809,6 +810,38 @@ void SKSiArrayPlane::UpdateUserDrawing()
             UpdateDataDisplays();
         }
     }
+}
+
+TH2Poly* SKSiArrayPlane::NewHistPlane(TString name, bool fillBinDetector)
+{
+    int layerYScale = 100;
+    auto hist = new TH2Poly(name,"STARK;#phi (deg.);ring",fMinPhi-0.02*(fMaxPhi-fMinPhi),fMaxPhi+0.02*(fMaxPhi-fMinPhi),0,layerYScale*(fMaxLayerIndex+1));
+    int numDetectors = fDetectorArray -> GetEntries();
+    int maxBins = numDetectors + 10;
+    for (auto det=0; det<numDetectors; ++det)
+    {
+        auto siDetector = (LKSiDetector*) fDetectorArray -> At(det);
+        auto layer = siDetector -> GetLayer();
+        auto phi1 = siDetector -> GetPhi1();
+        auto phi2 = siDetector -> GetPhi2();
+        auto phi0 = 0.5*(phi1+phi2);
+        phi1 = phi0 - fUserPhiScale*abs(phi0-phi1);
+        phi2 = phi0 + fUserPhiScale*abs(phi0-phi2);
+        double layer1 = layerYScale * (layer + fLayerYOffset);
+        double layer2 = layerYScale * (layer + 1 - fLayerYOffset);
+        auto bin = hist -> AddBin(phi1, layer1, phi2, layer2);
+        if (fillBinDetector) hist -> SetBinContent(bin,det);
+    }
+    hist -> SetMarkerSize(1.8);
+    hist -> SetStats(0);
+    hist -> GetXaxis() -> SetNdivisions(510);
+    hist -> GetYaxis() -> SetNdivisions(fMaxLayerIndex);
+    hist -> GetXaxis() -> SetTickSize(0.01);
+    hist -> GetYaxis() -> SetTickSize(0.01);
+    hist -> GetYaxis() -> SetBinLabel(1,"");
+    hist -> GetXaxis() -> SetLabelSize(0.04);
+    hist -> GetYaxis() -> SetLabelSize(0.04);
+    return hist;
 }
 
 TH2* SKSiArrayPlane::GetHistEventDisplay1(Option_t *option)

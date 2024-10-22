@@ -9,27 +9,29 @@ SKSiHit::SKSiHit()
 
 void SKSiHit::Clear(Option_t *option)
 {
-    fDetID = -1;
-    fdEDetID = -1;
-    fJunctionStrip = -1;
-    fOhmicStrip = -1;
+    fGrab = false;
     fInGate = true;
     fIsEPairDetector = false;
     fIsEDetector = true;
-    fKeyEnergy = 0;
-    fdE = 0;
-    fdEOhmic = 0;
-    fEnergy = 0;
-    fEnergyLeft = 0;
-    fEnergyRight = 0;
-    fEnergyOhmic = 0;
+    fKeyEnergy = -1;
+    fDetID = -1;
+    fJunctionStrip = -1;
+    fOhmicStrip = -1;
+    fEnergy = -1;
+    fEnergyLeft = -1;
+    fEnergyRight = -1;
+    fEnergyOhmic = -1;
     fStripPosition = TVector3();
     fRelativeZ = -999;
     fX = -999;
     fPhi = -999;
     fTheta = -999;
+    fdEDetID = -1;
+    fdEDetAIndex = -1;
+    fdE = -1;
+    fdEOhmic = -1;
+    fRelativeZdE = -999;
 }
-
 
 void SKSiHit::PrintAll() const
 {
