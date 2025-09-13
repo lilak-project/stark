@@ -9,6 +9,7 @@
 #include <vector>
 #include "LKSiDetector.h"
 #include "LKSiChannel.h"
+#include <climits>
 
 class SKSiArrayPlane : public LKEvePlane
 {
