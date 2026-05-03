@@ -15,7 +15,12 @@ SKAnalysisDK::SKAnalysisDK()
 
 bool SKAnalysisDK::Init()
 {
-    fSiHitArray = fRun -> GetBranchA("SiHit");
+    fSiHitArray = fRun -> GetBranchA("SiHit","SKSiHit");
+
+    int ne = 400;
+    double e1 = 0;
+    double e2 = 10;
+    fPar -> UpdateBinning("ko2421/binning_cal_energy", ne, e1, e2);
 
     fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
     if (fStarkPlane==nullptr) {
@@ -23,11 +28,6 @@ bool SKAnalysisDK::Init()
         lk_error << fName << " must run with SKSiArrayPlane" << endl;
         return false;
     }
-
-    int ne = 400;
-    double e1 = 0;
-    double e2 = 10;
-    fPar -> UpdateBinning("ko2421/binning_cal_energy", ne, e1, e2);
 
     fHistdEEAll[0] = new TH2D("fHistdEE_X6_all","dE_E_X6_all;Etotal;dE",ne,e1,2*e2,ne,e1,2*e2);
     fHistdEEAll[1] = new TH2D("fHistdEE_CSD_all","dE_E_CSD_all;Etotal;dE",ne,e1,2*e2,ne,e1,2*e2);

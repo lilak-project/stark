@@ -14,7 +14,7 @@ SKEnergyRestorationTask::SKEnergyRestorationTask()
 bool SKEnergyRestorationTask::Init()
 {
     fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
-    fSiChannelArray = fRun -> GetBranchA("SiChannel");
+    fSiChannelArray = fRun -> GetBranchA("SiChannel","LKSiChannel");
     fHitArray = fRun -> RegisterBranchA("SiHit","SKSiHit",20);
 
     if (fUseOldParameterSet)

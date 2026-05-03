@@ -15,16 +15,9 @@ SKDrawCalibratedEventStatisticsTask::SKDrawCalibratedEventStatisticsTask()
 
 bool SKDrawCalibratedEventStatisticsTask::Init()
 {
-    fSiHitArray = fRun -> GetBranchA("SiHit");
+    fSiHitArray = fRun -> GetBranchA("SiHit","SKSiHit");
     if (fSiHitArray==nullptr) {
         lk_error << "Branch SiHit do not exist!!!" << endl;
-        return false;
-    }
-
-    fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
-    if (fStarkPlane==nullptr) {
-        lk_error << "SKSiArrayPlane do not exist!!!" << endl;
-        lk_error << fName << " must run with SKSiArrayPlane" << endl;
         return false;
     }
 
@@ -32,6 +25,13 @@ bool SKDrawCalibratedEventStatisticsTask::Init()
     double e1 = 0;
     double e2 = 10;
     fPar -> UpdateBinning(fName+"/binning_cal_energy", ne, e1, e2);
+
+    fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
+    if (fStarkPlane==nullptr) {
+        lk_error << "SKSiArrayPlane do not exist!!!" << endl;
+        lk_error << fName << " must run with SKSiArrayPlane" << endl;
+        return false;
+    }
 
     fHistHP[0] = new TH2D("fHistCHP0","Junction;strip;energy (MeV)",40*fNumJStrips,0,40*fNumJStrips,ne,e1,e2);;
     fHistHP[1] = new TH2D("fHistCHP1",   "Ohmic;strip;energy (MeV)",40*fNumOStrips,0,40*fNumOStrips,ne,e1,e2);;

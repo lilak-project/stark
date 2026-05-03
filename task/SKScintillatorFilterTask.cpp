@@ -9,7 +9,7 @@ SKScintillatorFilterTask::SKScintillatorFilterTask()
 
 bool SKScintillatorFilterTask::Init()
 {
-    fRawDataArray = fRun -> GetBranchA("RawData");
+    fRawDataArray = fRun -> GetBranchA("RawData","GETChannel");
     fRecoHeaderArray = fRun -> RegisterBranchA("RecoHeader","SKRecoHeader",1);
 
     if (fPar->CheckPar(fName+"/tbRange1"))

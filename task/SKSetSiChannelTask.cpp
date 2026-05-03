@@ -19,7 +19,7 @@ SKSetSiChannelTask::SKSetSiChannelTask()
 bool SKSetSiChannelTask::Init()
 {
     fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
-    fRawDataArray = fRun -> GetBranchA("RawData");
+    fRawDataArray = fRun -> GetBranchA("RawData","GETChannel");
     fSiChannelArray = fRun -> RegisterBranchA("SiChannel","LKSiChannel",20);
     fFitDataArray = fRun -> RegisterBranchA("PFData","LKPulseFitData",10,false);
 

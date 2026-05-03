@@ -15,14 +15,7 @@ SKAnalysisTA::SKAnalysisTA()
 
 bool SKAnalysisTA::Init()
 {
-    fSiHitArray = fRun -> GetBranchA("SiHit");
-
-    fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
-    if (fStarkPlane==nullptr) {
-        lk_error << "SKSiArrayPlane do not exist!!!" << endl;
-        lk_error << fName << " must run with SKSiArrayPlane" << endl;
-        return false;
-    }
+    fSiHitArray = fRun -> GetBranchA("SiHit","SKSiHit");
 
     fPar -> UpdatePar(fBeamEnergy,"ko2421/beam_energy");
     fPar -> UpdatePar(fBeamRate,"ko2421/beam_rate");
@@ -35,6 +28,13 @@ bool SKAnalysisTA::Init()
     double e1com = -10;
     double e2com = 10;
     fPar -> UpdateBinning("analysis/binning_cal_energy", ne, e1, e2);
+
+    fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
+    if (fStarkPlane==nullptr) {
+        lk_error << "SKSiArrayPlane do not exist!!!" << endl;
+        lk_error << fName << " must run with SKSiArrayPlane" << endl;
+        return false;
+    }
 
     //fHistAvstotE[0] = new TH2D(Form("fHistAlabvsE"),Form("Lab Polar Angle vs Energy;theta (deg);energy (MeV)"),1800,0,180,ne,e1,2*e2);
     fHistAvstotE[0] = new TH2D(Form("fHistAlabvsE"),Form("Lab Polar Angle vs Energy;theta (deg);energy (MeV)"),1800,0,180,ne,e1,e2);

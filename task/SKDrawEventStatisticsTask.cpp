@@ -15,7 +15,7 @@ SKDrawEventStatisticsTask::SKDrawEventStatisticsTask()
 
 bool SKDrawEventStatisticsTask::Init()
 {
-    fSiChannelArray = fRun -> GetBranchA("SiChannel");
+    fSiChannelArray = fRun -> GetBranchA("SiChannel","LKSiChannel");
 
     fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
     if (fStarkPlane==nullptr) {

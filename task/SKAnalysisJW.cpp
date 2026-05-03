@@ -15,6 +15,12 @@ SKAnalysisJW::SKAnalysisJW()
 
 bool SKAnalysisJW::Init()
 {
+    int ne = 400;
+    double e1 = 0;
+    double e2 = 10;
+    fPar -> UpdateBinning("analysis/binning_cal_energy", ne, e1, e2);
+    fPar -> UpdatePar(fEThresholdForCount,"ko2421/energy_threshold_for_count");
+
     fSiHitArray = fRun -> GetBranchA("SiHit");
     if (fSiHitArray==nullptr) {
         lk_error << "Branch SiHit do not exist!!!" << endl;
@@ -27,13 +33,6 @@ bool SKAnalysisJW::Init()
         lk_error << fName << " must run with SKSiArrayPlane" << endl;
         return false;
     }
-
-    int ne = 400;
-    double e1 = 0;
-    double e2 = 10;
-    fPar -> UpdateBinning("analysis/binning_cal_energy", ne, e1, e2);
-
-    fPar -> UpdatePar(fEThresholdForCount,"ko2421/energy_threshold_for_count");
 
     fHistHP[0] = new TH2D("fHistCHP0","Junction;strip;energy (MeV)",40*fNumJStrips,0,40*fNumJStrips,ne,e1,e2);
     fHistHP[1] = new TH2D("fHistCHP1",   "Ohmic;strip;energy (MeV)",40*fNumOStrips,0,40*fNumOStrips,ne,e1,e2);

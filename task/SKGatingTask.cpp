@@ -16,7 +16,7 @@ SKGatingTask::SKGatingTask()
 
 bool SKGatingTask::Init()
 {
-    fSiHitArray = fRun -> GetBranchA("SiHit");
+    fSiHitArray = fRun -> GetBranchA("SiHit","SKSiHit");
     if (fSiHitArray==nullptr) {
         lk_error << "Branch SiHit do not exist!!!" << endl;
         return false;
@@ -34,16 +34,6 @@ bool SKGatingTask::Init()
     if (fUseEPairBoth  ) lk_info << "Use EPairBoth   = " << fUseEPairBoth   << endl;
     if (fUseEPair      ) lk_info << "Use EPair       = " << fUseEPair       << endl;
     if (fUseNotEPair   ) lk_info << "Use NotEPair    = " << fUseNotEPair    << endl;
-
-    if (fUseScintGate)
-    {
-        fRecoHeaderArray = fRun -> GetBranchA("RecoHeader");
-        if (fRecoHeaderArray==nullptr) {
-            lk_error << "Trying to use scintillator gate but branch RecoHeader for scintillator gate do not exist!" << endl;
-            return false;
-        }
-        lk_info << "Use ScintGate   = " << fUseScintGate    << endl;
-    }
 
     TString fileName1, fileName2, fileName3;
     fPar -> UpdatePar(fCutDetID,"SKGatingTask/gate_detID");
@@ -71,6 +61,16 @@ bool SKGatingTask::Init()
 
     TString keyEnergyType = "jj";
     fPar -> UpdatePar(keyEnergyType,"SKGatingTask/KeyEnergyType");
+
+    if (fUseScintGate)
+    {
+        fRecoHeaderArray = fRun -> GetBranchA("RecoHeader","SKRecoHeader");
+        if (fRecoHeaderArray==nullptr) {
+            lk_error << "Trying to use scintillator gate but branch RecoHeader for scintillator gate do not exist!" << endl;
+            return false;
+        }
+        lk_info << "Use ScintGate   = " << fUseScintGate    << endl;
+    }
 
     if      (keyEnergyType=="jj") fKeyEnergyType = 00;
     else if (keyEnergyType=="jo") fKeyEnergyType = 10;

@@ -1,6 +1,7 @@
 #include <fstream>
 using namespace std;
 
+#include "LKCompiled.h"
 #include "TApplication.h"
 #include "SKSiArrayPlane.h"
 #include "LKSiDetector.h"
@@ -12,6 +13,7 @@ using namespace std;
 ClassImp(SKSiArrayPlane)
 
 SKSiArrayPlane::SKSiArrayPlane()
+    //:SKSiArrayPlane("SKSiArrayPlane","General mapping class for si array detector")
     :SKSiArrayPlane("SKSiArrayPlane","General mapping class for si array detector")
 {
 }
@@ -32,10 +34,11 @@ SKSiArrayPlane::SKSiArrayPlane(const char *name, const char *title)
 
 bool SKSiArrayPlane::Init()
 {
-    LKEvePlane::Init();
+    //if (fDetName.IsNull())
+    fName = "SKSiArrayPlane";
+    fDetName = "stark";
 
-    if (fDetName.IsNull())
-        fDetName = "stark";
+    LKEvePlane::Init();
 
     fUserDrawingArrayIndex = new int***[4];
     for(int i=0; i<4; ++i) {
@@ -103,8 +106,8 @@ bool SKSiArrayPlane::Init()
     //fPar -> Require(fDetName+"/DetectorPar","{lilak_common}/stark_detector_par_RAON2024_40Arp.txt","detName detType(si,...) numSides numJunctionStrips numOhmicStrips useJunctionLR useOhmicLR","",2);
     //fPar -> UpdatePar(fDetectorParName,fDetName+"/DetectorPar");
     //fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping");
-    fPar -> Require(fDetName+"/Mapping1","","","t");
-    fPar -> Require(fDetName+"/Mapping2","","","t");
+    fPar -> Require(fDetName+"/Mapping1","","name of detector mapping file","t");
+    fPar -> Require(fDetName+"/Mapping2","","name of channel mapping file","t");
     fPar -> UpdatePar(fDetectorParName,fDetName+"/Mapping1");
     fPar -> UpdatePar(fMappingFileName,fDetName+"/Mapping2");
 
@@ -117,9 +120,18 @@ bool SKSiArrayPlane::Init()
         lk_note << fMappingFileName << endl;
     }
 
+    if (fDetectorParName.IsNull()) {
+        fDetectorParName = TString(LILAK_PATH) + "/common/starkmap_input.RAON2024_40Arp.txt";
+        lk_error << "Detector mapping file is not set. Using default file " << fDetectorParName << endl;
+    }
+    if (fMappingFileName.IsNull()) {
+        fMappingFileName = TString(LILAK_PATH) + "/common/starkmap_output.RAON2024_40Arp.txt";
+        lk_error << "Channel mapping file is not set. Using default file " << fMappingFileName << endl;
+    }
+
     ifstream fileDetector(fDetectorParName);
     if (!fileDetector.is_open()) {
-        lk_error << "Cannot open " << fDetectorParName << endl;
+        lk_error << "Cannot open detector mapping file " << fDetectorParName << endl;
         return false;
     }
     lk_info << "detector parameter: " << fDetectorParName << endl;
@@ -218,7 +230,7 @@ bool SKSiArrayPlane::Init()
 
     ifstream fileCAACMap(fMappingFileName);
     if (!fileCAACMap.is_open()) {
-        lk_error << "Cannot open " << fMappingFileName << endl;
+        lk_error << "Cannot open channel mapping file " << fMappingFileName << endl;
         return false;
     }
     lk_info << "channel mapping: " << fMappingFileName << endl;

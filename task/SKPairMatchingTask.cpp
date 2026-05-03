@@ -13,7 +13,7 @@ SKPairMatchingTask::SKPairMatchingTask()
 bool SKPairMatchingTask::Init()
 {
     fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
-    fHitArray = fRun -> KeepBranchA("SiHit");
+    fHitArray = fRun -> KeepBranchA("SiHit","SKSiHit");
 
     return true;
 }
