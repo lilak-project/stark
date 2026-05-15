@@ -1,0 +1,22 @@
+<stark_configs         config_stark.mac
+<paths_configs         config_paths.mac
+
+run                    e{RUN}
+@-run/run              {default_run}
+LKRun/RunID            {run}
+LKRun/Name             stark
+LKRun/OutputPath       {reco_data_path}
+LKRun/InputPath        {reco_data_path}
+LKRun/SearchRun        conv ##########
+LKRun/Tag              eve
+
+LKEveTask/drawEve3D    false
+LKEveTask/drawPlane    true
+LKRun/OutputPath       ./data/
+
+SKSiArrayPlane/jumpEventSize  50000
+
+SKDrawEventStatisticsTask/binning_energy 500, 0, 4100
+SKDrawEventStatisticsTask/binning_theta  50, 50, 100
+
+persistency/SiChannel  false

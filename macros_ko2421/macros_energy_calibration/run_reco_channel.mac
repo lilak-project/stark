@@ -1,0 +1,27 @@
+<stark_configs     config_stark.mac
+
+run                e{RUN}
+@-run/run          199
+LKRun/RunID        {run}
+LKRun/Name         stark
+LKRun/OutputPath   data_reco
+LKRun/InputPath    data_conv
+LKRun/SearchRun    conv
+LKRun/Tag          channel
+
+SKScintillatorFilterTask/tbRange   290, 320
+SKScintillatorFilterTask/threshold 1000
+
+reco/IgnoreMultHit true
+
+LKRun/EventCountForMessage 2000
+
+persistency/SiChannel  true
+
+######################################
+lilak/add   ELARK
+lilak/add   EKSetSiChannelTask
+lilak/print all
+#lilak/collect_par   1
+lilak/run   0
+######################################

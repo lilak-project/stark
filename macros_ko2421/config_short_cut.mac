@@ -1,0 +1,54 @@
+<stark_configs     config_stark.mac
+<paths_configs     config_paths.mac
+
+run                e{RUN}
+@-run/run          20
+LKRun/RunID        {run}
+LKRun/Name         stark
+LKRun/OutputPath   {reco_data_path}
+LKRun/InputPath    {reco_data_path}
+LKRun/SearchRun    reco8
+LKRun/Tag          hist8
+
+LKRun/EventCountForMessage 5000
+
+analysis/binning_theta 200, 25, 75
+analysis/binning_cal_energy 600, 0, 30
+
+e4/binng_Split_x_12 bnn12 4, 30, 42
+e5/binng_Split_x_12 bnn12 4, 32, 40
+e8/binng_Split_x_12 bnn12 4, 32, 40
+
+e8/binng_Split_x_16 bnn16 10, 51.5, 71.5
+e5/binng_Split_x_16 bnn16 10, 49, 69
+e4/binng_Split_x_16 bnn16 10, 49, 69
+
+pair_energy_range4    4, 24
+e4/RunIDRange     20:25, 29:36, 38 ,!31
+e4/analysis/cut_dE_vs_ETot_X6X6    cut0    y>(x-0.2)&&(x>{pair_energy_range4[0]})&&(x<{pair_energy_range4[1]})  true
+e4/analysis/cut_dE_vs_ETot_X6CSD   cut0    false true
+
+pair_energy_range5    4, 24
+e5/RunIDRange     39:42, 44:54, 56:59, 61:63, 65:69, 72
+e5/analysis/cut_dE_vs_ETot_X6X6/expression "cut0"
+e5/analysis/cut_dE_vs_ETot_X6X6    cut0    y>(x-0.2)&&(x>{pair_energy_range5[0]})&&(x<{pair_energy_range5[1]})  true
+e5/analysis/cut_dE_vs_ETot_X6CSD/expression "(cut0 && cut1)"
+e5/analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421_e5.dE_vs_ETot.x6_csd.proton_island.root true
+e5/analysis/cut_dE_vs_ETot_X6CSD   cut1    (x>{pair_energy_range5[0]})&&(x<{pair_energy_range5[1]})  true
+
+pair_energy_range8    8, 32
+e8/RunIDRange     92, 94:97, 99:107, 110:111
+e8/analysis/cut_dE_vs_ETot_X6X6/expression "(cut0 && cut1)"
+e8/analysis/cut_dE_vs_ETot_X6X6    cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_x6.proton_stopped_mixed.root true
+e8/analysis/cut_dE_vs_ETot_X6X6    cut1    (x>{pair_energy_range8[0]})&&(x<{pair_energy_range8[1]})  true
+e8/analysis/cut_dE_vs_ETot_X6X6    cut2    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_x6.proton.root false
+e8/analysis/cut_dE_vs_ETot_X6X6    cut3    x>{pair_energy_range8[0]} false
+e8/analysis/cut_dE_vs_ETot_X6X6    cut4    x<{pair_energy_range8[1]} false
+e8/analysis/cut_dE_vs_ETot_X6CSD/expression "(cut0 && cut1)"
+e8/analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_csd.proton_stopped_mixed.root true
+e8/analysis/cut_dE_vs_ETot_X6CSD   cut1    (x>{pair_energy_range8[0]})&&(x<{pair_energy_range8[1]})  true
+
+binning_e      etot   400,  0, 30
+binning_q      qvalue 400, -4, 6
+binning_ttaLab ttaLab 120, 20, 80
+binning_ttaCoM ttaCoM 240, 20, 140

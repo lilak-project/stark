@@ -1,0 +1,19 @@
+<ana_eve_config config_ana_eve.mac
+LKRun/Tag              check
+
+#<stark_configs     config_stark.mac
+#
+##conv config_conv.mac
+#
+#run                e{RUN}
+#@-run/run          {default_run}
+#LKRun/RunID        {run}
+#LKRun/Name         stark
+#LKRun/OutputPath   data
+#LKRun/InputPath    data
+#LKRun/SearchRun    conv ##########
+#LKRun/Tag          check
+#
+#LKRun/EventCountForMessage 20000
+#
+#persistency/SiChannel  false

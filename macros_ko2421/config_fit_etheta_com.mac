@@ -1,0 +1,74 @@
+binning_e      etot   400,  0, 30
+binning_q      qvalue 400, -4, 6
+binning_ttaLab ttaLab 120, 20, 80
+binning_ttaCoM ttaCoM 240, 20, 140
+
+e4/binng_Split_x_12 bnn12 4, 30, 42
+#e4/binng_Split_x_12 bnn12 4, 31, 41
+#e4/binng_Split_x_12 bnn12 4, 32, 40
+e5/binng_Split_x_12 bnn12 4, 32, 40
+#e5/binng_Split_x_12 bnn12 4, 30, 42
+e8/binng_Split_x_12 bnn12 4, 32, 40
+
+#e8/binng_Split_x_16 bnn16 10, 51.5, 71.5
+e8/binng_Split_x_16 bnn16 10, 51.5, 71.5
+#e8/binng_Split_x_16 bnn16 10, 49, 69
+#binng_Split_x_16 bnn16 8, 49, 69
+e5/binng_Split_x_16 bnn16 10, 49, 69
+e4/binng_Split_x_16 bnn16 10, 49, 69
+#binng_Split_x_16 bnn16 12, 46, 70
+
+#q_proj_test_sigma_factor 2.5
+q_proj_test_sigma_factor 1
+q_proj_sigma_factor 2.5
+histQ_entry_cut 100
+theta_com_scale_range 44, 48
+solid_angle_ratio 0.8
+draw_all_draw1 1
+path_x data_x
+use_saved_linear_bg_fit_parameter false
+#use_saved_linear_bg_fit_parameter true
+bin_width_for_fit 3
+
+background_type_12 0
+background_type_16 1
+
+e4/num_atoms_per_area   2.56E+19
+e4/beam_energy          4.41
+#e4/beam_count           8.29e+8
+#e4/beam_count           4e+10
+#e4/beam_count           2.510227E+10
+e4/beam_count           2.42765050751E+10
+e4/rutherford_file      {path_x}/plot_e4.txt
+e4/fresco_file          {path_x}/fort_Ar40pp_KD_4_41.16 {path_x}/fort_Ar40pp_DF_4_41.16
+e4/crosssection_max     1200
+e4/final_theta_range    30, 80, 95, 120
+e4/exclude_pair_ids     0, 4, 5, 6, 7, 8, 9, 10, 11, 16, 17, 18, 19, 22, 23
+#e4/exclude_pair_ids     0, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23
+e4/global_beam_normalization_factor 0
+
+e5/num_atoms_per_area   2.56E+19
+e5/beam_energy          5.838
+#e5/beam_count           6.4e+10
+#e5/beam_count           2.042e+9
+e5/beam_count           6.14256E+10
+e5/rutherford_file      {path_x}/plot_e5.txt
+e5/fresco_file          {path_x}/fort_Ar40pp_KD_5_84.16 {path_x}/fort_Ar40pp_DF_5_84.16 
+e5/crosssection_max     700
+e5/final_theta_range    30, 80, 95, 120
+e5/exclude_pair_ids     0, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23
+e5/global_beam_normalization_factor 0
+
+e8/num_atoms_per_area   1.96E+19
+e8/beam_energy          8.13
+#e8/beam_energy          8.60
+#e8/beam_count           3.e+10
+#e8/beam_count           3.70953E+11
+#e8/beam_count           3.0E+10
+e8/beam_count           2.119E+10
+e8/rutherford_file      {path_x}/plot_e8.txt
+e8/fresco_file          {path_x}/fort_Ar40pp_KD_8_13.16 {path_x}/fort_Ar40pp_DF_8_13.16
+e8/crosssection_max     400
+e8/final_theta_range    30, 80, 95, 120
+e8/exclude_pair_ids     0, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23
+e8/global_beam_normalization_factor 0

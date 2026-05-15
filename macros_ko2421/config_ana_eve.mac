@@ -1,0 +1,40 @@
+<stark_configs         config_stark.mac
+<paths_configs         config_paths.mac
+
+######################################
+lilak/add       ELARK
+lilak/add       EKAnalysisRecoHit
+lilak/run       0
+lilak/draw      
+######################################
+
+run                    e{RUN}
+@-run/run              {default_run}
+LKRun/RunID            {run}
+LKRun/Name             stark
+LKRun/OutputPath       {ana_data_path}
+LKRun/InputPath        {reco_data_path}
+#LKRun/Tag              ana_eve
+#LKRun/SearchRun        reco5
+#LKRun/SearchRun        reco6
+LKRun/SearchRun        reco_xmulth # reconstruction removing multi hit condision
+LKRun/Tag              ana_xmulth
+LKRun/EventCountForMessage    10000
+#LKRun/EventCountForMessage    1
+<type_configs   config_type.mac
+
+analysis/energy_threshold_for_count 1.5
+
+analysis/binning_cal_energy 400, 0, 30
+analysis/binning_theta 360, 0, 180
+analysis/binning_theta_lab 24*60, 20, 80
+analysis/binning_theta_com 12*180, 20, 140
+
+#analysis/binning_q_value 2000 -5 5
+
+#analysis/binning_cal_energy 500 0 50
+#analysis/binning_theta 900 0 180
+#analysis/binning_theta 60 0 180
+
+analysis/exclude_pair_ids 8, 11
+analysis/exclude_16ring_ids 22, 23

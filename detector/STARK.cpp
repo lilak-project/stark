@@ -1,5 +1,5 @@
 #include "STARK.h"
-#include "SKSiArrayPlane.h"
+#include "LKSiliconArray.h"
 
 ClassImp(STARK);
 
@@ -10,6 +10,6 @@ STARK::STARK()
 
 bool STARK::BuildDetectorPlane()
 {
-    AddPlane(new SKSiArrayPlane);
+    AddPlane(new LKSiliconArray);
     return true;
 }

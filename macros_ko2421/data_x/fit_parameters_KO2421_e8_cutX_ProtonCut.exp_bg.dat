@@ -1,0 +1,6290 @@
+
+========== 1 0 0.6 3
+0 0 -1 6
+q-Boundary -1.425 -1 -1.85
+amplitude  105.667 0 121
+mean       0.169641 -0.2 2
+sigma      0.219108 0.1 0.5
+expb_amp   0.112912 0 2
+expb_amp   4.65265 0 20
+const_bg   2.48899 -5 5
+========== 1 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 5 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 6 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 7 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 8 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 9 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 10 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 11 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 12 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 13 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 14 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 15 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 16 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 17 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 18 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 19 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 20 0 3
+0 0 -1 6
+q-Boundary -0.788641 -1 -0.4
+amplitude  16.1072 0 24
+mean       0.155901 -0.2 2
+sigma      0.208081 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 1 21 0 3
+0 0 -1 6
+q-Boundary -0.991569 -1 -0.8
+amplitude  38.1395 0 44
+mean       0.179651 -0.2 2
+sigma      0.206129 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 1 22 0 3
+0 0 -1 6
+q-Boundary -1.56769 -1 -1.4
+amplitude  28.1421 0 33
+mean       0.160382 -0.2 2
+sigma      0.203146 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 1 23 0 3
+0 0 -1 6
+q-Boundary -1.7175 -1 -1.6
+amplitude  41.3966 0 51
+mean       0.120607 -0.2 2
+sigma      0.175014 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 1 24 0 3
+0 0 -1 6
+q-Boundary -2.00093 -1 -2
+amplitude  50.987 0 60
+mean       0.149231 -0.2 2
+sigma      0.196652 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 1 25 0 3
+0 0 -1 6
+q-Boundary -2.60166 -1 -2.6
+amplitude  27.7524 0 32
+mean       0.29896 -0.2 2
+sigma      0.150177 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 1 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 27 0.6 3
+0 0 -1 6
+q-Boundary -0.998372 -1 4
+amplitude  17.3216 0 1000
+mean       0.0757299 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.047876 0 0.4
+expb_amp   3.6604 0 10
+const_bg   1.30424 0 10
+========== 1 28 0.6 3
+0 0 -1 6
+q-Boundary -0.999927 -1 4
+amplitude  32.6634 0 1000
+mean       0.201345 -0.8 0.8
+sigma      0.192065 0.1 0.3
+expb_amp   0.0324016 0 0.4
+expb_amp   4.27938 0 10
+const_bg   1.10462 0 10
+========== 1 29 0.6 3
+0 0 -1 6
+q-Boundary -0.992228 -1 4
+amplitude  21.4026 0 1000
+mean       0.143322 -0.8 0.8
+sigma      0.229093 0.1 0.3
+expb_amp   0.170308 0 0.4
+expb_amp   3.20149 0 10
+const_bg   0.509231 0 10
+========== 1 30 0.6 3
+0 0 -1 6
+q-Boundary -0.917044 -1 4
+amplitude  29.9459 0 1000
+mean       0.14559 -0.8 0.8
+sigma      0.237096 0.1 0.3
+expb_amp   0.0486185 0 0.4
+expb_amp   4.43998 0 10
+const_bg   0.575447 0 10
+========== 1 31 0.6 3
+0 0 -1 6
+q-Boundary -0.900622 -1 4
+amplitude  29.6689 0 1000
+mean       0.173648 -0.8 0.8
+sigma      0.203036 0.1 0.3
+expb_amp   0.0259168 0 0.4
+expb_amp   4.92646 0 10
+const_bg   0.487311 0 10
+========== 1 32 0.6 3
+0 0 -1 6
+q-Boundary -0.998645 -1 4
+amplitude  45.8005 0 1000
+mean       0.137488 -0.8 0.8
+sigma      0.195052 0.1 0.3
+expb_amp   0.0407273 0 0.4
+expb_amp   4.50249 0 10
+const_bg   0.606047 0 10
+========== 1 33 0.6 3
+0 0 -0.7 2
+q-Boundary -0.937575 -1 4
+amplitude  28.1307 0 350
+mean       0.298128 -0.8 0.8
+sigma      0.165444 0.1 0.3
+expb_amp   0.254818 0 0.4
+expb_amp   2.45784 0 5
+const_bg   9.26389e-13 0 10
+========== 1 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 1 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 2 0 0.6 3
+0 0 -1 6
+q-Boundary -1.625 -1 -2.25
+amplitude  94.3988 0 122
+mean       0.130633 -0.2 2
+sigma      0.255309 0.1 0.5
+expb_amp   0.113473 0 2
+expb_amp   4.65646 0 20
+const_bg   3.23758 -5 5
+========== 2 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 5 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 6 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 7 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 8 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 9 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 10 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 11 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 12 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 13 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 14 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 15 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 16 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 17 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 18 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 19 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 20 0 3
+0 0 -1 6
+q-Boundary -0.573836 -1 -0.4
+amplitude  20.4545 0 29
+mean       0.104193 -0.2 2
+sigma      0.176832 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 2 21 0 3
+0 0 -1 6
+q-Boundary -1.16613 -1 -1
+amplitude  34.6862 0 43
+mean       0.0850257 -0.2 2
+sigma      0.171419 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 2 22 0 3
+0 0 -1 6
+q-Boundary -1.58854 -1 -1.2
+amplitude  28.2348 0 40
+mean       0.0628629 -0.2 2
+sigma      0.196121 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 2 23 0 3
+0 0 -1 6
+q-Boundary -1.98865 -1 -1.6
+amplitude  41.401 0 50
+mean       0.082427 -0.2 2
+sigma      0.243292 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 2 24 0 3
+0 0 -1 6
+q-Boundary -2.30367 -1 -2.2
+amplitude  41.8893 0 55
+mean       0.208366 -0.2 2
+sigma      0.243299 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 2 25 0 3
+0 0 -1 6
+q-Boundary -2.3477 -1 -2.2
+amplitude  16.2153 0 18
+mean       0.227901 -0.2 2
+sigma      0.219288 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 2 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 27 0.6 3
+0 0 -1 6
+q-Boundary -0.999972 -1 4
+amplitude  15.1002 0 1000
+mean       0.171826 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0367665 0 0.4
+expb_amp   4.3721 0 10
+const_bg   1.53565 0 10
+========== 2 28 0.6 3
+0 0 -1 6
+q-Boundary -0.936963 -1 4
+amplitude  28.5855 0 1000
+mean       0.0821504 -0.8 0.8
+sigma      0.190353 0.1 0.3
+expb_amp   0.0371986 0 0.4
+expb_amp   4.43958 0 10
+const_bg   1.23059 0 10
+========== 2 29 0.6 3
+0 0 -1 6
+q-Boundary -0.934947 -1 4
+amplitude  19.1549 0 1000
+mean       0.0601054 -0.8 0.8
+sigma      0.285809 0.1 0.3
+expb_amp   0.0389994 0 0.4
+expb_amp   4.25277 0 10
+const_bg   1.17783 0 10
+========== 2 30 0.6 3
+0 0 -1 6
+q-Boundary -0.999868 -1 4
+amplitude  37.3743 0 1000
+mean       0.0873386 -0.8 0.8
+sigma      0.201947 0.1 0.3
+expb_amp   0.0596552 0 0.4
+expb_amp   4.54027 0 10
+const_bg   0.560437 0 10
+========== 2 31 0.6 3
+0 0 -1 6
+q-Boundary -0.99943 -1 4
+amplitude  22.6382 0 1000
+mean       0.154739 -0.8 0.8
+sigma      0.28327 0.1 0.3
+expb_amp   0.0448036 0 0.4
+expb_amp   4.49262 0 10
+const_bg   0.838784 0 10
+========== 2 32 0.6 3
+0 0 -1 6
+q-Boundary -0.998634 -1 4
+amplitude  38.3974 0 1000
+mean       0.205599 -0.8 0.8
+sigma      0.241027 0.1 0.3
+expb_amp   0.0483872 0 0.4
+expb_amp   4.47745 0 10
+const_bg   0.322212 0 10
+========== 2 33 0.6 3
+0 0 -0.7 2
+q-Boundary -0.994808 -1 4
+amplitude  17.6082 0 350
+mean       0.230877 -0.8 0.8
+sigma      0.237438 0.1 0.3
+expb_amp   0.340202 0 0.4
+expb_amp   1.68826 0 5
+const_bg   3.77541e-14 0 10
+========== 2 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 2 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 3 0 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  192.317 0 228
+mean       0.144629 -0.2 2
+sigma      0.216356 0.1 0.5
+expb_amp   0.203034 0 2
+expb_amp   5.01288 0 20
+const_bg   5 -5 5
+========== 3 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 5 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 6 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 7 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 8 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 9 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 10 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 11 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 12 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 13 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 14 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 15 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 16 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 17 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 18 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 19 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 20 0 3
+0 0 -1 6
+q-Boundary -0.900013 -1 -0.4
+amplitude  16.7464 0 26
+mean       0.147674 -0.2 2
+sigma      0.303875 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 3 21 0 3
+0 0 -1 6
+q-Boundary -1.15375 -1 -1
+amplitude  26.7649 0 39
+mean       0.0915442 -0.2 2
+sigma      0.174462 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 3 22 0 3
+0 0 -1 6
+q-Boundary -1.58865 -1 -1.2
+amplitude  39.9551 0 49
+mean       0.117971 -0.2 2
+sigma      0.167315 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 3 23 0 3
+0 0 -1 6
+q-Boundary -1.93592 -1 -1.8
+amplitude  31.7277 0 37
+mean       0.133418 -0.2 2
+sigma      0.227081 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 3 24 0 3
+0 0 -1 6
+q-Boundary -2.117 -1 -2
+amplitude  48.9005 0 56
+mean       0.159171 -0.2 2
+sigma      0.174739 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 3 25 0 3
+0 0 -1 6
+q-Boundary -2.40335 -1 -2.4
+amplitude  16.1854 0 18
+mean       0.181573 -0.2 2
+sigma      0.147193 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 3 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 27 0.6 3
+0 0 -1 6
+q-Boundary -0.945342 -1 4
+amplitude  14.8001 0 1000
+mean       0.112066 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0485147 0 0.4
+expb_amp   4.33657 0 10
+const_bg   1.80191 0 10
+========== 3 28 0.6 3
+0 0 -1 6
+q-Boundary -0.918023 -1 4
+amplitude  23.0375 0 1000
+mean       0.113051 -0.8 0.8
+sigma      0.184905 0.1 0.3
+expb_amp   0.0545917 0 0.4
+expb_amp   4.34917 0 10
+const_bg   1.86629 0 10
+========== 3 29 0.6 3
+0 0 -1 6
+q-Boundary -0.993978 -1 4
+amplitude  31.8631 0 1000
+mean       0.149692 -0.8 0.8
+sigma      0.166961 0.1 0.3
+expb_amp   0.0154029 0 0.4
+expb_amp   5.95398 0 10
+const_bg   0.310704 0 10
+========== 3 30 0.6 3
+0 0 -1 6
+q-Boundary -0.904883 -1 4
+amplitude  30.423 0 1000
+mean       0.128369 -0.8 0.8
+sigma      0.256298 0.1 0.3
+expb_amp   0.0306524 0 0.4
+expb_amp   4.4419 0 10
+const_bg   0.628026 0 10
+========== 3 31 0.6 3
+0 0 -1 6
+q-Boundary -0.718138 -1 4
+amplitude  26.3237 0 1000
+mean       0.132956 -0.8 0.8
+sigma      0.171223 0.1 0.3
+expb_amp   0.174254 0 0.4
+expb_amp   3.34194 0 10
+const_bg   0.671707 0 10
+========== 3 32 0.6 3
+0 0 -1 6
+q-Boundary -0.775854 -1 4
+amplitude  38.0927 0 1000
+mean       0.175589 -0.8 0.8
+sigma      0.210539 0.1 0.3
+expb_amp   0.0590612 0 0.4
+expb_amp   4.50513 0 10
+const_bg   0.211308 0 10
+========== 3 33 0.6 3
+0 0 -1 6
+q-Boundary -0.947009 -1 4
+amplitude  17.8602 0 1000
+mean       0.165304 -0.8 0.8
+sigma      0.191974 0.1 0.3
+expb_amp   0.0142934 0 0.4
+expb_amp   5.24708 0 10
+const_bg   6.16686e-12 0 10
+========== 3 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 3 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 12 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  783.051 0 827
+mean       0.236722 -0.2 2
+sigma      0.146241 0.1 0.5
+expb_amp   0.168877 0 2
+expb_amp   4.85143 0 20
+const_bg   5 -5 5
+========== 12 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 4 0 3
+0 0 -1 6
+q-Boundary -0.628182 -1 -0.05
+amplitude  35 0 35
+mean       0.299053 -0.2 2
+sigma      0.106717 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 12 5 0 3
+0 0 -1 6
+q-Boundary -0.587527 -1 -0.0875
+amplitude  182.386 0 194
+mean       0.182232 -0.2 2
+sigma      0.143726 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 12 6 0.6 3
+0 0 -1 6
+q-Boundary -0.437614 -1 -0.4375
+amplitude  89.7128 0 195
+mean       0.201557 -0.2 2
+sigma      0.129489 0.1 0.5
+expb_amp   0.0144586 0 2
+expb_amp   4.24565 0 20
+const_bg   0.221042 -5 5
+========== 12 7 0.6 3
+0 0 -1 6
+q-Boundary -0.737642 -1 -0.7375
+amplitude  141 0 141
+mean       0.182468 -0.2 2
+sigma      0.158942 0.1 0.5
+expb_amp   0.0201516 0 2
+expb_amp   4.15546 0 20
+const_bg   0.778823 -5 5
+========== 12 8 0.6 3
+0 0 -1 6
+q-Boundary -1.00625 -1 -1.0125
+amplitude  109 0 109
+mean       0.244564 -0.2 2
+sigma      0.144009 0.1 0.5
+expb_amp   0.0219074 0 2
+expb_amp   4.25227 0 20
+const_bg   0.989159 -5 5
+========== 12 9 0.6 3
+0 0 -1 6
+q-Boundary -1.11875 -1 -1.2375
+amplitude  92 0 92
+mean       0.259368 -0.2 2
+sigma      0.133883 0.1 0.5
+expb_amp   0.0226968 0 2
+expb_amp   4.3039 0 20
+const_bg   0.748594 -5 5
+========== 12 10 0.6 3
+0 0 -1 6
+q-Boundary -1.2375 -1 -1.475
+amplitude  82.687 0 123
+mean       0.267852 -0.2 2
+sigma      0.127366 0.1 0.5
+expb_amp   0.0207191 0 2
+expb_amp   4.27333 0 20
+const_bg   0.684074 -5 5
+========== 12 11 0.6 3
+0 0 -1 6
+q-Boundary -1.3625 -1 -1.725
+amplitude  65.0049 0 78
+mean       0.27004 -0.2 2
+sigma      0.135008 0.1 0.5
+expb_amp   0.0210894 0 2
+expb_amp   4.27649 0 20
+const_bg   0.868348 -5 5
+========== 12 12 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  56.9546 0 190
+mean       0.257039 -0.2 2
+sigma      0.136902 0.1 0.5
+expb_amp   0.0181074 0 2
+expb_amp   4.04724 0 20
+const_bg   0.730788 -5 5
+========== 12 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  89.6928 0 152
+mean       0.238448 -0.2 2
+sigma      0.133244 0.1 0.5
+expb_amp   0.0318915 0 2
+expb_amp   4.38253 0 20
+const_bg   1.46594 -5 5
+========== 12 14 0.6 3
+0 0 -1 6
+q-Boundary -1.725 -1 -2.45
+amplitude  65.4333 0 129
+mean       0.227224 -0.2 2
+sigma      0.156917 0.1 0.5
+expb_amp   0.0293802 0 2
+expb_amp   4.31474 0 20
+const_bg   1.67796 -5 5
+========== 12 15 0.6 3
+0 0 -0.7 2
+q-Boundary -0.8 -0.8 -0.8
+amplitude  171.325 0 350
+mean       0.245444 -0.2 2
+sigma      0.165125 0.1 0.5
+expb_amp   1.13265 0 2
+expb_amp   2.33882 0 5
+const_bg   5 -5 5
+========== 12 16 0.6 3
+0 0 -0.7 2
+q-Boundary -2.025 -1 -3.05
+amplitude  133.41 0 350
+mean       0.257075 -0.2 2
+sigma      0.195705 0.1 0.5
+expb_amp   1.57443 0 2
+expb_amp   2.0187 0 5
+const_bg   5 -5 5
+========== 12 17 0.6 3
+0 0 -1 6
+q-Boundary -0.983917 -1 4
+amplitude  106.571 0 1000
+mean       0.288273 -0.8 0.8
+sigma      0.20566 0.1 0.3
+expb_amp   0.0579153 0 0.4
+expb_amp   4.66855 0 10
+const_bg   7.30448 0 10
+========== 12 18 0.6 3
+0 0 -1 6
+q-Boundary -0.950268 -1 4
+amplitude  28.0094 0 1000
+mean       0.268465 -0.8 0.8
+sigma      0.186099 0.1 0.3
+expb_amp   0.0897906 0 0.4
+expb_amp   3.26607 0 10
+const_bg   4.89227 0 10
+========== 12 19 0.6 3
+0 0 -1 6
+q-Boundary -0.936903 -1 4
+amplitude  9.19525 0 1000
+mean       0.358575 -0.8 0.8
+sigma      0.279308 0.1 0.3
+expb_amp   0.0821922 0 0.4
+expb_amp   3.26454 0 10
+const_bg   1.60529 0 10
+========== 12 20 0.6 3
+0 0 -1 6
+q-Boundary -0.97989 -1 4
+amplitude  25.7948 0 1000
+mean       0.415007 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0841589 0 0.4
+expb_amp   4.73988 0 10
+const_bg   1.72783 0 10
+========== 12 21 0.6 3
+0 0 -1 6
+q-Boundary -0.97435 -1 4
+amplitude  3.24588 0 1000
+mean       -0.8 -0.8 0.8
+sigma      0.1 0.1 0.3
+expb_amp   0.0748442 0 0.4
+expb_amp   3.67202 0 10
+const_bg   1.51795e-12 0 10
+========== 12 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 12 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 13 0 0.6 3
+0 0 -1 6
+q-Boundary -2.00625 -1 -3.0125
+amplitude  868.597 0 895
+mean       0.230216 -0.2 2
+sigma      0.1342 0.1 0.5
+expb_amp   0.171885 0 2
+expb_amp   4.86474 0 20
+const_bg   5 -5 5
+========== 13 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 4 0 3
+0 0 -1 6
+q-Boundary -0.505402 -0.95 0.05
+amplitude  50.9364 0 53
+mean       0.240592 -0.2 2
+sigma      0.0944161 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 13 5 0 3
+0 0 -1 6
+q-Boundary -0.565625 -1 -0.0625
+amplitude  205.124 0 210
+mean       0.172566 -0.2 2
+sigma      0.13341 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 13 6 0.6 3
+0 0 -1 6
+q-Boundary -0.564656 -1 -0.5375
+amplitude  110.978 0 173
+mean       0.177144 -0.2 2
+sigma      0.120847 0.1 0.5
+expb_amp   0.0208426 0 2
+expb_amp   4.32866 0 20
+const_bg   0.17908 -5 5
+========== 13 7 0.6 3
+0 0 -1 6
+q-Boundary -0.737918 -1 -0.7375
+amplitude  148.922 0 152
+mean       0.184462 -0.2 2
+sigma      0.142578 0.1 0.5
+expb_amp   0.0209754 0 2
+expb_amp   4.35158 0 20
+const_bg   0.686669 -5 5
+========== 13 8 0.6 3
+0 0 -1 6
+q-Boundary -0.99375 -1 -0.9875
+amplitude  108 0 108
+mean       0.238237 -0.2 2
+sigma      0.14231 0.1 0.5
+expb_amp   0.0177355 0 2
+expb_amp   4.21489 0 20
+const_bg   0.937783 -5 5
+========== 13 9 0.6 3
+0 0 -1 6
+q-Boundary -1.11875 -1 -1.2375
+amplitude  104 0 104
+mean       0.247636 -0.2 2
+sigma      0.12559 0.1 0.5
+expb_amp   0.0193374 0 2
+expb_amp   4.29217 0 20
+const_bg   0.917215 -5 5
+========== 13 10 0.6 3
+0 0 -1 6
+q-Boundary -1.24375 -1 -1.4875
+amplitude  78 0 78
+mean       0.252132 -0.2 2
+sigma      0.130629 0.1 0.5
+expb_amp   0.0284271 0 2
+expb_amp   4.14104 0 20
+const_bg   0.818792 -5 5
+========== 13 11 0.6 3
+0 0 -1 6
+q-Boundary -1.3625 -1 -1.725
+amplitude  78.7725 0 97
+mean       0.256445 -0.2 2
+sigma      0.122858 0.1 0.5
+expb_amp   0.0168283 0 2
+expb_amp   4.12145 0 20
+const_bg   0.781987 -5 5
+========== 13 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  66.8736 0 126
+mean       0.245619 -0.2 2
+sigma      0.120804 0.1 0.5
+expb_amp   0.0419788 0 2
+expb_amp   3.33551 0 20
+const_bg   0.899609 -5 5
+========== 13 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6125 -1 -2.225
+amplitude  71 0 71
+mean       0.248943 -0.2 2
+sigma      0.148663 0.1 0.5
+expb_amp   0.0321014 0 2
+expb_amp   4.32205 0 20
+const_bg   2.19659 -5 5
+========== 13 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7625 -1 -2.525
+amplitude  41.3428 0 74
+mean       0.232432 -0.2 2
+sigma      0.117031 0.1 0.5
+expb_amp   0.019934 0 2
+expb_amp   4.12194 0 20
+const_bg   0.747564 -5 5
+========== 13 15 0.6 3
+0 0 -1 6
+q-Boundary -1.875 -1 -2.75
+amplitude  60.3384 0 125
+mean       0.229739 -0.2 2
+sigma      0.125351 0.1 0.5
+expb_amp   0.0285072 0 2
+expb_amp   4.3555 0 20
+const_bg   1.85862 -5 5
+========== 13 16 0.6 3
+0 0 -1 6
+q-Boundary -2.025 -1 -3.05
+amplitude  75.4486 0 125
+mean       0.260249 -0.2 2
+sigma      0.155754 0.1 0.5
+expb_amp   0.0554793 0 2
+expb_amp   4.39391 0 20
+const_bg   3.63584 -5 5
+========== 13 17 0.6 3
+0 0 -1 6
+q-Boundary -0.987932 -1 4
+amplitude  65.4667 0 1000
+mean       0.305268 -0.8 0.8
+sigma      0.158272 0.1 0.3
+expb_amp   0.0359118 0 0.4
+expb_amp   4.46793 0 10
+const_bg   4.27554 0 10
+========== 13 18 0.6 3
+0 0 -1 6
+q-Boundary -0.989516 -1 4
+amplitude  30.5446 0 1000
+mean       0.297656 -0.8 0.8
+sigma      0.160804 0.1 0.3
+expb_amp   0.249934 0 0.4
+expb_amp   2.88746 0 10
+const_bg   3.98727 0 10
+========== 13 19 0.6 3
+0 0 -1 6
+q-Boundary -0.998991 -1 4
+amplitude  25.8454 0 1000
+mean       0.329436 -0.8 0.8
+sigma      0.200357 0.1 0.3
+expb_amp   0.218625 0 0.4
+expb_amp   3.09692 0 10
+const_bg   3.44086 0 10
+========== 13 20 0.6 3
+0 0 -1 6
+q-Boundary -0.950003 -1 4
+amplitude  16.4749 0 1000
+mean       0.49756 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0669238 0 0.4
+expb_amp   4.45643 0 10
+const_bg   0.864827 0 10
+========== 13 21 0.6 3
+0 0 -1 6
+q-Boundary -0.952491 -1 4
+amplitude  4.27523 0 1000
+mean       -0.8 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0318702 0 0.4
+expb_amp   4.39342 0 10
+const_bg   8.72487e-10 0 10
+========== 13 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 13 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 14 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  914.818 0 941
+mean       0.229273 -0.2 2
+sigma      0.13071 0.1 0.5
+expb_amp   0.180317 0 2
+expb_amp   4.9024 0 20
+const_bg   5 -5 5
+========== 14 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 4 0 3
+0 0 -1 6
+q-Boundary -0.554891 -1 3.33067e-16
+amplitude  49 0 49
+mean       0.225931 -0.2 2
+sigma      0.144395 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 14 5 0 3
+0 0 -1 6
+q-Boundary -0.612529 -1 -0.1125
+amplitude  228.628 0 231
+mean       0.168704 -0.2 2
+sigma      0.119078 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 14 6 0.6 3
+0 0 -1 6
+q-Boundary -0.639685 -1 -0.2875
+amplitude  114.067 0 205
+mean       0.16416 -0.2 2
+sigma      0.111146 0.1 0.5
+expb_amp   0.00968165 0 2
+expb_amp   5.10194 0 20
+const_bg   0.203315 -5 5
+========== 14 7 0.6 3
+0 0 -1 6
+q-Boundary -0.687534 -1 -0.6875
+amplitude  158 0 158
+mean       0.183637 -0.2 2
+sigma      0.132024 0.1 0.5
+expb_amp   0.029614 0 2
+expb_amp   4.22615 0 20
+const_bg   1.28142 -5 5
+========== 14 8 0.6 3
+0 0 -0.7 2
+q-Boundary -0.999875 -1 -0.9875
+amplitude  145.75 0 350
+mean       0.231781 -0.2 2
+sigma      0.113231 0.1 0.5
+expb_amp   1.32558 0 2
+expb_amp   0.124181 0 5
+const_bg   1.08811 -5 5
+========== 14 9 0.6 3
+0 0 -0.7 2
+q-Boundary -1.11875 -1 -1.2375
+amplitude  123.345 0 350
+mean       0.249018 -0.2 2
+sigma      0.112038 0.1 0.5
+expb_amp   0.244815 0 2
+expb_amp   1.52414 0 5
+const_bg   1.5829 -5 5
+========== 14 10 0.6 3
+0 0 -0.7 2
+q-Boundary -1.23125 -1 -1.4625
+amplitude  100.509 0 350
+mean       0.250708 -0.2 2
+sigma      0.110128 0.1 0.5
+expb_amp   1.33792 0 2
+expb_amp   0.0194075 0 5
+const_bg   1.45079 -5 5
+========== 14 11 0.6 3
+0 0 -1 6
+q-Boundary -1.375 -1 -1.75
+amplitude  71.1127 0 155
+mean       0.25595 -0.2 2
+sigma      0.13198 0.1 0.5
+expb_amp   0.0522634 0 2
+expb_amp   3.29889 0 20
+const_bg   0.979318 -5 5
+========== 14 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  63.574 0 124
+mean       0.255492 -0.2 2
+sigma      0.12298 0.1 0.5
+expb_amp   0.159672 0 2
+expb_amp   2.06895 0 20
+const_bg   1.07779 -5 5
+========== 14 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  47.7652 0 148
+mean       0.250396 -0.2 2
+sigma      0.134956 0.1 0.5
+expb_amp   0.0424899 0 2
+expb_amp   3.37492 0 20
+const_bg   1.10283 -5 5
+========== 14 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  74.592 0 147
+mean       0.256542 -0.2 2
+sigma      0.14429 0.1 0.5
+expb_amp   0.0338862 0 2
+expb_amp   4.36145 0 20
+const_bg   1.92285 -5 5
+========== 14 15 0.6 3
+0 0 -1 6
+q-Boundary -1.875 -1 -2.75
+amplitude  106.089 0 108
+mean       0.286336 -0.2 2
+sigma      0.153266 0.1 0.5
+expb_amp   0.0595989 0 2
+expb_amp   4.39716 0 20
+const_bg   4.12885 -5 5
+========== 14 16 0.6 3
+0 0 -1 6
+q-Boundary -2 -1 -3
+amplitude  155.784 0 167
+mean       0.286319 -0.2 2
+sigma      0.159002 0.1 0.5
+expb_amp   0.103648 0 2
+expb_amp   4.56297 0 20
+const_bg   5 -5 5
+========== 14 17 0.6 3
+0 0 -1 6
+q-Boundary -0.990073 -1 4
+amplitude  110.047 0 1000
+mean       0.315988 -0.8 0.8
+sigma      0.205298 0.1 0.3
+expb_amp   0.0634806 0 0.4
+expb_amp   4.68422 0 10
+const_bg   8.27743 0 10
+========== 14 18 0.6 3
+0 0 -1 6
+q-Boundary -0.999934 -1 4
+amplitude  49.865 0 1000
+mean       0.327991 -0.8 0.8
+sigma      0.184728 0.1 0.3
+expb_amp   0.09872 0 0.4
+expb_amp   4.94813 0 10
+const_bg   8.91348 0 10
+========== 14 19 0.6 3
+0 0 -1 6
+q-Boundary -0.995936 -1 4
+amplitude  62.9684 0 1000
+mean       0.351621 -0.8 0.8
+sigma      0.20794 0.1 0.3
+expb_amp   0.0853289 0 0.4
+expb_amp   4.85724 0 10
+const_bg   7.37307 0 10
+========== 14 20 0.6 3
+0 0 -1 6
+q-Boundary -0.950013 -1 4
+amplitude  17.6267 0 1000
+mean       0.479147 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0574378 0 0.4
+expb_amp   4.41919 0 10
+const_bg   1.09979 0 10
+========== 14 21 0.6 3
+0 0 -1 6
+q-Boundary -0.931421 -1 4
+amplitude  3.37522 0 1000
+mean       -0.8 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.00913511 0 0.4
+expb_amp   6.25134 0 10
+const_bg   1.7319e-09 0 10
+========== 14 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 14 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 15 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  742.88 0 791
+mean       0.227742 -0.2 2
+sigma      0.156834 0.1 0.5
+expb_amp   0.198606 0 2
+expb_amp   4.98779 0 20
+const_bg   5 -5 5
+========== 15 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 4 0 3
+0 0 -1 6
+q-Boundary -0.377088 -0.875 0.125
+amplitude  21.2817 0 22
+mean       0.300842 -0.2 2
+sigma      0.121989 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 15 5 0 3
+0 0 -1 6
+q-Boundary -0.612546 -1 -0.1125
+amplitude  163.769 0 180
+mean       0.164407 -0.2 2
+sigma      0.160731 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 15 6 0.6 3
+0 0 -1 6
+q-Boundary -0.572864 -1 -0.4375
+amplitude  80.9589 0 153
+mean       0.184104 -0.2 2
+sigma      0.150331 0.1 0.5
+expb_amp   0.00370547 0 2
+expb_amp   5.23116 0 20
+const_bg   0.351795 -5 5
+========== 15 7 0.6 3
+0 0 -1 6
+q-Boundary -0.76295 -1 -0.7625
+amplitude  129 0 129
+mean       0.17281 -0.2 2
+sigma      0.170986 0.1 0.5
+expb_amp   0.00393947 0 2
+expb_amp   5.09948 0 20
+const_bg   1.4074 -5 5
+========== 15 8 0.6 3
+0 0 -1 6
+q-Boundary -0.99375 -1 -0.9875
+amplitude  103 0 103
+mean       0.223713 -0.2 2
+sigma      0.158127 0.1 0.5
+expb_amp   0.0152105 0 2
+expb_amp   4.15512 0 20
+const_bg   1.44157 -5 5
+========== 15 9 0.6 3
+0 0 -1 6
+q-Boundary -1.11875 -1 -1.2375
+amplitude  91 0 91
+mean       0.24216 -0.2 2
+sigma      0.143632 0.1 0.5
+expb_amp   0.0206607 0 2
+expb_amp   4.30416 0 20
+const_bg   1.39785 -5 5
+========== 15 10 0.6 3
+0 0 -1 6
+q-Boundary -1.24375 -1 -1.4875
+amplitude  74.9257 0 75
+mean       0.250897 -0.2 2
+sigma      0.140166 0.1 0.5
+expb_amp   0.0227537 0 2
+expb_amp   4.3022 0 20
+const_bg   1.18731 -5 5
+========== 15 11 0.6 3
+0 0 -1 6
+q-Boundary -1.3625 -1 -1.725
+amplitude  63.3788 0 89
+mean       0.256535 -0.2 2
+sigma      0.136836 0.1 0.5
+expb_amp   0.0222556 0 2
+expb_amp   4.31625 0 20
+const_bg   1.15127 -5 5
+========== 15 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  58.2218 0 120
+mean       0.253622 -0.2 2
+sigma      0.135219 0.1 0.5
+expb_amp   0.0215833 0 2
+expb_amp   4.27948 0 20
+const_bg   1.20485 -5 5
+========== 15 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  87.1509 0 166
+mean       0.231358 -0.2 2
+sigma      0.139101 0.1 0.5
+expb_amp   0.0372481 0 2
+expb_amp   4.40736 0 20
+const_bg   2.49475 -5 5
+========== 15 14 0.6 3
+0 0 -1 6
+q-Boundary -1.725 -1 -2.45
+amplitude  70.1868 0 120
+mean       0.241489 -0.2 2
+sigma      0.141739 0.1 0.5
+expb_amp   0.040355 0 2
+expb_amp   4.35779 0 20
+const_bg   2.3224 -5 5
+========== 15 15 0.6 3
+0 0 -1 6
+q-Boundary -1.9 -1 -2.8
+amplitude  88.8175 0 222
+mean       0.244174 -0.2 2
+sigma      0.152147 0.1 0.5
+expb_amp   0.0886486 0 2
+expb_amp   4.53453 0 20
+const_bg   4.94334 -5 5
+========== 15 16 0.6 3
+0 0 -1 6
+q-Boundary -2 -1 -3
+amplitude  83.3925 0 202
+mean       0.240113 -0.2 2
+sigma      0.139304 0.1 0.5
+expb_amp   0.0758976 0 2
+expb_amp   4.50282 0 20
+const_bg   4.6545 -5 5
+========== 15 17 0.6 3
+0 0 -1 6
+q-Boundary -0.950025 -1 4
+amplitude  55.3385 0 1000
+mean       0.300909 -0.8 0.8
+sigma      0.206617 0.1 0.3
+expb_amp   0.051115 0 0.4
+expb_amp   4.56705 0 10
+const_bg   4.8975 0 10
+========== 15 18 0.6 3
+0 0 -1 6
+q-Boundary -0.993283 -1 4
+amplitude  59.5582 0 1000
+mean       0.304251 -0.8 0.8
+sigma      0.222766 0.1 0.3
+expb_amp   0.0850636 0 0.4
+expb_amp   4.86412 0 10
+const_bg   10 0 10
+========== 15 19 0.6 3
+0 0 -1 6
+q-Boundary -0.951982 -1 4
+amplitude  44.8512 0 1000
+mean       0.35497 -0.8 0.8
+sigma      0.218468 0.1 0.3
+expb_amp   0.0807882 0 0.4
+expb_amp   4.78421 0 10
+const_bg   9.40572 0 10
+========== 15 20 0.6 3
+0 0 -1 6
+q-Boundary -0.950003 -1 4
+amplitude  16.707 0 1000
+mean       0.58272 -0.8 0.8
+sigma      0.283234 0.1 0.3
+expb_amp   0.080806 0 0.4
+expb_amp   4.60989 0 10
+const_bg   0.999819 0 10
+========== 15 21 0.6 3
+0 0 -1 6
+q-Boundary -0.904197 -1 4
+amplitude  7.12099 0 1000
+mean       -0.0840678 -0.8 0.8
+sigma      0.1 0.1 0.3
+expb_amp   0.252925 0 0.4
+expb_amp   3.03699 0 10
+const_bg   4.46228e-12 0 10
+========== 15 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 15 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 16 0 0.6 3
+0 0 -1 6
+q-Boundary -1.98125 -1 -2.9625
+amplitude  793.162 0 922
+mean       0.215741 -0.2 2
+sigma      0.125916 0.1 0.5
+expb_amp   0.205016 0 2
+expb_amp   5.02333 0 20
+const_bg   5 -5 5
+========== 16 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 5 0 3
+0 0 -1 6
+q-Boundary -0.287532 -0.7875 0.2125
+amplitude  206.034 0 220
+mean       0.131647 -0.2 2
+sigma      0.107969 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 16 6 0.6 3
+0 0 -1 6
+q-Boundary -0.263143 -1 -0.1125
+amplitude  77.0389 0 231
+mean       0.130913 -0.2 2
+sigma      0.1 0.1 0.5
+expb_amp   0.0363476 0 2
+expb_amp   3.31118 0 20
+const_bg   0.204006 -5 5
+========== 16 7 0.6 3
+0 0 -0.7 2
+q-Boundary -0.994375 -1 -0.4375
+amplitude  178.959 0 350
+mean       0.151854 -0.2 2
+sigma      0.119609 0.1 0.5
+expb_amp   0.0214373 0 2
+expb_amp   0.647486 0 5
+const_bg   2.90494 -5 5
+========== 16 8 0.6 3
+0 0 -0.8 2
+q-Boundary -0.998125 -1 -0.8125
+amplitude  140 0 350
+mean       0.233821 -0.2 2
+sigma      0.1 0.1 0.5
+expb_amp   1.04151 0 2
+expb_amp   8.26863e-08 0 5
+const_bg   2.6267 -5 5
+========== 16 9 0.6 3
+0 0 -0.8 2
+q-Boundary -1.05625 -1 -1.1125
+amplitude  115.409 0 350
+mean       0.249324 -0.2 2
+sigma      0.1 0.1 0.5
+expb_amp   1.99889 0 2
+expb_amp   0.0274355 0 5
+const_bg   1.83105 -5 5
+========== 16 10 0.6 3
+0 0 -1 6
+q-Boundary -1.1875 -1 -1.375
+amplitude  86.0544 0 111
+mean       0.256934 -0.2 2
+sigma      0.10414 0.1 0.5
+expb_amp   0.0306904 0 2
+expb_amp   4.32379 0 20
+const_bg   1.21012 -5 5
+========== 16 11 0.6 3
+0 0 -1 6
+q-Boundary -1.3375 -1 -1.675
+amplitude  69.159 0 88
+mean       0.252647 -0.2 2
+sigma      0.110664 0.1 0.5
+expb_amp   0.0307819 0 2
+expb_amp   4.03953 0 20
+const_bg   1.17752 -5 5
+========== 16 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  107.569 0 112
+mean       0.245652 -0.2 2
+sigma      0.11607 0.1 0.5
+expb_amp   0.0405457 0 2
+expb_amp   4.40077 0 20
+const_bg   2.41122 -5 5
+========== 16 13 0.6 3
+0 0 -0.8 2
+q-Boundary -1.6 -1 -2.2
+amplitude  163.089 0 350
+mean       0.262388 -0.2 2
+sigma      0.124093 0.1 0.5
+expb_amp   1.99685 0 2
+expb_amp   1.42942 0 5
+const_bg   5 -5 5
+========== 16 14 0.6 3
+0 0 -1 4
+q-Boundary -1.7 -1 -2.4
+amplitude  67.4142 0 140
+mean       0.2 -0.2 0.2
+sigma      0.135564 0.1 0.5
+expb_amp   0.0308456 0 2
+expb_amp   4.39438 0 20
+const_bg   3.50949 -5 5
+========== 16 15 0.6 3
+0 0 -1 6
+q-Boundary -1.875 -1 -2.75
+amplitude  86.1625 0 100
+mean       0.226989 -0.2 2
+sigma      0.167023 0.1 0.5
+expb_amp   0.0879419 0 2
+expb_amp   4.52433 0 20
+const_bg   4.15821 -5 5
+========== 16 16 0.6 3
+0 0 -1 6
+q-Boundary -2.025 -1 -3.05
+amplitude  139.159 0 154
+mean       0.237493 -0.2 2
+sigma      0.179832 0.1 0.5
+expb_amp   0.137976 0 2
+expb_amp   4.67076 0 20
+const_bg   5 -5 5
+========== 16 17 0.6 3
+0 0 -1 6
+q-Boundary -0.999934 -1 4
+amplitude  61.6137 0 1000
+mean       0.256195 -0.8 0.8
+sigma      0.271318 0.1 0.3
+expb_amp   0.0954048 0 0.4
+expb_amp   4.69174 0 10
+const_bg   9.52728 0 10
+========== 16 18 0.6 3
+0 0 -1 6
+q-Boundary -0.988816 -1 4
+amplitude  64.7977 0 1000
+mean       0.19105 -0.8 0.8
+sigma      0.228969 0.1 0.3
+expb_amp   0.0884081 0 0.4
+expb_amp   4.88163 0 10
+const_bg   10 0 10
+========== 16 19 0.6 3
+0 0 -1 6
+q-Boundary -0.999881 -1 4
+amplitude  29.2875 0 1000
+mean       0.427384 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0923416 0 0.4
+expb_amp   4.90847 0 10
+const_bg   6.60989 0 10
+========== 16 20 0.6 3
+0 0 -1 6
+q-Boundary -0.904024 -1 4
+amplitude  23.6993 0 1000
+mean       0.510118 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.117397 0 0.4
+expb_amp   4.97159 0 10
+const_bg   0.0946304 0 10
+========== 16 21 0.6 3
+0 0 -1 6
+q-Boundary -0.950548 -1 4
+amplitude  1.30829 0 1000
+mean       -0.478802 -0.8 0.8
+sigma      0.1 0.1 0.3
+expb_amp   0.0580675 0 0.4
+expb_amp   3.87815 0 10
+const_bg   1.42088e-11 0 10
+========== 16 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 16 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 17 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  664.081 0 737
+mean       0.203974 -0.2 2
+sigma      0.149855 0.1 0.5
+expb_amp   0.197787 0 2
+expb_amp   4.9845 0 20
+const_bg   5 -5 5
+========== 17 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 5 0 3
+0 0 -1 6
+q-Boundary -0.362527 -0.8625 0.1375
+amplitude  174.216 0 193
+mean       0.106009 -0.2 2
+sigma      0.122904 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 17 6 0.6 3
+0 0 -0.6 2
+q-Boundary -0.991625 -1 -0.1625
+amplitude  53.8943 0 350
+mean       0.0990844 -0.2 2
+sigma      0.106719 0.1 0.5
+expb_amp   3.54577e-15 0 2
+expb_amp   3.1097e-08 0 5
+const_bg   0.955004 -5 5
+========== 17 7 0.6 3
+0 0 -0.6 2
+q-Boundary -0.994375 -1 -0.4375
+amplitude  168.046 0 350
+mean       0.126363 -0.2 2
+sigma      0.129983 0.1 0.5
+expb_amp   0.238117 0 2
+expb_amp   1.4968 0 5
+const_bg   2.26082 -5 5
+========== 17 8 0.6 3
+0 0 -0.6 2
+q-Boundary -0.999875 -1 -0.9875
+amplitude  117.333 0 350
+mean       0.208868 -0.2 2
+sigma      0.124441 0.1 0.5
+expb_amp   0.253045 0 2
+expb_amp   2.39991 0 5
+const_bg   1.37354 -5 5
+========== 17 9 0.6 3
+0 0 -1 6
+q-Boundary -1.05625 -1 -1.1125
+amplitude  83 0 83
+mean       0.235255 -0.2 2
+sigma      0.135763 0.1 0.5
+expb_amp   0.0211611 0 2
+expb_amp   4.27701 0 20
+const_bg   1.43797 -5 5
+========== 17 10 0.6 3
+0 0 -1 6
+q-Boundary -1.175 -1 -1.35
+amplitude  74.4014 0 185
+mean       0.248281 -0.2 2
+sigma      0.121961 0.1 0.5
+expb_amp   0.0284924 0 2
+expb_amp   4.31432 0 20
+const_bg   1.29567 -5 5
+========== 17 11 0.6 3
+0 0 -1 6
+q-Boundary -1.3375 -1 -1.675
+amplitude  60.5416 0 69
+mean       0.252142 -0.2 2
+sigma      0.127418 0.1 0.5
+expb_amp   0.0238015 0 2
+expb_amp   4.25462 0 20
+const_bg   1.37302 -5 5
+========== 17 12 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  101.273 0 165
+mean       0.244132 -0.2 2
+sigma      0.135786 0.1 0.5
+expb_amp   0.0371455 0 2
+expb_amp   4.36233 0 20
+const_bg   2.36687 -5 5
+========== 17 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  69.0827 0 128
+mean       0.239595 -0.2 2
+sigma      0.141463 0.1 0.5
+expb_amp   0.0395008 0 2
+expb_amp   4.40063 0 20
+const_bg   2.18018 -5 5
+========== 17 14 0.6 3
+0 0 -1 6
+q-Boundary -1.8 -1 -2.6
+amplitude  31.0778 0 147
+mean       0.25008 -0.5 0.5
+sigma      0.151219 0.1 0.5
+expb_amp   0.0220754 0 2
+expb_amp   4.1458 0 20
+const_bg   1.26185 -5 5
+========== 17 15 0.6 3
+0 0 -1 6
+q-Boundary -1.9 -1 -2.8
+amplitude  111.944 0 219
+mean       0.305556 -0.2 2
+sigma      0.188395 0.1 0.5
+expb_amp   0.14706 0 2
+expb_amp   4.75021 0 20
+const_bg   5 -5 5
+========== 17 16 0.6 3
+0 0 -1 6
+q-Boundary -2.025 -1 -3.05
+amplitude  112.607 0 143
+mean       0.268948 -0.2 2
+sigma      0.201211 0.1 0.5
+expb_amp   0.14203 0 2
+expb_amp   4.70707 0 20
+const_bg   5 -5 5
+========== 17 17 0.6 3
+0 0 -1 6
+q-Boundary -0.980192 -1 4
+amplitude  53.8716 0 1000
+mean       0.271567 -0.8 0.8
+sigma      0.207501 0.1 0.3
+expb_amp   0.0949624 0 0.4
+expb_amp   4.91876 0 10
+const_bg   10 0 10
+========== 17 18 0.6 3
+0 0 -1 6
+q-Boundary -0.984754 -1 4
+amplitude  40.3176 0 1000
+mean       0.330317 -0.8 0.8
+sigma      0.276347 0.1 0.3
+expb_amp   0.0908527 0 0.4
+expb_amp   4.8509 0 10
+const_bg   10 0 10
+========== 17 19 0.6 3
+0 0 -1 6
+q-Boundary -0.960881 -1 4
+amplitude  19.2108 0 1000
+mean       0.444915 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0695086 0 0.4
+expb_amp   4.61778 0 10
+const_bg   3.02063 0 10
+========== 17 20 0.6 3
+0 0 -1 6
+q-Boundary -0.990934 -1 4
+amplitude  24.8348 0 1000
+mean       0.361517 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.136705 0 0.4
+expb_amp   4.73592 0 10
+const_bg   1.95183e-14 0 10
+========== 17 21 0.6 3
+0 0 -1 6
+q-Boundary -0.950674 -1 4
+amplitude  6.55651 0 1000
+mean       -0.8 -0.8 0.8
+sigma      0.178239 0.1 0.3
+expb_amp   0.0207538 0 0.4
+expb_amp   3.11623 0 10
+const_bg   0.0248237 0 10
+========== 17 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 17 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 18 0 0.6 3
+0 0 -1 6
+q-Boundary -1.98125 -1 -2.9625
+amplitude  599.661 0 650
+mean       0.201069 -0.2 2
+sigma      0.170283 0.1 0.5
+expb_amp   0.190134 0 2
+expb_amp   4.94729 0 20
+const_bg   5 -5 5
+========== 18 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 5 0 3
+0 0 -1 6
+q-Boundary -0.337523 -0.8375 0.1625
+amplitude  182.431 0 192
+mean       0.0794147 -0.2 2
+sigma      0.115037 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 18 6 0.6 3
+0 0 -1 6
+q-Boundary -0.212985 -1 -0.1375
+amplitude  40.7286 0 196
+mean       0.0763975 -0.2 2
+sigma      0.111137 0.1 0.5
+expb_amp   0.0494981 0 2
+expb_amp   2.77187 0 20
+const_bg   0.0445068 -5 5
+========== 18 7 0.6 3
+0 0 -0.6 2
+q-Boundary -0.994625 -1 -0.4625
+amplitude  190.536 0 350
+mean       0.095053 -0.2 2
+sigma      0.12469 0.1 0.5
+expb_amp   0.00302928 0 2
+expb_amp   1.59275 0 5
+const_bg   2.49909 -5 5
+========== 18 8 0.6 3
+0 0 -0.6 2
+q-Boundary -0.998125 -1 -0.8125
+amplitude  127.707 0 350
+mean       0.19894 -0.2 2
+sigma      0.122838 0.1 0.5
+expb_amp   1.51028 0 2
+expb_amp   0.664345 0 5
+const_bg   1.58753 -5 5
+========== 18 9 0.6 3
+0 0 -1 6
+q-Boundary -1.0125 -1 -1.025
+amplitude  97.6986 0 118
+mean       0.246755 -0.2 2
+sigma      0.121578 0.1 0.5
+expb_amp   0.0191135 0 2
+expb_amp   4.28645 0 20
+const_bg   1.38603 -5 5
+========== 18 10 0.6 3
+0 0 -1 6
+q-Boundary -1.175 -1 -1.35
+amplitude  63.8926 0 180
+mean       0.256877 -0.2 2
+sigma      0.141573 0.1 0.5
+expb_amp   0.0271574 0 2
+expb_amp   4.30321 0 20
+const_bg   1.20334 -5 5
+========== 18 11 0.6 3
+0 0 -1 6
+q-Boundary -1.325 -1 -1.65
+amplitude  98 0 98
+mean       0.266975 -0.2 2
+sigma      0.154467 0.1 0.5
+expb_amp   0.0383872 0 2
+expb_amp   4.39183 0 20
+const_bg   2.49056 -5 5
+========== 18 12 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  82.0816 0 163
+mean       0.293473 -0.2 2
+sigma      0.16082 0.1 0.5
+expb_amp   0.0398012 0 2
+expb_amp   4.40757 0 20
+const_bg   2.3702 -5 5
+========== 18 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  130.592 0 137
+mean       0.296192 -0.2 2
+sigma      0.170508 0.1 0.5
+expb_amp   0.0740315 0 2
+expb_amp   4.46708 0 20
+const_bg   4.68285 -5 5
+========== 18 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  81.4124 0 161
+mean       0.307342 -0.2 2
+sigma      0.177076 0.1 0.5
+expb_amp   0.0746762 0 2
+expb_amp   4.47449 0 20
+const_bg   4.96792 -5 5
+========== 18 15 0.6 3
+0 0 -1 6
+q-Boundary -1.9 -1 -2.8
+amplitude  117.952 0 200
+mean       0.312854 -0.2 2
+sigma      0.231914 0.1 0.5
+expb_amp   0.141343 0 2
+expb_amp   4.71585 0 20
+const_bg   5 -5 5
+========== 18 16 0.6 3
+0 0 -0.7 2
+q-Boundary -2.0125 -1 -3.025
+amplitude  100.59 0 350
+mean       0.347366 -0.2 2
+sigma      0.215144 0.1 0.5
+expb_amp   1.64197 0 2
+expb_amp   2.33254 0 5
+const_bg   5 -5 5
+========== 18 17 0.6 3
+0 0 -1 6
+q-Boundary -0.99993 -1 4
+amplitude  61.203 0 1000
+mean       0.335274 -0.8 0.8
+sigma      0.270111 0.1 0.3
+expb_amp   0.087637 0 0.4
+expb_amp   4.88016 0 10
+const_bg   10 0 10
+========== 18 18 0.6 3
+0 0 -1 6
+q-Boundary -0.95034 -1 4
+amplitude  23.6256 0 1000
+mean       0.363915 -0.8 0.8
+sigma      0.216904 0.1 0.3
+expb_amp   0.0734172 0 0.4
+expb_amp   4.43885 0 10
+const_bg   4.9969 0 10
+========== 18 19 0.6 3
+0 0 -1 6
+q-Boundary -0.996684 -1 4
+amplitude  12.3522 0 1000
+mean       0.310572 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.234983 0 0.4
+expb_amp   3.32972 0 10
+const_bg   2.68496 0 10
+========== 18 20 0.6 3
+0 0 -1 6
+q-Boundary -0.999408 -1 4
+amplitude  20.2305 0 1000
+mean       0.487634 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.113093 0 0.4
+expb_amp   4.82125 0 10
+const_bg   0.561204 0 10
+========== 18 21 0.6 3
+0 0 -1 6
+q-Boundary 2.33718 -1 4
+amplitude  78.7918 0 1000
+mean       -0.792127 -0.8 0.8
+sigma      0.244092 0.1 0.3
+expb_amp   0.000849443 0 0.4
+expb_amp   5.5717 0 10
+const_bg   0.062806 0 10
+========== 18 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 18 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 19 0 0.6 3
+0 0 -1 6
+q-Boundary -1.98125 -1 -2.9625
+amplitude  600.72 0 646
+mean       0.211389 -0.2 2
+sigma      0.174653 0.1 0.5
+expb_amp   0.176241 0 2
+expb_amp   4.88415 0 20
+const_bg   5 -5 5
+========== 19 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 5 0 3
+0 0 -1 6
+q-Boundary -0.362525 -0.8625 0.1375
+amplitude  169.986 0 190
+mean       0.099284 -0.2 2
+sigma      0.128069 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 19 6 0.6 3
+0 0 -1 6
+q-Boundary -0.39107 -1 -0.1375
+amplitude  45.7682 0 188
+mean       0.106654 -0.2 2
+sigma      0.117784 0.1 0.5
+expb_amp   0.000802909 0 2
+expb_amp   5.34178 0 20
+const_bg   0.146514 -5 5
+========== 19 7 0.6 3
+0 0 -0.6 2
+q-Boundary -0.994625 -1 -0.4625
+amplitude  170.699 0 350
+mean       0.113843 -0.2 2
+sigma      0.138156 0.1 0.5
+expb_amp   1.21493e-08 0 2
+expb_amp   1.97207e-09 0 5
+const_bg   2.57152 -5 5
+========== 19 8 0.6 3
+0 0 -0.6 2
+q-Boundary -0.998375 -1 -0.8375
+amplitude  115.234 0 350
+mean       0.20841 -0.2 2
+sigma      0.136831 0.1 0.5
+expb_amp   0.611198 0 2
+expb_amp   1.15532 0 5
+const_bg   1.80896 -5 5
+========== 19 9 0.6 3
+0 0 -1 2
+q-Boundary -1.05625 -1 -1.1125
+amplitude  80.1748 0 350
+mean       0.24491 -0.2 2
+sigma      0.146148 0.1 0.5
+expb_amp   0.451349 0 2
+expb_amp   0.0092481 0 5
+const_bg   1.64241 -5 5
+========== 19 10 0.6 3
+0 0 -1 6
+q-Boundary -1.175 -1 -1.35
+amplitude  68.2652 0 163
+mean       0.265522 -0.2 2
+sigma      0.144551 0.1 0.5
+expb_amp   0.0256053 0 2
+expb_amp   4.29645 0 20
+const_bg   1.06548 -5 5
+========== 19 11 0.6 3
+0 0 -1 6
+q-Boundary -1.325 -1 -1.65
+amplitude  105.896 0 116
+mean       0.272474 -0.2 2
+sigma      0.15161 0.1 0.5
+expb_amp   0.0350341 0 2
+expb_amp   4.36979 0 20
+const_bg   2.19115 -5 5
+========== 19 12 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  82.6051 0 156
+mean       0.265541 -0.2 2
+sigma      0.155794 0.1 0.5
+expb_amp   0.0342557 0 2
+expb_amp   4.34458 0 20
+const_bg   2.34614 -5 5
+========== 19 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  61.1355 0 116
+mean       0.286569 -0.2 2
+sigma      0.16736 0.1 0.5
+expb_amp   0.0300785 0 2
+expb_amp   4.50608 0 20
+const_bg   1.95083 -5 5
+========== 19 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  96.5017 0 118
+mean       0.29362 -0.5 0.5
+sigma      0.195918 0.1 0.5
+expb_amp   0.0556606 0 2
+expb_amp   4.39555 0 20
+const_bg   4.30801 -5 5
+========== 19 15 0.6 3
+0 0 -1 6
+q-Boundary -1.9 -1 -2.8
+amplitude  137.998 0 174
+mean       0.348266 -0.2 2
+sigma      0.182497 0.1 0.5
+expb_amp   0.13946 0 2
+expb_amp   4.71873 0 20
+const_bg   5 -5 5
+========== 19 16 0.6 3
+0 0 -0.7 2
+q-Boundary -2.0125 -1 -3.025
+amplitude  93.2152 0 350
+mean       0.35271 -0.2 2
+sigma      0.267762 0.1 0.5
+expb_amp   1.60538 0 2
+expb_amp   1.96623 0 5
+const_bg   5 -5 5
+========== 19 17 0.6 3
+0 0 -1 6
+q-Boundary -0.999993 -1 4
+amplitude  78.0441 0 1000
+mean       0.304828 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0685011 0 0.4
+expb_amp   4.72151 0 10
+const_bg   10 0 10
+========== 19 18 0.6 3
+0 0 -1 2
+q-Boundary -0.993518 -1 4
+amplitude  41.9713 0 350
+mean       0.368278 -0.8 0.8
+sigma      0.239274 0.1 0.3
+expb_amp   0.4 0 0.4
+expb_amp   3.40652 0 5
+const_bg   10 0 10
+========== 19 19 0.6 3
+0 0 -1 6
+q-Boundary -0.959794 -1 4
+amplitude  17.8658 0 1000
+mean       0.449444 -0.8 0.8
+sigma      0.267439 0.1 0.3
+expb_amp   0.0527803 0 0.4
+expb_amp   5.6471 0 10
+const_bg   5.26548 0 10
+========== 19 20 0.6 3
+0 0 -1 6
+q-Boundary -0.999871 -1 4
+amplitude  31.3457 0 1000
+mean       0.521835 -0.8 0.8
+sigma      0.255837 0.1 0.3
+expb_amp   0.103768 0 0.4
+expb_amp   4.91476 0 10
+const_bg   6.84432e-08 0 10
+========== 19 21 0.6 3
+0 0 -1 6
+q-Boundary 3.77514 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   1.95124e-08 0 0.4
+expb_amp   0.245474 0 10
+const_bg   0.0227227 0 10
+========== 19 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 19 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 20 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  633.399 0 695
+mean       0.245159 -0.2 2
+sigma      0.161137 0.1 0.5
+expb_amp   0.17467 0 2
+expb_amp   4.87595 0 20
+const_bg   5 -5 5
+========== 20 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 5 0 3
+0 0 -1 6
+q-Boundary -0.637527 -1 -0.1375
+amplitude  158.931 0 182
+mean       0.182497 -0.2 2
+sigma      0.145654 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 20 6 0.6 3
+0 0 -1 6
+q-Boundary -0.388466 -1 -0.3875
+amplitude  77.7126 0 141
+mean       0.188833 -0.2 2
+sigma      0.135509 0.1 0.5
+expb_amp   0.0106779 0 2
+expb_amp   5.01991 0 20
+const_bg   0.233729 -5 5
+========== 20 7 0.6 3
+0 0 -1 2
+q-Boundary -0.712705 -1 -0.7125
+amplitude  121.6 0 350
+mean       0.191747 -0.2 2
+sigma      0.156611 0.1 0.5
+expb_amp   0.639958 0 2
+expb_amp   0.0870366 0 5
+const_bg   1.43743 -5 5
+========== 20 8 0.6 3
+0 0 -1 2
+q-Boundary -0.999875 -1 -0.9875
+amplitude  96.469 0 350
+mean       0.258126 -0.2 2
+sigma      0.150304 0.1 0.5
+expb_amp   0.585459 0 2
+expb_amp   0.00248425 0 5
+const_bg   1.92128 -5 5
+========== 20 9 0.6 3
+0 0 -1 6
+q-Boundary -1.11875 -1 -1.2375
+amplitude  77 0 77
+mean       0.276941 -0.2 2
+sigma      0.145252 0.1 0.5
+expb_amp   0.0216031 0 2
+expb_amp   4.22733 0 20
+const_bg   1.1242 -5 5
+========== 20 10 0.6 3
+0 0 -1 6
+q-Boundary -1.225 -1 -1.45
+amplitude  58.8649 0 168
+mean       0.267246 -0.2 2
+sigma      0.139896 0.1 0.5
+expb_amp   0.0260442 0 2
+expb_amp   4.07397 0 20
+const_bg   0.957122 -5 5
+========== 20 11 0.6 3
+0 0 -1 2
+q-Boundary -1.3625 -1 -1.725
+amplitude  98.444 0 350
+mean       0.266159 -0.2 2
+sigma      0.16019 0.1 0.5
+expb_amp   1.54992 0 2
+expb_amp   0.0132011 0 5
+const_bg   2.95498 -5 5
+========== 20 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  88.6764 0 120
+mean       0.25677 -0.2 2
+sigma      0.156702 0.1 0.5
+expb_amp   0.0296034 0 2
+expb_amp   4.35954 0 20
+const_bg   1.84719 -5 5
+========== 20 13 0.6 3
+0 0 -1 6
+q-Boundary -1.625 -1 -2.25
+amplitude  112 0 112
+mean       0.263223 -0.2 2
+sigma      0.188509 0.1 0.5
+expb_amp   0.0611878 0 2
+expb_amp   4.41183 0 20
+const_bg   4.22676 -5 5
+========== 20 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  109.505 0 197
+mean       0.26071 -0.5 0.5
+sigma      0.173377 0.1 0.5
+expb_amp   0.0539035 0 2
+expb_amp   4.39288 0 20
+const_bg   3.92513 -5 5
+========== 20 15 0.6 3
+0 0 -1 6
+q-Boundary -1.8875 -1 -2.775
+amplitude  79 0 79
+mean       0.267175 -0.2 2
+sigma      0.176419 0.1 0.5
+expb_amp   0.0738654 0 2
+expb_amp   4.46276 0 20
+const_bg   3.18211 -5 5
+========== 20 16 0.6 3
+0 0 -1 6
+q-Boundary -2.025 -1 -3.05
+amplitude  61.6306 0 99
+mean       0.276954 -0.2 2
+sigma      0.17634 0.1 0.5
+expb_amp   0.0590552 0 2
+expb_amp   4.45517 0 20
+const_bg   3.39419 -5 5
+========== 20 17 0.6 3
+0 0 -1 6
+q-Boundary -0.950289 -1 4
+amplitude  43.8309 0 1000
+mean       0.28431 -0.8 0.8
+sigma      0.189898 0.1 0.3
+expb_amp   0.0424804 0 0.4
+expb_amp   4.59835 0 10
+const_bg   3.21181 0 10
+========== 20 18 0.6 3
+0 0 -0.8 0.8
+q-Boundary -0.791568 -1 4
+amplitude  12.1617 0 1000
+mean       0.384502 -0.8 0.8
+sigma      0.165898 0.1 0.3
+expb_amp   0.0591503 0 0.4
+expb_amp   3.75988 0 10
+const_bg   1.22596 0 10
+========== 20 19 0.6 3
+0 0 -1 6
+q-Boundary -0.965211 -1 4
+amplitude  21.2496 0 1000
+mean       0.402564 -0.8 0.8
+sigma      0.244649 0.1 0.3
+expb_amp   0.0515973 0 0.4
+expb_amp   4.66334 0 10
+const_bg   3.13184 0 10
+========== 20 20 0.6 3
+0 0 -1 6
+q-Boundary -0.999901 -1 4
+amplitude  32.7665 0 1000
+mean       0.603729 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.138763 0 0.4
+expb_amp   4.63458 0 10
+const_bg   0.944852 0 10
+========== 20 21 0.6 3
+0 0 -1 6
+q-Boundary -0.961284 -1 4
+amplitude  3.40361 0 1000
+mean       -0.8 -0.8 0.8
+sigma      0.1 0.1 0.3
+expb_amp   0.0208963 0 0.4
+expb_amp   4.2349 0 10
+const_bg   6.88192e-09 0 10
+========== 20 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 20 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 21 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  609.991 0 644
+mean       0.26552 -0.2 2
+sigma      0.163965 0.1 0.5
+expb_amp   0.15081 0 2
+expb_amp   4.76761 0 20
+const_bg   5 -5 5
+========== 21 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 4 0 3
+0 0 -1 6
+q-Boundary -0.633287 -1 -0.05
+amplitude  22 0 22
+mean       0.25747 -0.2 2
+sigma      0.150053 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 21 5 0 3
+0 0 -1 6
+q-Boundary -0.662535 -1 -0.1625
+amplitude  150.08 0 166
+mean       0.215266 -0.2 2
+sigma      0.15674 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 21 6 0.6 3
+0 0 -1 6
+q-Boundary -0.572308 -1 -0.4375
+amplitude  76.986 0 119
+mean       0.212065 -0.2 2
+sigma      0.144481 0.1 0.5
+expb_amp   0.0193748 0 2
+expb_amp   3.94214 0 20
+const_bg   0.239092 -5 5
+========== 21 7 0.6 3
+0 0 -1 6
+q-Boundary -0.737775 -1 -0.7375
+amplitude  95 0 95
+mean       0.231978 -0.2 2
+sigma      0.185317 0.1 0.5
+expb_amp   0.0239852 0 2
+expb_amp   4.29403 0 20
+const_bg   0.841524 -5 5
+========== 21 8 0.6 3
+0 0 -1 6
+q-Boundary -1.00625 -1 -1.0125
+amplitude  83.6837 0 87
+mean       0.273904 -0.2 2
+sigma      0.160969 0.1 0.5
+expb_amp   0.0106444 0 2
+expb_amp   4.27565 0 20
+const_bg   0.768614 -5 5
+========== 21 9 0.6 3
+0 0 -1 6
+q-Boundary -1.11875 -1 -1.2375
+amplitude  69.5827 0 70
+mean       0.28931 -0.2 2
+sigma      0.162408 0.1 0.5
+expb_amp   0.0136382 0 2
+expb_amp   4.29304 0 20
+const_bg   0.669619 -5 5
+========== 21 10 0.6 3
+0 0 -1 6
+q-Boundary -1.2375 -1 -1.475
+amplitude  55.308 0 99
+mean       0.287637 -0.2 2
+sigma      0.161275 0.1 0.5
+expb_amp   0.0225946 0 2
+expb_amp   4.10982 0 20
+const_bg   0.661045 -5 5
+========== 21 11 0.6 3
+0 0 -1 6
+q-Boundary -1.375 -1 -1.75
+amplitude  53.2093 0 132
+mean       0.284909 -0.2 2
+sigma      0.157341 0.1 0.5
+expb_amp   0.0155466 0 2
+expb_amp   4.0432 0 20
+const_bg   0.736797 -5 5
+========== 21 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  85.9697 0 107
+mean       0.283564 -0.2 2
+sigma      0.141364 0.1 0.5
+expb_amp   0.0347985 0 2
+expb_amp   4.34955 0 20
+const_bg   1.37411 -5 5
+========== 21 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  73.1956 0 130
+mean       0.277284 -0.2 2
+sigma      0.161165 0.1 0.5
+expb_amp   0.0219606 0 2
+expb_amp   4.34006 0 20
+const_bg   1.52939 -5 5
+========== 21 14 0.6 3
+0 0 -1 6
+q-Boundary -1.725 -1 -2.45
+amplitude  111 0 111
+mean       0.257638 -0.2 2
+sigma      0.151162 0.1 0.5
+expb_amp   0.0543037 0 2
+expb_amp   4.38274 0 20
+const_bg   3.31999 -5 5
+========== 21 15 0.6 3
+0 0 -1 6
+q-Boundary -1.9 -1 -2.8
+amplitude  150 0 150
+mean       0.264566 -0.2 2
+sigma      0.171093 0.1 0.5
+expb_amp   0.100724 0 2
+expb_amp   4.54318 0 20
+const_bg   5 -5 5
+========== 21 16 0.6 3
+0 0 -1 6
+q-Boundary -2 -1 -3
+amplitude  136 0 136
+mean       0.291279 -0.2 2
+sigma      0.153408 0.1 0.5
+expb_amp   0.0865206 0 2
+expb_amp   4.46646 0 20
+const_bg   5 -5 5
+========== 21 17 0.6 3
+0 0 -1 6
+q-Boundary -0.986696 -1 4
+amplitude  87.4789 0 1000
+mean       0.318025 -0.8 0.8
+sigma      0.190934 0.1 0.3
+expb_amp   0.0817607 0 0.4
+expb_amp   4.58889 0 10
+const_bg   6.01756 0 10
+========== 21 18 0.6 3
+0 0 -1 6
+q-Boundary -0.999672 -1 4
+amplitude  44.6561 0 1000
+mean       0.339201 -0.8 0.8
+sigma      0.182842 0.1 0.3
+expb_amp   0.0639971 0 0.4
+expb_amp   4.54791 0 10
+const_bg   7.04965 0 10
+========== 21 19 0.6 3
+0 0 -1 6
+q-Boundary -0.999864 -1 4
+amplitude  49.3767 0 1000
+mean       0.340975 -0.8 0.8
+sigma      0.222806 0.1 0.3
+expb_amp   0.00532835 0 0.4
+expb_amp   7.06736 0 10
+const_bg   5.58242 0 10
+========== 21 20 0.6 3
+0 0 -1 6
+q-Boundary -0.999975 -1 4
+amplitude  21.2229 0 1000
+mean       0.614523 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0950531 0 0.4
+expb_amp   4.78268 0 10
+const_bg   0.980499 0 10
+========== 21 21 0.6 3
+0 0 -1 6
+q-Boundary 3.9909 -1 4
+amplitude  100 0 1000
+mean       0.799989 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.181406 0 0.4
+expb_amp   3.52817 0 10
+const_bg   0.0511328 0 10
+========== 21 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 21 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 24 0 0.6 3
+0 0 -1 6
+q-Boundary -1.98125 -1 -2.9625
+amplitude  582.56 0 604
+mean       0.261282 -0.2 2
+sigma      0.165164 0.1 0.5
+expb_amp   0.142789 0 2
+expb_amp   4.73553 0 20
+const_bg   5 -5 5
+========== 24 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 4 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 5 0 3
+0 0 -1 6
+q-Boundary -0.512521 -1 -0.0125
+amplitude  135.927 0 149
+mean       0.203322 -0.2 2
+sigma      0.156601 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 24 6 0.6 3
+0 0 -1 6
+q-Boundary -0.508293 -1 -0.3375
+amplitude  111.428 0 123
+mean       0.22874 -0.2 2
+sigma      0.149496 0.1 0.5
+expb_amp   0.00751914 0 2
+expb_amp   5.14256 0 20
+const_bg   0.211711 -5 5
+========== 24 7 0.6 3
+0 0 -1 2
+q-Boundary -0.787522 -1 -0.7875
+amplitude  115.982 0 350
+mean       0.205216 -0.2 2
+sigma      0.16829 0.1 0.5
+expb_amp   5.37325e-15 0 2
+expb_amp   3.19356e-11 0 5
+const_bg   1.32111 -5 5
+========== 24 8 0.6 3
+0 0 -1 6
+q-Boundary -1.00625 -1 -1.0125
+amplitude  82 0 82
+mean       0.272078 -0.2 2
+sigma      0.165365 0.1 0.5
+expb_amp   0.0110279 0 2
+expb_amp   4.11047 0 20
+const_bg   0.744253 -5 5
+========== 24 9 0.6 3
+0 0 -1 6
+q-Boundary -1.1125 -1 -1.225
+amplitude  73.0841 0 117
+mean       0.300795 -0.2 2
+sigma      0.14788 0.1 0.5
+expb_amp   0.0157609 0 2
+expb_amp   4.24672 0 20
+const_bg   0.663331 -5 5
+========== 24 10 0.6 3
+0 0 -1 2
+q-Boundary -1.2375 -1 -1.475
+amplitude  110.517 0 350
+mean       0.308178 -0.2 2
+sigma      0.149598 0.1 0.5
+expb_amp   0.42547 0 2
+expb_amp   1.93532 0 5
+const_bg   1.34889 -5 5
+========== 24 11 0.6 3
+0 0 -1 2
+q-Boundary -1.3625 -1 -1.725
+amplitude  96.4766 0 350
+mean       0.29782 -0.2 2
+sigma      0.153365 0.1 0.5
+expb_amp   0.177869 0 2
+expb_amp   1.98189 0 5
+const_bg   2.02604 -5 5
+========== 24 12 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  40.129 0 154
+mean       0.274792 -0.2 2
+sigma      0.152787 0.1 0.5
+expb_amp   0.159614 0 2
+expb_amp   1.39431 0 20
+const_bg   0.633366 -5 5
+========== 24 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  66.3618 0 129
+mean       0.261957 -0.2 2
+sigma      0.155303 0.1 0.5
+expb_amp   0.106056 0 2
+expb_amp   2.86832 0 20
+const_bg   1.34934 -5 5
+========== 24 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  61.0726 0 137
+mean       0.236508 -0.2 2
+sigma      0.150985 0.1 0.5
+expb_amp   0.0246795 0 2
+expb_amp   4.31107 0 20
+const_bg   1.30601 -5 5
+========== 24 15 0.6 3
+0 0 -1 2
+q-Boundary -1.8875 -1 -2.775
+amplitude  82.96 0 350
+mean       0.238085 -0.2 2
+sigma      0.154056 0.1 0.5
+expb_amp   0.0364158 0 2
+expb_amp   4.25839 0 5
+const_bg   4.43906 -5 5
+========== 24 16 0.6 3
+0 0 -1 6
+q-Boundary -2 -1 -3
+amplitude  100 0 100
+mean       0.226262 -0.2 2
+sigma      0.197052 0.1 0.5
+expb_amp   0.0792107 0 2
+expb_amp   4.4316 0 20
+const_bg   4.47903 -5 5
+========== 24 17 0.6 3
+0 0 -1 6
+q-Boundary -0.973459 -1 4
+amplitude  86.0818 0 1000
+mean       0.270076 -0.8 0.8
+sigma      0.216181 0.1 0.3
+expb_amp   0.0647247 0 0.4
+expb_amp   4.63553 0 10
+const_bg   5.0377 0 10
+========== 24 18 0.6 3
+0 0 -1 6
+q-Boundary -0.999623 -1 4
+amplitude  52.5611 0 1000
+mean       0.300139 -0.8 0.8
+sigma      0.17224 0.1 0.3
+expb_amp   0.0717727 0 0.4
+expb_amp   4.62539 0 10
+const_bg   6.8643 0 10
+========== 24 19 0.6 3
+0 0 -1 6
+q-Boundary -0.950258 -1 4
+amplitude  19.8778 0 1000
+mean       0.287117 -0.8 0.8
+sigma      0.190955 0.1 0.3
+expb_amp   0.206057 0 0.4
+expb_amp   2.92368 0 10
+const_bg   2.76794 0 10
+========== 24 20 0.6 3
+0 0 -1 6
+q-Boundary -0.987505 -1 4
+amplitude  7.12703 0 1000
+mean       0.451617 -0.8 0.8
+sigma      0.132377 0.1 0.3
+expb_amp   0.0607682 0 0.4
+expb_amp   3.76939 0 10
+const_bg   0.875859 0 10
+========== 24 21 0.6 3
+0 0 -1 6
+q-Boundary -0.992141 -1 4
+amplitude  3.89067 0 1000
+mean       -0.646341 -0.8 0.8
+sigma      0.1 0.1 0.3
+expb_amp   0.07008 0 0.4
+expb_amp   4.58759 0 10
+const_bg   0.536645 0 10
+========== 24 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 24 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 25 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  536.296 0 583
+mean       0.245352 -0.2 2
+sigma      0.175468 0.1 0.5
+expb_amp   0.13933 0 2
+expb_amp   4.71258 0 20
+const_bg   5 -5 5
+========== 25 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 4 0 3
+0 0 -1 6
+q-Boundary -0.500011 -1 3.33067e-16
+amplitude  44.9197 0 45
+mean       0.271702 -0.2 2
+sigma      0.163948 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 25 5 0 3
+0 0 -1 6
+q-Boundary -0.626151 -1 -0.1125
+amplitude  131.755 0 144
+mean       0.205804 -0.2 2
+sigma      0.168541 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 25 6 0.6 3
+0 0 -1 6
+q-Boundary -0.62588 -1 -0.3625
+amplitude  63.2572 0 120
+mean       0.209641 -0.2 2
+sigma      0.165976 0.1 0.5
+expb_amp   0.0053231 0 2
+expb_amp   4.37342 0 20
+const_bg   0.157738 -5 5
+========== 25 7 0.6 3
+0 0 -1 6
+q-Boundary -0.737855 -1 -0.7375
+amplitude  94 0 94
+mean       0.213578 -0.2 2
+sigma      0.183213 0.1 0.5
+expb_amp   0.0196543 0 2
+expb_amp   4.22558 0 20
+const_bg   0.686954 -5 5
+========== 25 8 0.6 3
+0 0 -1 6
+q-Boundary -0.99375 -1 -0.9875
+amplitude  76 0 76
+mean       0.260127 -0.2 2
+sigma      0.171176 0.1 0.5
+expb_amp   0.0121354 0 2
+expb_amp   4.2026 0 20
+const_bg   0.701779 -5 5
+========== 25 9 0.6 3
+0 0 -1 6
+q-Boundary -1.1125 -1 -1.225
+amplitude  60.4975 0 109
+mean       0.286509 -0.2 2
+sigma      0.167883 0.1 0.5
+expb_amp   0.0133879 0 2
+expb_amp   4.22858 0 20
+const_bg   0.703079 -5 5
+========== 25 10 0.6 3
+0 0 -1 6
+q-Boundary -1.2375 -1 -1.475
+amplitude  84 0 84
+mean       0.274309 -0.2 2
+sigma      0.188 0.1 0.5
+expb_amp   0.0359937 0 2
+expb_amp   4.3798 0 20
+const_bg   1.52337 -5 5
+========== 25 11 0.6 3
+0 0 -1 6
+q-Boundary -1.375 -1 -1.75
+amplitude  82.8467 0 103
+mean       0.272085 -0.2 2
+sigma      0.162367 0.1 0.5
+expb_amp   0.029623 0 2
+expb_amp   4.33759 0 20
+const_bg   1.21089 -5 5
+========== 25 12 0.6 3
+0 0 -1 6
+q-Boundary -1.5 -1 -2
+amplitude  76.4431 0 146
+mean       0.248769 -0.2 2
+sigma      0.155692 0.1 0.5
+expb_amp   0.0288899 0 2
+expb_amp   4.33204 0 20
+const_bg   1.21387 -5 5
+========== 25 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  31.8279 0 120
+mean       0.218426 -0.2 2
+sigma      0.170173 0.1 0.5
+expb_amp   0.0209472 0 2
+expb_amp   3.4434 0 20
+const_bg   0.731186 -5 5
+========== 25 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  80.1686 0 110
+mean       0.237581 -0.2 2
+sigma      0.185719 0.1 0.5
+expb_amp   0.0394887 0 2
+expb_amp   4.33755 0 20
+const_bg   2.82519 -5 5
+========== 25 15 0.6 3
+0 0 -1 2
+q-Boundary -1.875 -1 -2.75
+amplitude  130.648 0 350
+mean       0.218862 -0.2 2
+sigma      0.18379 0.1 0.5
+expb_amp   1.98852 0 2
+expb_amp   1.41023 0 5
+const_bg   5 -5 5
+========== 25 16 0.6 3
+0 0 -1 6
+q-Boundary -2 -1 -3
+amplitude  99.1368 0 134
+mean       0.225799 -0.2 2
+sigma      0.196621 0.1 0.5
+expb_amp   0.0816617 0 2
+expb_amp   4.48235 0 20
+const_bg   4.76544 -5 5
+========== 25 17 0.6 3
+0 0 -1 6
+q-Boundary -0.981731 -1 4
+amplitude  86.7932 0 1000
+mean       0.262259 -0.8 0.8
+sigma      0.198346 0.1 0.3
+expb_amp   0.0607224 0 0.4
+expb_amp   4.58958 0 10
+const_bg   5.34847 0 10
+========== 25 18 0.6 3
+0 0 -1 6
+q-Boundary -0.97552 -1 4
+amplitude  37.0975 0 1000
+mean       0.232788 -0.8 0.8
+sigma      0.236624 0.1 0.3
+expb_amp   0.174406 0 0.4
+expb_amp   3.19527 0 10
+const_bg   7.89296 0 10
+========== 25 19 0.6 3
+0 0 -1 6
+q-Boundary -0.999664 -1 4
+amplitude  29.1437 0 1000
+mean       0.265769 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0270824 0 0.4
+expb_amp   4.92514 0 10
+const_bg   6.73896 0 10
+========== 25 20 0.6 3
+0 0 -1 6
+q-Boundary -0.999987 -1 4
+amplitude  27.3933 0 1000
+mean       0.447224 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0644921 0 0.4
+expb_amp   4.94629 0 10
+const_bg   2.62957 0 10
+========== 25 21 0.6 3
+0 0 -1 6
+q-Boundary 3.1049 -1 4
+amplitude  100 0 1000
+mean       0.426725 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.0192286 0 0.4
+expb_amp   4.58208 0 10
+const_bg   0.40303 0 10
+========== 25 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 25 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 26 0 0.6 3
+0 0 -1 6
+q-Boundary -1.99375 -1 -2.9875
+amplitude  536.562 0 567
+mean       0.240264 -0.2 2
+sigma      0.175791 0.1 0.5
+expb_amp   0.14051 0 2
+expb_amp   4.72253 0 20
+const_bg   5 -5 5
+========== 26 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 4 0 3
+0 0 -1 6
+q-Boundary -0.500013 -1 3.33067e-16
+amplitude  51.1196 0 52
+mean       0.289178 -0.2 2
+sigma      0.123319 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 26 5 0 3
+0 0 -1 6
+q-Boundary -0.742958 -1 -0.2375
+amplitude  136.882 0 143
+mean       0.202801 -0.2 2
+sigma      0.16522 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 26 6 0.6 3
+0 0 -1 6
+q-Boundary -0.600078 -1 -0.4125
+amplitude  69.7073 0 119
+mean       0.207106 -0.2 2
+sigma      0.148867 0.1 0.5
+expb_amp   0.0210791 0 2
+expb_amp   3.95373 0 20
+const_bg   0.0665125 -5 5
+========== 26 7 0.6 3
+0 0 -1 2
+q-Boundary -0.737926 -1 -0.7375
+amplitude  104.555 0 350
+mean       0.2113 -0.2 2
+sigma      0.171741 0.1 0.5
+expb_amp   0.578258 0 2
+expb_amp   0.118387 0 5
+const_bg   0.881854 -5 5
+========== 26 8 0.6 3
+0 0 -1 2
+q-Boundary -0.999875 -1 -0.9875
+amplitude  81.2911 0 350
+mean       0.255807 -0.2 2
+sigma      0.156252 0.1 0.5
+expb_amp   0.449573 0 2
+expb_amp   0.100814 0 5
+const_bg   1.04224 -5 5
+========== 26 9 0.6 3
+0 0 -1 6
+q-Boundary -1.1125 -1 -1.225
+amplitude  69.2091 0 111
+mean       0.282414 -0.2 2
+sigma      0.157525 0.1 0.5
+expb_amp   0.0147459 0 2
+expb_amp   4.23875 0 20
+const_bg   0.713757 -5 5
+========== 26 10 0.6 3
+0 0 -1 6
+q-Boundary -1.2375 -1 -1.475
+amplitude  48.9512 0 79
+mean       0.275545 -0.2 2
+sigma      0.165867 0.1 0.5
+expb_amp   0.0149666 0 2
+expb_amp   4.2418 0 20
+const_bg   0.663789 -5 5
+========== 26 11 0.6 3
+0 0 -1 6
+q-Boundary -1.375 -1 -1.75
+amplitude  79.5663 0 94
+mean       0.247752 -0.2 2
+sigma      0.188993 0.1 0.5
+expb_amp   0.0254681 0 2
+expb_amp   4.31857 0 20
+const_bg   1.202 -5 5
+========== 26 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  34.9197 0 96
+mean       0.247267 -0.2 2
+sigma      0.156754 0.1 0.5
+expb_amp   0.711701 0 2
+expb_amp   0.20138 0 20
+const_bg   0.68432 -5 5
+========== 26 13 0.6 3
+0 0 -1 6
+q-Boundary -1.6 -1 -2.2
+amplitude  102.567 0 111
+mean       0.225509 -0.2 2
+sigma      0.201003 0.1 0.5
+expb_amp   0.0377086 0 2
+expb_amp   4.41185 0 20
+const_bg   2.48364 -5 5
+========== 26 14 0.6 3
+0 0 -1 6
+q-Boundary -1.8 -1 -2.6
+amplitude  76.0441 0 93
+mean       0.248291 -0.2 2
+sigma      0.216737 0.1 0.5
+expb_amp   0.052754 0 2
+expb_amp   4.38895 0 20
+const_bg   2.50721 -5 5
+========== 26 15 0.6 3
+0 0 -1 2
+q-Boundary -1.8875 -1 -2.775
+amplitude  115.053 0 350
+mean       0.21714 -0.2 2
+sigma      0.211874 0.1 0.5
+expb_amp   1.93613 0 2
+expb_amp   1.21817 0 5
+const_bg   5 -5 5
+========== 26 16 0.6 3
+0 0 -0.7 2
+q-Boundary -2 -1 -3
+amplitude  110.662 0 350
+mean       0.182239 -0.2 2
+sigma      0.215097 0.1 0.5
+expb_amp   1.53444 0 2
+expb_amp   1.2589 0 5
+const_bg   5 -5 5
+========== 26 17 0.6 3
+0 0 -1 6
+q-Boundary -0.989176 -1 4
+amplitude  72.9376 0 1000
+mean       0.252469 -0.8 0.8
+sigma      0.251325 0.1 0.3
+expb_amp   0.074086 0 0.4
+expb_amp   4.65798 0 10
+const_bg   5.15354 0 10
+========== 26 18 0.6 3
+0 0 -1 6
+q-Boundary -0.977476 -1 4
+amplitude  48.7595 0 1000
+mean       0.186083 -0.8 0.8
+sigma      0.19693 0.1 0.3
+expb_amp   0.078276 0 0.4
+expb_amp   4.1914 0 10
+const_bg   7.32847 0 10
+========== 26 19 0.6 3
+0 0 -1 6
+q-Boundary -0.98867 -1 4
+amplitude  29.4434 0 1000
+mean       0.318545 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0523959 0 0.4
+expb_amp   4.57455 0 10
+const_bg   7.2132 0 10
+========== 26 20 0.6 3
+0 0 -0.8 0.8
+q-Boundary -0.971756 -1 4
+amplitude  12.8173 0 1000
+mean       0.0943895 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0241979 0 0.4
+expb_amp   4.10914 0 10
+const_bg   10 0 10
+========== 26 21 0.6 3
+0 0 -1 6
+q-Boundary -0.901613 -1 4
+amplitude  6.07145 0 1000
+mean       0.28145 -0.8 0.8
+sigma      0.272589 0.1 0.3
+expb_amp   0.149371 0 0.4
+expb_amp   3.70731 0 10
+const_bg   2.48433e-13 0 10
+========== 26 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 26 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+
+========== 27 0 0.6 3
+0 0 -1 6
+q-Boundary -1.98125 -1 -2.9625
+amplitude  491.112 0 549
+mean       0.225858 -0.2 2
+sigma      0.19489 0.1 0.5
+expb_amp   0.142143 0 2
+expb_amp   4.73438 0 20
+const_bg   5 -5 5
+========== 27 1 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 2 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 3 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 4 0 3
+0 0 -1 6
+q-Boundary -0.386674 -1 3.33067e-16
+amplitude  62.4673 0 65
+mean       0.309624 -0.2 2
+sigma      0.14738 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 27 5 0 3
+0 0 -1 6
+q-Boundary -0.687412 -1 -0.1875
+amplitude  113.026 0 128
+mean       0.181698 -0.2 2
+sigma      0.188285 0.1 0.5
+expb_amp   0.2 0 2
+expb_amp   5 0 20
+const_bg   0 -5 5
+========== 27 6 0.6 3
+0 0 -1 6
+q-Boundary -0.633349 -1 -0.4625
+amplitude  107 0 107
+mean       0.211956 -0.2 2
+sigma      0.175346 0.1 0.5
+expb_amp   0.000256443 0 2
+expb_amp   8.48184 0 20
+const_bg   0.356136 -5 5
+========== 27 7 0.6 3
+0 0 -1 6
+q-Boundary -0.738247 -1 -0.7375
+amplitude  82 0 82
+mean       0.180942 -0.2 2
+sigma      0.218276 0.1 0.5
+expb_amp   0.0162973 0 2
+expb_amp   4.1211 0 20
+const_bg   0.590597 -5 5
+========== 27 8 0.6 3
+0 0 -1 6
+q-Boundary -0.99375 -1 -0.9875
+amplitude  68 0 68
+mean       0.226696 -0.2 2
+sigma      0.195124 0.1 0.5
+expb_amp   0.00959889 0 2
+expb_amp   4.1419 0 20
+const_bg   0.896545 -5 5
+========== 27 9 0.6 3
+0 0 -1 6
+q-Boundary -1.1125 -1 -1.225
+amplitude  54.6492 0 106
+mean       0.261012 -0.2 2
+sigma      0.188742 0.1 0.5
+expb_amp   0.0116492 0 2
+expb_amp   4.20996 0 20
+const_bg   0.730615 -5 5
+========== 27 10 0.6 3
+0 0 -1 2
+q-Boundary -1.2375 -1 -1.475
+amplitude  95.0683 0 350
+mean       0.2616 -0.2 2
+sigma      0.18138 0.1 0.5
+expb_amp   1.97741 0 2
+expb_amp   0.284113 0 5
+const_bg   1.53063 -5 5
+========== 27 11 0.6 3
+0 0 -1 6
+q-Boundary -1.375 -1 -1.75
+amplitude  41.4999 0 111
+mean       0.250975 -0.2 2
+sigma      0.170612 0.1 0.5
+expb_amp   0.022348 0 2
+expb_amp   4.27881 0 20
+const_bg   0.524711 -5 5
+========== 27 12 0.6 3
+0 0 -1 6
+q-Boundary -1.475 -1 -1.95
+amplitude  72.211 0 89
+mean       0.233856 -0.2 2
+sigma      0.176222 0.1 0.5
+expb_amp   0.0236881 0 2
+expb_amp   4.28439 0 20
+const_bg   1.31934 -5 5
+========== 27 13 0.6 3
+0 0 -1 2
+q-Boundary -1.625 -1 -2.25
+amplitude  100.455 0 350
+mean       0.216389 -0.2 2
+sigma      0.191239 0.1 0.5
+expb_amp   1.99554 0 2
+expb_amp   0.0386459 0 5
+const_bg   5 -5 5
+========== 27 14 0.6 3
+0 0 -1 6
+q-Boundary -1.7 -1 -2.4
+amplitude  91.9492 0 134
+mean       0.222736 -0.2 2
+sigma      0.191206 0.1 0.5
+expb_amp   0.0389217 0 2
+expb_amp   4.34548 0 20
+const_bg   2.52585 -5 5
+========== 27 15 0.6 3
+0 0 -1 6
+q-Boundary -1.9 -1 -2.8
+amplitude  72.3883 0 170
+mean       0.194281 -0.2 2
+sigma      0.172769 0.1 0.5
+expb_amp   0.0547005 0 2
+expb_amp   4.46151 0 20
+const_bg   2.32696 -5 5
+========== 27 16 0.6 3
+0 0 -1 6
+q-Boundary -2.025 -1 -3.05
+amplitude  50.5827 0 67
+mean       0.207907 -0.2 2
+sigma      0.232538 0.1 0.5
+expb_amp   0.247843 0 2
+expb_amp   2.44375 0 20
+const_bg   2.59541 -5 5
+========== 27 17 0.6 3
+0 0 -1 6
+q-Boundary -0.996762 -1 4
+amplitude  24.3148 0 1000
+mean       0.230355 -0.8 0.8
+sigma      0.21217 0.1 0.3
+expb_amp   0.0154319 0 0.4
+expb_amp   4.67208 0 10
+const_bg   1.26258 0 10
+========== 27 18 0.6 3
+0 0 -1 6
+q-Boundary -0.998129 -1 4
+amplitude  54.9645 0 1000
+mean       0.205015 -0.8 0.8
+sigma      0.166107 0.1 0.3
+expb_amp   0.105368 0 0.4
+expb_amp   4.15192 0 10
+const_bg   7.47968 0 10
+========== 27 19 0.6 3
+0 0 -1 6
+q-Boundary -0.971186 -1 4
+amplitude  11.6957 0 1000
+mean       0.187732 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0220235 0 0.4
+expb_amp   4.34168 0 10
+const_bg   3.58721 0 10
+========== 27 20 0.6 3
+0 0 -1 6
+q-Boundary -0.922639 -1 4
+amplitude  15.6779 0 1000
+mean       0.190237 -0.8 0.8
+sigma      0.3 0.1 0.3
+expb_amp   0.0916692 0 0.4
+expb_amp   4.6511 0 10
+const_bg   3.59812 0 10
+========== 27 21 0.6 3
+0 0 -1 6
+q-Boundary 3.9619 -1 4
+amplitude  100 0 1000
+mean       0.545678 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.181569 0 0.4
+expb_amp   5.15194 0 10
+const_bg   1.56947e-11 0 10
+========== 27 22 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 23 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 24 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 25 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 26 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 27 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 28 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 29 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 30 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 31 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 32 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 33 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 34 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 35 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 36 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 37 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 38 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 39 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10
+========== 27 40 0 -1
+0 0 -1 6
+q-Boundary -1 -1 4
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+expb_amp   0.1 0 0.4
+expb_amp   5 0 10
+const_bg   1 0 10

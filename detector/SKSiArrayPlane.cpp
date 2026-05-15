@@ -32,6 +32,22 @@ SKSiArrayPlane::SKSiArrayPlane(const char *name, const char *title)
     //fCtrlLabelOffset = 0.10;
 }
 
+void SKSiArrayPlane::ResetEPairMapping()
+{
+    for (auto i=0; i<40; ++i)
+        for (auto j=0; j<2; ++j)
+            fdEEPairMapping[i][j] = -1;
+}
+
+void SKSiArrayPlane::SetEPairMapping(int pair, int i, int detID)
+{
+    if (pair < 0 || pair >= 40)
+        return;
+    if (i < 0 || i >= 2)
+        return;
+    fdEEPairMapping[pair][i] = detID;
+}
+
 bool SKSiArrayPlane::Init()
 {
     //if (fDetName.IsNull())
@@ -151,9 +167,7 @@ bool SKSiArrayPlane::Init()
     int polarID; // 0 - 12(16)
 
 
-    for (auto i=0; i<12; ++i)
-        for (auto j=0; j<2; ++j)
-            fdEEPairMapping[i][j] = -1;
+    ResetEPairMapping();
 
     detWidth = 40.3;
     detHeight = 75;
@@ -199,7 +213,7 @@ bool SKSiArrayPlane::Init()
         siDetector -> SetIsEDetector();
         if (ringType==12)
         {
-            fdEEPairMapping[polarID][dEEType] = detID;
+            SetEPairMapping(polarID, dEEType, detID);
             if (dEEType==0) siDetector -> SetIsEDetector();
             else siDetector -> SetIsdEDetector();
         }

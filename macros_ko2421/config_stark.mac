@@ -1,0 +1,20 @@
+elark/Mapping1                {lilak_common}/starkmap_input.RAON2024_40Arp.txt
+elark/Mapping2                {lilak_common}/starkmap_output.RAON2024_40Arp.txt
+elark/pulseFile               {lilak_common}/pulseReference.root
+elark/EnergyCalibrationFile   {lilak_common}/stark_ecal_par.199_303.RAON2024_40Arp.root
+elark/PositionCalibrationFile {lilak_common}/stark_position_calibration_parameters.199_168.KO2421.dat
+
+#stark/Mapping                 {lilak_common}/stark_channel_mapping_RAON2024_40Arp.txt
+#stark/DetectorPar             {lilak_common}/stark_detector_par_RAON2024_40Arp.txt
+#stark/EnergyCalibrationFile   {lilak_common}/stark_ecal_par.199_303.RAON2024_40Arp.root
+stark/Mapping1                {lilak_common}/starkmap_input.RAON2024_40Arp.txt
+stark/Mapping2                {lilak_common}/starkmap_output.RAON2024_40Arp.txt
+stark/pulseFile               {lilak_common}/pulseReference.root
+stark/EnergyCalibrationFile   {lilak_common}/stark_energy_calibration_parameters.199_168.KO2421.dat   
+stark/PositionCalibrationFile {lilak_common}/stark_position_calibration_parameters.199_168.KO2421.dat
+
+stark/SiDetectorWidth   40.3 # mm
+stark/SiDetectorHeight  75 # mm
+
+#default_run 9993
+default_run 94

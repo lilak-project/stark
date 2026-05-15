@@ -1,0 +1,253 @@
+run_type     e{TYPE}
+cut_type     e{CUT}  # e4_etlab e4_etcom e5_etlab e5_etcom e8_etlab e8_etcom
+pid_type     e{PID}  #pid_proton_and_stopped
+@-run_type/run_type e5
+#@-pid_type/pid_type pid_tight
+
+cut_name cutX
+cut_title
+pid_name  pidAll
+pid_title
+
+analysis/binning_cal_energy 400, 0, 30
+analysis/binning_q_value 500, -3, 3
+#analysis/binning_theta 360, 0, 180
+analysis/binning_theta 180, 0, 180
+
+#####################################
+@e4/
+    #pair_energy_range    8, 14 
+    pair_energy_range    4, 24
+    LKRun/RunIDRange     20:25, 29:36, 38 ,!31
+    ko2421/beam_energy   4.41
+    #ko2421/beam_energy   4.3553
+    ko2421/beam_rate     1.9E6
+    ko2421/run_time      11460
+    ko2421/n_target      2.56E19
+    ko2421/diffx_fresco  {lilak_common}/differential_cross_section_fresco.441.dat
+    pid_name    ProtonCut
+    pid_title   <ProtonCut>
+    analysis/cut_dE_vs_ETot_X6X6    cut0    y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    false true
+
+@e5/
+    #pair_energy_range    10, 19
+    pair_energy_range    4, 24
+    LKRun/RunIDRange     39:42, 44:54, 56:59, 61:63, 65:69, 72
+    ko2421/beam_energy   5.838
+    #/ko2421/beam_energy   5.7903
+    ko2421/beam_rate     1.9E6
+    ko2421/run_time      9415+4736
+    ko2421/n_target      2.56E19
+    ko2421/diffx_fresco  {lilak_common}/differential_cross_section_fresco.5838.dat
+    pid_name    ProtonCut
+    pid_title   <ProtonCut>
+    analysis/cut_dE_vs_ETot_X6X6/expression "cut0"
+    analysis/cut_dE_vs_ETot_X6X6    cut0    y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6CSD/expression "(cut0 && cut1)"
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421_e5.dE_vs_ETot.x6_csd.proton_island.root true
+    analysis/cut_dE_vs_ETot_X6CSD   cut1    (x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+
+@e8/
+    #pair_energy_range    16, 25
+    pair_energy_range    8, 32
+    LKRun/RunIDRange     92, 94:97, 99:107, 110:111
+    ko2421/beam_energy   8.13
+    #ko2421/beam_energy   8.0903
+    ko2421/beam_rate     4.0E6
+    ko2421/run_time      4874
+    ko2421/n_target      1.96E19
+    ko2421/diffx_fresco  {lilak_common}/differential_cross_section_fresco.double_folding.dat
+    pid_name    ProtonCut
+    pid_title   <ProtonCut>
+    #analysis/cut_dE_vs_ETot_X6X6    cut0    1 true
+    #analysis/cut_dE_vs_ETot_X6CSD   cut0    1 true
+    analysis/cut_dE_vs_ETot_X6X6/expression "(cut0 && cut1)"
+    analysis/cut_dE_vs_ETot_X6X6    cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_x6.proton_stopped_mixed.root true
+    analysis/cut_dE_vs_ETot_X6X6    cut1    (x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6X6    cut2    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_x6.proton.root false
+    analysis/cut_dE_vs_ETot_X6X6    cut3    x>{pair_energy_range[0]} false
+    analysis/cut_dE_vs_ETot_X6X6    cut4    x<{pair_energy_range[1]} false
+    analysis/cut_dE_vs_ETot_X6CSD/expression "(cut0 && cut1)"
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_csd.proton_stopped_mixed.root true
+    analysis/cut_dE_vs_ETot_X6CSD   cut1    (x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+
+@test5/
+    #pair_energy_range    10, 19
+    pair_energy_range    4, 24
+    #LKRun/RunIDRange     39, 57, 59, 70, 72, 72
+    LKRun/RunIDRange     72,72
+    ko2421/beam_energy   5.838
+    #/ko2421/beam_energy   5.7903
+    ko2421/beam_rate     1.9E6
+    ko2421/run_time      9415+4736
+    ko2421/n_target      2.56E19
+    ko2421/diffx_fresco  {lilak_common}/differential_cross_section_fresco.5838.dat
+    #pid_name    ProtonCutWideE
+    pid_title   <{LKRun/RunIDRange}>
+    analysis/cut_dE_vs_ETot_X6X6    cut0    1 true
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    1 true
+
+@test8/
+    pair_energy_range    8, 32
+    LKRun/RunIDRange     92, 92
+    ko2421/beam_energy   8.13
+    ko2421/beam_rate     4.0E6
+    ko2421/run_time      4874
+    ko2421/n_target      1.96E19
+    ko2421/diffx_fresco  {lilak_common}/differential_cross_section_fresco.double_folding.dat
+    pid_title   <{LKRun/RunIDRange}>
+    analysis/cut_dE_vs_ETot_X6X6    cut0    1 true
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    1 true
+
+@blank/
+    #pair_energy_range    16, 25
+    pair_energy_range    8, 32
+    #LKRun/RunIDRange     73, 76, 77, 80
+    LKRun/RunIDRange     73, 76
+    #LKRun/RunIDRange     77, 80
+    ko2421/beam_energy   1
+    ko2421/beam_rate     1
+    ko2421/run_time      1
+    ko2421/n_target      1
+    ko2421/diffx_fresco  {lilak_common}/differential_cross_section_fresco.double_folding.dat
+    pid_title   <All>
+    analysis/cut_dE_vs_ETot_X6X6    cut0    1 true
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    1 true
+
+#####################################
+#pid_tag proton
+#pid_tag proton_stopped
+pid_tag proton_stopped_mixed
+
+@pid_tight1/
+    pid_name    ProtonInERange1
+    pid_title   <E-Range>
+    analysis/cut_dE_vs_ETot_X6X6    cut2    y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6CSD   cut1    y<0 true
+
+@pid_tight2/
+    pid_name    ProtonInERange2
+    pid_title   <Proton in E-Range >
+    analysis/cut_dE_vs_ETot_X6X6/expression "(cut0 && cut1)"
+    analysis/cut_dE_vs_ETot_X6X6    cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_x6.{pid_tag}.root true
+    analysis/cut_dE_vs_ETot_X6X6    cut1    (x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6CSD   cut1    y<0 true
+
+@pid_tight3/
+    pid_name    ProtonInERange3
+    pid_title   <Proton CSD 3>
+    analysis/cut_dE_vs_ETot_X6X6    cut1    y<0 true
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_csd.{pid_tag}.root true
+
+@pid_tight/
+    pid_name    ProtonInERange
+    pid_title   <Proton in/and E-Range>
+    #analysis/cut_dE_vs_ETot_X6CSD/expression "(cut0 && cut1) || cut2"
+    analysis/cut_dE_vs_ETot_X6CSD/expression "(cut0 && cut1)"
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_csd.{pid_tag}.root true
+    analysis/cut_dE_vs_ETot_X6CSD   cut1    (x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    #analysis/cut_dE_vs_ETot_X6CSD   cut2    y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6X6/expression "(cut0 && cut1) || cut2"
+    analysis/cut_dE_vs_ETot_X6X6    cut0    {lilak_common}/cutg.ko2421.dE_vs_ETot.x6_x6.{pid_tag}.root true
+    analysis/cut_dE_vs_ETot_X6X6    cut1    (x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6X6    cut2    y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+
+@pid_proton_and_erange/
+    pid_name    ProtonAndERange
+    pid_title   <Proton and E-Range>
+    analysis/cut_dE_vs_ETot_X6CSD   {lilak_common}/cutg.ko2421_e8.dE_vs_ETot.x6_csd.proton.root true
+    analysis/cut_dE_vs_ETot_X6CSD   y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+    analysis/cut_dE_vs_ETot_X6X6    {lilak_common}/cutg.ko2421_e8.dE_vs_ETot.x6_x6.proton.root true
+    analysis/cut_dE_vs_ETot_X6X6    y>(x-0.2)&&(x>{pair_energy_range[0]})&&(x<{pair_energy_range[1]})  true
+
+@pid_proton_and_stopped/
+    pid_name    ProtonAndStop
+    pid_title   <Proton and Stopped>
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421_e8.dE_vs_ETot.x6_csd.proton.root true
+    analysis/cut_dE_vs_ETot_X6CSD   cut1    y>x-0.2 true
+    analysis/cut_dE_vs_ETot_X6X6    cut0    {lilak_common}/cutg.ko2421_e8.dE_vs_ETot.x6_x6.proton.root true
+    analysis/cut_dE_vs_ETot_X6X6    cut1    y>x-0.2 true
+
+@pid_punch_proton/
+    pid_name    PunchProton
+    pid_title   <Punch-Through Proton>
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    {lilak_common}/cutg.ko2421_e8.dE_vs_ETot.x6_csd.proton.root true
+    analysis/cut_dE_vs_ETot_X6X6    cut1    {lilak_common}/cutg.ko2421_e8.dE_vs_ETot.x6_x6.proton.root true
+
+@pid_stopped/
+    pid_name    Stopped
+    pid_title   <Stopped>
+    analysis/cut_dE_vs_ETot_X6CSD   cut0    y>x-0.2 true
+    analysis/cut_dE_vs_ETot_X6X6    cut1    y>x-0.2 true
+
+@eall/LKRun/RunIDRange     20, 38, 39, 57, 59, 72, 81, 83, 92, 92, 94, 97, 99, 107, 110, 111
+@eall/main_name            ko2421_all
+@eall/ko2421/beam_energy   0
+@eall/ko2421/beam_rate     0
+@eall/ko2421/run_time      0
+@eall/ko2421/n_target      0
+
+main_name      KO2421_{run_type}_{cut_name}_{pid_name}_NT{analysis/binning_theta[0]}
+#main_title     [KO-24-21]  ({ko2421/beam_energy} MeV) {cut_title} {pid_title}
+LKRun/FileName {main_name}
+
+#####################################
+
+@e0/LKRun/RunIDRange     11, 14
+@e0/ko2421/beam_energy   4.41
+@e0/ko2421/beam_rate     1.9E6
+@e0/ko2421/run_time      100
+@e0/ko2421/n_target      0
+
+@e1/LKRun/RunIDRange     15, 19
+@e1/ko2421/beam_energy   4.41
+@e1/ko2421/beam_rate     1.9E6
+@e1/ko2421/run_time      8185
+@e1/ko2421/n_target      0
+
+@b4/LKRun/RunIDRange     73, 74
+@b4/ko2421/beam_energy   4.41 
+@b4/ko2421/beam_rate     1.9E6
+@b4/ko2421/run_time      1519
+@b4/ko2421/n_target      0
+
+@b5/LKRun/RunID          58
+@b5/ko2421/beam_energy   5.838
+@b5/ko2421/beam_rate     1.9E6
+@b5/ko2421/run_time      1519
+@b5/ko2421/n_target      0
+
+@b8/LKRun/RunIDRange     77, 80
+@b8/ko2421/beam_energy   8.13
+@b8/ko2421/beam_rate     1.9E6
+@b8/ko2421/run_time      10
+@b8/ko2421/n_target      0
+
+#####################################
+
+@p8/LKRun/RunIDRange    89, 89
+@p8/ko2421/beam_energy   8.13
+@p8/ko2421/beam_rate     1.9E6
+@p8/ko2421/run_time      10
+@p8/ko2421/n_target      0
+
+#####################################
+
+#@test/LKRun/RunIDRange     117, 123
+#@test/ko2421/beam_energy   8.13
+#@test/ko2421/beam_rate     4.0E6
+#@test/ko2421/run_time      4874
+#@test/ko2421/n_target      1.96E19
+#LKRun/RunIDRange     39, 57, 59, 72
+#ko2421/beam_energy   5.838
+#ko2421/beam_rate     1.9E6
+#ko2421/run_time      9415+4736
+#ko2421/n_target      2.56E19
+
+#####################################
+@25Na/LKRun/RunIDRange     152, 158, 162, 163
+@25Na/ko2421/beam_energy   15
+@25Na/ko2421/beam_rate     0
+@25Na/ko2421/run_time      0
+@25Na/ko2421/n_target      0

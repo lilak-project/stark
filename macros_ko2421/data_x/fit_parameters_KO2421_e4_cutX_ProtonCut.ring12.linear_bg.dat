@@ -1,0 +1,987 @@
+
+========== 1 0 0 3
+0 0 -1 6
+amplitude  122.666 0 291
+mean       0.0224463 -0.2 2
+sigma      0.238428 0 0.6
+y-itercept 19.8959 0 1226.66
+slope      -2.8361 -24.5332 0
+q-Boundary -1.76442 -2.65 -1.65
+========== 1 1 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 2 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 3 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 4 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 5 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 6 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 7 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 8 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 9 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 10 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 11 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 12 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 13 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 14 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 15 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 16 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 17 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 18 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 19 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 20 0 3
+0 0 -1 6
+amplitude  102.472 0 109
+mean       -0.049703 -0.2 2
+sigma      0.244354 0 0.6
+y-itercept 5.49223 0 1090
+slope      -1.24784 -21.8 0
+q-Boundary -0.700014 -1.2 -0.2
+========== 1 21 0 3
+0 0 -1 6
+amplitude  46.7602 0 59
+mean       0.0305177 -0.2 2
+sigma      0.23954 0 0.6
+y-itercept 5.55341 0 590
+slope      -1.28287 -11.8 0
+q-Boundary -1.00663 -1.65 -0.65
+========== 1 22 0 3
+0 0 -1 6
+amplitude  74.9068 0 95
+mean       -0.0251873 -0.2 2
+sigma      0.272687 0 0.6
+y-itercept 15.8096 0 950
+slope      -3.63054 -19 0
+q-Boundary -1.30002 -1.8 -0.8
+========== 1 23 0 3
+0 0 -1 6
+amplitude  84.5262 0 104
+mean       0.090952 -0.2 2
+sigma      0.253569 0 0.6
+y-itercept 20.7212 0 1040
+slope      -5.01234 -20.8 0
+q-Boundary -1.50002 -2 -1
+========== 1 24 0 3
+0 0 -1 6
+amplitude  29.8651 0 42
+mean       0.0548443 -0.2 2
+sigma      0.211292 0 0.6
+y-itercept 6.96232 0 420
+slope      -1.71084 -8.4 0
+q-Boundary -1.75002 -2.25 -1.25
+========== 1 25 0 3
+0 0 -1 6
+amplitude  79.6863 0 94
+mean       0.083339 -0.2 2
+sigma      0.22796 0 0.6
+y-itercept 15.1441 0 940
+slope      -3.8679 -18.8 0
+q-Boundary -2.07833 -2.6 -1.6
+========== 1 26 0 3
+0 0 -0.8 6
+amplitude  23 0 23
+mean       -0.0607534 -0.2 0.2
+sigma      0.278206 0 0.6
+y-itercept 6.73491 0 230
+slope      -1.66197 -4.6 0
+q-Boundary -2.39894 -2.6 -1.6
+========== 1 27 0 3
+0 0 -1 6
+amplitude  84.863 0 1000
+mean       -0.00665948 -0.8 0.8
+sigma      0.236078 0.1 0.3
+y-itercept 4.95943 0 848.627
+slope      -1.04765 -16.9725 0
+q-Boundary -0.999862 -1 0.5
+========== 1 28 0 3
+0 0 -1 6
+amplitude  63.8282 0 1000
+mean       0.0263104 -0.8 0.8
+sigma      0.251651 0.1 0.3
+y-itercept 7.53278 0 638.282
+slope      -1.17665 -12.7656 0
+q-Boundary -0.999998 -1 0.5
+========== 1 29 0 3
+0 0 -1 6
+amplitude  49.3312 0 1000
+mean       -0.0164469 -0.8 0.8
+sigma      0.297922 0.1 0.3
+y-itercept 11.2292 0 493.312
+slope      -1.24743 -9.86624 0
+q-Boundary -0.986429 -1 0.5
+========== 1 30 0 3
+0 0 -1 6
+amplitude  69.3139 0 1000
+mean       0.0108458 -0.8 0.8
+sigma      0.216962 0.1 0.3
+y-itercept 14.4904 0 693.139
+slope      -1.79022 -13.8628 0
+q-Boundary -0.999967 -1 0.5
+========== 1 31 0 3
+0 0 -1 6
+amplitude  49.8621 0 1000
+mean       0.0833985 -0.8 0.8
+sigma      0.3 0.1 0.3
+y-itercept 10.6531 0 498.621
+slope      -0.75777 -9.97242 0
+q-Boundary -0.992301 -1 0.5
+========== 1 32 0 3
+0 0 -1 6
+amplitude  39.9508 0 1000
+mean       0.073614 -0.8 0.8
+sigma      0.184003 0.1 0.3
+y-itercept 12.2166 0 399.508
+slope      -1.25387 -7.99016 0
+q-Boundary -0.989656 -1 0.5
+========== 1 33 0 3
+0 0 -1 6
+amplitude  54.968 0 1000
+mean       0.096595 -0.8 0.8
+sigma      0.245944 0.1 0.3
+y-itercept 11.1433 0 549.68
+slope      -2.23374 -10.9936 0
+q-Boundary -0.979676 -1 0.5
+========== 1 34 0 3
+0 0 -1 6
+amplitude  27.2447 0 1000
+mean       0.00391926 -0.8 0.8
+sigma      0.23472 0.1 0.3
+y-itercept 2.92927 0 272.447
+slope      -0.739111 -5.44894 0
+q-Boundary -0.99987 -1 0.5
+========== 1 35 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 36 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 37 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 38 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 39 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 1 40 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+
+========== 2 0 0 3
+0 0 -1 6
+amplitude  134.831 0 169
+mean       0.0236073 -0.2 2
+sigma      0.209388 0 0.6
+y-itercept 17.3513 0 1348.31
+slope      -2.4358 -26.9662 0
+q-Boundary -1.62624 -2.625 -1.625
+========== 2 1 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 2 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 3 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 4 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 5 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 6 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 7 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 8 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 9 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 10 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 11 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 12 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 13 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 14 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 15 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 16 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 17 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 18 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 19 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 20 0 3
+0 0 -1 6
+amplitude  59.5898 0 60
+mean       -0.0539981 -0.2 2
+sigma      0.216236 0 0.6
+y-itercept 2.90714 0 600
+slope      -0.656839 -12 0
+q-Boundary -0.850013 -1.35 -0.35
+========== 2 21 0 3
+0 0 -1 6
+amplitude  85.8972 0 87
+mean       -0.0568576 -0.2 2
+sigma      0.267864 0 0.6
+y-itercept 7.93142 0 870
+slope      -1.70025 -17.4 0
+q-Boundary -1.10002 -1.6 -0.6
+========== 2 22 0 3
+0 0 -1 6
+amplitude  85.1154 0 105
+mean       -0.0544002 -0.2 2
+sigma      0.254977 0 0.6
+y-itercept 12.4653 0 1050
+slope      -2.858 -21 0
+q-Boundary -1.30002 -1.8 -0.8
+========== 2 23 0 3
+0 0 -1 6
+amplitude  102.508 0 120
+mean       0.0695091 -0.2 2
+sigma      0.223081 0 0.6
+y-itercept 17.2456 0 1200
+slope      -4.09014 -24 0
+q-Boundary -1.6032 -2.2 -1.2
+========== 2 24 0 3
+0 0 -1 6
+amplitude  76.5447 0 92
+mean       0.104659 -0.2 2
+sigma      0.193184 0 0.6
+y-itercept 13.0925 0 920
+slope      -3.22269 -18.4 0
+q-Boundary -1.80618 -2.4 -1.4
+========== 2 25 0 3
+0 0 -1 6
+amplitude  92.0547 0 102
+mean       0.1217 -0.2 2
+sigma      0.179385 0 0.6
+y-itercept 11.5996 0 1020
+slope      -2.96183 -20.4 0
+q-Boundary -2.0172 -2.6 -1.6
+========== 2 26 0 3
+0 0 -1 6
+amplitude  55.6921 0 1000
+mean       -0.0689655 -0.8 0.8
+sigma      0.209284 0.1 0.3
+y-itercept 2.95599 0 556.921
+slope      -0.737588 -11.1384 0
+q-Boundary -0.996383 -1 0.5
+========== 2 27 0 3
+0 0 -1 6
+amplitude  79.6189 0 1000
+mean       -0.0415485 -0.8 0.8
+sigma      0.228869 0.1 0.3
+y-itercept 4.77179 0 796.189
+slope      -0.975923 -15.9238 0
+q-Boundary -0.969605 -1 0.5
+========== 2 28 0 3
+0 0 -1 6
+amplitude  62.6936 0 1000
+mean       -0.0529965 -0.8 0.8
+sigma      0.251214 0.1 0.3
+y-itercept 5.6653 0 626.936
+slope      -0.727605 -12.5387 0
+q-Boundary -0.999817 -1 0.5
+========== 2 29 0 3
+0 0 -1 6
+amplitude  57.6525 0 1000
+mean       -0.0262739 -0.8 0.8
+sigma      0.207751 0.1 0.3
+y-itercept 10.573 0 576.518
+slope      -1.45343 -11.5304 0
+q-Boundary -0.998789 -1 0.5
+========== 2 30 0 3
+0 0 -1 6
+amplitude  40.2326 0 1000
+mean       0.0108309 -0.8 0.8
+sigma      0.182243 0.1 0.3
+y-itercept 6.56181 0 402.326
+slope      -0.88066 -8.04652 0
+q-Boundary -0.999984 -1 0.5
+========== 2 31 0 3
+0 0 -1 6
+amplitude  65.8842 0 1000
+mean       0.0772723 -0.8 0.8
+sigma      0.232619 0.1 0.3
+y-itercept 11.4347 0 658.842
+slope      -0.917657 -13.1768 0
+q-Boundary -0.997565 -1 0.5
+========== 2 32 0 3
+0 0 -1 6
+amplitude  50.8978 0 1000
+mean       0.111519 -0.8 0.8
+sigma      0.21182 0.1 0.3
+y-itercept 8.16066 0 508.978
+slope      -0.454229 -10.1796 0
+q-Boundary -0.993901 -1 0.5
+========== 2 33 0 3
+0 0 -1 6
+amplitude  70.9801 0 1000
+mean       0.132301 -0.8 0.8
+sigma      0.177884 0.1 0.3
+y-itercept 8.84764 0 709.803
+slope      -1.73616 -14.1961 0
+q-Boundary -0.999914 -1 0.5
+========== 2 34 0 3
+0 0 -1 6
+amplitude  28.7046 0 1000
+mean       0.124413 -0.8 0.8
+sigma      0.135018 0.1 0.3
+y-itercept 1.79971 0 287.046
+slope      -0.452257 -5.74092 0
+q-Boundary -0.999483 -1 0.5
+========== 2 35 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 36 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 37 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 38 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 39 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 2 40 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+
+========== 3 0 0 3
+0 0 -1 6
+amplitude  163 0 163
+mean       -0.016517 -0.2 2
+sigma      0.243271 0 0.6
+y-itercept 44.1238 0 1630
+slope      -7.94059 -32.6 0
+q-Boundary -1.67781 -2.575 -1.575
+========== 3 1 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 2 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 3 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 4 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 5 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 6 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 7 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 8 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 9 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 10 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 11 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 12 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 13 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 14 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 15 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 16 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 17 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 18 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 19 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 20 0 3
+0 0 -1 6
+amplitude  51.7737 0 57
+mean       -0.101537 -0.2 2
+sigma      0.216671 0 0.6
+y-itercept 2.32852 0 570
+slope      -0.522443 -11.4 0
+q-Boundary -0.75111 -1.25 -0.25
+========== 3 21 0 3
+0 0 -1 6
+amplitude  94.9014 0 102
+mean       -0.0401772 -0.2 2
+sigma      0.220945 0 0.6
+y-itercept 9.72974 0 1020
+slope      -2.18668 -20.4 0
+q-Boundary -0.900011 -1.4 -0.4
+========== 3 22 0 3
+0 0 -1 6
+amplitude  49.1707 0 56
+mean       -0.0450276 -0.2 2
+sigma      0.237963 0 0.6
+y-itercept 5.26462 0 560
+slope      -1.20375 -11.2 0
+q-Boundary -1.35 -1.85 -0.85
+========== 3 23 0 3
+0 0 -1 6
+amplitude  103.471 0 110
+mean       0.0121058 -0.2 2
+sigma      0.214208 0 0.6
+y-itercept 15.309 0 1100
+slope      -3.63074 -22 0
+q-Boundary -1.50002 -2 -1
+========== 3 24 0 3
+0 0 -1 6
+amplitude  74.9086 0 79
+mean       0.0103682 -0.2 2
+sigma      0.193245 0 0.6
+y-itercept 12.7477 0 790
+slope      -3.15733 -15.8 0
+q-Boundary -1.81627 -2.4 -1.4
+========== 3 25 0 3
+0 0 -1 6
+amplitude  77.5698 0 86
+mean       0.0534513 -0.2 2
+sigma      0.16502 0 0.6
+y-itercept 12.0332 0 860
+slope      -3.08449 -17.2 0
+q-Boundary -2.00653 -2.6 -1.6
+========== 3 26 0 3
+0 0 -1 6
+amplitude  39.3899 0 1000
+mean       -0.162383 -0.8 0.8
+sigma      0.256293 0.1 0.3
+y-itercept 0.923142 0 393.9
+slope      -0.237549 -7.878 0
+q-Boundary -0.999914 -1 0.5
+========== 3 27 0 3
+0 0 -1 6
+amplitude  83.0357 0 1000
+mean       -0.0621085 -0.8 0.8
+sigma      0.224865 0.1 0.3
+y-itercept 5.00404 0 830.357
+slope      -1.06464 -16.6071 0
+q-Boundary -0.990404 -1 0.5
+========== 3 28 0 3
+0 0 -1 6
+amplitude  68.1696 0 1000
+mean       -0.0464702 -0.8 0.8
+sigma      0.216453 0.1 0.3
+y-itercept 6.16043 0 681.697
+slope      -1.00054 -13.6339 0
+q-Boundary -0.999821 -1 0.5
+========== 3 29 0 3
+0 0 -1 6
+amplitude  70.6624 0 1000
+mean       -0.0482825 -0.8 0.8
+sigma      0.221026 0.1 0.3
+y-itercept 6.65331 0 706.624
+slope      -0.646977 -14.1325 0
+q-Boundary -0.979451 -1 0.5
+========== 3 30 0 3
+0 0 -1 6
+amplitude  77.3808 0 1000
+mean       -0.012053 -0.8 0.8
+sigma      0.21713 0.1 0.3
+y-itercept 12.2502 0 773.808
+slope      -1.6724 -15.4762 0
+q-Boundary -0.996432 -1 0.5
+========== 3 31 0 3
+0 0 -1 6
+amplitude  66.6981 0 1000
+mean       0.0215601 -0.8 0.8
+sigma      0.206963 0.1 0.3
+y-itercept 8.91625 0 666.98
+slope      -0.960871 -13.3396 0
+q-Boundary -0.997937 -1 0.5
+========== 3 32 0 3
+0 0 -1 6
+amplitude  49.021 0 1000
+mean       0.0103078 -0.8 0.8
+sigma      0.19658 0.1 0.3
+y-itercept 9.00712 0 490.21
+slope      -0.880287 -9.8042 0
+q-Boundary -0.98489 -1 0.5
+========== 3 33 0 3
+0 0 -1 6
+amplitude  69.9366 0 1000
+mean       0.0887586 -0.8 0.8
+sigma      0.159466 0.1 0.3
+y-itercept 7.11094 0 699.366
+slope      -1.53897 -13.9873 0
+q-Boundary -0.99994 -1 0.5
+========== 3 34 0 3
+0 0 -1 6
+amplitude  859.253 0 1000
+mean       0.136537 -0.8 0.8
+sigma      0.103799 0.1 0.3
+y-itercept 0.147669 0 8592.25
+slope      -0.0335311 -171.845 0
+q-Boundary 0.486689 -1 0.5
+========== 3 35 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 36 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 37 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 38 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 39 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5
+========== 3 40 0 -1
+0 0 -1 6
+amplitude  100 0 1000
+mean       0.1 -0.8 0.8
+sigma      0.2 0.1 0.3
+y-itercept 10 0 1000
+slope      -1 -200 0
+q-Boundary -1 -1 0.5

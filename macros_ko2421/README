@@ -1,0 +1,67 @@
+# run
+
+## run macros
+- run_online.C  : short online analysis during the experiment
+- run_monitor.C : online analysis mornitor during the experiment
+- run_conv.C : conversion from mfm to root
+- run_reco.C : hit reconstruction
+- run_viewer.C : GET channel viewer
+- run_merger.C : LTEMerger
+- run_ana_eve.C : create tree to run draw_and_fit_cross_section.C
+
+## common configuration
+- config_paths.mac : paths
+- config_stark.mac : stark configuration
+- config_type.mac  : run types
+
+## outdated
+- run_eve.C
+- run_short.C
+
+---
+
+# drawing macros
+
+## drawing macros and necessary files
+- draw_and_fit_cross_section.C : create kinematics plot -> create energy plot for each theta -> create differential cross section.
+    - set_draw_and_fit_cross_section.h
+    - find_scaling_factor.C
+    - functions.h
+    - FitParInfo.h
+    - data_x/et_kinematic_line.e[energy_index].[level_index].root
+    - data_x/qt_edge.6789.root
+    - data_lilak/anaX_e[energy_index]_cutX_ProtonCut.root
+    - data_ana/KO2421_e[energy_index]_cutX_ProtonCut_NT360.ana_xmulth.root
+    - data_x/theta_conversion.root
+    - data_x/ggar_e[energy_index].root
+    - data_x/argon_scattering_data.txt
+    - data_x/fit_parameters_KO2421_e8_cutX_ProtonCut.ring12.linear_bg.dat
+    - data_x/fit_parameters_KO2421_e8_cutX_ProtonCut.ring16.exp_bg.dat
+- draw_blank_run_background.C : E/Q-value plot for background runs
+    - data_ana/KO2421_blank_cutX_pidAll_NT360.ana_eve.root
+    - data_x/example_e8_16.root
+    - data_x/example_cut.root
+- draw_detectors.C : draw stark silicon detector position in phi theta and their ids
+    - reco files
+- draw_event_count.C : draw event counts and merged kinematics plot for all runs
+    - reco files
+- draw_geometry_target_detector.C : draw geometrical position of experimental setup and create position error data file
+- draw_junction_vs_ohmic.C : draw junction energy vs ohmic energy for all detectors
+    - reco files
+- draw_ko2421.C : draw plots for paper
+    - data_x/x[energy_index].short.root
+    - data_x/histQT_813_pair14_3.root
+    - data_x/EVSTheta.root
+- draw_phi_distribution.C : draw phi distribution of counts
+    - reco files
+- draw_psa.C : example PSA
+    - reco files
+- draw_summary.C : draw summary of draw_and_fit_cross_section.C
+    - file from draw_and_fit_cross_section.C
+
+## outdated
+- draw_projection_histq.C
+- draw_reco.C
+- draw_relative_z.C
+- draw_theta.C
+- draw_theta_z.C

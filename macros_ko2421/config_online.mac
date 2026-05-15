@@ -1,0 +1,27 @@
+<stark_configs         config_stark.mac
+<paths_configs         config_paths.mac
+
+run                    e{RUN}
+@-run/run              {default_run}
+LKRun/RunID            {run}
+LKRun/Name             stark
+LKRun/OutputPath       {reco_data_path}
+LKRun/Tag              conv
+#LKRun/UpdateOuputFile  true
+
+persistency/FrameHeader true
+persistency/RawData     true
+
+LKMFMConversionTask/InputFileName   online
+LKMFMConversionTask/watcherIP       192.168.41.5
+#LKMFMConversionTask/watcherIP       192.168.40.5
+LKMFMConversionTask/watcherPort     10204
+#LKMFMConversionTask/watcherPort     10202
+
+LKMFMConversionTask/sleepBeforeConnect 1
+LKMFMConversionTask/breakAfterFailNumber 20
+
+LKFrameBuilder/MaxCobo              4   # maximum number of CoBo
+LKFrameBuilder/MaxAsad              4   # maximum number of AsAd in one CoBo
+LKFrameBuilder/MaxAget              4   # maximum number of AGET in one AsAd
+LKFrameBuilder/MaxChannels          68  # maximum number of channels in AGET

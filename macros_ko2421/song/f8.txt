@@ -1,0 +1,687 @@
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.960628, step 0.0100, error 0.2324
+# Var 2=Wd value 4.135068, step 0.0100, error 0.1889
+# ChiSq/N = 5.502 from 5.502
+# sigma_R = 632.845
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 79.328062, step 0.0100, error 7.5207
+# Var 2=rv value 0.945823, step 0.0100, error 0.0571
+# Var 3=Wd value 4.134626, step 0.0100, error 0.4427
+# Var 4=rwd value 1.611543, step 0.0100, error 0.0585
+# ChiSq/N = 2.186 from 2.186
+# sigma_R = 689.559
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 78.378236, step 0.0100, error 4.1275
+# Var 2=rv value 1.159158, step 0.0100, error 0.0367
+# Var 3=av value 0.101376, step 0.0100, error 0.0632
+# Var 4=Wd value 30.112805, step 0.0100, error 12.4451
+# Var 5=rwd value 1.111467, step 0.0100, error 0.0575
+# Var 6=awd value 0.102443, step 0.0100, error 0.0455
+# ChiSq/N = 0.979 from 0.979
+# sigma_R = 328.791
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.560463, step 0.0100, error 0.2282
+# Var 2=Wd value 3.934413, step 0.0100, error 0.1537
+# ChiSq/N = 4.403 from 4.403
+# sigma_R = 654.077
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 73.265221, step 0.0100, error 2.9272
+# Var 2=rv value 1.008736, step 0.0100, error 0.0218
+# Var 3=Wd value 2.047080, step 0.0100, error 0.3257
+# Var 4=rwd value 1.759388, step 0.0100, error 0.0427
+# ChiSq/N = 1.537 from 1.537
+# sigma_R = 692.920
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 79.478861, step 0.0100, error 5.5541
+# Var 2=rv value 1.043310, step 0.0100, error 0.0611
+# Var 3=av value 0.450867, step 0.0100, error 0.0468
+# Var 4=Wd value 27.033163, step 0.0100, error 8.1939
+# Var 5=rwd value 1.323495, step 0.0100, error 0.1160
+# Var 6=awd value 0.100062, step 0.0100, error 0.0410
+# ChiSq/N = 1.158 from 1.158
+# sigma_R = 379.679
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_Vso_rso
+fit
+exp*1.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.930755, step 0.0100, error 0.0004
+# Var 2=rv value 1.150444, step 0.0100, error 0.0050
+# Var 3=Wd value 3.019984, step 0.0100, error 0.1377
+# Var 4=rwd value 1.382215, step 0.0100, error 2.0476
+# Var 5=Vso value 5.678001, step 0.0100, error 0.1075
+# Var 6=rso value 2.219628, step 0.0100, error 0.0014
+# ChiSq/N = 0.945 from 0.945
+# sigma_R = 520.108
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.173710, step 0.0100, error 0.3005
+# Var 2=Wd value 6.571029, step 0.0100, error 0.2410
+# ChiSq/N = 5.207 from 5.207
+# sigma_R = 749.714
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 97.531909, step 0.0100, error 6.1883
+# Var 2=rv value 0.835055, step 0.0100, error 0.0321
+# Var 3=Wd value 5.165905, step 0.0100, error 0.8757
+# Var 4=rwd value 1.523741, step 0.0100, error 0.0697
+# ChiSq/N = 0.768 from 0.768
+# sigma_R = 702.051
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 89.593071, step 0.0100, error 10.4964
+# Var 2=rv value 1.083055, step 0.0100, error 0.0581
+# Var 3=av value 0.105386, step 0.0100, error 0.1267
+# Var 4=Wd value 17.313638, step 0.0100, error 4.8499
+# Var 5=rwd value 0.710531, step 0.0100, error 0.0859
+# Var 6=awd value 0.291453, step 0.0100, error 0.1610
+# ChiSq/N = 0.823 from 0.823
+# sigma_R = 336.375
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.277181, step 0.0100, error 0.2786
+# Var 2=Wd value 5.982423, step 0.0100, error 0.2009
+# ChiSq/N = 4.989 from 4.989
+# sigma_R = 758.297
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 67.972217, step 0.0100, error 3.2353
+# Var 2=rv value 1.044850, step 0.0100, error 0.0264
+# Var 3=Wd value 3.181728, step 0.0100, error 0.8751
+# Var 4=rwd value 1.733531, step 0.0100, error 0.0900
+# ChiSq/N = 0.658 from 0.658
+# sigma_R = 853.344
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 80.574494, step 0.0100, error 12.6559
+# Var 2=rv value 0.961158, step 0.0100, error 0.0776
+# Var 3=av value 0.609352, step 0.0100, error 0.0446
+# Var 4=Wd value 4.888817, step 0.0100, error 2.5518
+# Var 5=rwd value 1.730184, step 0.0100, error 0.1033
+# Var 6=awd value 0.365034, step 0.0100, error 0.1934
+# ChiSq/N = 0.591 from 0.591
+# sigma_R = 743.012
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_Vso_rso
+fit
+exp*0.90
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 75.270425, step 0.0100, error 5.2906
+# Var 2=rv value 0.997824, step 0.0100, error 0.0429
+# Var 3=Wd value 3.737280, step 0.0100, error 1.3168
+# Var 4=rwd value 1.573745, step 0.0100, error 0.2214
+# Var 5=Vso value 2.696362, step 0.0100, error 0.6960
+# Var 6=rso value 2.680495, step 0.0100, error 0.2022
+# ChiSq/N = 0.527 from 0.527
+# sigma_R = 673.422
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 57.093400, step 0.0100, error 0.3683
+# Var 2=Wd value 10.013285, step 0.0100, error 0.3042
+# ChiSq/N = 2.895 from 2.895
+# sigma_R = 826.908
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 54.909951, step 0.0100, error 8.1469
+# Var 2=rv value 1.195134, step 0.0100, error 0.1084
+# Var 3=Wd value 9.993757, step 0.0100, error 0.5645
+# Var 4=rwd value 1.386229, step 0.0100, error 0.0438
+# ChiSq/N = 0.662 from 0.662
+# sigma_R = 857.796
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 99.691777, step 0.0100, error 15.4062
+# Var 2=rv value 0.825860, step 0.0100, error 0.0657
+# Var 3=av value 0.614289, step 0.0100, error 0.0847
+# Var 4=Wd value 4.032345, step 0.0100, error 0.3891
+# Var 5=rwd value 1.632170, step 0.0100, error 0.0908
+# Var 6=awd value 0.692203, step 0.0100, error 0.0863
+# ChiSq/N = 0.407 from 0.407
+# sigma_R = 896.748
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 57.321180, step 0.0100, error 0.3755
+# Var 2=Wd value 9.334505, step 0.0100, error 0.3001
+# ChiSq/N = 3.655 from 3.655
+# sigma_R = 833.293
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 52.625701, step 0.0100, error 6.7491
+# Var 2=rv value 1.226198, step 0.0100, error 0.0989
+# Var 3=Wd value 8.889217, step 0.0100, error 0.3071
+# Var 4=rwd value 1.431871, step 0.0100, error 0.0290
+# ChiSq/N = 0.636 from 0.636
+# sigma_R = 899.942
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 67.969306, step 0.0100, error 12.0153
+# Var 2=rv value 1.048648, step 0.0100, error 0.0893
+# Var 3=av value 0.613812, step 0.0100, error 0.1048
+# Var 4=Wd value 2.929799, step 0.0100, error 0.9647
+# Var 5=rwd value 1.799594, step 0.0100, error 0.1945
+# Var 6=awd value 0.710819, step 0.0100, error 0.1270
+# ChiSq/N = 0.455 from 0.455
+# sigma_R = 1050.881
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_Vso_rso
+fit
+exp*0.80
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 50.950407, step 0.0100, error 8.9987
+# Var 2=rv value 1.253450, step 0.0100, error 0.1429
+# Var 3=Wd value 8.551283, step 0.0100, error 1.2765
+# Var 4=rwd value 1.440163, step 0.0100, error 0.0607
+# Var 5=Vso value 6.820748, step 0.0100, error 3.8971
+# Var 6=rso value 0.867916, step 0.0100, error 0.3647
+# ChiSq/N = 0.625 from 0.625
+# sigma_R = 912.606
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 55.349632, step 0.0100, error 0.5638
+# Var 2=Wd value 15.276586, step 0.0100, error 0.4857
+# ChiSq/N = 1.457 from 1.457
+# sigma_R = 867.334
+20 40 60 80 100 120 140 160 180
+10 1
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 39.792703, step 0.0100, error 2.0041
+# Var 2=rv value 1.451084, step 0.0100, error 0.0445
+# Var 3=Wd value 11.655038, step 0.0100, error 0.6886
+# Var 4=rwd value 1.428036, step 0.0100, error 0.0239
+# ChiSq/N = 0.499 from 0.499
+# sigma_R = 1074.835
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 55.306621, step 0.0100, error 1.2288
+# Var 2=rv value 1.170619, step 0.0100, error 0.0098
+# Var 3=av value 0.644622, step 0.0100, error 0.2247
+# Var 4=Wd value 4.557755, step 0.0100, error 1.9878
+# Var 5=rwd value 1.512122, step 0.0100, error 0.3024
+# Var 6=awd value 0.937164, step 0.0100, error 0.0816
+# ChiSq/N = 0.388 from 0.388
+# sigma_R = 1206.996
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 55.373016, step 0.0100, error 0.5781
+# Var 2=Wd value 14.818149, step 0.0100, error 0.4954
+# ChiSq/N = 1.568 from 1.568
+# sigma_R = 869.140
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 38.217614, step 0.0100, error 1.9785
+# Var 2=rv value 1.492017, step 0.0100, error 0.0475
+# Var 3=Wd value 10.714765, step 0.0100, error 0.7030
+# Var 4=rwd value 1.444262, step 0.0100, error 0.0213
+# ChiSq/N = 0.511 from 0.511
+# sigma_R = 1103.940
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.562301, step 0.0100, error 8.1993
+# Var 2=rv value 1.127930, step 0.0100, error 0.0836
+# Var 3=av value 0.661064, step 0.0100, error 0.2008
+# Var 4=Wd value 2.966028, step 0.0100, error 1.3323
+# Var 5=rwd value 1.731793, step 0.0100, error 0.2976
+# Var 6=awd value 0.938873, step 0.0100, error 0.0790
+# ChiSq/N = 0.355 from 0.355
+# sigma_R = 1309.704
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_Vso_rso
+fit
+exp*0.70
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 37.485028, step 0.0100, error 1.6489
+# Var 2=rv value 1.515351, step 0.0100, error 0.0425
+# Var 3=Wd value 9.815955, step 0.0100, error 0.5698
+# Var 4=rwd value 1.408529, step 0.0100, error 0.0118
+# Var 5=Vso value 8.277731, step 0.0100, error 2.1799
+# Var 6=rso value 0.697459, step 0.0100, error 0.2892
+# ChiSq/N = 0.496 from 0.496
+# sigma_R = 1109.822
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 55.759515, step 0.0100, error 0.5555
+# Var 2=Wd value 14.034047, step 0.0100, error 0.8277
+# Var 3=scale value 0.720231, step 0.0100, error 0.0119
+# ChiSq/N = 1.211 from 1.211
+# sigma_R = 862.148
+20 40 60 80 100 120 140 160 180
+10 3
+10 2
+10 1
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 32.417427, step 0.0100, error 3.5748
+# Var 2=rv value 1.636629, step 0.0100, error 0.1036
+# Var 3=Wd value 12.381436, step 0.0100, error 0.7087
+# Var 4=rwd value 1.450037, step 0.0100, error 0.0205
+# Var 5=scale value 0.585293, step 0.0100, error 0.0799
+# ChiSq/N = 0.412 from 0.412
+# sigma_R = 1281.310
+20 40 60 80 100 120 140 160 180
+10 1
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=0.000 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 53.668832, step 0.0100, error 0.4541
+# Var 2=rv value 1.164359, step 0.0100, error 0.0238
+# Var 3=av value 0.741172, step 0.0100, error 0.1355
+# Var 4=Wd value 4.142224, step 0.0100, error 0.3786
+# Var 5=rwd value 1.528056, step 0.0100, error 0.1007
+# Var 6=awd value 1.187704, step 0.0100, error 0.2001
+# Var 7=scale value 0.567072, step 0.0100, error 0.0974
+# ChiSq/N = 0.285 from 0.285
+# sigma_R = 1622.742
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_Wd_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 58.582754, step 0.0100, error 0.1911
+# Var 2=Wd value 2.357581, step 0.0100, error 0.3875
+# Var 3=scale value 1.120057, step 0.0100, error 0.0355
+# ChiSq/N = 3.733 from 3.733
+# sigma_R = 501.261
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 32.373893, step 0.0100, error 1.5132
+# Var 2=rv value 1.636653, step 0.0100, error 0.0482
+# Var 3=Wd value 10.584931, step 0.0100, error 0.8546
+# Var 4=rwd value 1.353757, step 0.0100, error 0.0945
+# Var 5=scale value 0.569425, step 0.0100, error 0.0380
+# ChiSq/N = 0.355 from 0.355
+# sigma_R = 1287.792
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_av_Wd_rwd_awd_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 52.877695, step 0.0100, error 2.0931
+# Var 2=rv value 1.136943, step 0.0100, error 0.0608
+# Var 3=av value 0.895245, step 0.0100, error 0.0978
+# Var 4=Wd value 2.239536, step 0.0100, error 0.6383
+# Var 5=rwd value 1.498151, step 0.0100, error 0.0591
+# Var 6=awd value 1.554765, step 0.0100, error 0.3556
+# Var 7=scale value 0.494823, step 0.0100, error 0.1183
+# ChiSq/N = 0.279 from 0.279
+# sigma_R = 1839.790
+20 40 60 80 100 120 140 160 180
+100
+101
+102
+103
+E=8.13 fit Vv_rv_Wd_rwd_Vso_rso_scale
+fit
+exp*0.00
+#initial
+&POT KP=1 TYPE=1 SHAPE=0 P1=56.578 P2=1.185 P3=0.672 P4=0.000 P5=1.185 P6=0.672 /
+&POT KP=1 TYPE=2 SHAPE=0 P1=0.000 P2=0.000 P3=0.000 P4=8.185 P5=1.288 P6=0.540 /
+&POT KP=1 TYPE=3 SHAPE=0 P1=5.668 P2=0.996 P3=0.590 P4=0.000 P5=0.996 P6=0.590 /
+#fit
+# Var 1=Vv value 48.900863, step 0.0100, error 0.8031
+# Var 2=rv value 1.284340, step 0.0100, error 0.0177
+# Var 3=Wd value 15.620913, step 0.0100, error 2.3224
+# Var 4=rwd value 0.693145, step 0.0100, error 0.0680
+# Var 5=Vso value 13.420091, step 0.0100, error 0.8690
+# Var 6=rso value 1.598979, step 0.0100, error 0.0201
+# Var 7=scale value 0.715578, step 0.0100, error 0.0333
+# ChiSq/N = 0.366 from 0.366
+# sigma_R = 1073.394

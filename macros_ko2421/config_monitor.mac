@@ -1,0 +1,25 @@
+<stark_configs         config_stark.mac
+<paths_configs         config_paths.mac
+
+run                    e{RUN}
+@-run/run              {default_run}
+LKRun/RunID            {run}
+LKRun/Name             stark
+LKRun/OutputPath       {reco_data_path}
+LKRun/InputPath        {reco_data_path}
+LKRun/Tag              ana_eve
+
+#run1                   e{RUN1}
+#run2                   e{RUN2}
+#LKRun/RunIDRange       {run1}, {run2}
+#LKRun/RunIDList        11, 12, 13, 14
+#LKRun/RunIDList        15, 16, 17
+LKRun/SearchRun        reco
+
+LKEveTask/drawEve3D    false
+LKEveTask/drawPlane    true
+
+SKAnalysisJW/energy_threshold_for_count 1.0
+analysis/binning_cal_energy 400 0 30
+
+SKSiArrayPlane/jumpEventSize  50000

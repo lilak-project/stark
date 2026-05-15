@@ -1,0 +1,18 @@
+<stark_configs         config_stark.mac
+<paths_configs         config_paths.mac
+
+run                    e{RUN}
+@-run/run              {default_run}
+LKRun/RunID            {run}
+LKRun/Name             stark
+LKRun/OutputPath       {reco_data_path}
+LKRun/InputPath        {reco_data_path}
+LKRun/SearchRun        conv ##########
+LKRun/Tag              viewer
+LKRun/AutoTerminate    false
+
+########################################################################
+LKGETChannelViewer/MaxCobo          4
+LKGETChannelViewer/MaxAsad          4
+LKGETChannelViewer/MaxAget          4
+LKGETChannelViewer/MaxChannels      68

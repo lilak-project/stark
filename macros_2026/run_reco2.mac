@@ -1,0 +1,27 @@
+lilak/print  all  # print after init gen:par:out:in:det:task
+lilak/run  0  # run [no] after init. Execute all events if [no] is 0
+lilak/add  SKSiArrayPlane
+lilak/add  SKDrawCalibratedEventStatisticsTask
+
+LKRun/Name  stark_board_test  # name of the run
+LKRun/RunID  54  # run number
+LKRun/Tag  reco2  # tag
+LKRun/OutputPath  data_reco/  # /Users/jungwoo/Research/lilak/data  # path to the output. Default path {lilak_data} is lilak/data/
+LKRun/InputPath  data_reco/  # /path/to/in/  # LKRun will search files from input paths when LKRun/SearchRun
+LKRun/SearchRun  reco  # mfm  # search input files with LKRun/RunID. opt=mfm: search mfm files, opt=[tag]: search run_runNo.*.[tag].root
+LKRun/AutoTerminate  true  # automatically terminate root after end of run
+LKRun/EventCountForMessage  20000
+
+#LKRun/Division  0  # division within the run [optional]
+#LKRun/InputFile  to/input/file  # input file. Cannot be used with LKRun/SearchRun
+#LKRun/FriendFile  to/friend/file  # input friend file
+#LKRun/RunIDList  1, 2, 3, 4  # list of run numbers separated by ,
+#LKRun/RunIDRange  1, 10  # list of run numbers ranged by ,
+#LKRun/EntriesLimit  100000  # limit number of run entries
+#LKRun/UpdateOutputFile  0  # update root file with option update
+#LKRun/FileName  # file name will be fixed to this name if it is not null string
+
+#lilak/collect_par  print  # file name to write collected parameters. 'print' to print out on screen
+#lilak/auto_exit  0  # set(1)/unset(0) auto termination
+#lilak/draw  0  # execute Draw()
+#lilak/execute  0  # execute event [no] after init

@@ -1,0 +1,27 @@
+################################################################################
+# (c0) energy calibration parameter g0 :
+    - adc * g0 = energy
+
+# (c1) slope correction parameters g1, g2 :
+    - energy_left  = adc_left * g1
+    - energy_right = adc_right * g2
+
+# (c2) balistic correction parameters b0, b1, b2 :
+    - x = c1_rpos
+    - c2_esum = c1_esum(x) * source_energy / (b0 + b1*x + b2*x*x) 
+
+# note that initial input is ../data/stark_xxxx.reco.root created from run_reco.C
+
+# order of macros
+vi si_calibration.h               # to fix fRun and fDataType
+RUN=____ root make_histograms.C                 # create raw histograms
+RUN=____ root run_energy_correction.C           # energy correction for non resistive strips
+RUN=____ root run_slope_correction.C            # slope correction for resistive strips
+RUN=____ root make_c1_histograms.C              # create energy, slope corrected histograms
+RUN=____ root run_ballistic_correction.C        # ballistic correction for resistive strips
+RUN=____ root make_c2_histograms.C              # create energy, (slope, ballistic) corrected histograms
+RUN=____ root run_junction_energy_calibration.C # energy correction for resistive strips
+RUN=____ root make_c3_histograms.C              # create final histograms and make position calibration for resistive strips
+RUN=____ root run_recalibration_168_with_199_parameters.C   # energy calibration for gain change during the experiment for det=(0-11)
+RUN=____ root summary.C                         # summary
+################################################################################

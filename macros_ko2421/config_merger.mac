@@ -1,0 +1,29 @@
+<stark_configs         config_stark.mac
+<paths_configs         config_paths.mac
+
+run                e{RUN}
+@-run/run          {default_run}
+LKRun/RunID        {run}
+LKRun/Name         stark
+LKRun/OutputPath   {reco_data_path}
+LKRun/InputPath    {reco_data_path}
+LKRun/SearchRun    conv ##########
+LKRun/Tag          merge
+
+#LKRun/EventCountForMessage 20000
+
+#run_lte     {run}
+run_lte     {run}
+run_kobra   661
+
+mte/key_source                0 Cobo               # key_source_number key_source_name
+mte/add_source                1 Kobra              # source_number source_name
+mte/add_source                2 Pulser
+mte/add_source                3 Scint
+mte/TestKobraEntry            5                    #
+mte/FindTimeOffset            true                #
+mte/TimeOffsetFile            {mte_data_path}/mte_time_offset.txt             #
+mte/MTEFile                   {mte_data_path}/lte_tag_{run_lte}.dat                 #
+mte/KobraAnaFile              {kobra_ana_data_path}/output00000{run_kobra}.root        #
+mte/KobraDAQFile              {kobra_daq_data_path}/output00{run_kobra}.root           #
+#mte/MTESummaryFile            data_mte/mte_summary.root                # empty to write to output file

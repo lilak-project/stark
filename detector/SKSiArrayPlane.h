@@ -96,6 +96,10 @@ class SKSiArrayPlane : public LKEvePlane
         int GetEPairDetID(int pair, int i) { return fdEEPairMapping[pair][i]; }
 
     protected:
+        void ResetEPairMapping();
+        void SetEPairMapping(int pair, int i, int detID);
+
+    protected:
         TString fMappingFileName;
         TString fDetectorParName;
         int fNumCobo = 6;

@@ -1,0 +1,8 @@
+raw_data_path       {lilak_path}/ko2421/macros/data_raw
+conv_data_path      {lilak_path}/ko2421/macros/data_conv
+reco_data_path      {lilak_path}/ko2421/macros/data_reco
+ana_data_path       {lilak_path}/ko2421/macros/data_ana
+
+mte_data_path       {lilak_path}/ko2421/macros/data_mte
+kobra_ana_data_path {lilak_path}/ko2421/macros/data_kobra_ana
+kobra_daq_data_path {lilak_path}/ko2421/macros/data_kobra_daq
