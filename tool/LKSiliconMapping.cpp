@@ -75,8 +75,17 @@ TString LKSiliconMapping::FindFirstMappingFile(TString mappingPath, TString suff
 
 bool LKSiliconMapping::Load(TString mappingPath)
 {
-    auto detectorFile = FindFirstMappingFile(mappingPath, "_detector_mapping.txt");
-    auto channelFile = FindFirstMappingFile(mappingPath, "_channel_mapping.txt");
+    auto resolvedPath = mappingPath;
+    gSystem->ExpandPathName(resolvedPath);
+
+    auto detectorFile = TString::Format("%s/detector_mapping.txt", resolvedPath.Data());
+    auto channelFile = TString::Format("%s/channel_mapping.txt", resolvedPath.Data());
+
+    if (gSystem->AccessPathName(detectorFile))
+        detectorFile = FindFirstMappingFile(mappingPath, "_detector_mapping.txt");
+    if (gSystem->AccessPathName(channelFile))
+        channelFile = FindFirstMappingFile(mappingPath, "_channel_mapping.txt");
+
     if (detectorFile.IsNull() || channelFile.IsNull()) {
         lk_error << "Cannot find mapping files in " << mappingPath << std::endl;
         lk_error << "  detector mapping: " << detectorFile << std::endl;

@@ -1,0 +1,189 @@
+// Do NOT change. Changes will be lost next time file is generated
+
+#define R__DICTIONARY_FILENAME dIUsersdIjungwoodIResearchdIlilakdIstarkdImacros_pre_li7dImacros_target_thickness_measurementdIstep3_energy_C_ACLiC_dict
+#define R__NO_DEPRECATION
+
+/*******************************************************************/
+#include <cstddef>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cassert>
+#define G__DICTIONARY
+#include "ROOT/RConfig.hxx"
+#include "TClass.h"
+#include "TDictAttributeMap.h"
+#include "TInterpreter.h"
+#include "TROOT.h"
+#include "TBuffer.h"
+#include "TMemberInspector.h"
+#include "TInterpreter.h"
+#include "TVirtualMutex.h"
+#include "TError.h"
+
+#ifndef G__ROOT
+#define G__ROOT
+#endif
+
+#include "RtypesImp.h"
+#include "TIsAProxy.h"
+#include "TFileMergeInfo.h"
+#include <algorithm>
+#include "TCollectionProxyInfo.h"
+/*******************************************************************/
+
+#include "TDataMember.h"
+
+// The generated code does not explicitly qualify STL entities
+namespace std {} using namespace std;
+
+// Header files passed as explicit arguments
+#include "/Users/jungwoo/Research/lilak/stark/macros_pre_li7/macros_target_thickness_measurement/./step3_energy.C"
+
+// Header files passed via #pragma extra_include
+
+namespace ROOT {
+   static TClass *ThicknessPoint_Dictionary();
+   static void ThicknessPoint_TClassManip(TClass*);
+   static void *new_ThicknessPoint(void *p = nullptr);
+   static void *newArray_ThicknessPoint(Long_t size, void *p);
+   static void delete_ThicknessPoint(void *p);
+   static void deleteArray_ThicknessPoint(void *p);
+   static void destruct_ThicknessPoint(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::ThicknessPoint*)
+   {
+      ::ThicknessPoint *ptr = nullptr;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::ThicknessPoint));
+      static ::ROOT::TGenericClassInfo 
+         instance("ThicknessPoint", "step3_energy.C", 45,
+                  typeid(::ThicknessPoint), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &ThicknessPoint_Dictionary, isa_proxy, 4,
+                  sizeof(::ThicknessPoint) );
+      instance.SetNew(&new_ThicknessPoint);
+      instance.SetNewArray(&newArray_ThicknessPoint);
+      instance.SetDelete(&delete_ThicknessPoint);
+      instance.SetDeleteArray(&deleteArray_ThicknessPoint);
+      instance.SetDestructor(&destruct_ThicknessPoint);
+      return &instance;
+   }
+   TGenericClassInfo *GenerateInitInstance(const ::ThicknessPoint*)
+   {
+      return GenerateInitInstanceLocal(static_cast<::ThicknessPoint*>(nullptr));
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal(static_cast<const ::ThicknessPoint*>(nullptr)); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *ThicknessPoint_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal(static_cast<const ::ThicknessPoint*>(nullptr))->GetClass();
+      ThicknessPoint_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void ThicknessPoint_TClassManip(TClass* theClass){
+      theClass->CreateAttributeMap();
+      TDictAttributeMap* attrMap( theClass->GetAttributeMap() );
+      attrMap->AddProperty("file_name","/Users/jungwoo/Research/lilak/stark/macros_pre_li7/macros_target_thickness_measurement/./step3_energy.C");
+   }
+
+} // end of namespace ROOT
+
+namespace ROOT {
+   static TClass *EnergyCal_Dictionary();
+   static void EnergyCal_TClassManip(TClass*);
+   static void *new_EnergyCal(void *p = nullptr);
+   static void *newArray_EnergyCal(Long_t size, void *p);
+   static void delete_EnergyCal(void *p);
+   static void deleteArray_EnergyCal(void *p);
+   static void destruct_EnergyCal(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const ::EnergyCal*)
+   {
+      ::EnergyCal *ptr = nullptr;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::EnergyCal));
+      static ::ROOT::TGenericClassInfo 
+         instance("EnergyCal", "step3_energy.C", 136,
+                  typeid(::EnergyCal), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &EnergyCal_Dictionary, isa_proxy, 4,
+                  sizeof(::EnergyCal) );
+      instance.SetNew(&new_EnergyCal);
+      instance.SetNewArray(&newArray_EnergyCal);
+      instance.SetDelete(&delete_EnergyCal);
+      instance.SetDeleteArray(&deleteArray_EnergyCal);
+      instance.SetDestructor(&destruct_EnergyCal);
+      return &instance;
+   }
+   TGenericClassInfo *GenerateInitInstance(const ::EnergyCal*)
+   {
+      return GenerateInitInstanceLocal(static_cast<::EnergyCal*>(nullptr));
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal(static_cast<const ::EnergyCal*>(nullptr)); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *EnergyCal_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal(static_cast<const ::EnergyCal*>(nullptr))->GetClass();
+      EnergyCal_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void EnergyCal_TClassManip(TClass* theClass){
+      theClass->CreateAttributeMap();
+      TDictAttributeMap* attrMap( theClass->GetAttributeMap() );
+      attrMap->AddProperty("file_name","/Users/jungwoo/Research/lilak/stark/macros_pre_li7/macros_target_thickness_measurement/./step3_energy.C");
+   }
+
+} // end of namespace ROOT
+
+namespace ROOT {
+   // Wrappers around operator new
+   static void *new_ThicknessPoint(void *p) {
+      return  p ? new(p) ::ThicknessPoint : new ::ThicknessPoint;
+   }
+   static void *newArray_ThicknessPoint(Long_t nElements, void *p) {
+      return p ? new(p) ::ThicknessPoint[nElements] : new ::ThicknessPoint[nElements];
+   }
+   // Wrapper around operator delete
+   static void delete_ThicknessPoint(void *p) {
+      delete (static_cast<::ThicknessPoint*>(p));
+   }
+   static void deleteArray_ThicknessPoint(void *p) {
+      delete [] (static_cast<::ThicknessPoint*>(p));
+   }
+   static void destruct_ThicknessPoint(void *p) {
+      typedef ::ThicknessPoint current_t;
+      (static_cast<current_t*>(p))->~current_t();
+   }
+} // end of namespace ROOT for class ::ThicknessPoint
+
+namespace ROOT {
+   // Wrappers around operator new
+   static void *new_EnergyCal(void *p) {
+      return  p ? new(p) ::EnergyCal : new ::EnergyCal;
+   }
+   static void *newArray_EnergyCal(Long_t nElements, void *p) {
+      return p ? new(p) ::EnergyCal[nElements] : new ::EnergyCal[nElements];
+   }
+   // Wrapper around operator delete
+   static void delete_EnergyCal(void *p) {
+      delete (static_cast<::EnergyCal*>(p));
+   }
+   static void deleteArray_EnergyCal(void *p) {
+      delete [] (static_cast<::EnergyCal*>(p));
+   }
+   static void destruct_EnergyCal(void *p) {
+      typedef ::EnergyCal current_t;
+      (static_cast<current_t*>(p))->~current_t();
+   }
+} // end of namespace ROOT for class ::EnergyCal
+
+namespace ROOT {
+   // Registration Schema evolution read functions
+   int RecordReadRules_step3_energy_C_ACLiC_dict() {
+      return 0;
+   }
+   static int _R__UNIQUE_DICT_(ReadRules_step3_energy_C_ACLiC_dict) = RecordReadRules_step3_energy_C_ACLiC_dict();R__UseDummy(_R__UNIQUE_DICT_(ReadRules_step3_energy_C_ACLiC_dict));
+} // namespace ROOT

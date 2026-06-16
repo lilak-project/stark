@@ -1,0 +1,12 @@
+mv BB10_idx0_lc.dat   BB10_N2_lc.dat
+mv BB10_idx1_lc.dat   BB10_N7_lc.dat
+mv BB10_idx2_lc.dat   BB10_N4_lc.dat
+mv BB10_idx3_lc.dat   BB10_N3_lc.dat
+mv BB10_idx4_lc.dat   BB10_N5_lc.dat
+mv BB10_idx5_lc.dat   BB10_N6_lc.dat
+mv BB10_idx6_lc.dat   BB10_N1_lc.dat
+mv BB10_idx7_lc.dat   BB10_N8_lc.dat
+mv QQQ5_idx0_lc.dat   QQQ5_N3_lc.dat
+mv QQQ5_idx1_lc.dat   QQQ5_N4_lc.dat
+mv QQQ5_idx2_lc.dat   QQQ5_N2_lc.dat
+mv QQQ5_idx3_lc.dat   QQQ5_N1_lc.dat

@@ -1,0 +1,6 @@
+# energy = (Mean - [p0]) * [conversion]
+# p0(no 1V pulser fit) = -2.39261 +/- 0.379809 channel
+# Gd-148 alpha = 3.271 MeV
+# path	mean_channel	mean_error	conversion_MeV_per_channel	conversion_error
+data/20260528/blank/blank_200v.Spe	534.554	0.0888453	0.00609185	4.42539e-06
+data/20260527/Blank/blank.Spe	538.365	0.0901649	0.00604893	4.36663e-06

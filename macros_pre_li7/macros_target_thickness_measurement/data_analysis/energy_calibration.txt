@@ -1,0 +1,5 @@
+# fit_mode=graph
+# date  p0  conversion_MeV_per_ch  conv_err  sigma_ch  sigma_mev
+# E[MeV] = (channel - p0) * conversion
+20260528	-2.76379	0.00609305	9.99319e-07	3.04395	0.018547
+20260527	-2.76379	0.00604968	1.05585e-06	3.00439	0.0181756

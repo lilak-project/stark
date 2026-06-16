@@ -86,7 +86,7 @@ LKSiliconArray::LKSiliconArray(const char *name, const char *title)
 bool LKSiliconArray::Init()
 {
     fName = "LKSiliconArray";
-    fDetName = "stark";
+    fDetName = "si_array";
 
     LKEvePlane::Init();
 
@@ -156,20 +156,23 @@ bool LKSiliconArray::Init()
     fPar -> UpdatePar(fDetectorParName, fDetName+"/Mapping1");
     fPar -> UpdatePar(fMappingFileName, fDetName+"/Mapping2");
 
-    fPar -> Require(fDetName+"/ForceMapping","","","t/");
-    if (fPar -> CheckPar(fDetName+"/ForceMapping")) {
-        auto nForce = fPar -> GetParN(fDetName+"/ForceMapping");
+    auto forceMappingParName = fDetName + "/ForceMapping";
+    fPar -> Require(forceMappingParName,"","","t/");
+    //if (fPar -> CheckPar(forceMappingParName) == false && fDetName != "stark" && fPar -> CheckPar("stark/ForceMapping"))
+        //forceMappingParName = "stark/ForceMapping";
+    if (fPar -> CheckPar(forceMappingParName)) {
+        auto nForce = fPar -> GetParN(forceMappingParName);
         if (nForce >= 2) {
-            fDetectorParName = fPar -> GetParString(fDetName+"/ForceMapping",0);
-            fMappingFileName = fPar -> GetParString(fDetName+"/ForceMapping",1);
+            fDetectorParName = fPar -> GetParString(forceMappingParName,0);
+            fMappingFileName = fPar -> GetParString(forceMappingParName,1);
             mappingPath = "";
         }
         else if (nForce >= 1) {
-            mappingPath = fPar -> GetParString(fDetName+"/ForceMapping",0);
+            mappingPath = fPar -> GetParString(forceMappingParName,0);
             fDetectorParName = "";
             fMappingFileName = "";
         }
-        lk_note << "YOU FORCED MAPPING FILES BY USING PARAMETER " << fDetName+"/ForceMapping" << endl;
+        lk_note << "YOU FORCED MAPPING FILES BY USING PARAMETER " << forceMappingParName << endl;
         if (mappingPath.IsNull() == false)
             lk_note << mappingPath << endl;
         else {
@@ -334,6 +337,7 @@ bool LKSiliconArray::Init()
         siChannel -> SetChan(chan);
         siChannel -> SetDetType(detTypeIndex);
         siChannel -> SetDetID(detIndex);
+        siChannel -> SetDetNum(detectorInfo->detNumber);
         siChannel -> SetChannelID(globalChannelIndex);
         siChannel -> SetLocalID(localID);
         siChannel -> SetSide(side);
@@ -432,6 +436,7 @@ bool LKSiliconArray::SetSiChannelData(LKSiChannel* siChannel, GETChannel* channe
     siChannel -> SetChan(chan);
     siChannel -> SetDetType(dummyChannel -> GetDetType());
     siChannel -> SetDetID(dummyChannel -> GetDetID());
+    siChannel -> SetDetNum(dummyChannel -> GetDetNum());
     siChannel -> SetChannelID(dummyChannel -> GetChannelID());
     siChannel -> SetLocalID(dummyChannel -> GetLocalID());
     siChannel -> SetSide(dummyChannel -> GetSide());
