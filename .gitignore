@@ -6,6 +6,9 @@ CMakeLists.txt
 build
 *.swp
 *.o
+*.d
+*.so
+*.pcm
 
 #simulation/analysis data
 data
