@@ -15,6 +15,7 @@ class LKSiCalibratorC2 : public TNamed
         {
             bool success = false;
             double entries = 0;
+            int points = 0;
             double b0 = 0;
             double b1 = 0;
             double b2 = 0;
@@ -36,7 +37,7 @@ class LKSiCalibratorC2 : public TNamed
         virtual ~LKSiCalibratorC2() {}
 
         void Clear(Option_t *option="");
-        GateResult FitSingle(TH2 *hist);
+        GateResult FitSingle(TH2 *hist, double sourceEnergy=0, double expectedResolution=0.01, double rangeScale=3.0);
         Result Fit(const std::vector<TH2 *> &positionEnergyHists, int chooseGate=1, double entriesCut=100.0);
         TF1 *GetLastFit() const { return fLastFit; }
 

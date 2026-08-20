@@ -15,11 +15,16 @@ class SKEnergyHandler : public TObject
         double RestorePosition(int det, int side, int strip, double &position, double energySum);
 
     private:
-        double fC0Parameters[40][2][8][2];
-        double fC1Parameters[40][2][8][2][2];
-        double fCPParameters[40][2][8][2][5];
-        double fC2Parameters[40][2][8][3];
-        double fC3Parameters[40][2][8][2];
+        enum { kMaxDetectors = 128, kMaxSides = 2, kMaxStrips = 8 };
+        bool IsValidChannel(int det, int side, int strip) const;
+        void InitializeParameters();
+
+        double fC0Parameters[kMaxDetectors][kMaxSides][kMaxStrips][2];
+        double fC1Parameters[kMaxDetectors][kMaxSides][kMaxStrips][2][2];
+        double fCPParameters[kMaxDetectors][kMaxSides][kMaxStrips][2][5];
+        double fC2Parameters[kMaxDetectors][kMaxSides][kMaxStrips][3];
+        double fC3Parameters[kMaxDetectors][kMaxSides][kMaxStrips][2];
+        bool fHasPositionCalibration = false;
         const double fGate1Energy = 5.486;
         const double fGate0Energy = 3.1822;
 

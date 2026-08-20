@@ -16,6 +16,7 @@ class LKSiCalibratorC0 : public TNamed
             double entries = 0;
             double intercept = 0;
             double slope = 0;
+            std::vector<double> peakAmps;
             std::vector<double> peakMeans;
             std::vector<double> peakSigmas;
         };

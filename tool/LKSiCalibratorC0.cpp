@@ -45,8 +45,10 @@ LKSiCalibratorC0::Result LKSiCalibratorC0::Fit(TH1 *hist, const std::vector<doub
         fitPeak.SetRange(mean - 1.0 * sigma, mean + 2.5 * sigma);
         hist->Fit(&fitPeak, "Q0NR");
 
+        auto amp = fitPeak.GetParameter(0);
         mean = fitPeak.GetParameter(1);
         sigma = fitPeak.GetParameter(2);
+        result.peakAmps.push_back(amp);
         result.peakMeans.push_back(mean);
         result.peakSigmas.push_back(sigma);
         graph.SetPoint((int) iGate, mean, gateEnergies[iGate]);
