@@ -1,0 +1,5 @@
+# exclude1V=true
+# fit_mode=graph
+# date  p0  p0_err  slope  slope_err
+# mean_channel = p0 + slope * Vamp
+20260528	-2.76379	0.382889	417.784	0.334484
