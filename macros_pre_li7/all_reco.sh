@@ -20,14 +20,50 @@ source /Users/jungwoo/Research/lilak/lilak.sh
 #RUN=124 MAPPING=mapping_QB_DepV_Measure lilak run auto_reco.mac # QQQ5 190
 #RUN=125 MAPPING=mapping_QB_DepV_Measure lilak run auto_reco.mac # QQQ5 200
 #RUN=130 MAPPING=mapping_QB_DepV_Measure lilak run auto_reco.mac # QQQ5 112
-RUN=132 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 15
-RUN=133 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 10
-RUN=134 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 20
-RUN=135 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 25
-RUN=136 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 30
-RUN=137 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 35
-RUN=138 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 40
-RUN=139 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 45
-RUN=140 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 50
-RUN=141 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 55
-RUN=142 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 60
+
+#RUN=132 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 15
+#RUN=133 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 10
+#RUN=134 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 20
+#RUN=135 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 25
+#RUN=136 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 30
+#RUN=137 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 35
+#RUN=138 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 40
+#RUN=139 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 45
+#RUN=140 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 50
+#RUN=141 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 55
+#RUN=142 MAPPING=mapping_BB10_DepV_Test  lilak run auto_reco.mac # BB10 60
+
+RUN=151 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=154 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=155 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=156 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=157 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=158 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=159 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=160 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=161 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=162 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=163 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=165 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=167 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=168 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=169 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=170 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=171 MAPPING=mapping_X6_DepV_Test1  lilak run auto_reco.mac
+RUN=173 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=174 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=175 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=176 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=177 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=178 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=179 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=180 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=181 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=182 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=183 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=184 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=185 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=186 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=187 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=188 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac
+RUN=189 MAPPING=mapping_X6_DepV_Test2  lilak run auto_reco.mac

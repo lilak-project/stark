@@ -1,0 +1,33 @@
+
+SKSiCalibrationTask/stage     1
+SKSiCalibrationTask/sourceEnergy        3.182000
+SKSiCalibrationTask/sourceEnergies      3.182
+
+SKSiCalibrationTask/C0/det011_side1_strip00       0,0.00117788707594  # intercept,slope
+SKSiCalibrationTask/C0/det011_side1_strip01       0,0.00118194798564  # intercept,slope
+SKSiCalibrationTask/C0/det011_side1_strip02       0,0.00118529141177  # intercept,slope
+SKSiCalibrationTask/C0/det011_side1_strip03       0,0.00122408679566  # intercept,slope
+SKSiCalibrationTask/C0/det044_side1_strip00       0,0.000961202423952  # intercept,slope
+SKSiCalibrationTask/C0/det044_side1_strip01       0,0.00098182276242  # intercept,slope
+SKSiCalibrationTask/C0/det044_side1_strip02       0,0.000977103649435  # intercept,slope
+SKSiCalibrationTask/C0/det044_side1_strip03       0,0.000988681596077  # intercept,slope
+SKSiCalibrationTask/C0/det045_side1_strip00       0,0.000949609989222  # intercept,slope
+SKSiCalibrationTask/C0/det045_side1_strip01       0,0.000970173247322  # intercept,slope
+SKSiCalibrationTask/C0/det045_side1_strip02       0,0.000977925733032  # intercept,slope
+SKSiCalibrationTask/C0/det045_side1_strip03       0,0.00101238250589  # intercept,slope
+SKSiCalibrationTask/C0/det046_side1_strip00       0,0.000935020305468  # intercept,slope
+SKSiCalibrationTask/C0/det046_side1_strip01       0,0.000942363840938  # intercept,slope
+SKSiCalibrationTask/C0/det046_side1_strip02       0,0.000974063375037  # intercept,slope
+SKSiCalibrationTask/C0/det046_side1_strip03       0,0.000978179029369  # intercept,slope
+SKSiCalibrationTask/C0/det047_side1_strip00       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det047_side1_strip01       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det047_side1_strip02       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det047_side1_strip03       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det052_side1_strip00       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det052_side1_strip01       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det052_side1_strip02       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det052_side1_strip03       0,0  # intercept,slope
+SKSiCalibrationTask/C0/det060_side1_strip00       0,0.00111943367072  # intercept,slope
+SKSiCalibrationTask/C0/det060_side1_strip01       0,0.00115649629584  # intercept,slope
+SKSiCalibrationTask/C0/det060_side1_strip02       0,0.00116383234144  # intercept,slope
+SKSiCalibrationTask/C0/det060_side1_strip03       0,0.00119134116611  # intercept,slope

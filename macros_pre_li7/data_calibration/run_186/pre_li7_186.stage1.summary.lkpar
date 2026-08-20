@@ -1,0 +1,95 @@
+
+SKSiCalibrationTask/stage     1
+SKSiCalibrationTask/sourceEnergies      3.182
+SKSiCalibrationTask/expectedStandalone  28
+SKSiCalibrationTask/expectedPaired      56
+
+SKSiCalibrationTask/Summary/stage1/det011_side1_strip00_single                  1,2848,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side1_strip01_single                  1,3408,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side1_strip02_single                  1,3820,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side1_strip03_single                  1,4407,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side1_strip00_single                  1,2810,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side1_strip01_single                  1,3311,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side1_strip02_single                  1,3697,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side1_strip03_single                  1,4150,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side1_strip00_single                  1,2692,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side1_strip01_single                  1,3392,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side1_strip02_single                  1,3935,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side1_strip03_single                  1,4344,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side1_strip00_single                  1,3011,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side1_strip01_single                  1,3553,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side1_strip02_single                  1,4437,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side1_strip03_single                  1,5080,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side1_strip00_single                  1,2,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side1_strip01_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side1_strip02_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side1_strip03_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side1_strip00_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side1_strip01_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side1_strip02_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side1_strip03_single                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side1_strip00_single                  1,3184,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side1_strip01_single                  1,3698,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side1_strip02_single                  1,4515,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side1_strip03_single                  1,5128,found  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det011_side0_strip07_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det044_side0_strip07_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det045_side0_strip07_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det046_side0_strip07_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det047_side0_strip07_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det052_side0_strip07_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip00_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip01_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip02_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip03_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip04_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip05_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip06_paired                  1,0,missing  # expected,entries,status
+SKSiCalibrationTask/Summary/stage1/det060_side0_strip07_paired                  1,0,missing  # expected,entries,status
+
+SKSiCalibrationTask/foundStandalone     21
+SKSiCalibrationTask/missingStandalone   7
+SKSiCalibrationTask/foundPaired         0
+SKSiCalibrationTask/missingPaired       56

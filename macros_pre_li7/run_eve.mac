@@ -1,0 +1,38 @@
+# Usage:
+#   RUN=186 CALRUN=186 MAPPING=mapping_X6_DepV_Test2 lilak auto_reco_calibrated.mac
+#   RUN=186 MAPPING=mapping_X6_DepV_Test2 lilak run_eve.mac
+#
+# This macro opens /Users/jungwoo/data/stark/reco/pre_li7_0RUN.reco_calibrated.root.
+# If the file does not exist yet, run auto_reco_calibrated.mac first.
+
+lilak/print  all  # print after init gen:par:out:in:det:task
+#lilak/run  0  # run [no] after init. Execute all events if [no] is 0
+lilak/add  STARK
+lilak/add  LKEveTask
+lilak/auto_exit  0  # keep ROOT open for event display
+lilak/execute    0  # execute event [no] after init
+
+LKRun/Name  pre_li7
+LKRun/RunID  e{RUN}
+LKRun/Tag  eve
+LKRun/OutputPath  /Users/jungwoo/data/stark/reco
+LKRun/InputPath  /Users/jungwoo/data/stark/reco
+#LKRun/SearchRun  reco_calibrated
+LKRun/SearchRun  reco
+
+si_array/MappingPath e{MAPPING}
+
+LKEveTask/drawEve3D  false
+LKEveTask/drawPlane  true
+LKEveTask/selectBranches  SiChannel,SiHit
+
+LKSiliconArray/fillOption  preview
+LKSiliconArray/EveThreshold  0
+LKSiliconArray/jumpEventSize  2000
+
+SiChannel/markerStyle  20
+SiChannel/markerSize   1
+SiChannel/markerColor  kBlue
+SiHit/markerStyle      24
+SiHit/markerSize       1.2
+SiHit/markerColor      kRed

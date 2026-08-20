@@ -12,6 +12,7 @@
 #include "TH1D.h"
 #include "TLine.h"
 #include "TPaveText.h"
+#include "TROOT.h"
 #include "TString.h"
 #include "TSystem.h"
 
@@ -43,9 +44,9 @@ void ana_depv_calibration(
     int runID = -1,
     TString parameterFileName = "ana_depv_calibration.conf",
     bool saveImages = false,
-    bool draw_fittings = false,
+    bool draw_fittings = true,
     bool draw_corrected_fit = false,
-    bool drawTop = false
+    bool drawTop = true
     )
 {
     auto par = LKParameterContainer(parameterFileName);
@@ -228,8 +229,13 @@ void ana_depv_calibration(
         }
     }
 
-    if (drawTop)
-        top -> Draw("viewer");
+    if (drawTop) {
+        if (gROOT->IsBatch())
+            Warning("ana_depv_calibration", "Skipping LKDrawingGroup viewer in ROOT batch mode.");
+        else
+            top -> Draw("viewer");
+            //top -> Draw("");
+    }
 
     Info("draw_detector_channels", "Drew detector channels using LKSiliconArray mapping from %s (%lld entries).",
          mappingDir.Data(), run->GetEntries());
@@ -266,7 +272,8 @@ void Fill(
             if (hist == nullptr)
                 continue;
 
-            double energy = channel->GetEnergy();
+            double energy = channel->GetEnergySum();
+            if (side==1) energy = channel->GetEnergy();
             if (correctionMap != nullptr) {
                 auto correction = correctionMap->find(std::make_tuple(detID, side, strip));
                 if (correction != correctionMap->end())

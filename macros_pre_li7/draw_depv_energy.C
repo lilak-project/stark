@@ -7,6 +7,7 @@
 #include "TLegend.h"
 #include "TBox.h"
 #include "TError.h"
+#include "TLine.h"
 #include "TMultiGraph.h"
 #include "TString.h"
 #include "TSystem.h"
@@ -36,7 +37,7 @@ struct DepVGraph {
 
 using DepVKey = std::tuple<TString, int, int, int>; // detector type, idx, side, channel
 
-LKBinning bnnADC(500, 0, 2800);
+LKBinning bnnADC(500, 0, 4000);
 
 std::map<std::tuple<TString, int>, double> MakeBestBiasMap()
 {
@@ -55,6 +56,42 @@ std::map<std::tuple<TString, int>, double> MakeBestBiasMap()
         {std::make_tuple("QQQ5", 2), 112.0},
         {std::make_tuple("QQQ5", 3), 112.0},
         {std::make_tuple("QQQ5", 4), 112.0},
+        // X6 criteria: V >= 150 V, and both junction/ohmic raw amplitudes
+        // must stay above 90% of their detector-side maximum. The selected
+        // value is then the minimum average junction resolution.
+        {std::make_tuple("X6_1", 39), 240.0},
+        {std::make_tuple("X6_1", 41), 250.0},
+        {std::make_tuple("X6_1", 42), 240.0},
+        {std::make_tuple("X6_1", 43), 220.0},
+        {std::make_tuple("X6_1", 48), 250.0},
+        {std::make_tuple("X6_1", 49), 200.0},
+        {std::make_tuple("X6_1", 50), 170.0},
+        {std::make_tuple("X6_2", 11), 210.0},
+        {std::make_tuple("X6_2", 44), 170.0},
+        {std::make_tuple("X6_2", 45), 150.0},
+        {std::make_tuple("X6_2", 46), 200.0},
+        {std::make_tuple("X6_2", 60), 160.0},
+    };
+}
+
+std::map<std::tuple<TString, int>, double> MakeOhmicResolutionBiasMap()
+{
+    // First bias where the average ohmic resolution is no more than twice
+    // the detector's minimum average ohmic resolution.
+    return {
+        {std::make_tuple("X6_1", 39), 130.0},
+        {std::make_tuple("X6_1", 41), 130.0},
+        {std::make_tuple("X6_1", 42), 130.0},
+        {std::make_tuple("X6_1", 43), 140.0},
+        {std::make_tuple("X6_1", 48), 140.0},
+        {std::make_tuple("X6_1", 49), 140.0},
+        {std::make_tuple("X6_1", 50), 160.0},
+        {std::make_tuple("X6_1", 52), 200.0},
+        {std::make_tuple("X6_2", 11), 150.0},
+        {std::make_tuple("X6_2", 44), 120.0},
+        {std::make_tuple("X6_2", 45), 140.0},
+        {std::make_tuple("X6_2", 46), 130.0},
+        {std::make_tuple("X6_2", 60), 140.0},
     };
 }
 
@@ -136,7 +173,8 @@ LKDrawingGroup* group,
     TString yTitle,
     bool saveImages,
     double bestBias = -1,
-    double bestBiasBandHalfWidth = 2.5)
+    double bestBiasBandHalfWidth = 2.5,
+    double ohmicResolutionBias = -1)
 {
     if (graphs.empty())
         return;
@@ -166,6 +204,20 @@ LKDrawingGroup* group,
         drawing -> Add(bestBiasBand, "f");
     }
 
+    TLine *ohmicResolutionLine = nullptr;
+    if (ohmicResolutionBias >= 0 && std::isfinite(ohmicResolutionBias)) {
+        ohmicResolutionLine = new TLine(
+            ohmicResolutionBias,
+            bnnY.GetX1(),
+            ohmicResolutionBias,
+            bnnY.GetX2()
+        );
+        ohmicResolutionLine->SetLineColor(kAzure - 9);
+        ohmicResolutionLine->SetLineStyle(1);
+        ohmicResolutionLine->SetLineWidth(2);
+        drawing -> Add(ohmicResolutionLine);
+    }
+
     auto legend = new TLegend(0.15, 0.12, 0.85, 0.33);
     legend->SetBorderSize(0);
     legend->SetFillStyle(0);
@@ -177,6 +229,8 @@ LKDrawingGroup* group,
     else if (graphs.size() > 18) legend->SetNColumns(8);
     else legend->SetNColumns(4);
     legend->SetTextSize(0.045);
+    if (ohmicResolutionLine != nullptr)
+        legend->AddEntry(ohmicResolutionLine, "ohmic #leq 2 #times min", "l");
 
     int iLine = 0;
     for (auto const &graphSpec : graphs) {
@@ -325,7 +379,8 @@ void draw_depv_energy(
     TString dataDir = "data_depv",
     TString parameterFileName = "ana_depv_calibration.conf",
     bool saveImages = true,
-    TString selectedDetType = "",
+    //TString selectedDetType = "",
+    TString selectedDetType = "X6_2",
     //TString selectedDetType = "BB10",
     int selectedDetIdx = -1,
     bool draw_mean_graph = false,
@@ -340,30 +395,45 @@ void draw_depv_energy(
         //{"QQQ5", LKBinning(200, 0, 220)},
         {"BB10", LKBinning(200, 0, 100)},
         {"QQQ5", LKBinning(200, 0, 250)},
+        {"X6_1", LKBinning(200, 0, 260)},
+        {"X6_2", LKBinning(200, 0, 260)},
     };
     std::map<TString, LKBinning> bnnEnergyByType = {
         {"BB10", LKBinning(500, 0, 7)},
         {"QQQ5", LKBinning(500, 0, 7)},
+        {"X6_1", LKBinning(500, 0, 7)},
+        {"X6_2", LKBinning(500, 0, 7)},
     };
     std::map<TString, LKBinning> bnnRawMeanByType = {
         {"BB10", bnnADC},
         {"QQQ5", bnnADC},
+        {"X6_1", bnnADC},
+        {"X6_2", bnnADC},
     };
     std::map<TString, LKBinning> bnnResolutionByType = {
         {"BB10", LKBinning(500, 0, 0.15)},
         {"QQQ5", LKBinning(500, 0, 0.15)},
+        {"X6_1", LKBinning(500, 0, 0.30)},
+        {"X6_2", LKBinning(500, 0, 0.30)},
     };
     std::map<TString, LKBinning> bnnLeakageCurrentByType = {
         {"BB10", LKBinning(500, 0, 1)},
         {"QQQ5", LKBinning(500, 0, 120)},
+        {"X6_1", LKBinning(500, 0, 6)},
+        {"X6_2", LKBinning(500, 0, 6)},
     };
     double bestBiasBandHalfWidth = 2.5;
     auto bestBiasByDetector = MakeBestBiasMap();
+    auto ohmicResolutionBiasByDetector = MakeOhmicResolutionBiasMap();
     std::map<std::tuple<TString, int>, LKBinning> bnnResolutionByTypeSide = {
         {std::make_tuple("BB10", 0), LKBinning(500, 0, 0.15)},
         {std::make_tuple("BB10", 1), LKBinning(500, 0, 0.15)},
         {std::make_tuple("QQQ5", 0), LKBinning(500, 0, 0.15)},
         {std::make_tuple("QQQ5", 1), LKBinning(500, 0, 0.15)},
+        {std::make_tuple("X6_1", 0), LKBinning(500, 0, 0.30)},
+        {std::make_tuple("X6_1", 1), LKBinning(500, 0, 0.70)},
+        {std::make_tuple("X6_2", 0), LKBinning(500, 0, 0.30)},
+        {std::make_tuple("X6_2", 1), LKBinning(500, 0, 0.70)},
     };
     for (auto &entry : bnnVoltageByType)
         par.UpdatePar(entry.second, Form("bnnVoltage%s", entry.first.Data()));
@@ -495,7 +565,6 @@ void draw_depv_energy(
 
     auto top = new LKDrawingGroup("top");
 
-    int count = 0;
     /*
     for (auto const &detType : detTypes) {
         auto group = top -> CreateGroup(Form("%s_%d",detType.Data(),count++));
@@ -577,7 +646,7 @@ void draw_depv_energy(
         const auto detType = std::get<0>(detector);
         const int idx = std::get<1>(detector);
         const auto detectorTitle = DetectorTitle(detType, idx);
-        auto group = top -> CreateGroup(Form("all_%s_%d",detType.Data(),count++));
+        auto group = top -> CreateGroup(Form("all_%s_%d", detType.Data(), idx));
         group -> SetCanvasDivision(2,3);
         //group -> SetCanvasSize(800,800);
         auto bnnVoltage = bnnVoltageByType.count(detType) ? bnnVoltageByType[detType] : LKBinning(200, 0, 220);
@@ -586,6 +655,8 @@ void draw_depv_energy(
             auto bnnLeakageCurrent = bnnLeakageCurrentByType.count(detType) ? bnnLeakageCurrentByType[detType] : LKBinning(500, 0, 120);
             const auto bestBiasIt = bestBiasByDetector.find(std::make_tuple(detType, idx));
             const double bestBias = bestBiasIt != bestBiasByDetector.end() ? bestBiasIt->second : -1;
+            const auto ohmicResolutionBiasIt = ohmicResolutionBiasByDetector.find(std::make_tuple(detType, idx));
+            const double ohmicResolutionBias = ohmicResolutionBiasIt != ohmicResolutionBiasByDetector.end() ? ohmicResolutionBiasIt->second : -1;
         for (int side : {0, 1}) {
             auto bnnResolution = bnnResolutionByTypeSide.count(std::make_tuple(detType, side)) ? bnnResolutionByTypeSide[std::make_tuple(detType, side)] : LKBinning(500, 0, 0.15);
             std::vector<TGraphErrors *> rawMeanChannelGraphs;
@@ -656,7 +727,8 @@ void draw_depv_energy(
                     ";Bias [V];Raw amplitude",
                     saveImages,
                     bestBias,
-                    bestBiasBandHalfWidth
+                    bestBiasBandHalfWidth,
+                    ohmicResolutionBias
                 );
             if (draw_mean_graph)
                 DrawMultiGraph(
@@ -669,7 +741,8 @@ void draw_depv_energy(
                     "Corrected fit energy",
                     saveImages,
                     bestBias,
-                    bestBiasBandHalfWidth
+                    bestBiasBandHalfWidth,
+                    ohmicResolutionBias
                 );
             if (draw_resolution_graph)
                 DrawMultiGraph(
@@ -682,7 +755,8 @@ void draw_depv_energy(
                     ";Bias [V];Energy resolution (FWHM / mean) [%]",
                     saveImages,
                     bestBias,
-                    bestBiasBandHalfWidth
+                    bestBiasBandHalfWidth,
+                    ohmicResolutionBias
                 );
         }
         auto leakageCurrentGraph = leakageCurrentGraphs[std::make_tuple(detType, idx)];
@@ -700,12 +774,13 @@ void draw_depv_energy(
                 ";Bias [V];Leakage current",
                 saveImages,
                 bestBias,
-                bestBiasBandHalfWidth
+                bestBiasBandHalfWidth,
+                ohmicResolutionBias
             );
         }
     }
 
     //top -> Draw("viewer");
     top -> Draw("");
-    top -> Save("png");
+    top -> Save("");
 }

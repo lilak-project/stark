@@ -1,0 +1,62 @@
+
+SKSiCalibrationTask/stage     3
+SKSiCalibrationTask/sourceEnergy        3.182000
+SKSiCalibrationTask/sourceEnergies      3.182
+SKSiCalibrationTask/c2ReferenceEnergy   5.486000
+
+SKSiCalibrationTask/C2/det011_side0_strip00       5.44022378697,-0.155322098024,0.445043867653  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip01       5.4169169878,-0.111388535197,0.471110531546  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip02       5.41337888605,-0.147584505855,0.558007946015  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip03       5.42718353907,-0.0952393427532,0.554465459431  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip04       5.42813354057,-0.200140727596,0.625248329378  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip05       5.40961814513,-0.0920310916397,0.535079892929  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip06       5.38866699388,-0.111420279994,0.649048354953  # b0,b1,b2
+SKSiCalibrationTask/C2/det011_side0_strip07       5.4007531422,-0.15474102913,0.71860837901  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip00       5.37047223524,-0.273283355737,1.17223987591  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip01       5.36470338814,-0.157937822441,1.09450032505  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip02       5.34451440197,-0.17044283699,1.3904465607  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip03       5.38717419724,-0.264006255761,1.29702558476  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip04       5.47701792063,-0.905794962416,1.50947790217  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip05       5.37222665019,-0.15445981406,1.10451761166  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip06       5.3590328959,-0.241743011774,1.49056353734  # b0,b1,b2
+SKSiCalibrationTask/C2/det044_side0_strip07       5.26312864087,-1.04904292037,2.55572853417  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip00       5.38526430811,-0.103382397542,1.14572576477  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip01       5.36810778968,-0.0774219479523,1.10529153594  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip02       5.38580863862,-0.255039049651,1.19646243195  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip03       5.36761523406,-0.161329946879,1.27753364429  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip04       5.35092796063,-0.16012622273,1.21280229394  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip05       5.44812062228,-0.80395855273,1.16309596344  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip06       5.35702618927,-0.268774697071,1.45518764727  # b0,b1,b2
+SKSiCalibrationTask/C2/det045_side0_strip07       5.3411079243,-0.200275624706,1.54427710026  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip00       5.4114468,-0.207763532168,0.908828611527  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip01       5.35319768913,-0.175282210243,1.16738104573  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip02       5.47180134597,-1.00727029335,1.1896731757  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip03       5.32508462469,-0.198855899669,1.18091929337  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip04       5.37695296606,-0.350371675216,1.3084856771  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip05       5.38352137919,-0.218162402198,1.24611847467  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip06       5.32641190623,-0.39062405761,1.57390388452  # b0,b1,b2
+SKSiCalibrationTask/C2/det046_side0_strip07       5.31268139644,-0.236379784429,1.75302520234  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip00       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip01       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip02       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip03       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip04       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip05       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip06       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det047_side0_strip07       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip00       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip01       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip02       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip03       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip04       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip05       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip06       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det052_side0_strip07       5.486,0,0  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip00       5.44066240933,-0.115711247092,0.357788495627  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip01       5.42478754923,-0.112928286498,0.466964867235  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip02       5.42376409738,-0.185917440738,0.642277020737  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip03       5.41864321351,-0.182585621949,0.545258081586  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip04       5.40496422677,-0.170751878584,0.622803488955  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip05       5.5047318333,-0.38856060699,0.565758214686  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip06       5.41731115053,-0.206646914487,0.665770128182  # b0,b1,b2
+SKSiCalibrationTask/C2/det060_side0_strip07       5.40490813114,-0.167379722835,0.807542030261  # b0,b1,b2
