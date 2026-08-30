@@ -1,0 +1,21 @@
+<common_run get_common.mac
+
+LKRun/Tag viewer
+#LKRun/SearchRun   reco#pulser
+LKRun/RunID 67
+LKRun/SearchRun pulser
+LKRun/InputPath data_reco
+LKRun/AutoTerminate false
+
+######################################
+lilak/add   LKGETChannelViewer
+######################################
+
+LKGETChannelViewer/MaxCobo          1
+LKGETChannelViewer/MaxAsad          4
+LKGETChannelViewer/MaxAget          4
+LKGETChannelViewer/MaxChannels      68
+#LKGETChannelViewer/SelCobo          0
+#LKGETChannelViewer/SelAsad          2
+#LKGETChannelViewer/SelAget          0
+#LKGETChannelViewer/SelChan          65

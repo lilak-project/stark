@@ -1,0 +1,8 @@
+#LKRun/RunID       e{RUN}
+LKRun/RunID       67
+
+LKRun/Name             ko2520
+LKRun/OutputPath       data_reco
+LKRun/AutoTerminate    true  # automatically terminate root after end of run
+
+#si_array/MappingPath   mapping_eight_X6

@@ -1,0 +1,16 @@
+<common_run   common_run.mac
+
+#si_array/MappingPath   mapping_ko2520
+
+######################################
+lilak/add   LKGETConversionTask
+lilak/add   LKSetSiChannelTask
+lilak/run   1
+######################################
+
+LKRun/Tag         reco
+LKRun/SearchRun   mfm
+LKRun/InputPath   data_merged
+LKRun/EventCountForMessage 10000
+
+#SKSiArrayPlane/jumpEventSize  50000
