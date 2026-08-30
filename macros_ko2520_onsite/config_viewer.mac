@@ -1,0 +1,19 @@
+<common_run         common_run.mac
+
+LKRun/Tag         viewer
+LKRun/SearchRun   reco # search input files with LKRun/RunID. opt=mfm: search mfm files, opt=[tag]: search run_runNo.*.[tag].root
+LKRun/InputPath   data_reco
+LKRun/AutoTerminate false
+
+######################################
+lilak/add   LKGETChannelViewer
+######################################
+
+LKGETChannelViewer/MaxCobo          1
+LKGETChannelViewer/MaxAsad          4
+LKGETChannelViewer/MaxAget          4
+LKGETChannelViewer/MaxChannels      68
+#LKGETChannelViewer/SelCobo          0
+#LKGETChannelViewer/SelAsad          2
+#LKGETChannelViewer/SelAget          0
+#LKGETChannelViewer/SelChan          65
