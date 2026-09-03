@@ -3,7 +3,7 @@
 
 #include "TClonesArray.h"
 #include "LKTask.h"
-#include "SKSiArrayPlane.h"
+#include "LKSiliconArray.h"
 #include "SKEnergyHandler.h"
 
 class SKEnergyRestorationTask : public LKTask
@@ -16,7 +16,7 @@ class SKEnergyRestorationTask : public LKTask
         void Exec(Option_t*);
 
     private:
-        SKSiArrayPlane* fStarkPlane = nullptr;
+        LKSiliconArray* fStarkPlane = nullptr;
         SKEnergyHandler* fEnergyHandler = nullptr;
 
         TClonesArray *fSiChannelArray = nullptr;

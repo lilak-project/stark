@@ -3,7 +3,7 @@
 
 #include "TClonesArray.h"
 #include "LKTask.h"
-#include "SKSiArrayPlane.h"
+#include "LKSiliconArray.h"
 
 class SKPairMatchingTask : public LKTask
 {
@@ -15,7 +15,7 @@ class SKPairMatchingTask : public LKTask
         void Exec(Option_t*);
 
     private:
-        SKSiArrayPlane* fStarkPlane = nullptr;
+        LKSiliconArray* fStarkPlane = nullptr;
 
         TClonesArray *fHitArray = nullptr;
 

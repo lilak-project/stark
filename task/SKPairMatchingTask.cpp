@@ -12,7 +12,11 @@ SKPairMatchingTask::SKPairMatchingTask()
 
 bool SKPairMatchingTask::Init()
 {
-    fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
+    fStarkPlane = (LKSiliconArray*) fRun -> FindDetectorPlane("LKSiliconArray");
+    if (fStarkPlane == nullptr) {
+        lk_error << "LKSiliconArray detector plane is not found. Add STARK or LKSiliconArray before SKPairMatchingTask." << endl;
+        return false;
+    }
     fHitArray = fRun -> KeepBranchA("SiHit","SKSiHit");
 
     return true;

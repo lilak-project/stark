@@ -13,7 +13,11 @@ SKEnergyRestorationTask::SKEnergyRestorationTask()
 
 bool SKEnergyRestorationTask::Init()
 {
-    fStarkPlane = (SKSiArrayPlane*) fRun -> FindDetectorPlane("SKSiArrayPlane");
+    fStarkPlane = (LKSiliconArray*) fRun -> FindDetectorPlane("LKSiliconArray");
+    if (fStarkPlane == nullptr) {
+        lk_error << "LKSiliconArray detector plane is not found. Add STARK or LKSiliconArray before SKEnergyRestorationTask." << endl;
+        return false;
+    }
     fSiChannelArray = fRun -> GetBranchA("SiChannel","LKSiChannel");
     fHitArray = fRun -> RegisterBranchA("SiHit","SKSiHit",20);
 

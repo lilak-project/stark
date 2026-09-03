@@ -29,6 +29,53 @@
 #include <string>
 #include <vector>
 
+namespace {
+// A TF1 registers itself in gROOT->GetListOfFunctions(), which ROOT deletes at the end of the
+// process. The histograms that are drawn in the saved canvases keep the same pointers in their
+// own list of functions, so that deletion leaves dangling entries behind and the clean-up sweep
+// of ROOT crashes. Hand the ownership to the histogram, which deletes its functions itself.
+void AttachFunction(TH1 *hist, TF1 *function)
+{
+    function -> AddToGlobalList(false);
+    hist -> GetListOfFunctions() -> Add(function);
+}
+
+template <typename HistMap>
+void AddHistByDetector(LKDrawingGroup *group, HistMap &histMap, const char *prefix, Option_t *option = "")
+{
+    std::map<int, LKDrawingGroup *> groupMap;
+    for (auto &entry : histMap) {
+        auto det = std::get<0>(entry.first);
+        auto detGroup = groupMap[det];
+        if (detGroup == nullptr) {
+            detGroup = group -> CreateGroup(Form("%s%d", prefix, det));
+            groupMap[det] = detGroup;
+        }
+
+        std::vector<TObject *> paveTextArray;
+        auto functions = entry.second -> GetListOfFunctions();
+        for (auto object : *functions) {
+            if (object -> InheritsFrom(TPaveText::Class()))
+                paveTextArray.push_back(object);
+        }
+
+        if (paveTextArray.empty()) {
+            detGroup -> AddHist(entry.second, option);
+            continue;
+        }
+
+        auto drawing = new LKDrawing();
+        drawing -> SetPaveCorner(1);
+        drawing -> Add(entry.second, option);
+        for (auto object : paveTextArray) {
+            functions -> Remove(object);
+            drawing -> Add(object, "same");
+        }
+        detGroup -> AddDrawing(drawing);
+    }
+}
+}
+
 ClassImp(SKSiCalibrationTask)
 
 SKSiCalibrationTask::SKSiCalibrationTask()
@@ -437,7 +484,7 @@ double SKSiCalibrationTask::FitPeak(TH1D *hist, TString fitName) const
     fitDraw -> SetLineColor(kRed+1);
     fitDraw -> SetLineWidth(2);
     fitDraw -> SetNpx(500);
-    hist -> GetListOfFunctions() -> Add(fitDraw);
+    AttachFunction(hist, fitDraw);
 
     auto text = new TPaveText(0.55, 0.66, 0.88, 0.88, "NDC");
     text -> SetName(Form("fit_info_%s", hist->GetName()));
@@ -488,7 +535,7 @@ void SKSiCalibrationTask::AddC0FitAnnotations(TH1D *hist, const std::vector<doub
         fit -> SetLineColor(kRed + (int) iPeak);
         fit -> SetLineWidth(2);
         fit -> SetNpx(500);
-        hist -> GetListOfFunctions() -> Add(fit);
+        AttachFunction(hist, fit);
 
         text -> AddText(Form("p%zu: m=%.2f s=%.4f r=%.4f",
                              iPeak, means[iPeak], sigmas[iPeak],
@@ -510,7 +557,7 @@ void SKSiCalibrationTask::AddC2FitAnnotation(TH2D *hist, const std::array<double
     fit -> SetLineColor(kRed+1);
     fit -> SetLineWidth(2);
     fit -> SetNpx(500);
-    hist -> GetListOfFunctions() -> Add(fit);
+    AttachFunction(hist, fit);
 
     auto text = new TPaveText(0.44, 0.52, 0.88, 0.88, "NDC");
     text -> SetName(Form("fit_info_%s", hist->GetName()));
@@ -698,7 +745,7 @@ void SKSiCalibrationTask::FitAndWriteC1()
             fitDraw -> SetLineWidth(2);
             fitDraw -> SetNpx(500);
             hist -> SetStats(0);
-            hist -> GetListOfFunctions() -> Add(fitDraw);
+            AttachFunction(hist, fitDraw);
 
             auto text = new TPaveText(0.48, 0.66, 0.88, 0.88, "NDC");
             text -> SetName(Form("fit_info_%s", hist->GetName()));
@@ -801,57 +848,24 @@ void SKSiCalibrationTask::WriteHistograms()
     auto taskGroup = fRun -> GetTopDrawingGroup();
     taskGroup -> SetName("top");
 
-    auto addHistByDetector = [](LKDrawingGroup *group, auto &histMap, const char *prefix, Option_t *option = "") {
-        std::map<int, LKDrawingGroup *> groupMap;
-        for (auto &entry : histMap) {
-            auto det = std::get<0>(entry.first);
-            auto detGroup = groupMap[det];
-            if (detGroup == nullptr) {
-                detGroup = group -> CreateGroup(Form("%s%d", prefix, det));
-                groupMap[det] = detGroup;
-            }
-
-            std::vector<TObject *> paveTextArray;
-            auto functions = entry.second -> GetListOfFunctions();
-            for (auto object : *functions) {
-                if (object -> InheritsFrom(TPaveText::Class()))
-                    paveTextArray.push_back(object);
-            }
-
-            if (paveTextArray.empty()) {
-                detGroup -> AddHist(entry.second, option);
-                continue;
-            }
-
-            auto drawing = new LKDrawing();
-            drawing -> SetPaveCorner(1);
-            drawing -> Add(entry.second, option);
-            for (auto object : paveTextArray) {
-                functions -> Remove(object);
-                drawing -> Add(object, "same");
-            }
-            detGroup -> AddDrawing(drawing);
-        }
-    };
-
     if (!fEnergyHistMap.empty()) {
         auto energyGroup = taskGroup -> CreateGroup(Form("stage%d_Energy", fStage));
-        addHistByDetector(energyGroup, fEnergyHistMap, "E");
+        AddHistByDetector(energyGroup, fEnergyHistMap, "E");
     }
 
     if (!fEnergySumHistMap.empty()) {
         auto esumGroup = taskGroup -> CreateGroup(Form("stage%d_EnergySum", fStage));
-        addHistByDetector(esumGroup, fEnergySumHistMap, "ES");
+        AddHistByDetector(esumGroup, fEnergySumHistMap, "ES");
     }
 
     if (!fLeftRightHistMap.empty()) {
         auto leftRightGroup = taskGroup -> CreateGroup(Form("stage%d_LeftRight", fStage));
-        addHistByDetector(leftRightGroup, fLeftRightHistMap, "LR", "colz");
+        AddHistByDetector(leftRightGroup, fLeftRightHistMap, "LR", "colz");
     }
 
     if (!fPositionEnergyHistMap.empty()) {
         auto rposEsumGroup = taskGroup -> CreateGroup(Form("stage%d_EnergyPosition", fStage));
-        addHistByDetector(rposEsumGroup, fPositionEnergyHistMap, "EP", "colz");
+        AddHistByDetector(rposEsumGroup, fPositionEnergyHistMap, "EP", "colz");
     }
 
     if (!fFitHistArray.empty()) {

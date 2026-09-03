@@ -46,6 +46,11 @@ SKEnergyHandler::SKEnergyHandler(TString energyCalibrationName, TString position
     int det, side, strip;
     string dummy;
 
+    if (energyCalibrationName.IsNull()) {
+        e_info << "[SKEnergyHandler] Energy calibration file is not set; using identity calibration" << endl;
+        return;
+    }
+
     ifstream energyCalibrationFile(energyCalibrationName);
     if (energyCalibrationFile.is_open()==false) {
         e_error << "[SKEnergyHandler] Cannot open " << energyCalibrationName << endl;
