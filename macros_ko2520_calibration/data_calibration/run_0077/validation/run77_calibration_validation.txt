@@ -1,0 +1,10 @@
+input ko2520_0077.si_calibration_stage_6.root
+histograms_found 304
+channels_summed 254
+channels_with_both_peaks 246
+gd_reference_MeV 3.1822
+gd_fit_mean_MeV 3.17398
+gd_fit_sigma_MeV 0.0743045
+am_reference_MeV 5.486
+am_fit_mean_MeV 5.47549
+am_fit_sigma_MeV 0.0734615

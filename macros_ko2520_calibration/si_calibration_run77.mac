@@ -1,0 +1,42 @@
+# Silicon calibration for KO2520 run 77
+# Sources: 148Gd (3.1822 MeV) and 241Am (5.486 MeV)
+#
+# Run the stages in order when all C0-C3 corrections are needed:
+#   STAGE=0 lilak run si_calibration_run77.mac  # raw spectra (check both peaks)
+#   STAGE=1 lilak run si_calibration_run77.mac  # C0: ADC-to-energy calibration
+#   STAGE=2 lilak run si_calibration_run77.mac  # C1: left/right calibration
+#   STAGE=3 lilak run si_calibration_run77.mac  # C2: position correction
+#   STAGE=4 lilak run si_calibration_run77.mac  # spectra after C2
+#   STAGE=5 lilak run si_calibration_run77.mac  # C3: final energy correction
+#   STAGE=6 lilak run si_calibration_run77.mac  # final calibrated spectra/macro
+#
+# For standalone silicon channels, stage 1 is the ADC-to-energy calibration.
+
+lilak/run  0
+lilak/savex true  # save top drawing-group canvases in output ROOT TDirectories
+lilak/add  LKSiliconArray
+lilak/add  SKSiCalibrationTask
+
+LKRun/Name                   ko2520
+LKRun/RunID                  77
+LKRun/Tag                    si_calibration_stage_e{STAGE}
+LKRun/InputPath              data_reco2
+LKRun/SearchRun              reco
+LKRun/OutputPath             data_reco2
+LKRun/AutoTerminate          true
+LKRun/EventCountForMessage   20000
+
+SKSiCalibrationTask/stage              e{STAGE}
+SKSiCalibrationTask/sourceEnergies     3.1822,5.486
+SKSiCalibrationTask/outputPath         data_calibration/run_0077
+SKSiCalibrationTask/outputPrefix       ko2520_0077
+SKSiCalibrationTask/expectedResolution 0.01
+SKSiCalibrationTask/gateDisplayRangeScale 3
+SKSiCalibrationTask/entriesCut         100
+SKSiCalibrationTask/c2ReferenceEnergy  5.486
+
+# Mapping used to reconstruct the KO2520 run-77 SiChannel branch.
+si_array/MappingPath ../macros_ko2520_onsite/mapping_ko2520_new
+
+persistency/EventHeader false
+persistency/SiChannel   false

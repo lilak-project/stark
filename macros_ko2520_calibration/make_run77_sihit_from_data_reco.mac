@@ -1,0 +1,18 @@
+lilak/add  STARK
+lilak/add  SKEnergyRestorationTask
+lilak/add  SKPairMatchingTask
+lilak/run  0
+
+LKRun/Name                  ko2520
+LKRun/RunID                 77
+LKRun/InputPath             data_reco
+LKRun/SearchRun             reco
+LKRun/OutputPath            .
+LKRun/Tag                   sihit_cal
+LKRun/AutoTerminate         true
+LKRun/EventCountForMessage  20000
+
+si_array/MappingPath ../macros_ko2520_onsite/mapping_ko2520_new
+stark/EnergyCalibrationFile data_calibration/run_0077/ko2520_0077.energy_calibration.dat
+
+persistency/SiHit true
