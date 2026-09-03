@@ -1,0 +1,16 @@
+#LKRun/RunID       e{RUN}
+#LKRun/RunID       77
+#LKRun/RunID       81
+#LKRun/RunID       84
+
+default_run 84 
+common_run e{RUN}
+@-common_run/common_run  {default_run}
+LKRun/RunID         {common_run}
+
+LKRun/Name             ko2520
+LKRun/OutputPath       data_reco
+LKRun/AutoTerminate    true  # automatically terminate root after end of run
+#LKRun/EventCountForMessage    20000
+
+si_array/MappingPath   mapping_ko2520_new

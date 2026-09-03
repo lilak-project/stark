@@ -1,0 +1,27 @@
+# Usage:
+#   RUN=84 lilak run get_sihit.mac
+#
+# This reads the SiChannel branch produced by get_reco.mac, restores the
+# silicon-hit energy/position, and combines matching dE-E hits.
+
+<common_run get_common.mac
+
+######################################
+lilak/add  STARK
+lilak/add  LKEnergyRestorationTask
+# LKEnergyRestorationTask already creates one reconstructed SiHit per detector.
+# SKPairMatchingTask expects the legacy SKEnergyRestorationTask hit layout and
+# removes the reconstructed X6 junction hits produced by the task above.
+lilak/run  0
+######################################
+
+LKRun/InputPath   data_reco
+LKRun/OutputPath  data_reco
+LKRun/SearchRun   reco
+LKRun/Tag         sihit
+LKRun/EventCountForMessage 1000
+
+persistency/SiHit true
+
+stark/EnergyCalibrationFile    /root/lilak/stark/macros_ko2520_calibration/data_calibration/run_0077/ko2520_0077.energy_calibration.dat
+#stark/PositionCalibrationFile  e{PCAL}

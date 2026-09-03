@@ -1,8 +1,10 @@
-<common_run         common_run.mac
+<common_run get_common.mac
 
-LKRun/Tag         viewer
-LKRun/SearchRun   reco # search input files with LKRun/RunID. opt=mfm: search mfm files, opt=[tag]: search run_runNo.*.[tag].root
-LKRun/InputPath   data_reco
+LKRun/Tag viewer
+#LKRun/SearchRun   reco#pulser
+#LKRun/RunID 67
+LKRun/SearchRun reco
+LKRun/InputPath data_reco
 LKRun/AutoTerminate false
 
 ######################################

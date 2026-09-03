@@ -1,0 +1,28 @@
+# Usage:
+#   RUN=84 lilak run get_eve.mac
+
+<common_run get_common.mac
+
+######################################
+lilak/add       STARK
+lilak/add       LKEveTask
+lilak/auto_exit 0
+lilak/execute   0
+######################################
+
+# get_common.mac supplies LKRun/RunID, LKRun/Name, and the detector mapping.
+LKRun/InputPath       data_reco
+LKRun/OutputPath      data_reco
+LKRun/SearchRun       reco
+LKRun/Tag             eve
+LKRun/AutoTerminate   false
+
+LKEveTask/drawEve3D   false
+LKEveTask/drawPlane   true
+LKEveTask/selectBranches SiChannel
+
+LKSiliconArray/fillOption    preview
+LKSiliconArray/EveThreshold  0
+LKSiliconArray/jumpEventSize 50000
+
+persistency/SiChannel false
