@@ -1,8 +1,6 @@
 #<common_run   common_run.mac
 <common_run get_common.mac
 
-#si_array/MappingPath   mapping_ko2520
-
 ######################################
 lilak/add  LKCoboFrameMergerTask  # add task or detector class
 lilak/add  LKSetSiChannelTask

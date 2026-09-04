@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KO2520 Monitoring Dashboard</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --header-height: 48px;
+      --gap: 8px;
+      --background: #11151b;
+      --panel: #1b222c;
+      --border: #394553;
+      --text: #edf2f7;
+      --muted: #aeb8c5;
+      --accent: #66b3ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      height: var(--header-height);
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: #161c24;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    header button,
+    header a {
+      padding: 6px 11px;
+      border: 1px solid #536273;
+      border-radius: 5px;
+      background: #263241;
+      color: var(--text);
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    header button:hover,
+    header a:hover { background: #344457; }
+
+    header .tab-button.active {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #081522;
+      font-weight: 700;
+    }
+
+    main {
+      height: calc(100vh - var(--header-height));
+      padding: var(--gap);
+    }
+
+    .tab-page {
+      display: none;
+      width: 100%;
+      height: 100%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: var(--gap);
+    }
+
+    .tab-page.active {
+      display: grid;
+    }
+
+    .tab-page.equipment {
+      grid-template-rows: minmax(0, 1fr);
+    }
+
+    .tab-page.single-panel {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: minmax(0, 1fr);
+    }
+
+    #monitoring .panel:last-child:nth-child(3) {
+      grid-column: 1 / -1;
+      width: calc((100% - var(--gap)) / 2);
+      justify-self: center;
+    }
+
+    .panel {
+      min-width: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: 34px minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--panel);
+      box-shadow: 0 2px 9px rgba(0, 0, 0, .28);
+    }
+
+    .panel-bar {
+      padding: 0 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      background: #202936;
+    }
+
+    .panel-title {
+      overflow: hidden;
+      font-size: 13px;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .panel-actions {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .panel-actions button,
+    .panel-actions a {
+      padding: 2px 5px;
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .panel-actions button:hover,
+    .panel-actions a:hover { text-decoration: underline; }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+
+    @media (max-width: 1200px) {
+      html, body { overflow: auto; }
+      main {
+        height: auto;
+      }
+      .tab-page.active {
+        height: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, 520px);
+        grid-auto-rows: 520px;
+      }
+      .tab-page.equipment.active { grid-template-rows: 620px; }
+      .tab-page.single-panel.active { grid-template-rows: 720px; }
+    }
+
+    @media (max-width: 760px) {
+      :root { --header-height: 96px; }
+      header { flex-wrap: wrap; }
+      header h1 { width: 100%; text-align: center; }
+      .tab-page.active,
+      .tab-page.equipment.active,
+      .tab-page.single-panel.active {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-rows: 500px;
+      }
+      #monitoring .panel:last-child:nth-child(3) {
+        grid-column: 1;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KO2520 Monitoring Dashboard</h1>
+    <nav class="tabs" aria-label="Dashboard view selector">
+      <button type="button" class="tab-button active" data-tab="monitoring">Monitoring</button>
+      <button type="button" class="tab-button" data-tab="root-online">ROOT Online</button>
+      <button type="button" class="tab-button" data-tab="equipment">Equipment</button>
+    </nav>
+    <div class="header-actions">
+      <a href="http://192.168.1.102:8025/" target="_blank" rel="noopener">1. 8025 Login</a>
+      <button type="button" id="load-portal">2. Load Portal Panels</button>
+      <button type="button" id="reload-all">Reload All</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="tab-page active" id="monitoring" role="tabpanel">
+      <section class="panel">
+        <div class="panel-bar">
+          <span class="panel-title">MTE Monitoring</span>
+          <span class="panel-actions"><button type="button">Reload</button><a href="http://192.168.1.102:8025/p/mte_monitoring/" target="_blank" rel="noopener">Open</a></span>
+        </div>
+        <iframe data-portal data-src="http://192.168.1.102:8025/p/mte_monitoring/" title="MTE Monitoring" srcdoc="<!doctype html><style>body{margin:0;display:grid;place-items:center;height:100vh;background:#f5f7fa;color:#42526b;font:16px Arial}p{text-align:center;line-height:1.6}</style><p>Log in to the 8025 Portal first,<br>then click <b>Load Portal Panels</b>.</p>"></iframe>
+      </section>
+
+      <section class="panel">
+        <div class="panel-bar">
+          <span class="panel-title">GANIL DAQ Monitoring</span>
+          <span class="panel-actions"><button type="button">Reload</button><a href="http://192.168.1.102:8025/p/ganil_daq_monitoring/" target="_blank" rel="noopener">Open</a></span>
+        </div>
+        <iframe data-portal data-src="http://192.168.1.102:8025/p/ganil_daq_monitoring/" title="GANIL DAQ Monitoring" srcdoc="<!doctype html><style>body{margin:0;display:grid;place-items:center;height:100vh;background:#f5f7fa;color:#42526b;font:16px Arial}p{text-align:center;line-height:1.6}</style><p>Log in to the 8025 Portal first,<br>then click <b>Load Portal Panels</b>.</p>"></iframe>
+      </section>
+
+      <section class="panel">
+        <div class="panel-bar">
+          <span class="panel-title">Vacuum</span>
+          <span class="panel-actions"><button type="button">Reload</button><a href="http://192.168.1.102:8025/p/vacuum/" target="_blank" rel="noopener">Open</a></span>
+        </div>
+        <iframe data-portal data-src="http://192.168.1.102:8025/p/vacuum/" title="Vacuum" srcdoc="<!doctype html><style>body{margin:0;display:grid;place-items:center;height:100vh;background:#f5f7fa;color:#42526b;font:16px Arial}p{text-align:center;line-height:1.6}</style><p>Log in to the 8025 Portal first,<br>then click <b>Load Portal Panels</b>.</p>"></iframe>
+      </section>
+    </div>
+
+    <div class="tab-page single-panel" id="root-online" role="tabpanel">
+      <section class="panel">
+        <div class="panel-bar">
+          <span class="panel-title">ROOT Online Server · 192.168.1.102:9093</span>
+          <span class="panel-actions"><button type="button">Reload</button><a href="http://192.168.1.102:9093/" target="_blank" rel="noopener">Open</a></span>
+        </div>
+        <iframe src="http://192.168.1.102:9093/" title="ROOT Online Server"></iframe>
+      </section>
+    </div>
+
+    <div class="tab-page equipment" id="equipment" role="tabpanel">
+      <section class="panel">
+        <div class="panel-bar">
+          <span class="panel-title">Monitor · 192.168.1.37:8018</span>
+          <span class="panel-actions"><button type="button">Reload</button><a href="http://192.168.1.37:8018/" target="_blank" rel="noopener">Open</a></span>
+        </div>
+        <iframe src="http://192.168.1.37:8018/" title="192.168.1.37 Monitor"></iframe>
+      </section>
+
+      <section class="panel">
+        <div class="panel-bar">
+          <span class="panel-title">Actuator</span>
+          <span class="panel-actions"><button type="button">Reload</button><a href="http://192.168.1.102:8025/p/actuator_monitoring/" target="_blank" rel="noopener">Open</a></span>
+        </div>
+        <iframe data-portal data-src="http://192.168.1.102:8025/p/actuator_monitoring/" title="Actuator" srcdoc="<!doctype html><style>body{margin:0;display:grid;place-items:center;height:100vh;background:#f5f7fa;color:#42526b;font:16px Arial}p{text-align:center;line-height:1.6}</style><p>Log in to the 8025 Portal first,<br>then click <b>Load Portal Panels</b>.</p>"></iframe>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    function reloadFrame(frame) {
+      frame.src = frame.src;
+    }
+
+    function loadPortalFrames() {
+      document.querySelectorAll('iframe[data-portal]').forEach((frame) => {
+        frame.removeAttribute('srcdoc');
+        frame.src = frame.dataset.src;
+      });
+    }
+
+    document.querySelectorAll('.panel').forEach((panel) => {
+      panel.querySelector('button').addEventListener('click', () => {
+        reloadFrame(panel.querySelector('iframe'));
+      });
+    });
+
+    document.getElementById('reload-all').addEventListener('click', () => {
+      document.querySelectorAll('iframe:not([data-portal])').forEach(reloadFrame);
+      loadPortalFrames();
+    });
+
+    document.getElementById('load-portal').addEventListener('click', loadPortalFrames);
+
+    document.querySelectorAll('.tab-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach((item) => {
+          item.classList.toggle('active', item === button);
+        });
+        document.querySelectorAll('.tab-page').forEach((page) => {
+          page.classList.toggle('active', page.id === button.dataset.tab);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<common_run   common_run.mac
+<common_run get_common.mac
 
 lilak/add  LKCoboFrameMergerTask  # add task or detector class
 lilak/add  LKSetSiChannelTask

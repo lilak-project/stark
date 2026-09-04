@@ -9,9 +9,9 @@
 ######################################
 lilak/add  STARK
 lilak/add  LKEnergyRestorationTask
-# LKEnergyRestorationTask already creates one reconstructed SiHit per detector.
-# SKPairMatchingTask expects the legacy SKEnergyRestorationTask hit layout and
-# removes the reconstructed X6 junction hits produced by the task above.
+#lilak/add  LKSiHitPairMatchingTask
+# LKSiHitPairMatchingTask attaches the position-matched X6 ohmic segment and
+# combines 12-ring dE-E hits produced by LKEnergyRestorationTask.
 lilak/run  0
 ######################################
 
@@ -22,6 +22,7 @@ LKRun/Tag         sihit
 LKRun/EventCountForMessage 1000
 
 persistency/SiHit true
+persistency/FrameHeader true
 
-stark/EnergyCalibrationFile    /root/lilak/stark/macros_ko2520_calibration/data_calibration/run_0077/ko2520_0077.energy_calibration.dat
+LKEnergyRestorationTask/energyCalibrationFile /root/lilak/stark/macros_ko2520_calibration/data_calibration/run_0077/ko2520_0077.energy_calibration.dat
 #stark/PositionCalibrationFile  e{PCAL}

@@ -13,4 +13,4 @@ LKRun/OutputPath       data_reco
 LKRun/AutoTerminate    true  # automatically terminate root after end of run
 #LKRun/EventCountForMessage    20000
 
-si_array/MappingPath   mapping_ko2520_new
+si_array/MappingPath   mapping_ko2520_0904

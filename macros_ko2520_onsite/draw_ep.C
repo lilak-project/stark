@@ -32,8 +32,8 @@ void draw_ep()
     //TString inputFile = Form("data_reco/ko2520_%04d.reco.root",runID);
 
     LKSiliconMapping mapping;
-    if (!mapping.Load("mapping_ko2520")) {
-        cerr << "Failed to load mapping_ko2520" << endl;
+    if (!mapping.Load("mapping_ko2520_0904")) {
+        cerr << "Failed to load mapping_ko2520_0904" << endl;
         return;
     }
 

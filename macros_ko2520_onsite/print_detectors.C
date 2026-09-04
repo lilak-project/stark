@@ -1,8 +1,8 @@
 void print_detectors()
 {
     LKSiliconMapping mapping;
-    if (!mapping.Load("mapping_ko2520")) {
-        cerr << "Failed to load mapping_ko2520" << endl;
+    if (!mapping.Load("mapping_ko2520_0904")) {
+        cerr << "Failed to load mapping_ko2520_0904" << endl;
         return;
     }
 

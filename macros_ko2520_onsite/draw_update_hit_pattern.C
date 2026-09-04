@@ -28,6 +28,21 @@ void draw_update_hit_pattern()
         tree -> Add(Form("data_reco/ko2520_%04d.reco.root",89));
         tree -> Add(Form("data_reco/ko2520_%04d.reco.root",90));
     }
+    else if (runID == 8003) {
+        // Production runs acquired on 2026-09-04.
+        tree = new TChain("event");
+        for (int inputRun:{134,135,136,139,141,142,146,147,148})
+            tree->Add(Form("data_reco/ko2520_%04d.reco.root",inputRun));
+    }
+    else if (runID == 8004)
+    {
+        tree = new TChain("event");
+        for (int inputRun:{134, 135, 136, 139, 141, 142}) {
+            cout << Form("data_reco/ko2520_%04d.reco.root",inputRun) << endl;
+            TString fileName = Form("data_reco/ko2520_%04d.reco.root",inputRun);
+            tree->Add(fileName);
+        }
+    }
     else {
         TString fileName = Form("data_reco/ko2520_%04d.reco.root",runID);
         cout << fileName << endl;
@@ -61,7 +76,7 @@ void draw_update_hit_pattern()
     TString agetTitle;
 
     LKSiliconMapping mapping;
-    mapping.Load("mapping_ko2520");
+    mapping.Load("mapping_ko2520_0904");
 
     for (auto id=0; id<mapping.GetNumDetectors(); ++id)
     {
@@ -84,8 +99,8 @@ void draw_update_hit_pattern()
         else if (id>=12 && id<24) { draw1 = top1 -> GetGroup(1) -> CreateDrawing(); draw1 -> Add(hist1[1][id]); }
         else if (id>=24 && id<36) { draw1 = top1 -> GetGroup(2) -> CreateDrawing(); draw1 -> Add(hist1[1][id]); }
         else if (id>=36 && id<48) { draw1 = top1 -> GetGroup(3) -> CreateDrawing(); draw1 -> Add(hist1[1][id]); }
-        else if (detType=="X6")   for (auto i=0; i<8 ; ++i) { auto line = new TLine(8 *i,0,8 *i,2000); line -> SetLineColor(kBlue); draw1 -> Add(line); }
-        else if (detType=="QQQ5") for (auto i=0; i<2 ; ++i) { auto line = new TLine(32*i,0,32*i,2000); line -> SetLineColor(kRed);  draw1 -> Add(line); }
+        else if (detType=="X6")   for (auto i=0; i<8 ; ++i) { auto line = new TLine(8 *i,0,8 *i,4200); line -> SetLineColor(kBlue); draw1 -> Add(line); }
+        else if (detType=="QQQ5") for (auto i=0; i<2 ; ++i) { auto line = new TLine(32*i,0,32*i,4200); line -> SetLineColor(kRed);  draw1 -> Add(line); }
     }
 
     for (auto asad=0; asad<4; ++asad)
@@ -110,8 +125,8 @@ void draw_update_hit_pattern()
             //else if (is_qqq5 (asad,aget)) hist1[asad][aget] = new TH2D(histName1,histTitle1,64,0,64,200,0,emax);
             //else if (is_x6   (asad,aget)) hist1[asad][aget] = new TH2D(histName1,histTitle1,32,0,32,200,0,emax);
             hist2[asad][aget] = new TH1D(histName2,histTitle2,200,0,emax);           
-            hist3[asad][aget] = new TH2D(histName3,histTitle3,100,0,500,200,0,2000); 
-            hist4[asad][aget] = new TH2D(histName4,histTitle4,68,0,68,200,0,2000);   
+            hist3[asad][aget] = new TH2D(histName3,histTitle3,100,0,500,200,0,4200); 
+            hist4[asad][aget] = new TH2D(histName4,histTitle4,68,0,68,200,0,4200);   
 
 
             //if (asad==1&&aget==2)
