@@ -38,7 +38,18 @@ class LKSiliconMapping : public TNamed
             int polarID = -1;
             bool isLegacy = false;
 
-            void Print() const;
+            /// one-line dump of every detector field
+            TString Summary() const;
+            /// option (case insensitive):
+            ///   ""/"all"  : full block, all detector fields + the channel list (cobo/asad/aget/chan/side/strip)
+            ///   "line"    : the one-line Summary()
+            ///   "nochannel" : full block without the channel list
+            void Print(Option_t *option="") const;
+            const LKSiliconMapping *GetMapping() const { return fMapping; }
+
+            private:
+                const LKSiliconMapping *fMapping = nullptr; //! set by LKSiliconMapping when the mapping is loaded
+                friend class LKSiliconMapping;
         };
 
         struct ChannelInfo
@@ -61,11 +72,22 @@ class LKSiliconMapping : public TNamed
             double detDistance = 0;
             bool isLegacy = false;
 
-            void Print() const;
+            /// one-line dump of every channel field
+            TString Summary() const;
+            /// option (case insensitive): ""/"line" one line, "det"/"all" also print the detector it belongs to
+            void Print(Option_t *option="") const;
+            const LKSiliconMapping *GetMapping() const { return fMapping; }
+            const DetectorInfo *GetDetector() const;
+
+            private:
+                const LKSiliconMapping *fMapping = nullptr; //! set by LKSiliconMapping when the mapping is loaded
+                friend class LKSiliconMapping;
         };
 
     public:
         LKSiliconMapping();
+        LKSiliconMapping(const LKSiliconMapping &other);
+        LKSiliconMapping &operator=(const LKSiliconMapping &other);
         virtual ~LKSiliconMapping() {}
 
         bool Load(TString mappingPath);
@@ -73,9 +95,21 @@ class LKSiliconMapping : public TNamed
         bool LoadDetectorMapping(TString fileName);
         bool LoadChannelMapping(TString fileName);
         void Clear(Option_t *option="");
+        /// Print everything that is known about the loaded mapping.
+        /// option (case insensitive, may contain several keywords):
+        ///   "summary"  : file names, styles and counters only
+        ///   "detector" : detector table (all detector fields)
+        ///   "channel"  : channel table (all channel fields, incl. cobo/asad/aget/chan)
+        ///   "group"    : channels listed under the detector they belong to
+        ///   "all"      : summary + detector + channel  (default)
         void Print(Option_t *option="") const;
-        void PrintDetectors(int numPrint = 20) const;
-        void PrintChannels(int numPrint = 20) const;
+        void PrintSummary() const;
+        void PrintDetectors(int numPrint = -1) const;
+        /// full block of one detector (same as FindDetectorByIndex(detIndex)->Print())
+        void PrintDetector(int detIndex) const;
+        void PrintChannels(int numPrint = -1) const;
+        /// Channels grouped by detector. detIndex<0 prints all detectors.
+        void PrintDetectorChannels(int detIndex = -1) const;
         void PrintChannelLookup(int cobo, int asad, int aget, int chan) const;
         void PrintTest(int queryCobo = 0, int queryAsad = 0, int queryAget = 3, int queryChan = 0, int numPrintDetectors = 20, int numPrintChannels = 20) const;
 
@@ -91,6 +125,11 @@ class LKSiliconMapping : public TNamed
         const ChannelInfo *GetChannelByVectorIndex(int index) const;
         const ChannelInfo *FindChannel(int cobo, int asad, int aget, int chan) const;
 
+        const std::vector<int> &GetChannelVectorIndicesOfDetector(int detIndex) const;
+        int GetNumChannelsOfDetector(int detIndex) const;
+        /// cobo/asad the detector is read out by, taken from its channels (-1 if unknown/mixed is resolved to the first one found)
+        bool GetDetectorElectronics(int detIndex, int &cobo, int &asad) const;
+
         int FindChannelIndex(int cobo, int asad, int aget, int chan) const;
         int FindDetectorIndex(int cobo, int asad, int aget, int chan) const;
         int FindDetectorNumber(int cobo, int asad, int aget, int chan) const;
@@ -101,8 +140,13 @@ class LKSiliconMapping : public TNamed
         bool ParseLegacyDetectorRow(const std::vector<TString> &columns, DetectorInfo &info) const;
         bool ParseNewChannelRow(const std::vector<TString> &columns, ChannelInfo &info) const;
         bool ParseLegacyChannelRow(const std::vector<TString> &columns, ChannelInfo &info, int rowIndex) const;
+        void CopyFrom(const LKSiliconMapping &other);
         void RebuildLookupTables();
+        void RebuildDetectorChannelTable();
+        void RebuildOwnerPointers();
         Long64_t MakeChannelKey(int cobo, int asad, int aget, int chan) const;
+        bool HasLegacyDetector() const;
+        bool HasLegacyChannel() const;
 
     private:
         TString fDetectorMappingFileName = "";
@@ -116,6 +160,8 @@ class LKSiliconMapping : public TNamed
         std::vector<int> fDetectorVectorIndexByDetIndex;
         std::vector<int> fDetectorVectorIndexByDetNumber;
         std::unordered_map<Long64_t, int> fChannelVectorIndexByCAAC;
+        std::vector<std::vector<int>> fChannelVectorIndicesByDetIndex;
+        std::vector<int> fEmptyChannelIndices;
 
     ClassDef(LKSiliconMapping, 1);
 };
