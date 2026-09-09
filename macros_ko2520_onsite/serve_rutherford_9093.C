@@ -12,6 +12,7 @@
 #include "TError.h"
 
 #include <fstream>
+#include <algorithm>
 #include <cctype>
 #include <map>
 #include <set>
@@ -76,11 +77,18 @@ void loadRecoFiles(const TString& directory)
   TList* entries=listing.GetListOfFiles();
   if (!entries) return;
 
+  std::vector<TString> names;
   TIter next(entries);
   while (auto item=dynamic_cast<TSystemFile*>(next())) {
     if (item->IsDirectory()) continue;
     TString name=item->GetName();
     if (!name.BeginsWith("compass_0") || !name.EndsWith(".reco.root")) continue;
+    names.push_back(name);
+  }
+  delete entries;
+  std::sort(names.begin(),names.end(),
+            [](const TString& a,const TString& b){ return a.CompareTo(b)<0; });
+  for (const auto& name : names) {
     TString full=directory+"/"+name;
     if (gLoadedFiles.count(full.Data())) continue;
 
@@ -96,7 +104,6 @@ void loadRecoFiles(const TString& directory)
     Info("serve_rutherford_9093","loaded %s (%d drawable object(s))",
          full.Data(),count);
   }
-  delete entries;
 }
 
 void loadFitFiles(const TString& directory)
@@ -104,6 +111,7 @@ void loadFitFiles(const TString& directory)
   TSystemDirectory listing("rutherford_js_fit_files",directory);
   TList* entries=listing.GetListOfFiles();
   if (!entries) return;
+  std::vector<TString> names;
   TIter next(entries);
   while (auto item=dynamic_cast<TSystemFile*>(next())) {
     if (item->IsDirectory()) continue;
@@ -111,6 +119,17 @@ void loadFitFiles(const TString& directory)
     const bool compassFit=name.BeginsWith("compass_0") && name.EndsWith(".rutherford.root");
     const bool productionFit=name=="production_beam_rate.rutherford.root";
     if (!compassFit && !productionFit) continue;
+    names.push_back(name);
+  }
+  delete entries;
+  std::sort(names.begin(),names.end(),[](const TString& a,const TString& b){
+    const bool aProduction=a=="production_beam_rate.rutherford.root";
+    const bool bProduction=b=="production_beam_rate.rutherford.root";
+    if (aProduction!=bProduction) return aProduction;
+    return a.CompareTo(b)<0;
+  });
+  for (const auto& name : names) {
+    const bool productionFit=name=="production_beam_rate.rutherford.root";
     TString full=directory+"/"+name;
     if (gLoadedFiles.count(full.Data())) continue;
 
@@ -131,7 +150,6 @@ void loadFitFiles(const TString& directory)
     Info("serve_rutherford_9093","loaded %s (%d Rutherford canvas(es))",
          full.Data(),count);
   }
-  delete entries;
 }
 }
 
@@ -149,7 +167,7 @@ void serve_rutherford_9093()
   const char* directory=gSystem->Getenv("RUTHERFORD_JS_DIRECTORY");
   const char* fitDirectory=gSystem->Getenv("RUTHERFORD_JS_FIT_DIRECTORY");
   const char* pidFile=gSystem->Getenv("RUTHERFORD_JS_PIDFILE");
-  if (!address) address="192.168.1.102:9093";
+  if (!address) address="0.0.0.0:9093";
   if (!directory) directory="data_reco3";
   if (!fitDirectory) fitDirectory="data_reco3/rutherford_sidecars";
 
@@ -166,8 +184,8 @@ void serve_rutherford_9093()
 
   Info("serve_rutherford_9093","serving %s at http://%s",directory,address);
   while (true) {
-    loadRecoFiles(directory);
     loadFitFiles(fitDirectory);
+    loadRecoFiles(directory);
     for (int i=0;i<100;i++) {
       gSystem->ProcessEvents();
       gSystem->Sleep(10);

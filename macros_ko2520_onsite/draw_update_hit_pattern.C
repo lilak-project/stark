@@ -1,3 +1,5 @@
+#include <vector>
+
 bool is_ohmic(int asad, int aget) { if (aget==0) return true; return false; }
 bool is_qqq5(int asad, int aget) { if (asad==0 && (aget==2 || aget==3)) return true; return false; }
 bool is_x6(int asad, int aget) { if (is_ohmic(asad,aget)) return false; if (is_qqq5(asad,aget)) return false; return true; }
@@ -13,44 +15,33 @@ void draw_update_hit_pattern()
 
     auto par = new LKParameterContainer("get_common.mac");
     auto runID = par -> GetParInt("LKRun/RunID");
-    cout << runID << endl;
+    TString anaName = par->CheckPar("ana_name") ? par->GetParString("ana_name") : "";
+    cout << "run " << runID << " analysis " << anaName << endl;
 
-    TChain *tree = nullptr;
-
-    if (runID==8000) {
-        tree = new TChain("event");
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",83));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",84));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",85));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",86));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",87));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",88));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",89));
-        tree -> Add(Form("data_reco/ko2520_%04d.reco.root",90));
+    std::vector<int> inputRuns = {runID};
+    if (par->CheckPar("ana_runs"))
+        inputRuns = par->GetParIntRange("ana_runs");
+    if (inputRuns.empty()) {
+        cerr << "ana_runs is empty for run " << runID << endl;
+        return;
     }
-    else if (runID == 8003) {
-        // Production runs acquired on 2026-09-04.
-        tree = new TChain("event");
-        for (int inputRun:{134,135,136,139,141,142,146,147,148})
-            tree->Add(Form("data_reco/ko2520_%04d.reco.root",inputRun));
-    }
-    else if (runID == 8004)
-    {
-        tree = new TChain("event");
-        for (int inputRun:{134, 135, 136, 139, 141, 142}) {
-            cout << Form("data_reco/ko2520_%04d.reco.root",inputRun) << endl;
-            TString fileName = Form("data_reco/ko2520_%04d.reco.root",inputRun);
-            tree->Add(fileName);
-        }
-    }
-    else {
-        TString fileName = Form("data_reco/ko2520_%04d.reco.root",runID);
+    auto tree = new TChain("event");
+    for (int inputRun : inputRuns) {
+        TString fileName = Form("data_reco/ko2520_%04d.reco.root",inputRun);
         cout << fileName << endl;
-        auto file = new TFile(fileName);
-        tree = (TChain*) file -> Get("event");
+        tree->Add(fileName);
+    }
+    if (tree->GetNtrees() == 0) {
+        cerr << "No reco input file was found for run " << runID << endl;
+        return;
+    }
+    if (tree->GetBranch("RawData") == nullptr || tree->GetBranch("SiChannel") == nullptr) {
+        cerr << "RawData or SiChannel branch is not present in the input files" << endl;
+        return;
     }
 
-    TString nameTop = Form("ko2520_%04d",runID);
+    TString analysisSuffix = anaName.IsNull() ? TString("") : "."+anaName;
+    TString nameTop = Form("ko2520_%04d%s",runID,analysisSuffix.Data());
     TString nameTop1 = Form("ko2520_%04d_paired",runID);
     TString nameTop2 = Form("ko2520_%04d_energy",runID);
     TString nameTop3 = Form("ko2520_%04d_et",runID);
@@ -70,7 +61,7 @@ void draw_update_hit_pattern()
     //TH2D *hist1[4][4] = {0};
     TH2D *hist1[2][50] = {0};
     TH1D *hist2[4][4] = {0};
-    TH2D *hist3[4][4] = {0};
+    //TH2D *hist3[4][4] = {0};
     TH2D *hist4[4][4] = {0};
     TString asadTitle;
     TString agetTitle;
@@ -103,6 +94,26 @@ void draw_update_hit_pattern()
         else if (detType=="QQQ5") for (auto i=0; i<2 ; ++i) { auto line = new TLine(32*i,0,32*i,4200); line -> SetLineColor(kRed);  draw1 -> Add(line); }
     }
 
+    auto hist3_0 = new TH1D("hist3_0","pedestal",500,0,500);
+    auto hist3_1 = new TH1D("hist3_1","time",512/2,0,512);
+    auto hist3_2 = new TH1D("hist3_2","noise",200,0,200);
+    auto hist3_3 = new TH1D("hist3_3","s/n",500,0,200);
+    auto hist3_4 = new TH2D("hist3_4",";noise;s/n",200,0,200,500,0,200);
+    auto hist3_5 = new TH2D("hist3_5",";noise;pedestal",200,0,200,400,0,4096);
+    top3 -> CreateDrawing() -> Add(hist3_0);
+    top3 -> CreateDrawing() -> Add(hist3_1);
+    top3 -> CreateDrawing() -> Add(hist3_2);
+    top3 -> CreateDrawing() -> Add(hist3_3);
+    top3 -> CreateDrawing() -> Add(hist3_4);
+    top3 -> CreateDrawing() -> Add(hist3_5);
+    tree -> Draw("SiChannel.fPedestal>>hist3_0","","goff");
+    tree -> Draw("SiChannel.fTime>>hist3_1","","goff");
+    tree -> Draw("SiChannel.fNoiseScale>>hist3_2","","goff");
+    tree -> Draw("SiChannel.fEnergy/SiChannel.fNoiseScale>>hist3_3","","goff");
+    tree -> Draw("SiChannel.fNoiseScale:SiChannel.fEnergy/SiChannel.fNoiseScale>>hist3_4","","goff");
+    tree -> Draw("SiChannel.fNoiseScale:SiChannel.fEnergy/SiChannel.fPedestal>>hist3_5","","goff");
+    //draw3 -> Add(hist3_4);
+
     for (auto asad=0; asad<4; ++asad)
     {
         if (asad==0) asadTitle = "QQQ5"; 
@@ -125,7 +136,7 @@ void draw_update_hit_pattern()
             //else if (is_qqq5 (asad,aget)) hist1[asad][aget] = new TH2D(histName1,histTitle1,64,0,64,200,0,emax);
             //else if (is_x6   (asad,aget)) hist1[asad][aget] = new TH2D(histName1,histTitle1,32,0,32,200,0,emax);
             hist2[asad][aget] = new TH1D(histName2,histTitle2,200,0,emax);           
-            hist3[asad][aget] = new TH2D(histName3,histTitle3,100,0,500,200,0,4200); 
+            //hist3[asad][aget] = new TH2D(histName3,histTitle3,100,0,500,200,0,4200); 
             hist4[asad][aget] = new TH2D(histName4,histTitle4,68,0,68,200,0,4200);   
 
 
@@ -133,7 +144,7 @@ void draw_update_hit_pattern()
             {
                 //auto draw1 = top1 -> CreateDrawing(); draw1 -> Add(hist1[asad][aget]);
                 auto draw2 = top2 -> CreateDrawing(); draw2 -> Add(hist2[asad][aget]);
-                auto draw3 = top3 -> CreateDrawing(); draw3 -> Add(hist3[asad][aget]);
+                //auto draw3 = top3 -> CreateDrawing(); draw3 -> Add(hist3[asad][aget]);
                 auto draw4 = top4 -> CreateDrawing(); draw4 -> Add(hist4[asad][aget]);
             }
         }
@@ -236,14 +247,13 @@ void draw_update_hit_pattern()
     TString outName = TString("data_reco/")+nameTop+".root";
     cout << outName << endl;
     auto out = new TFile(outName,"recreate");
+    top3 -> Draw(); top3 -> GetCanvas() -> Write();
     top1 -> Draw(); //top1 -> GetCanvas() -> Write();
     top1 -> GetGroup(0) -> GetCanvas() -> Write();
     top1 -> GetGroup(1) -> GetCanvas() -> Write();
     top1 -> GetGroup(2) -> GetCanvas() -> Write();
     top1 -> GetGroup(3) -> GetCanvas() -> Write();
-    //top1 -> GetGroup(4) -> GetCanvas() -> Write();
     top2 -> Draw(); top2 -> GetCanvas() -> Write();
-    //top3 -> Draw(); top3 -> GetCanvas() -> Write();
     top4 -> Draw(); top4 -> GetCanvas() -> Write();
     top5 -> Draw(); top5 -> GetCanvas() -> Write();
     out -> Close();

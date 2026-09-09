@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <vector>
 
 namespace {
 // NIST PSTAR CSDA ranges for protons in silicon
@@ -86,45 +87,27 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
 
     auto par = new LKParameterContainer("get_common.mac");
     auto runID = par->GetParInt("LKRun/RunID");
-    cout << "run " << runID << endl;
+    TString anaName = par->CheckPar("ana_name") ? par->GetParString("ana_name") : "";
+    cout << "run " << runID << " analysis " << anaName << endl;
 
     auto tree = new TChain("event");
     if (!inputName.IsNull()) {
         cout << inputName << endl;
         tree->Add(inputName);
     }
-    else if (runID == 8000) {
-        for (int inputRun:{
-                83,84,85,86,87,88,89,90,
-                97,98,99,100,101,102,105,
-                112,113,114,
-                134,135,136,139,141,142,146,147,148})
-            tree->Add(Form("data_reco/ko2520_%04d.sihit.root",inputRun));
-    }
-    else if (runID == 8001) {
-        // Production runs acquired on 2026-09-02.
-        for (int inputRun:{83,84,85,86,87,88,89,90})
-            tree->Add(Form("data_reco/ko2520_%04d.sihit.root",inputRun));
-    }
-    else if (runID == 8002) {
-        // Production runs acquired on 2026-09-03.
-        for (int inputRun:{97,98,99,100,101,102,105,112,113,114})
-            tree->Add(Form("data_reco/ko2520_%04d.sihit.root",inputRun));
-    }
-    else if (runID == 8003) {
-        // Production runs acquired on 2026-09-04.
-        for (int inputRun:{134,135,136,139,141,142,146,147,148})
-            tree->Add(Form("data_reco/ko2520_%04d.sihit.root",inputRun));
-    }
-    else if (runID == 8004)
-    {
-        for (int inputRun:{134, 135, 136, 139, 141, 142})
-            tree->Add(Form("data_reco/ko2520_%04d.sihit.root",inputRun));
-    }
     else {
-        inputName = Form("data_reco/ko2520_%04d.sihit.root",runID);
-        cout << inputName << endl;
-        tree->Add(inputName);
+        std::vector<int> inputRuns = {runID};
+        if (par->CheckPar("ana_runs"))
+            inputRuns = par->GetParIntRange("ana_runs");
+        if (inputRuns.empty()) {
+            cerr << "ana_runs is empty for run " << runID << endl;
+            return;
+        }
+        for (int inputRun : inputRuns) {
+            TString fileName = Form("data_reco/ko2520_%04d.sihit.root",inputRun);
+            cout << fileName << endl;
+            tree->Add(fileName);
+        }
     }
     if (tree->GetNtrees() == 0) {
         cerr << "No sihit input file was found for run " << runID << endl;
@@ -192,16 +175,22 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
         61700,63400,65050,66650,68200,69700,71150,72550,
         73900,75200,76450,77650,78800,79900,80950,81950
     };
-    auto qqq5Coordinate = [mode, &qqq5InnerRadiusUm, &qqq5OuterRadiusUm](
+    auto qqq5Theta = [&qqq5InnerRadiusUm, &qqq5OuterRadiusUm](
         const LKSiliconMapping::DetectorInfo *det, int junctionStrip) -> double {
-        if (junctionStrip < 1 || junctionStrip > 32)
+        if (det == nullptr || junctionStrip < 1 || junctionStrip > 32)
             return -999;
-        if (mode != 2 || det == nullptr)
-            return junctionStrip;
         const int index = junctionStrip-1;
         const double radiusMm = 0.0005*
             (qqq5InnerRadiusUm[index]+qqq5OuterRadiusUm[index]);
         return TMath::ATan2(radiusMm,det->ringZ)*TMath::RadToDeg();
+    };
+    auto qqq5Coordinate = [mode, &qqq5Theta](
+        const LKSiliconMapping::DetectorInfo *det, int junctionStrip) -> double {
+        if (junctionStrip < 1 || junctionStrip > 32)
+            return -999;
+        if (mode != 2)
+            return junctionStrip;
+        return qqq5Theta(det,junctionStrip);
     };
     auto qqq5AxisRange = [mode](const LKSiliconMapping::DetectorInfo *det,
                                 double &xMin, double &xMax) {
@@ -250,6 +239,11 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
     TString nameTopOhmicRingSum = Form("sihit_ring_sum_ohmic_energy_position_%04d",runID);
     auto topOhmicRingSum = new LKDrawingGroup(nameTopOhmicRingSum);
 
+    TString nameTopRingOhmicVsJunction =
+        Form("sihit_ring_ohmic_vs_junction_%04d",runID);
+    auto topRingOhmicVsJunction =
+        new LKDrawingGroup(nameTopRingOhmicVsJunction);
+
     TString nameTop3 = Form("sihit_multiplicity_%04d",runID);
     auto topMultiplicity = new LKDrawingGroup(nameTop3);
 
@@ -258,6 +252,7 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
     TString ringSumName[kNumRingSums] = {"X6_16", "X6_12dE", "X6_12E", "QQQ5"};
     TH2D *histRingSum[kNumRingSums] = {nullptr};
     TH2D *histOhmicRingSum[kNumRingSums] = {nullptr};
+    TH2D *histRingOhmicVsJunction[kNumRingSums] = {nullptr};
     for (int i=0; i<kNumRingSums; ++i) {
         bool isQQQ5 = (i == kSumQQQ5);
         const LKSiliconMapping::DetectorInfo *ringDetector = nullptr;
@@ -307,6 +302,16 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
             300,0,energyMax);
         auto ohmicDrawing = topOhmicRingSum->CreateDrawing(ringSumName[i]);
         ohmicDrawing->Add(histOhmicRingSum[i],"colz");
+
+        histRingOhmicVsJunction[i] = new TH2D(
+            Form("hist_sihit_ring_ohmic_vs_junction_%s",ringSumName[i].Data()),
+            Form("%s detector-summed ohmic vs junction energy;"
+                 "junction energy [MeV];ohmic energy [MeV]",
+                 ringSumName[i].Data()),
+            300,0,energyMax,300,0,energyMax);
+        auto ohmicVsJunctionDrawing =
+            topRingOhmicVsJunction->CreateDrawing(ringSumName[i]);
+        ohmicVsJunctionDrawing->Add(histRingOhmicVsJunction[i],"colz");
     }
     const LKSiliconMapping::DetectorInfo *representative16 = nullptr;
     const LKSiliconMapping::DetectorInfo *representative12E = nullptr;
@@ -323,6 +328,26 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
             !isExcludedQQQ5Aget3(candidate))
             representativeQQQ5 = candidate;
     }
+
+    // Build one variable-width theta bin per physical QQQ5 junction strip.
+    // At an inter-strip guard gap, use its radial midpoint as the shared bin
+    // boundary so that all 32 active strips map one-to-one onto 32 theta bins.
+    std::vector<double> qqq5ThetaBinEdges;
+    if (representativeQQQ5 != nullptr) {
+        qqq5ThetaBinEdges.resize(33);
+        auto radiusToTheta = [representativeQQQ5](double radiusUm) {
+            return TMath::ATan2(0.001*radiusUm,representativeQQQ5->ringZ)
+                 * TMath::RadToDeg();
+        };
+        qqq5ThetaBinEdges[0] = radiusToTheta(qqq5InnerRadiusUm[0]);
+        for (int edge=1; edge<32; ++edge) {
+            const double boundaryRadiusUm = 0.5*
+                (qqq5OuterRadiusUm[edge-1]+qqq5InnerRadiusUm[edge]);
+            qqq5ThetaBinEdges[edge] = radiusToTheta(boundaryRadiusUm);
+        }
+        qqq5ThetaBinEdges[32] = radiusToTheta(qqq5OuterRadiusUm[31]);
+    }
+
     double pairXMin = -1.2;
     double pairXMax = 1.2;
     x6AxisRange(representative12E,pairXMin,pairXMax);
@@ -374,11 +399,31 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
         combinedXMin = TMath::Min(combinedXMin,qqq5XMin);
         combinedXMax = TMath::Max(combinedXMax,qqq5XMax);
     }
-    auto histCombinedOhmic = new TH2D(
-        "hist_sihit_combined_ohmic_X6_12_16",
-        Form("QQQ5 junction + X6 ohmic combined spectrum;%s;energy [MeV]",
-             x6AxisTitle().Data()),
-        400,combinedXMin,combinedXMax,600,0,2*energyMax);
+    TH2D *histCombinedOhmic = nullptr;
+    if (mode == 2 && qqq5ThetaBinEdges.size() == 33) {
+        // Preserve the exact QQQ5 strip-angle boundaries, then continue with
+        // nearly uniform angular bins through the X6 portion of the canvas.
+        std::vector<double> combinedThetaBinEdges = qqq5ThetaBinEdges;
+        const double nominalWidth = (combinedXMax-combinedXMin)/400.;
+        const double lastQQQ5Edge = combinedThetaBinEdges.back();
+        const int numX6Bins = TMath::Max(
+            1,(int)TMath::Ceil((combinedXMax-lastQQQ5Edge)/nominalWidth));
+        for (int bin=1; bin<=numX6Bins; ++bin)
+            combinedThetaBinEdges.push_back(
+                lastQQQ5Edge+(combinedXMax-lastQQQ5Edge)*bin/numX6Bins);
+        histCombinedOhmic = new TH2D(
+            "hist_sihit_combined_ohmic_X6_12_16",
+            "QQQ5 junction + X6 ohmic combined spectrum;#theta_{lab} [deg];energy [MeV]",
+            combinedThetaBinEdges.size()-1,combinedThetaBinEdges.data(),
+            600,0,2*energyMax);
+    }
+    else {
+        histCombinedOhmic = new TH2D(
+            "hist_sihit_combined_ohmic_X6_12_16",
+            Form("QQQ5 junction + X6 ohmic combined spectrum;%s;energy [MeV]",
+                 x6AxisTitle().Data()),
+            400,combinedXMin,combinedXMax,600,0,2*energyMax);
+    }
 
     TGraph *graphKinematics = nullptr;
     TGraph *graphKinematicsQQQ5 = nullptr;
@@ -419,7 +464,7 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
     auto histQValueVsThetaCM = new TH2D(
         "hist_sihit_qvalue_vs_theta_cm_X6_12_16",
         "^{21}Na+p candidates (|E-E_{kin}| < 1 MeV);#theta_{CM} [deg];Q-value [MeV]",
-        360,0,180,400,-2,2);
+        45,0,180,400,-2,2);
     auto histQValue = new TH1D(
         "hist_sihit_qvalue_X6_12_16",
         "^{21}Na+p candidates (|E-E_{kin}| < 1 MeV);Q-value [MeV];counts",
@@ -427,11 +472,11 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
     auto histThetaCM = new TH1D(
         "hist_sihit_theta_cm_X6_12_16",
         "^{21}Na+p candidates (|E-E_{kin}| < 1 MeV);#theta_{CM} [deg];counts",
-        360,0,180);
+        45,0,180);
     auto histQValueVsThetaCMAll = new TH2D(
         "hist_sihit_qvalue_vs_theta_cm_all_X6_12_16",
         "All QQQ5 + X6 ring events (no kinematics cut);#theta_{CM} [deg];Q-value [MeV]",
-        360,0,180,700,-10,60);
+        45,0,180,700,-10,60);
     auto histQValueAll = new TH1D(
         "hist_sihit_qvalue_all_X6_12_16",
         "All QQQ5 + X6 ring events (no kinematics cut);Q-value [MeV];counts",
@@ -439,7 +484,7 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
     auto histThetaCMAll = new TH1D(
         "hist_sihit_theta_cm_all_X6_12_16",
         "All QQQ5 + X6 ring events (no kinematics cut);#theta_{CM} [deg];counts",
-        360,0,180);
+        45,0,180);
     Long64_t numQValueCandidates = 0;
     Long64_t numAllQValueEvents = 0;
     auto fillQValue = [&](double thetaLab, double energy, bool isQQQ5=false) {
@@ -494,16 +539,16 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
     Long64_t numCoincidence[maxDetectorIndex] = {0};
     Long64_t numOhmicCoincidence[maxDetectorIndex] = {0};
 
-    // Dedicated QQQ5-only view.  Keep the horizontal coordinate as the
-    // physical junction strip even when mode=2 changes other plots to theta.
+    // Dedicated QQQ5-only view using the physical angular width of each
+    // junction strip rather than uniform strip-number bins.
     auto histQQQ5JunctionEnergyVsStrip = new TH2D(
         "hist_sihit_qqq5_junction_energy_vs_junction_strip",
-        "QQQ5 junction energy;Junction strip;Junction energy [MeV]",
-        32,0.5,32.5,300,0,energyMax);
+        "QQQ5 junction energy;#theta_{lab} [deg];Junction energy [MeV]",
+        32,qqq5ThetaBinEdges.data(),300,0,energyMax);
     auto histQQQ5OhmicEnergyVsJunctionStrip = new TH2D(
         "hist_sihit_qqq5_ohmic_energy_vs_junction_strip",
-        "QQQ5 ohmic energy;Junction strip;Ohmic energy [MeV]",
-        32,0.5,32.5,300,0,energyMax);
+        "QQQ5 ohmic energy;#theta_{lab} [deg];Ohmic energy [MeV]",
+        32,qqq5ThetaBinEdges.data(),300,0,energyMax);
     for (int id=0; id<maxDetectorIndex; ++id)
         dEDetectorByE[id] = -1;
 
@@ -735,7 +780,12 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
                     !isQQQ5OhmicOnly && energy > 0) {
                     int junctionStrip = hit->GetJunctionStrip();
                     if (junctionStrip >= 1 && junctionStrip <= 32) {
-                        histQQQ5JunctionEnergyVsStrip->Fill(junctionStrip,energy);
+                        const double qqq5ThetaLab =
+                            qqq5Theta(det,junctionStrip);
+                        histQQQ5JunctionEnergyVsStrip->Fill(
+                            qqq5ThetaLab,energy);
+                        if (mode == 2)
+                            histCombinedOhmic->Fill(qqq5ThetaLab,energy);
                     }
                 }
 
@@ -806,12 +856,12 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
 
         for (int id=0; id<maxDetectorIndex; ++id) {
             auto det = mapping.FindDetectorByIndex(id);
-            // QQQ5 contributes its junction spectrum directly.  It does not
-            // require a coincident ohmic-side hit in the combined plot.
+            // QQQ5 contributes every junction hit to the combined plot in
+            // the hit loop above.  Keep one event/detector representative
+            // here only for the Q-value calculation.
             if (mode == 2 && det != nullptr && det->ringType == "Q" &&
                 histPosition[id] != nullptr && eventEnergy[id] > 0 &&
                 eventPosition[id] > -900) {
-                histCombinedOhmic->Fill(eventPosition[id],eventEnergy[id]);
                 fillQValue(eventPosition[id],eventEnergy[id],true);
             }
             if (eventEnergy[id] > 0 && eventOhmicEnergy[id] > 0 &&
@@ -821,7 +871,7 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
                 if (det != nullptr && det->detType == "QQQ5" &&
                     eventJunctionStrip[id] >= 1 && eventJunctionStrip[id] <= 32)
                     histQQQ5OhmicEnergyVsJunctionStrip->Fill(
-                        eventJunctionStrip[id],eventOhmicEnergy[id]);
+                        qqq5Theta(det,eventJunctionStrip[id]),eventOhmicEnergy[id]);
 
                 int ringSumIndex = -1;
                 if (det != nullptr) {
@@ -830,9 +880,12 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
                     else if (det->ringType == "12E")  ringSumIndex = kSum12E;
                     else if (det->ringType == "Q")    ringSumIndex = kSumQQQ5;
                 }
-                if (ringSumIndex >= 0)
+                if (ringSumIndex >= 0) {
                     histOhmicRingSum[ringSumIndex]->Fill(
                         eventPosition[id],eventOhmicEnergy[id]);
+                    histRingOhmicVsJunction[ringSumIndex]->Fill(
+                        eventEnergy[id],eventOhmicEnergy[id]);
+                }
                 if (ringSumIndex == kSum16) {
                     histCombinedOhmic->Fill(
                         eventPosition[id],eventOhmicEnergy[id]);
@@ -882,8 +935,10 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
             cout << "event " << event << " / " << numEvents << endl;
     }
 
-    if (outputName.IsNull())
-        outputName = Form("data_reco/draw_sihit_%04d.root",runID);
+    if (outputName.IsNull()) {
+        TString analysisSuffix = anaName.IsNull() ? TString("") : "."+anaName;
+        outputName = Form("data_reco/sihit_%04d%s.root",runID,analysisSuffix.Data());
+    }
     cout << outputName << endl;
     auto output = new TFile(outputName,"recreate");
 
@@ -893,6 +948,9 @@ void draw_sihit(int mode=2, TString inputName="", TString outputName="")
 
     topOhmicRingSum->Draw();
     topOhmicRingSum->GetCanvas()->Write();
+
+    topRingOhmicVsJunction->Draw();
+    topRingOhmicVsJunction->GetCanvas()->Write();
 
     topMultiplicity->Draw();
     topMultiplicity->GetCanvas()->Write();

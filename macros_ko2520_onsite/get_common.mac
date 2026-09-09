@@ -1,12 +1,7 @@
-#LKRun/RunID       e{RUN}
-#LKRun/RunID       77
-#LKRun/RunID       81
-#LKRun/RunID       84
-
-default_run 84 
+default_run 147 
 common_run e{RUN}
-@-common_run/common_run  {default_run}
-LKRun/RunID         {common_run}
+@-common_run/common_run {default_run}
+LKRun/RunID {common_run}
 
 LKRun/Name             ko2520
 LKRun/OutputPath       data_reco
@@ -14,3 +9,52 @@ LKRun/AutoTerminate    true  # automatically terminate root after end of run
 #LKRun/EventCountForMessage    20000
 
 si_array/MappingPath   mapping_ko2520_0904
+
+na21_name Na-21 
+na21_runs_1 83:90
+na21_runs_2 97:102, 105, 112:114
+na21_runs_3 134, 135, 136, 139, 141, 142, 146, 147, 148
+na21_runs_4 151, 153, 154, 156, 159, 160, 161, 162, 160, 
+#na21_runs_4_2 156, 159, 160, 161, 162, 160, 
+na21_runs_5 164, 165, 170
+#na21_runs_6 177, 178, 179, 180, 181, 182, 183, 184
+na21_runs_6 177, 179, 180, 181, 182, 183, 184
+na21_runs {na21_runs_1}, {na21_runs_2}, {na21_runs_3}, {na21_runs_4}, {na21_runs_5}, {na21_runs_6}
+
+na21_bg_name Na-21_C
+na21_bg_runs 172, 173, 174, 175, 176
+
+ana_name run_{common_run}
+ana_runs {common_run}
+
+?common_run==8000/
+    ana_name {na21_name}-all
+    ana_runs {na21_runs}
+
+?common_run==8001/
+    ana_name {na21_name}-1
+    ana_runs {na21_runs_1}
+
+?common_run==8002/
+    ana_name {na21_name}-2
+    ana_runs {na21_runs_2}
+
+?common_run==8003/
+    ana_name {na21_name}-3
+    ana_runs {na21_runs_3}
+
+?common_run==8004/
+    ana_name {na21_name}-4
+    ana_runs {na21_runs_4}
+
+?common_run==8005/
+    ana_name {na21_name}-5
+    ana_runs {na21_runs_5}
+
+?common_run==8006/
+    ana_name {na21_name}-6
+    ana_runs {na21_runs_6}
+
+?common_run==9021/
+    ana_name {na21_bg_name}
+    ana_runs {na21_bg_runs}

@@ -1,0 +1,90 @@
+# Usage:
+#   RUN=84 lilak run get_sihit.mac
+#
+# This reads the SiChannel branch produced by get_reco.mac, restores the
+# silicon-hit energy/position, and combines matching dE-E hits.
+
+<common_run get_common.mac
+
+######################################
+lilak/add  STARK
+lilak/add  SKChannelFilterTask
+lilak/add  LKEnergyRestorationTask
+lilak/add  LKSiHitPairMatchingTask
+# LKSiHitPairMatchingTask attaches the position-matched X6 ohmic segment and
+# combines 12-ring dE-E hits produced by LKEnergyRestorationTask.
+lilak/run  0
+######################################
+
+LKRun/InputPath   data_reco
+LKRun/OutputPath  data_reco
+LKRun/SearchRun   reco
+LKRun/Tag         fthit
+LKRun/EventCountForMessage 1000
+
+persistency/SiChannel false
+persistency/SiHit true
+persistency/FrameHeader true
+
+# Negative NoiseScale marks bipolar; abs(NoiseScale) is pedestal stddev in ADC.
+# Enable desired cuts by uncommenting; example thresholds need data tuning.
+SKChannelFilterTask/Filter/NoiseLevel 30                 # reject abs(noise) >= configured value (ADC)
+SKChannelFilterTask/Filter/SignalToNoiseRatio 3           # reject Energy/abs(noise) < value
+SKChannelFilterTask/Filter/Bipolar true
+# Reject the whole event if any saturated channel matches cobo/asad/aget.
+# Rules are cumulative; -1 is wildcard. Evaluated before channel removal.
+# Use PFData flags if present; otherwise scan SiChannel waveforms (negative: ADC 0, positive: 4095).
+#SKChannelFilterTask/Filter/SaturationEvent 0 0 0
+#SKChannelFilterTask/Filter/SaturationEvent 0 0 2
+#SKChannelFilterTask/Filter/SaturationEvent 0 0 3
+SKChannelFilterTask/Filter/SaturationEvent -1 -1 -1
+# EnergyRange: default min max, then overrides cobo asad aget channel min max.
+# -1 matches all; more specified address fields win; equal specificity: last rule wins.
+# Overrides REPLACE the default range (they can widen it). Both endpoints are included.
+#SKChannelFilterTask/Filter/EnergyRange 100 4000
+#SKChannelFilterTask/Filter/EnergyRange 0, 1, -1, -1, 200, 3000  # CoBo 0 / AsAd 1
+#SKChannelFilterTask/Filter/EnergyRange 0, 1, 0, -1, 150, 3500   # AGET 0 on that board
+#SKChannelFilterTask/Filter/EnergyRange 0, 1, 0, 8, 50, 4000     # channel 8 override
+SKChannelFilterTask/Filter/TimeRange 260 310             # inclusive hit-time bounds in TB; omit to disable
+#SKChannelFilterTask/Filter/Crosstalk 0, 1, 0, >4          # reject runs of 5+ signal channels
+SKChannelFilterTask/Filter/Crosstalk -1, -1, -1, >3       # all AGETs, evaluated separately
+SKChannelFilterTask/Filter/SignalThreshold 0              # signal means reconstructed Energy > this value
+# Event multiplicity BEFORE channel cuts, across all boards (no adjacency requirement).
+# Fired means finite Energy > SignalThreshold. Endpoints included; omit to disable.
+#SKChannelFilterTask/Filter/FiredChannelCountRange 1 20
+# Require exactly one junction and one ohmic signal across AGET 0..2 together.
+# Named fields may appear in any order; aget=0:2 includes AGET 0, 1, 2.
+# cobo/asad=-1 means all; aget=2 selects one AGET; counts are exact.
+# Counts ORIGINAL finite Energy > SignalThreshold, before any channel cuts.
+# Zero signals fail; channels outside this scope do not count and remain subject to other cuts.
+# Does not require the two channels to belong to the same detector; repeated rules are ANDed.
+#SKChannelFilterTask/Filter/SideMultiplicity cobo=0 asad=0 aget=0:2 junction=1 ohmic=1
+SKChannelFilterTask/Filter/MinChannels 1                  # reject event if fewer channels remain AFTER channel cuts
+
+# Match junction/ohmic signals one-to-one by nearest TB. If one side is
+# missing, keep the remaining signal as a SiHit as well.
+#LKSiHitPairMatchingTask/keepSingleSideHits true
+LKSiHitPairMatchingTask/keepSingleSideHits false
+# a is a wildcard; omitted trailing address fields are wildcards too.
+#LKSiHitPairMatchingTask/singleSideChannels 0/0/0/a
+
+LKEnergyRestorationTask/energyCalibrationFile /root/lilak/stark/macros_ko2520_calibration/data_calibration/run_0077/ko2520_0077.energy_calibration.dat
+#stark/PositionCalibrationFile  e{PCAL}
+
+# Optional gain AFTER energy calibration: E_final = gain * E_calibrated.
+# Repeated rules: last matching rule wins (not multiplied together); default gain=1.
+# -1 is wildcard. Detector uses det_number; DetID uses mapping det_idx.
+# Side: 0=junction, 1=ohmic, -1=both. Gain must be positive.
+# QQQ5 detIndex 32/33 = detector numbers 4/2, gain x5 runs:
+# 134,135,136,139,141,142,146,147,148: apply 1/5 only for these runs.
+# draw_fthit.C uses the corrected energy directly without an additional /5.
+#LKEnergyRestorationTask/PostCalibrationGain/DetID 32 0 0.2
+#LKEnergyRestorationTask/PostCalibrationGain/DetID 33 0 0.2
+# Equivalent detector-number selection (choose one form):
+#LKEnergyRestorationTask/PostCalibrationGain/Detector 4 0 0.2
+#LKEnergyRestorationTask/PostCalibrationGain/Detector 2 0 0.2
+# CAAC form: cobo asad aget channel gain (no side restriction).
+?common_run>=134/LKEnergyRestorationTask/PostCalibrationGain/CAAC 0 0 2 -1 0.2
+#LKEnergyRestorationTask/PostCalibrationGain/CAAC 0 0 2 61 0.25
+# Paired X6: direction-0 channel selects one gain for both ends and SiHit;
+# calibrated RelativeZ is preserved. Uncalibrated channels are not adjusted.

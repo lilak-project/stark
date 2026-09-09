@@ -36,7 +36,7 @@ root_bin=/root/opt/root-6.40.04/bin/root
 root_library_path=/root/opt/root-6.40.04/lib:/root/lilak/build:/usr/local/gru/lib:/usr/local/get/lib
 
 setsid -f env \
-  RUTHERFORD_JS_ADDRESS=192.168.1.102:9093 \
+  RUTHERFORD_JS_ADDRESS=0.0.0.0:9093 \
   RUTHERFORD_JS_DIRECTORY="$server_directory" \
   RUTHERFORD_JS_FIT_DIRECTORY="$fit_directory" \
   RUTHERFORD_JS_PIDFILE="$server_pid_file" \
@@ -46,4 +46,5 @@ setsid -f env \
   >>"$server_log" 2>&1 </dev/null
 
 echo "Rutherford JSROOT URL: http://192.168.1.102:9093"
+echo "Rutherford JSROOT external URL: http://10.200.207.100:9093"
 echo "Watched directory: $server_directory"

@@ -1,27 +1,20 @@
-void print_detectors()
+/// Dump the full silicon mapping.
+///   option : "all" (summary + detector table + channel table),
+///            "summary", "detector", "channel", "group" (channels listed under each detector)
+void print_detectors(TString mappingPath = "mapping_ko2520_0904", TString option = "all")
 {
     LKSiliconMapping mapping;
-    if (!mapping.Load("mapping_ko2520_0904")) {
-        cerr << "Failed to load mapping_ko2520_0904" << endl;
+    if (!mapping.Load(mappingPath)) {
+        cerr << "Failed to load " << mappingPath << endl;
         return;
     }
 
-    cout << "Number of detectors: " << mapping.GetNumDetectors() << endl;
-    cout << "idx  det#  type  ring   dE/E phi#"
-         << "       radius       z-center          phi          phi1          phi2" << endl;
-    for (auto iDet=0; iDet<mapping.GetNumDetectors(); ++iDet) {
-        auto det = mapping.GetDetectorByVectorIndex(iDet);
-        if (det == nullptr) {
-            cerr << "Missing detector at vector index " << iDet << endl;
-            continue;
-        }
-        printf("%3d %5d %5s %5s %5s %4d %12.4f %14.4f %12.4f %12.4f %12.4f\n",
-               det->detIndex, det->detNumber, det->detType.Data(), det->ringType.Data(),
-               det->dEE.Data(), det->phiNumber, det->ringRadius, det->ringZ,
-               det->phi, det->phi1, det->phi2);
-    }
+    mapping.Print(option);
 
-    cout << endl << "12-ring dE-E pairs (matched by phi#)" << endl;
+    cout << endl;
+    mapping.PrintDetectorChannels();
+
+    cout << endl << "== 12-ring dE-E pairs (matched by phi#) ======================================" << endl;
     cout << "phi#   dE idx/det#/phi       E idx/det#/phi" << endl;
     for (auto phiNumber=0; phiNumber<12; ++phiNumber) {
         const LKSiliconMapping::DetectorInfo *detDE = nullptr;

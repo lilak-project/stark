@@ -9,7 +9,7 @@
 ######################################
 lilak/add  STARK
 lilak/add  LKEnergyRestorationTask
-#lilak/add  LKSiHitPairMatchingTask
+lilak/add  LKSiHitPairMatchingTask
 # LKSiHitPairMatchingTask attaches the position-matched X6 ohmic segment and
 # combines 12-ring dE-E hits produced by LKEnergyRestorationTask.
 lilak/run  0
@@ -24,5 +24,13 @@ LKRun/EventCountForMessage 1000
 persistency/SiHit true
 persistency/FrameHeader true
 
+# Match junction/ohmic signals one-to-one by nearest TB. If one side is
+# missing, keep the remaining signal as a SiHit as well.
+LKSiHitPairMatchingTask/keepSingleSideHits true
+# a is a wildcard; omitted trailing address fields are wildcards too.
+#LKSiHitPairMatchingTask/singleSideChannels 0/0/0/a
+
 LKEnergyRestorationTask/energyCalibrationFile /root/lilak/stark/macros_ko2520_calibration/data_calibration/run_0077/ko2520_0077.energy_calibration.dat
 #stark/PositionCalibrationFile  e{PCAL}
+
+?common_run>=134/LKEnergyRestorationTask/PostCalibrationGain/CAAC 0 0 2 -1 0.2

@@ -9,4 +9,5 @@ export ROOTSYS=/root/opt/root-6.40.04
 export PATH="$ROOTSYS/bin:/usr/bin:/bin:$PATH"
 export LD_LIBRARY_PATH="$ROOTSYS/lib:/root/lilak/build:/usr/local/gru/lib:/usr/local/get/lib"
 
-lilak js -I 192.168.1.102:9091 -D data_reco
+lilak js -K -I 0.0.0.0:9091
+lilak js -I 0.0.0.0:9091 -D data_reco

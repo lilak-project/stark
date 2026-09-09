@@ -1,7 +1,8 @@
 #<common_run   common_run.mac
-<common_run get_common.mac
+<common_run  get_common.mac
 
 ######################################
+lilak/add  STARK
 lilak/add  LKCoboFrameMergerTask  # add task or detector class
 lilak/add  LKSetSiChannelTask
 lilak/run  0
@@ -12,9 +13,25 @@ LKRun/SearchRun   mfm
 LKRun/InputPath   data_raw
 LKRun/EventCountForMessage 1000
 
-#SKSiArrayPlane/jumpEventSize  50000
-
 LKFrameBuilder/MaxCobo 1  # maximum number of CoBo
 LKFrameBuilder/MaxAsad 4  # maximum number of AsAd in one CoBo
 LKFrameBuilder/MaxAget 4  # maximum number of AGET in one AsAd
 LKFrameBuilder/MaxChannels 68  # maximum number of channels in AGET
+
+#persistency/RawData false
+
+# Pedestal interval includes both endpoints (251 samples).
+LKSetSiChannelTask/PedestalTbRange 10 250
+LKSetSiChannelTask/BipolarPercentRange 50 150
+LKSetSiChannelTask/BipolarWindow 30  # maximum peak-to-opposite-lobe distance in TB
+
+# Saturation-only energy formula (ROOT TFormula). Default 10000 is a marker, not physical energy.
+LKSetSiChannelTask/SaturationEnergyFormula 10000
+# x or [slope]: ADC/TB from a line fitted to unclipped samples immediately before saturation.
+# Also available: [amplitude] (observed peak above pedestal), [pedestal] (polarity-normalized),
+# [time] (hit TB), [noise] (absolute pedestal stddev). Non-saturated hits are unchanged.
+LKSetSiChannelTask/SaturationSlopeWindow 6
+# Example syntax ONLY; coefficients must be calibrated for this slope definition:
+#LKSetSiChannelTask/SaturationEnergyFormula -1.90397 + 9.39922*x
+# Invalid syntax fails Init; invalid/nonpositive results or unusable slope fall back to 10000.
+# PFData retains fIsSaturated, observed amplitude, evaluated energy, and slope/range when used.
