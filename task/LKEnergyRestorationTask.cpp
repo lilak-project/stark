@@ -21,6 +21,14 @@ LKEnergyRestorationTask::LKEnergyRestorationTask()
 
 bool LKEnergyRestorationTask::Init()
 {
+    // Gain rules are read by scanning every entry (a name may repeat), which make_meta and
+    // collect_par cannot see; declare them so they appear in the parameter template.
+    fPar -> Require("LKEnergyRestorationTask/PostCalibrationGain/Detector", "0 -1 1.0",
+                    "repeatable; detector-number side gain (side -1 all, 0 junction, 1 ohmic; -1 = any)", "/");
+    fPar -> Require("LKEnergyRestorationTask/PostCalibrationGain/DetID", "0 -1 1.0",
+                    "repeatable; detID side gain (side -1 all, 0 junction, 1 ohmic; -1 = any)", "/");
+    fPar -> Require("LKEnergyRestorationTask/PostCalibrationGain/CAAC", "0 0 0 0 1.0",
+                    "repeatable; cobo asad aget channel gain (-1 = any)", "/");
     fSiChannelArray = fRun -> GetBranchA("SiChannel", "LKSiChannel");
     if (fSiChannelArray == nullptr) {
         lk_error << "Branch SiChannel does not exist. Run LKSetSiChannelTask before LKEnergyRestorationTask." << endl;

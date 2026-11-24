@@ -71,6 +71,12 @@ bool ELARK::Init()
         lk_note << fMappingFileName << endl;
     }
 
+    // Read every parameter before the file checks: make_meta and collect_par run Init() without files.
+    double detWidth = 40.3;
+    double detHeight = 75;
+    fPar -> UpdatePar(detWidth ,"stark/SiDetectorWidth 40.3 # (mm)");
+    fPar -> UpdatePar(detHeight,"stark/SiDetectorHeight 75 # (mm)");
+
     ifstream fileDetector(fDetectorParName);
     if (!fileDetector.is_open()) {
         lk_error << "Cannot open (" << fDetName+"/Mapping1" << ") " << fDetectorParName << endl;
@@ -85,7 +91,7 @@ bool ELARK::Init()
     TString detName;
     int cobo, asad, aget, chan, chan2, detID, strip, side, lr;
     int numSides, numJunctionStrips, numOhmicStrips, layer, ringIndex, useJunctionLR, useOhmicLR;
-    double detDistance, detRadius, detDiameter, phi0, detWidth, detHeight, detThickness, tta, phi;
+    double detDistance, detRadius, detDiameter, phi0, detThickness, tta, phi;
     TString zapJNo, zapONo, markNo;
     int markID, fb;
     int ringType; // 12 or 16
@@ -96,10 +102,6 @@ bool ELARK::Init()
         for (auto j=0; j<2; ++j)
             fdEEPairMapping[i][j] = -1;
 
-    detWidth = 40.3;
-    detHeight = 75;
-    fPar -> UpdatePar(detWidth ,"stark/SiDetectorWidth");
-    fPar -> UpdatePar(detHeight,"stark/SiDetectorHeight");
     while (fileDetector >> detName >> detID >> cobo >> asad
             >> zapJNo >> zapONo >> markNo >> markID >> fb
             >> ringType >> dEEType >> polarID >> detDiameter >> detDistance >> phi0 >> ringIndex)

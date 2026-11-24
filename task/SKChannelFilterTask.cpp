@@ -17,6 +17,16 @@ SKChannelFilterTask::SKChannelFilterTask() : LKTask("SKChannelFilterTask", "Filt
 
 bool SKChannelFilterTask::Init()
 {
+    // These rules are read by scanning every entry (a name may repeat), which make_meta and
+    // collect_par cannot see; declare them so they appear in the parameter template.
+    fPar->Require("SKChannelFilterTask/Filter/SideMultiplicity", "cobo=0 asad=0 aget=0:3 junction=1 ohmic=1",
+                  "repeatable; per AsAd and AGET range: junction and ohmic channel counts", "/");
+    fPar->Require("SKChannelFilterTask/Filter/EnergyRange", "100 4000",
+                  "repeatable; min max, or cobo asad aget chan min max (-1 = any)", "/");
+    fPar->Require("SKChannelFilterTask/Filter/SaturationEvent", "-1 -1 -1",
+                  "repeatable; cobo asad aget of a saturated channel that rejects the event (-1 = any)", "/");
+    fPar->Require("SKChannelFilterTask/Filter/Crosstalk", "-1, -1, -1, >3",
+                  "repeatable; cobo asad aget >N rejects runs of more than N neighbouring signal channels", "/");
     fEventRun = dynamic_cast<LKRun*>(fRun);
     if (!fEventRun || !fRun->GetBranchA("SiChannel", "LKSiChannel")) return false;
     fSiChannelArray = fRun->KeepBranchA("SiChannel", "LKSiChannel");
